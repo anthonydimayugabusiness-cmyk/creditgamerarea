@@ -207,9 +207,9 @@
 
         function openQuiz() { document.getElementById('quiz-modal').classList.add('active'); document.body.style.overflow = 'hidden'; startQuiz(); }
         function closeQuiz() { document.getElementById('quiz-modal').classList.remove('active'); document.body.style.overflow = 'auto'; }
-        function startQuiz() {
-            sessionStorage.setItem('credit-cards_score', '0');
-            window.location.href = '/quiz/credit-cards/q1.html';
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('creditcards_score', '0');
+            window.location.href = '/quiz/credit-cards/q1';
         }
 
         function showQuestion() {

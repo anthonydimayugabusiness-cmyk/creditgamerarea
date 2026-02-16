@@ -176,7 +176,7 @@
                 <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
             </div>
             
-            <button class="btn btn-primary btn-large" onclick="startQuiz()">Start the Quiz →</button>
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
         </div>
     </section>
 
@@ -287,9 +287,9 @@
             window.location.href = `/quiz-complete.html?quiz=credit-basics&score=${score}&total=${quizData.questions.length}&pct=${pct}`;
         }
 
-        function startQuiz() {
-            sessionStorage.setItem('cb_score', '0');
-            window.location.href = '/quiz/credit-basics/q1.html';
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('cred_score', '0');
+            window.location.href = '/quiz/credit-basics/q1';
         }
     </script>
 </body>

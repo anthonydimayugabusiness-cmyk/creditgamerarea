@@ -78,7 +78,7 @@
                         <span>⏱️ ~5 min</span>
                         <span>📊 Easy</span>
                     </div>
-                    <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
+                    <button class="btn btn-primary" onclick="startMultiPageQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
                 </div>
             </div>
         </div>
@@ -108,9 +108,9 @@
 
         let currentQuestion = 0, score = 0, answers = [];
 
-        function startQuiz() {
+        function startMultiPageQuiz() {
             sessionStorage.setItem('budgeting_score', '0');
-            window.location.href = '/quiz/budgeting/q1.html';
+            window.location.href = '/quiz/budgeting/q1';
         }
 
         function showQuestion() {
@@ -137,7 +137,7 @@
             const pct = Math.round((score / quizData.data.length) * 100);
             let msg = pct >= 90 ? 'Budget Master!' : pct >= 70 ? 'Well Done!' : pct >= 50 ? 'Keep Learning!' : 'Study More!';
             let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '📚' : '💪';
-            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
+            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startMultiPageQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
         }
     </script>
 

@@ -223,9 +223,9 @@
 
         function openQuiz() { document.getElementById('quiz-modal').classList.add('active'); document.body.style.overflow = 'hidden'; startQuiz(); }
         function closeQuiz() { document.getElementById('quiz-modal').classList.remove('active'); document.body.style.overflow = 'auto'; }
-        function startQuiz() {
-            sessionStorage.setItem('prediction-markets_score', '0');
-            window.location.href = '/quiz/prediction-markets/q1.html';
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('predictionmarkets_score', '0');
+            window.location.href = '/quiz/prediction-markets/q1';
         }
 
         function showQuestion() {
