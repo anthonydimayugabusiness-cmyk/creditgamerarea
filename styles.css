@@ -497,19 +497,296 @@ section h2 {
         display: none;
     }
     
-    .blog-grid {
-        grid-template-columns: 1fr;
+/* Viral/Growth Hacking Styles */
+
+/* Pulse animation for CTA buttons */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+    50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+}
+
+.btn-primary.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Social proof bar */
+.social-proof-bar {
+    margin-top: 32px;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.live-counter {
+    font-size: 0.9rem;
+    color: #10b981;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.recent-scores {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.score-pill {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: white;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Viral feature cards with unlock rewards */
+.feature-card.viral {
+    position: relative;
+    overflow: hidden;
+}
+
+.unlock-reward {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.feature-card.viral:hover .unlock-reward {
+    transform: translateY(0);
+}
+
+/* Viral CTA box */
+.viral-cta-box {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    color: white;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 48px;
+}
+
+.viral-cta-box p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+/* Share buttons for quiz completion */
+.share-section {
+    background: #f8fafc;
+    padding: 32px;
+    border-radius: 16px;
+    margin: 32px 0;
+    text-align: center;
+}
+
+.share-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--dark);
+}
+
+.share-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.share-btn.twitter { background: #1da1f2; }
+.share-btn.facebook { background: #4267B2; }
+.share-btn.reddit { background: #FF4500; }
+.share-btn.copy { background: var(--dark); }
+
+/* Leaderboard styles */
+.leaderboard {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+    margin: 32px 0;
+}
+
+.leaderboard-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--dark);
+}
+
+.leaderboard-row {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--gray-light);
+    transition: background 0.2s;
+}
+
+.leaderboard-row:hover {
+    background: #f8fafc;
+}
+
+.leaderboard-rank {
+    font-size: 1.5rem;
+    font-weight: 800;
+    width: 50px;
+    color: var(--primary);
+}
+
+.leaderboard-rank.top-3 {
+    color: #f59e0b;
+}
+
+.leaderboard-name {
+    flex: 1;
+    font-weight: 600;
+}
+
+.leaderboard-score {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Streak counter */
+.streak-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* FOMO countdown */
+.countdown-box {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.countdown-box .label {
+    font-size: 0.875rem;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.countdown-box .timer {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+/* Difficulty badges */
+.difficulty-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.difficulty-badge.easy { background: #d1fae5; color: #047857; }
+.difficulty-badge.medium { background: #fef3c7; color: #b45309; }
+.difficulty-badge.hard { background: #fee2e2; color: #b91c1c; }
+
+/* Result share card */
+.result-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.result-card .emoji {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.result-card .title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.result-card .score-display {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 16px 0;
+}
+
+.result-card .comparison {
+    color: var(--gray);
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .social-proof-bar {
+        padding: 12px 16px;
     }
     
-    .blog-card.featured {
-        grid-row: auto;
+    .recent-scores {
+        font-size: 0.75rem;
     }
     
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
+    .score-pill {
+        padding: 4px 8px;
     }
     
-    .newsletter-form {
+    .share-buttons {
         flex-direction: column;
+    }
+    
+    .share-btn {
+        width: 100%;
+        justify-content: center;
     }
 }

@@ -1,5 +1,54 @@
 // Credit Gamer Area - Main JavaScript
 
+// Live user counter simulation
+function initLiveCounter() {
+    const counter = document.getElementById('live-users');
+    if (!counter) return;
+    
+    // Start with a base number and fluctuate
+    let baseUsers = 1247;
+    
+    setInterval(() => {
+        // Random fluctuation between -15 and +20
+        const change = Math.floor(Math.random() * 36) - 15;
+        baseUsers = Math.max(800, Math.min(2000, baseUsers + change));
+        counter.textContent = baseUsers.toLocaleString();
+    }, 3000);
+}
+
+// Animate recent scores
+function animateRecentScores() {
+    const scores = [
+        { name: 'Alex', score: '9/10', emoji: '⭐' },
+        { name: 'Jordan', score: '7/10', emoji: '' },
+        { name: 'Taylor', score: '10/10', emoji: '🔥' },
+        { name: 'Morgan', score: '8/10', emoji: '⭐' },
+        { name: 'Casey', score: '10/10', emoji: '🏆' },
+        { name: 'Riley', score: '6/10', emoji: '' },
+        { name: 'Quinn', score: '9/10', emoji: '⭐' },
+        { name: 'Avery', score: '10/10', emoji: '🔥' }
+    ];
+    
+    const container = document.querySelector('.recent-scores');
+    if (!container) return;
+    
+    let index = 0;
+    setInterval(() => {
+        const score = scores[index % scores.length];
+        const pill = document.createElement('span');
+        pill.className = 'score-pill';
+        pill.textContent = `${score.name} got ${score.score} ${score.emoji}`;
+        pill.style.animation = 'slideIn 0.5s ease';
+        
+        container.appendChild(pill);
+        if (container.children.length > 3) {
+            container.removeChild(container.firstChild);
+        }
+        
+        index++;
+    }, 4000);
+}
+
 // Quiz Data
 const quizData = {
     'credit-basics': {
@@ -72,6 +121,10 @@ const quizData = {
 
 // DOM Ready
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Initialize viral features
+    initLiveCounter();
+    animateRecentScores();
     
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
