@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Loans Quiz - Question 1 of 10</title>
+    <meta name="description" content="Auto Loans Quiz - Test your knowledge. Question 1 of 10.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.5rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #6366f1; background: #f8fafc; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; display: none; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; display: block; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; display: block; }
+        .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .error-message { background: #fee2e2; border: 1px solid #ef4444; color: #b91c1c; padding: 20px; border-radius: 12px; text-align: center; display: none; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <script src="/quiz-token.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+        </div>
+    </nav>
+
+    <div id="error-msg" class="error-message" style="max-width: 700px; margin: 40px auto;">
+        <h3>⚠️ Invalid Access</h3>
+        <p>Please start the quiz from the beginning.</p>
+        <a href="/auto-loans-quiz.html" class="next-btn">Go to Quiz Start</a>
+    </div>
+
+    <section class="quiz-page" id="quiz-content">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span class="category-tag">Auto Loans - Question 1 of 10</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" style="width: 10%;"></div>
+                    </div>
+                    <div class="progress-text">Question 1 of 10</div>
+                </div>
+                
+                <div class="question-container">
+                    <h2>What is the typical auto loan term?</h2>
+                    <div class="options-list">
+                        <button class="option" onclick="selectAnswer(0, 1)">12-24 months</button>
+                        <button class="option" onclick="selectAnswer(1, 1)">36-72 months</button>
+                        <button class="option" onclick="selectAnswer(2, 1)">84-96 months</button>
+                        <button class="option" onclick="selectAnswer(3, 1)">120+ months</button>
+                    </div>
+                    
+                    <div id="explanation" class="explanation">
+                        <h4 id="result-text"></h4>
+                        <p>Most auto loans range from 36-72 months (3-6 years). Longer terms mean lower payments but more interest paid overall.</p>
+                        <button id="next-btn" class="next-btn" onclick="goToNext()">Next Question →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const QUIZ_NAME = 'auto-loans';
+        const QUESTION_NUM = 1;
+        const IS_LAST = false;
+        
+        // Validate token on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = QuizToken.getParams();
+            
+            // First question doesn't need token
+            if (QUESTION_NUM === 1) {
+                sessionStorage.setItem('auto_score', '0');
+                return;
+            }
+            
+            // Validate token for subsequent questions
+            if (!params.token || !QuizToken.validate(params.token, QUIZ_NAME, QUESTION_NUM - 1, params.score)) {
+                document.getElementById('quiz-content').style.display = 'none';
+                document.getElementById('error-msg').style.display = 'block';
+            } else {
+                // Update score from token
+                sessionStorage.setItem('auto_score', params.score.toString());
+            }
+        });
+        
+        let answered = false;
+        let currentScore = parseInt(sessionStorage.getItem('auto_score') || '0');
+        
+        function selectAnswer(selected, correct) {
+            if (answered) return;
+            answered = true;
+            
+            const isCorrect = selected === correct;
+            const explanation = document.getElementById('explanation');
+            const resultText = document.getElementById('result-text');
+            
+            document.querySelectorAll('.option').forEach((btn, idx) => {
+                btn.style.pointerEvents = 'none';
+                if (idx === correct) {
+                    btn.style.borderColor = '#10b981';
+                    btn.style.background = '#d1fae5';
+                } else if (idx === selected && !isCorrect) {
+                    btn.style.borderColor = '#ef4444';
+                    btn.style.background = '#fee2e2';
+                }
+            });
+            
+            explanation.className = 'explanation ' + (isCorrect ? 'correct' : 'incorrect');
+            resultText.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
+            
+            if (isCorrect) {
+                currentScore++;
+                sessionStorage.setItem('auto_score', currentScore.toString());
+            }
+        }
+        
+        function goToNext() {
+            if (IS_LAST) {
+                // Go to completion page with token
+                window.location.href = QuizToken.buildUrl('/quiz-complete.html', QUIZ_NAME, 'complete', currentScore);
+            } else {
+                // Go to next question with token
+                window.location.href = QuizToken.buildUrl('q2.html', QUIZ_NAME, QUESTION_NUM + 1, currentScore);
+            }
+        }
+    </script>
+</body>
+</html>

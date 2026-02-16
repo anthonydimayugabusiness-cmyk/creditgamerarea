@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shopping Quiz - New vs used, negotiating, and getting the best deal (Free)</title>
+    <meta name="description" content="Take our free Car Shopping Quiz! New vs used, negotiating, and getting the best deal. 10 questions with instant results and detailed explanations.">
+    <meta name="keywords" content="car-shopping quiz, learn car-shopping, personal finance, money tips, free quiz">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.creditgamerarea.com/car-shopping-quiz.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/car-shopping-quiz.html">
+    <meta property="og:title" content="Car Shopping Quiz - New vs used, negotiating, and getting the best deal">
+    <meta property="og:description" content="Take our free Car Shopping Quiz! New vs used, negotiating, and getting the best deal.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-car-shopping.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/car-shopping-quiz.html">
+    <meta property="twitter:title" content="Car Shopping Quiz - New vs used, negotiating, and getting the best deal">
+    <meta property="twitter:description" content="Take our free Car Shopping Quiz! New vs used, negotiating, and getting the best deal.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-car-shopping.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #f97316; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #f97316, #fb923c); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #f97316; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .next-btn { margin-top: 16px; background: #f97316; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #f97316, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #f97316; color: white; }
+        .btn-secondary { background: white; color: #f97316; border: 2px solid #f97316; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #f97316, #fb923c); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <span style="display: inline-block; background: #f97316; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Auto</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Car Shopping Mastery: How to Get the Best Deal</h1>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <!-- Inline Ad 1 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Walking onto a car lot without preparation is like bringing a knife to a gunfight. Dealers have decades of experience extracting maximum profit from buyers who don't know the game. The good news? With the right knowledge, you can turn the tables and drive away with a great deal that doesn't destroy your budget.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                The first rule of car shopping: never negotiate based on monthly payment. Dealers love monthly payment shoppers because they can hide inflated prices, high interest rates, and unnecessary add-ons in a "manageable" monthly number. Instead, negotiate the out-the-door price—the actual amount you'll pay including taxes, fees, and extras. Only then should you discuss financing.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">New vs. Used: The Real Math</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                New cars lose 20-30% of their value in the first year and 60% within five years. That $40,000 new car is worth $28,000 the moment you drive it off the lot. A 2-3 year old certified pre-owned vehicle offers nearly the same features, remaining warranty, and significant savings. The sweet spot is often 2-4 years old with 20,000-40,000 miles.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Timing matters too. End of month, quarter, and model year are when dealers need to hit quotas and clear inventory. December often brings the best deals as dealers try to meet annual targets. Shop on weekdays when lots are empty and salespeople are hungry. And always get pre-approved for financing before you shop—it gives you leverage and a baseline to compare against dealer offers.
+            </p>
+
+            <!-- Inline Ad 2 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Take the quiz above to test your car shopping knowledge. Remember: the best deal isn't the one with the lowest monthly payment—it's the one that costs you the least overall. Do your research, get pre-approved, and negotiate with confidence.
+            </p>
+
+            <!-- Inline Ad 3 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🚙 Ready to Test Your Knowledge?</h2>
+            <p>Take our free 10-question quiz to see how much you've learned about car-shopping. Get instant results and detailed explanations for each question.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ ~5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: #0f0d2e; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('carshopping_score', '0');
+            window.location.href = '/quiz/car-shopping/q1';
+        }
+    </script>
+</body>
+</html>

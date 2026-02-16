@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Insurance Quiz - Coverage types, deductibles, and saving money (Free)</title>
+    <meta name="description" content="Take our free Auto Insurance Quiz! Coverage types, deductibles, and saving money. 10 questions with instant results and detailed explanations.">
+    <meta name="keywords" content="auto-insurance quiz, learn auto-insurance, personal finance, money tips, free quiz">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.creditgamerarea.com/auto-insurance-quiz.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/auto-insurance-quiz.html">
+    <meta property="og:title" content="Auto Insurance Quiz - Coverage types, deductibles, and saving money">
+    <meta property="og:description" content="Take our free Auto Insurance Quiz! Coverage types, deductibles, and saving money.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-auto-insurance.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/auto-insurance-quiz.html">
+    <meta property="twitter:title" content="Auto Insurance Quiz - Coverage types, deductibles, and saving money">
+    <meta property="twitter:description" content="Take our free Auto Insurance Quiz! Coverage types, deductibles, and saving money.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-auto-insurance.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #06b6d4; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #06b6d4, #22d3ee); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #06b6d4; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .next-btn { margin-top: 16px; background: #06b6d4; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #06b6d4, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #06b6d4; color: white; }
+        .btn-secondary { background: white; color: #06b6d4; border: 2px solid #06b6d4; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #06b6d4, #22d3ee); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <span style="display: inline-block; background: #06b6d4; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Insurance</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Auto Insurance Decoded: Protect Your Ride Without Overpaying</h1>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <!-- Inline Ad 1 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Auto insurance is a legal requirement in almost every state, but that doesn't mean you should overpay for it. The average driver spends $1,500+ per year on car insurance, yet most have no idea what they're actually paying for. Understanding coverage types, how rates are calculated, and where to find discounts can save you hundreds annually.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Liability insurance—the minimum required by law—only covers damage you cause to others. It doesn't protect your car at all. If you have a loan or lease, you'll need comprehensive and collision coverage. But if you own an older car outright, carrying only liability might make financial sense. The key is understanding the trade-offs and making informed decisions.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Decoding Your Premium</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Insurance companies use complex algorithms considering your age, driving record, credit score, location, vehicle type, and even your occupation. A speeding ticket can increase rates by 20-30%. A DUI can double or triple them. But good news: accidents and tickets typically stop affecting your rates after 3-5 years, and many insurers offer accident forgiveness programs.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                The deductible—the amount you pay before insurance kicks in—is a powerful lever. Raising your deductible from $500 to $1,000 can lower premiums by 10-20%. Just make sure you have that $1,000 saved in an emergency fund. And shop around every year or two; loyalty rarely pays in insurance, and rates vary dramatically between companies.
+            </p>
+
+            <!-- Inline Ad 2 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Take the quiz above to test your auto insurance knowledge. The right coverage protects you without breaking the bank. Review your policy annually, shop around, and make sure you're getting every discount you deserve.
+            </p>
+
+            <!-- Inline Ad 3 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🛡️ Ready to Test Your Knowledge?</h2>
+            <p>Take our free 10-question quiz to see how much you've learned about auto-insurance. Get instant results and detailed explanations for each question.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ ~5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: #0f0d2e; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('autoinsurance_score', '0');
+            window.location.href = '/quiz/auto-insurance/q1';
+        }
+    </script>
+</body>
+</html>
