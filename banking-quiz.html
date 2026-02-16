@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Basics Quiz - Credit Gamer Area</title>
+    <meta name="description" content="Learn checking vs savings, APY, fees, and online banks. 10 questions.">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #3b82f6; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #3b82f6, #60a5fa); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #3b82f6; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .explanation.correct h4 { color: #047857; }
+        .explanation.incorrect h4 { color: #b91c1c; }
+        .next-btn { margin-top: 16px; background: #3b82f6; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #3b82f6; color: white; }
+        .btn-secondary { background: white; color: #3b82f6; border: 2px solid #3b82f6; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+        </div>
+    </nav>
+
+    <section class="quiz-page">
+        <div class="container">
+            <div id="quiz-content" class="quiz-container">
+                <div class="start-screen">
+                    <span class="category-tag">Finance</span>
+                    <h2>🏦 Banking Basics Quiz</h2>
+                    <p>Checking vs savings, APY, fees, and online banks</p>
+                    <div class="quiz-meta">
+                        <span>📝 10 Questions</span>
+                        <span>⏱️ ~5 min</span>
+                        <span>📊 Easy</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const quizData = {
+            title: "Banking Basics",
+            category: "Finance",
+            description: "Checking vs savings, APY, fees, and online banks",
+            questions: 10,
+            difficulty: "Easy",
+            time: "5 min",
+            data: [
+                { question: "What is the main difference between checking and savings accounts?", options: ["Checking is for spending, savings is for storing money", "Savings has higher fees", "Checking earns more interest", "There is no difference"], correct: 0, explanation: "Checking accounts are for daily transactions and spending. Savings accounts are for storing money and earning interest." },
+                { question: "What does APY stand for?", options: ["Annual Percentage Yield", "Annual Payment Yearly", "Account Percentage Yield", "Average Percentage Yearly"], correct: 0, explanation: "APY = Annual Percentage Yield. It shows how much interest you'll earn in a year, including compound interest." },
+                { question: "Which typically has higher interest rates?", options: ["Checking accounts", "Savings accounts", "They are the same", "Neither pays interest"], correct: 1, explanation: "Savings accounts typically offer higher interest rates than checking accounts because they're designed for storing money, not frequent transactions." },
+                { question: "What is an overdraft fee?", options: ["A reward for saving money", "A charge for spending more than you have", "An account opening fee", "A monthly maintenance fee"], correct: 1, explanation: "An overdraft fee is charged when you spend more money than you have in your account, and the bank covers the difference." },
+                { question: "What is a direct deposit?", options: ["Depositing cash at the bank", "Having your paycheck automatically sent to your account", "Mailing a check", "Using an ATM"], correct: 1, explanation: "Direct deposit is when your employer automatically sends your paycheck to your bank account on payday." },
+                { question: "What is FDIC insurance?", options: ["Protection for investments", "Government protection for bank deposits up to $250,000", "Credit card protection", "Loan insurance"], correct: 1, explanation: "FDIC insurance protects your bank deposits up to $250,000 per account type, per bank, if the bank fails." },
+                { question: "What is a wire transfer?", options: ["A fast electronic transfer between banks", "Mailing cash", "Using an ATM", "Writing a check"], correct: 0, explanation: "A wire transfer is an electronic way to send money quickly between banks, often used for large amounts or international transfers." },
+                { question: "What is a minimum balance requirement?", options: ["The maximum you can deposit", "The least amount you must keep to avoid fees", "Your starting deposit", "The interest rate"], correct: 1, explanation: "Some banks require you to keep a minimum balance in your account or they'll charge you a monthly fee." },
+                { question: "What is an online bank?", options: ["A bank only on the internet with no physical branches", "A bank that uses computers", "An ATM", "A credit card company"], correct: 0, explanation: "Online banks operate entirely online with no physical branches. They often offer higher interest rates and lower fees than traditional banks." },
+                { question: "How often do most savings accounts compound interest?", options: ["Daily", "Monthly or annually", "Never", "Only on weekends"], correct: 1, explanation: "Most savings accounts compound interest monthly or annually. The more frequent the compounding, the more interest you earn." }
+            ]
+        };
+
+        let currentQuestion = 0, score = 0, answers = [];
+
+        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
+
+        function showQuestion() {
+            const q = quizData.data[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.data.length) * 100;
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-header"><span class="category-tag">${quizData.category}</span><h1>${quizData.title}</h1></div>
+                <div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div><div class="progress-text">Question ${currentQuestion + 1} of ${quizData.data.length}</div></div>
+                <div class="question-container"><h2>${q.question}</h2><div class="options-list" id="options">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div></div>`;
+        }
+
+        function selectAnswer(index) {
+            const q = quizData.data[currentQuestion];
+            const isCorrect = index === q.correct;
+            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
+            if (isCorrect) score++;
+            document.querySelectorAll('.option').forEach(btn => { btn.classList.add('disabled'); if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct'); else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect'); });
+            document.querySelector('.question-container').innerHTML += `<div class="explanation ${isCorrect ? 'correct' : 'incorrect'}"><h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4><p>${q.explanation}</p><button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.data.length - 1 ? 'Next →' : 'See Results'}</button></div>`;
+        }
+
+        function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.data.length) showQuestion(); else showResults(); }
+
+        function showResults() {
+            const pct = Math.round((score / quizData.data.length) * 100);
+            let msg = pct >= 90 ? 'Banking Pro!' : pct >= 70 ? 'Well Done!' : pct >= 50 ? 'Keep Learning!' : 'Study More!';
+            let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '📚' : '💪';
+            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
+        }
+    </script>
+</body>
+</html>
