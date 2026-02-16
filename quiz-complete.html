@@ -41,40 +41,56 @@
     ========================================
     -->
     <script>
-        // Quiz completion data will be available here
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const quiz = urlParams.get('quiz');
-            const score = urlParams.get('score');
-            const total = urlParams.get('total');
-            const percentage = urlParams.get('pct');
+            // Get score from sessionStorage (for multi-page quizzes)
+            let score = sessionStorage.getItem('cb_score') || sessionStorage.getItem('quiz_score') || '0';
             
-            // Display results
-            if (score && total) {
-                document.getElementById('score-display').textContent = score + '/' + total;
-                document.getElementById('percentage-display').textContent = percentage + '%';
+            // Or from URL params (for single-page quizzes)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlScore = urlParams.get('score');
+            const urlTotal = urlParams.get('total');
+            const urlPct = urlParams.get('pct');
+            const quiz = urlParams.get('quiz') || 'Quiz';
+            
+            // Use URL params if available, otherwise use sessionStorage
+            if (urlScore && urlTotal) {
+                score = urlScore;
+                document.getElementById('score-display').textContent = score + '/' + urlTotal;
+                document.getElementById('percentage-display').textContent = urlPct + '%';
                 
-                // Set message based on percentage
-                const pct = parseInt(percentage);
+                const pct = parseInt(urlPct);
                 let msg = '', emoji = '';
-                if (pct >= 90) { msg = '🏆 Quiz Master!'; emoji = '🏆'; }
-                else if (pct >= 70) { msg = '⭐ Well Done!'; emoji = '⭐'; }
-                else if (pct >= 50) { msg = '📚 Keep Learning!'; emoji = '📚'; }
-                else { msg = '💪 Study More!'; emoji = '💪'; }
+                if (pct >= 90) { msg = 'Quiz Master!'; emoji = '🏆'; }
+                else if (pct >= 70) { msg = 'Well Done!'; emoji = '⭐'; }
+                else if (pct >= 50) { msg = 'Keep Learning!'; emoji = '📚'; }
+                else { msg = 'Study More!'; emoji = '💪'; }
                 
-                document.getElementById('result-message').textContent = msg;
-                document.getElementById('result-emoji').textContent = emoji;
-                document.getElementById('quiz-name').textContent = quiz ? quiz.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'Quiz';
+                document.getElementById('result-message').textContent = emoji + ' ' + msg;
+                document.getElementById('quiz-name').textContent = quiz.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            } else {
+                // Multi-page quiz - show score from sessionStorage
+                const total = 10; // Default total
+                const pct = Math.round((parseInt(score) / total) * 100);
+                document.getElementById('score-display').textContent = score + '/' + total;
+                document.getElementById('percentage-display').textContent = pct + '%';
                 
-                // ========================================
-                // ADD YOUR CONVERSION TRACKING HERE
-                // ========================================
-                // Example: gtag('event', 'quiz_complete', { ... });
-                // Example: fbq('track', 'CompleteRegistration', { ... });
-                // ========================================
+                let msg = '', emoji = '';
+                if (pct >= 90) { msg = 'Quiz Master!'; emoji = '🏆'; }
+                else if (pct >= 70) { msg = 'Well Done!'; emoji = '⭐'; }
+                else if (pct >= 50) { msg = 'Keep Learning!'; emoji = '📚'; }
+                else { msg = 'Study More!'; emoji = '💪'; }
                 
-                console.log('Quiz completed:', { quiz, score, total, percentage });
+                document.getElementById('result-message').textContent = emoji + ' ' + msg;
             }
+            
+            // Clear sessionStorage
+            sessionStorage.removeItem('cb_score');
+            sessionStorage.removeItem('quiz_score');
+            
+            // ========================================
+            // ADD YOUR CONVERSION TRACKING HERE
+            // ========================================
+            console.log('Quiz completed:', { score, quiz });
         });
     </script>
 </head>
