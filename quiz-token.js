@@ -47,6 +47,7 @@ const QuizToken = {
     
     // Build URL with token
     buildUrl: function(baseUrl, quizName, questionNum, score) {
+        // Token validates that we completed the current question with this score
         const token = this.generate(quizName, questionNum, score);
         return `${baseUrl}?t=${token}&s=${score}`;
     }
