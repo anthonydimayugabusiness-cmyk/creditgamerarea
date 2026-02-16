@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Catalogue - Credit Gamer Area</title>
+    <meta name="description" content="Browse all our credit, finance, and money-making quizzes. Test your knowledge and learn while you play.">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-catalogue { padding: 60px 0; }
+        .quiz-catalogue h1 { font-size: 2.5rem; text-align: center; margin-bottom: 16px; }
+        .catalogue-subtitle { text-align: center; color: #64748b; margin-bottom: 48px; }
+        
+        .quiz-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        
+        .quiz-item { background: white; border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+        .quiz-item:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-color: #6366f1; }
+        
+        .quiz-item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .quiz-item-category { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #6366f1; }
+        .quiz-item-questions { font-size: 0.875rem; color: #64748b; }
+        
+        .quiz-item h3 { font-size: 1.25rem; margin-bottom: 8px; color: #1e1b4b; }
+        .quiz-item p { color: #64748b; font-size: 0.9375rem; margin-bottom: 16px; }
+        
+        .quiz-item-footer { display: flex; justify-content: space-between; align-items: center; }
+        .quiz-item-difficulty { font-size: 0.875rem; }
+        .difficulty-easy { color: #10b981; }
+        .difficulty-medium { color: #f59e0b; }
+        .difficulty-hard { color: #ef4444; }
+        
+        .quiz-item-btn { background: #6366f1; color: white; padding: 8px 16px; border-radius: 6px; font-size: 0.875rem; font-weight: 500; }
+        
+        .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 48px; }
+        .pagination a, .pagination span { padding: 10px 16px; border-radius: 8px; text-decoration: none; }
+        .pagination a { background: white; border: 1px solid #e2e8f0; color: #1e1b4b; }
+        .pagination a:hover { background: #f8fafc; border-color: #6366f1; }
+        .pagination .current { background: #6366f1; color: white; }
+        .pagination .disabled { color: #94a3b8; cursor: not-allowed; }
+        
+        .filter-bar { display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+        .filter-bar select { padding: 10px 16px; border: 1px solid #e2e8f0; border-radius: 8px; background: white; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="quiz-catalogue">
+        <div class="container">
+            <h1>Quiz Catalogue</h1>
+            <p class="catalogue-subtitle">Find your topic and test your knowledge</p>
+            
+            <div class="filter-bar">
+                <select>
+                    <option>All Categories</option>
+                    <option>Credit</option>
+                    <option>Finance</option>
+                    <option>Taxes</option>
+                    <option>Investing</option>
+                    <option>Side Hustles</option>
+                </select>
+                
+                <select>
+                    <option>All Difficulties</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </div>
+            
+            <div class="quiz-list">
+                <a href="/quiz/credit-basics.html" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Credit</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Credit Basics</h3>
+                    <p>Learn about credit scores, reports, and building credit from scratch.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-easy">● Easy</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/credit-cards/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Credit</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Credit Cards 101</h3>
+                    <p>How to use cards responsibly, avoid debt, and maximize rewards.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-easy">● Easy</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/taxes/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Taxes</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Taxes for Beginners</h3>
+                    <p>W-2s, 1099s, deductions, and how to not overpay the IRS.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-medium">● Medium</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/student-loans/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Loans</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Student Loans</h3>
+                    <p>Federal vs private, repayment plans, and forgiveness options.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-medium">● Medium</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/investing/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Investing</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Investing Basics</h3>
+                    <p>Stocks, ETFs, 401k, and how to start with $100.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-medium">● Medium</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/make-money-online.html" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Side Hustle</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Make Money Online</h3>
+                    <p>Side hustles, freelancing, streaming, and passive income.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-easy">● Easy</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/budgeting/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Finance</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Budgeting</h3>
+                    <p>50/30/20 rule, apps, and how to save while gaming.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-easy">● Easy</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+                
+                <a href="/quiz/banking/" class="quiz-item">
+                    <div class="quiz-item-header">
+                        <span class="quiz-item-category">Finance</span>
+                        <span class="quiz-item-questions">10 questions</span>
+                    </div>
+                    <h3>Banking Basics</h3>
+                    <p>Checking vs savings, APY, fees, and online banks.</p>
+                    <div class="quiz-item-footer">
+                        <span class="quiz-item-difficulty difficulty-easy">● Easy</span>
+                        <span class="quiz-item-btn">Start →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="pagination">
+                <span class="disabled">← Prev</span>
+                <span class="current">1</span>
+                <a href="/quizzes/page/2/">2</a>
+                <a href="/quizzes/page/3/">3</a>
+                <a href="/quizzes/page/2/">Next →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

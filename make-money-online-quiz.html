@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Money Online Quiz - Credit Gamer Area</title>
+    <meta name="description" content="Test your knowledge of side hustles, freelancing, and online income. 10 questions, instant results.">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .quiz-header p { color: #64748b; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #10b981, #34d399); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #10b981; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .explanation.correct h4 { color: #047857; }
+        .explanation.incorrect h4 { color: #b91c1c; }
+        .next-btn { margin-top: 16px; background: #10b981; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .next-btn:hover { background: #059669; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #10b981; color: white; }
+        .btn-secondary { background: white; color: #10b981; border: 2px solid #10b981; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .start-screen h2 { margin-bottom: 16px; }
+        .start-screen p { color: #64748b; margin-bottom: 32px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+        </div>
+    </nav>
+
+    <section class="quiz-page">
+        <div class="container">
+            <div id="quiz-content" class="quiz-container">
+                <div class="start-screen">
+                    <span class="category-tag">Side Hustle</span>
+                    <h2>💻 Make Money Online Quiz</h2>
+                    <p>Test your knowledge of side hustles, freelancing, and online income</p>
+                    <div class="quiz-meta">
+                        <span>📝 10 Questions</span>
+                        <span>⏱️ ~5 min</span>
+                        <span>📊 Easy</span>
+                    </div>
+                    <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const quizData = {
+            title: "Make Money Online",
+            category: "Side Hustle",
+            description: "Test your knowledge of side hustles, freelancing, and online income",
+            questions: 10,
+            difficulty: "Easy",
+            time: "5 min",
+            data: [
+                { question: "What is the most popular freelance platform for beginners?", options: ["Toptal", "Upwork", "Fiverr", "LinkedIn"], correct: 2, explanation: "Fiverr is the easiest for beginners — you create 'gigs' and clients come to you." },
+                { question: "How much can you realistically make from online surveys per month?", options: ["$500-1000", "$100-300", "$50-150", "$2000+"], correct: 2, explanation: "Surveys pay $50-150/month realistically. They're not a main income source." },
+                { question: "What is affiliate marketing?", options: ["Creating your own products", "Earning commission promoting others' products", "Buying and reselling items", "Stock trading"], correct: 1, explanation: "You promote products and earn a commission on each sale through your link." },
+                { question: "Which platform is best for selling digital products like ebooks or courses?", options: ["eBay", "Gumroad or Teachable", "Amazon", "Craigslist"], correct: 1, explanation: "Gumroad (simple) or Teachable (courses) are built for digital products." },
+                { question: "What is the typical commission rate for Amazon Associates?", options: ["1-10%", "20-30%", "50%", "Fixed $5 per sale"], correct: 0, explanation: "Amazon pays 1-10% depending on the product category." },
+                { question: "How do most YouTubers make money?", options: ["Sponsorships only", "Ad revenue + sponsorships + merch", "Donations only", "Subscription fees"], correct: 1, explanation: "Multiple streams: AdSense, brand deals, merchandise, memberships, affiliates." },
+                { question: "What is dropshipping?", options: ["Buying wholesale and reselling", "Selling without holding inventory", "Shipping items yourself", "Importing from China"], correct: 1, explanation: "You list products, supplier ships directly to customer — you never touch inventory." },
+                { question: "Which skill has the highest demand for freelancers in 2024?", options: ["Data entry", "AI/Machine Learning", "Copywriting", "Virtual assistance"], correct: 1, explanation: "AI/ML skills command $100-300+/hour. Copywriting and VA work are also strong." },
+                { question: "What is a good starting rate for beginner freelance writers?", options: ["$0.01/word", "$0.05-0.10/word", "$1/word", "$5/word"], correct: 1, explanation: "$0.05-0.10/word is realistic for beginners. Experienced writers charge $0.25-1+/word." },
+                { question: "How long does it typically take to make meaningful income online?", options: ["1 week", "3-6 months", "1-2 years", "5+ years"], correct: 1, explanation: "Most people need 3-6 months of consistent effort to see meaningful income." }
+            ]
+        };
+
+        let currentQuestion = 0, score = 0, answers = [];
+
+        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
+
+        function showQuestion() {
+            const q = quizData.data[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.data.length) * 100;
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-header"><span class="category-tag">${quizData.category}</span><h1>${quizData.title}</h1></div>
+                <div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div><div class="progress-text">Question ${currentQuestion + 1} of ${quizData.data.length}</div></div>
+                <div class="question-container"><h2>${q.question}</h2><div class="options-list" id="options">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div></div>`;
+        }
+
+        function selectAnswer(index) {
+            const q = quizData.data[currentQuestion];
+            const isCorrect = index === q.correct;
+            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
+            if (isCorrect) score++;
+            document.querySelectorAll('.option').forEach(btn => { btn.classList.add('disabled'); if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct'); else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect'); });
+            document.querySelector('.question-container').innerHTML += `<div class="explanation ${isCorrect ? 'correct' : 'incorrect'}"><h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4><p>${q.explanation}</p><button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.data.length - 1 ? 'Next →' : 'See Results'}</button></div>`;
+        }
+
+        function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.data.length) showQuestion(); else showResults(); }
+
+        function showResults() {
+            const pct = Math.round((score / quizData.data.length) * 100);
+            let msg = pct >= 90 ? 'Side Hustle Master!' : pct >= 70 ? 'Getting There!' : pct >= 50 ? 'Keep Learning!' : 'Time to Research!';
+            let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '📚' : '💪';
+            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
+        }
+    </script>
+</body>
+</html>
