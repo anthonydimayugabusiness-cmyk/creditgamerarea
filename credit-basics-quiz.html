@@ -8,103 +8,66 @@
     <meta name="keywords" content="credit basics quiz, credit score quiz, learn credit, credit report, build credit, credit education, free quiz">
     <meta name="author" content="Credit Gamer Area">
     <meta name="robots" content="index, follow">
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.creditgamerarea.com/credit-basics-quiz.html">
-    
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.creditgamerarea.com/credit-basics-quiz.html">
     <meta property="og:title" content="Credit Basics Quiz - Test Your Credit Score Knowledge">
     <meta property="og:description" content="Learn about credit scores, credit reports, and how to build credit with our free interactive quiz.">
     <meta property="og:image" content="https://www.creditgamerarea.com/og-credit-basics.jpg">
-    
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.creditgamerarea.com/credit-basics-quiz.html">
     <meta property="twitter:title" content="Credit Basics Quiz - Test Your Credit Score Knowledge">
     <meta property="twitter:description" content="Learn about credit scores, credit reports, and how to build credit with our free interactive quiz.">
     <meta property="twitter:image" content="https://www.creditgamerarea.com/og-credit-basics.jpg">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
-    
     <link rel="stylesheet" href="/styles.css">
     <style>
         .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
         .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        
         .quiz-header { text-align: center; margin-bottom: 32px; }
         .quiz-header .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
         .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
-        .quiz-header p { color: #64748b; }
-        
         .progress-container { margin-bottom: 32px; }
         .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
         .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
         .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
-        
         .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
-        
         .options-list { display: flex; flex-direction: column; gap: 12px; }
         .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
         .option:hover { border-color: #6366f1; background: #f8fafc; }
         .option.correct { border-color: #10b981; background: #d1fae5; }
         .option.incorrect { border-color: #ef4444; background: #fee2e2; }
         .option.disabled { pointer-events: none; opacity: 0.7; }
-        
         .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
         .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
         .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
         .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
-        .explanation.correct h4 { color: #047857; }
-        .explanation.incorrect h4 { color: #b91c1c; }
-        
         .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
-        .next-btn:hover { background: #4f46e5; }
-        
         .results-container { text-align: center; padding: 40px 20px; }
         .results-emoji { font-size: 4rem; margin-bottom: 16px; }
         .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
         .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
         .results-subtitle { color: #64748b; margin-bottom: 32px; }
-        
         .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
         .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
         .btn-primary { background: #6366f1; color: white; }
         .btn-secondary { background: white; color: #6366f1; border: 2px solid #6366f1; }
-        
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
         .start-screen { text-align: center; padding: 40px 20px; }
-        .start-screen h2 { margin-bottom: 16px; }
-        .start-screen p { color: #64748b; margin-bottom: 32px; }
         .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
         .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
-        
         .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
         .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+        #quiz-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
+        #quiz-modal.active { display: block; }
+        .modal-content { background: white; max-width: 800px; margin: 40px auto; border-radius: 16px; padding: 40px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #64748b; }
     </style>
-    
-    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-    
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Quiz",
-        "name": "Credit Basics Quiz",
-        "description": "Test your knowledge of credit scores, credit reports, and building credit with 10 interactive questions.",
-        "url": "https://www.creditgamerarea.com/credit-basics-quiz.html",
-        "provider": {
-            "@type": "Organization",
-            "name": "Credit Gamer Area",
-            "url": "https://www.creditgamerarea.com/"
-        },
-        "about": {
-            "@type": "Thing",
-            "name": "Credit Basics"
-        }
-    }
-    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -112,254 +75,35 @@
             <a href="/" class="logo">💳 Credit Gamer Area</a>
             <ul class="nav-links">
                 <li><a href="/quizzes/">Quizzes</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Top Ad Unit -->
     <div class="ad-container">
         <div class="ad-label">Advertisement</div>
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-
-    <section class="quiz-page">
-        <div class="container">
-            <div class="quiz-container">
-                <div id="quiz-content">
-                    <!-- Quiz loads here -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="ad-container">
-        <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <script>
-        const quizData = {
-            title: "Credit Basics",
-            category: "Credit",
-            description: "Test your knowledge of credit scores, reports, and building credit from scratch.",
-            questions: 10,
-            difficulty: "Easy",
-            time: "5 min",
-            data: [
-                {
-                    question: "What is the most commonly used credit scoring model?",
-                    options: ["VantageScore", "FICO Score", "Experian Score", "TransUnion Score"],
-                    correct: 1,
-                    explanation: "FICO Score is used by 90% of top lenders. It ranges from 300-850."
-                },
-                {
-                    question: "What percentage of your credit score is based on payment history?",
-                    options: ["15%", "35%", "50%", "65%"],
-                    correct: 1,
-                    explanation: "Payment history makes up 35% of your FICO score - the single biggest factor."
-                },
-                {
-                    question: "How long do negative items (like late payments) stay on your credit report?",
-                    options: ["3 years", "5 years", "7 years", "10 years"],
-                    correct: 2,
-                    explanation: "Most negative items stay for 7 years. Bankruptcies can stay for 10."
-                },
-                {
-                    question: "What is the recommended credit utilization ratio?",
-                    options: ["Under 10%", "Under 30%", "Under 50%", "Under 70%"],
-                    correct: 1,
-                    explanation: "Keep utilization under 30% (ideally under 10%) for best scores."
-                },
-                {
-                    question: "How often can you get a free credit report from each bureau?",
-                    options: ["Monthly", "Every 6 months", "Annually", "Every 3 years"],
-                    correct: 2,
-                    explanation: "AnnualCreditReport.com gives you one free report per bureau per year."
-                },
-                {
-                    question: "What is a 'hard inquiry' on your credit report?",
-                    options: ["Checking your own score", "A lender checking your credit", "A soft credit check", "An error on your report"],
-                    correct: 1,
-                    explanation: "Hard inquiries happen when you apply for credit and can lower your score slightly."
-                },
-                {
-                    question: "How long does it take to build credit from scratch?",
-                    options: ["1 month", "3-6 months", "1 year", "2 years"],
-                    correct: 1,
-                    explanation: "It takes 3-6 months of credit activity to generate a FICO score."
-                },
-                {
-                    question: "What is the best first credit card for beginners?",
-                    options: ["Premium travel card", "Secured credit card", "Business credit card", "Store credit card"],
-                    correct: 1,
-                    explanation: "Secured cards require a deposit and are designed for building credit."
-                },
-                {
-                    question: "Does closing a credit card help your credit score?",
-                    options: ["Yes, always", "Yes, if it has a balance", "No, it usually hurts", "No effect"],
-                    correct: 2,
-                    explanation: "Closing cards reduces available credit and can hurt your utilization ratio."
-                },
-                {
-                    question: "What is the average credit score in the US?",
-                    options: ["650", "700", "718", "750"],
-                    correct: 2,
-                    explanation: "The average FICO score is around 718 as of 2024."
-                }
-            ]
-        };
-
-        let currentQuestion = 0;
-        let score = 0;
-        let answers = [];
-
-        function init() {
-            showStartScreen();
-        }
-
-        function showStartScreen() {
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="start-screen">
-                    <span class="category-tag">${quizData.category}</span>
-                    <h2>${quizData.title} Quiz</h2>
-                    <p>${quizData.description}</p>
-                    
-                    <div class="quiz-meta">
-                        <span>📝 ${quizData.questions} Questions</span>
-                        <span>⏱️ ~${quizData.time}</span>
-                        <span>📊 ${quizData.difficulty}</span>
-                    </div>
-                    
-                    <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">
-                        Start Quiz
-                    </button>
-                </div>
-            `;
-        }
-
-        function startQuiz() {
-            currentQuestion = 0;
-            score = 0;
-            answers = [];
-            showQuestion();
-        }
-
-        function showQuestion() {
-            const q = quizData.data[currentQuestion];
-            const progress = ((currentQuestion + 1) / quizData.data.length) * 100;
-            
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="quiz-header">
-                    <span class="category-tag">${quizData.category}</span>
-                    <h1>${quizData.title}</h1>
-                </div>
-                
-                <div class="progress-container">
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar" style="width: ${progress}%"></div>
-                    </div>
-                    <div class="progress-text">Question ${currentQuestion + 1} of ${quizData.data.length}</div>
-                </div>
-                
-                <div class="question-container">
-                    <h2>${q.question}</h2>
-                    <div class="options-list" id="options">
-                        ${q.options.map((opt, i) => `
-                            <button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-        }
-
-        function selectAnswer(index) {
-            const q = quizData.data[currentQuestion];
-            const isCorrect = index === q.correct;
-            
-            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
-            if (isCorrect) score++;
-            
-            // Disable all options
-            document.querySelectorAll('.option').forEach(btn => {
-                btn.classList.add('disabled');
-                if (parseInt(btn.dataset.index) === q.correct) {
-                    btn.classList.add('correct');
-                } else if (parseInt(btn.dataset.index) === index && !isCorrect) {
-                    btn.classList.add('incorrect');
-                }
-            });
-            
-            // Show explanation
-            const container = document.querySelector('.question-container');
-            container.innerHTML += `
-                <div class="explanation ${isCorrect ? 'correct' : 'incorrect'}">
-                    <h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4>
-                    <p>${q.explanation}</p>
-                    <button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.data.length - 1 ? 'Next Question →' : 'See Results'}</button>
-                </div>
-            `;
-        }
-
-        function nextQuestion() {
-            currentQuestion++;
-            if (currentQuestion < quizData.data.length) {
-                showQuestion();
-            } else {
-                showResults();
-            }
-        }
-
-        function showResults() {
-            const percentage = Math.round((score / quizData.data.length) * 100);
-            let message = '', emoji = '', subtitle = '';
-            
-            if (percentage >= 90) {
-                message = 'Finance Master!';
-                emoji = '🏆';
-                subtitle = 'You really know your stuff!';
-            } else if (percentage >= 70) {
-                message = 'Well Done!';
-                emoji = '⭐';
-                subtitle = 'Solid understanding of credit basics.';
-            } else if (percentage >= 50) {
-                message = 'Keep Learning!';
-                emoji = '📚';
-                subtitle = 'Review the explanations and try again.';
-            } else {
-                message = 'Time to Study!';
-                emoji = '💪';
-                subtitle = 'Check out our blog for more credit tips.';
-            }
-            
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="results-container">
-                    <div class="results-emoji">${emoji}</div>
-                    <div class="results-message">${message}</div>
-                    <div class="results-score">${score}/${quizData.data.length}</div>
-                    <div class="results-subtitle">${subtitle}</div>
-                    
-                    <div class="results-actions">
-                        <button class="btn btn-primary" onclick="startQuiz()">Retake Quiz</button>
-                        <a href="/quizzes/" class="btn btn-secondary">More Quizzes →</a>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Initialize on load
-        init();
-    </script>
 
     <!-- Blog Content Section -->
     <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
         <div class="container" style="max-width: 800px;">
-            <h2 style="font-size: 2rem; margin-bottom: 24px; color: #1e1b4b;">Understanding Credit Basics: Your Financial Foundation</h2>
+            <span style="display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Credit</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Understanding Credit Basics: Your Financial Foundation</h1>
             
-            <!-- Image 1 -->
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                📊 Credit Score Chart<br>(300x250)
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <!-- Inline Ad 1 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
             </div>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
@@ -370,15 +114,19 @@
                 At its core, credit is trust in financial form. When lenders, landlords, or even employers check your credit, they're asking one fundamental question: "Can we trust this person to fulfill their financial obligations?" Your credit score, ranging from 300 to 850, is the numerical answer to that question. A score above 700 generally indicates good credit management, while scores above 750 are considered excellent and can unlock the best rates and terms available.
             </p>
             
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">Why Credit Matters for Young Adults</h3>
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Why Credit Matters for Young Adults</h2>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
                 For young adults aged 18-30, building credit early is one of the smartest financial moves you can make. The length of your credit history accounts for 15% of your FICO score, which means the sooner you start, the better. Think of credit building like leveling up a character in a game—the earlier you start grinding, the stronger your character becomes. By establishing good credit habits now, you're setting yourself up for easier approvals, lower interest rates, and better financial opportunities when you need them most.
             </p>
-            
-            <!-- Image 2 -->
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #10b981, #34d399); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                💳 Building Credit Tips<br>(300x250)
+
+            <!-- Inline Ad 2 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
             </div>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
@@ -389,11 +137,22 @@
                 Credit utilization, the second-biggest factor, measures how much of your available credit you're using. If you have a $1,000 credit limit and carry a $500 balance, your utilization is 50%—which is too high. Experts recommend keeping utilization under 30%, and ideally under 10% for the best scores. This doesn't mean you shouldn't use your credit cards; it means you should pay them off in full each month if possible.
             </p>
             
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Building Credit from Scratch</h2>
+            
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
                 Building credit from scratch can feel like a catch-22: you need credit to get credit. But there are proven strategies to break this cycle. Secured credit cards, where you put down a deposit that becomes your credit limit, are designed specifically for credit building. Credit-builder loans from community banks or credit unions are another excellent option. Becoming an authorized user on a parent's credit card can also help establish your credit history, provided they have good credit habits themselves.
             </p>
+
+            <!-- Inline Ad 3 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
             
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">Common Credit Mistakes to Avoid</h3>
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Common Credit Mistakes to Avoid</h2>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
                 Many young adults make costly credit mistakes simply because they weren't taught how the system works. Maxing out credit cards, making only minimum payments, applying for too many cards at once, and ignoring their credit reports are all common pitfalls. Each of these mistakes can set you back years in your credit-building journey. The good news is that credit is forgiving—negative marks fade over time, and positive behaviors consistently practiced will eventually outweigh past mistakes.
@@ -402,21 +161,141 @@
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
                 Monitoring your credit is essential. You're entitled to one free credit report per year from each of the three major bureaus (Equifax, Experian, and TransUnion) through AnnualCreditReport.com. Many credit card companies now offer free credit score monitoring as a cardholder benefit. Regular monitoring helps you catch errors, detect identity theft early, and track your progress as you build your credit.
             </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Take the quiz above to test your credit knowledge and identify areas where you might need to learn more. Remember, financial literacy is a journey, not a destination. Every question you get wrong is an opportunity to learn something that could save you money and stress in the future. Your future self will thank you for taking the time to understand these concepts now.
-            </p>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="/quizzes/" class="btn" style="background: #6366f1; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Try More Quizzes →</a>
-            </div>
         </div>
     </section>
 
+    <!-- Quiz CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🎮 Ready to Test Your Knowledge?</h2>
+            <p>Take our free 10-question quiz to see how much you've learned about credit basics. Get instant results and detailed explanations for each question.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ 5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="openQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeQuiz()">✕</button>
+            <div id="quiz-container">
+                <!-- Quiz loads here -->
+            </div>
+        </div>
+    </div>
+
     <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
         </div>
     </footer>
+
+    <script>
+        const quizData = {
+            title: "Credit Basics",
+            category: "Credit",
+            questions: [
+                { question: "What is the most commonly used credit scoring model?", options: ["VantageScore", "FICO Score", "Experian Score", "TransUnion Score"], correct: 1, explanation: "FICO Score is used by 90% of top lenders. It ranges from 300-850." },
+                { question: "What percentage of your credit score is based on payment history?", options: ["15%", "35%", "50%", "65%"], correct: 1, explanation: "Payment history makes up 35% of your FICO score - the single biggest factor." },
+                { question: "How long do negative items stay on your credit report?", options: ["3 years", "5 years", "7 years", "10 years"], correct: 2, explanation: "Most negative items stay for 7 years. Bankruptcies can stay for 10." },
+                { question: "What is the recommended credit utilization ratio?", options: ["Under 10%", "Under 30%", "Under 50%", "Under 70%"], correct: 1, explanation: "Keep utilization under 30% (ideally under 10%) for best scores." },
+                { question: "How often can you get a free credit report from each bureau?", options: ["Monthly", "Every 6 months", "Annually", "Every 3 years"], correct: 2, explanation: "AnnualCreditReport.com gives you one free report per bureau per year." },
+                { question: "What is a 'hard inquiry'?", options: ["Checking your own score", "A lender checking your credit", "A soft credit check", "An error"], correct: 1, explanation: "Hard inquiries happen when you apply for credit and can lower your score slightly." },
+                { question: "How long does it take to build credit from scratch?", options: ["1 month", "3-6 months", "1 year", "2 years"], correct: 1, explanation: "It takes 3-6 months of credit activity to generate a FICO score." },
+                { question: "What is the best first credit card for beginners?", options: ["Premium travel card", "Secured credit card", "Business credit card", "Store credit card"], correct: 1, explanation: "Secured cards require a deposit and are designed for building credit." },
+                { question: "Does closing a credit card help your score?", options: ["Yes, always", "Yes, if it has a balance", "No, it usually hurts", "No effect"], correct: 2, explanation: "Closing cards reduces available credit and can hurt your utilization ratio." },
+                { question: "What is the average credit score in the US?", options: ["650", "700", "718", "750"], correct: 2, explanation: "The average FICO score is around 718 as of 2024." }
+            ]
+        };
+
+        let currentQuestion = 0, score = 0, answers = [];
+
+        function openQuiz() {
+            document.getElementById('quiz-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            startQuiz();
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function startQuiz() {
+            currentQuestion = 0; score = 0; answers = [];
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = quizData.questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="quiz-header">
+                    <span class="category-tag">${quizData.category}</span>
+                    <h1>${quizData.title} Quiz</h1>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div>
+                    <div class="progress-text">Question ${currentQuestion + 1} of ${quizData.questions.length}</div>
+                </div>
+                <div class="question-container">
+                    <h2>${q.question}</h2>
+                    <div class="options-list">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div>
+                </div>`;
+        }
+
+        function selectAnswer(index) {
+            const q = quizData.questions[currentQuestion];
+            const isCorrect = index === q.correct;
+            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
+            if (isCorrect) score++;
+            document.querySelectorAll('.option').forEach(btn => {
+                btn.classList.add('disabled');
+                if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct');
+                else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect');
+            });
+            document.querySelector('.question-container').innerHTML += `
+                <div class="explanation ${isCorrect ? 'correct' : 'incorrect'}">
+                    <h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4>
+                    <p>${q.explanation}</p>
+                    <button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.questions.length - 1 ? 'Next →' : 'See Results'}</button>
+                </div>`;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.questions.length) showQuestion();
+            else showResults();
+        }
+
+        function showResults() {
+            const pct = Math.round((score / quizData.questions.length) * 100);
+            let msg = pct >= 90 ? '🏆 Finance Master!' : pct >= 70 ? '⭐ Well Done!' : pct >= 50 ? '📚 Keep Learning!' : '💪 Study More!';
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="results-container">
+                    <div style="font-size: 4rem; margin-bottom: 16px;">${msg.split(' ')[0]}</div>
+                    <div class="results-message">${msg.split(' ').slice(1).join(' ')}</div>
+                    <div class="results-score">${score}/${quizData.questions.length}</div>
+                    <div class="results-subtitle">${pct}% correct</div>
+                    <div class="results-actions">
+                        <button class="btn btn-primary" onclick="startQuiz()">Retake Quiz</button>
+                        <button class="btn btn-secondary" onclick="closeQuiz()">Back to Article</button>
+                    </div>
+                </div>`;
+        }
+    </script>
 </body>
 </html>
