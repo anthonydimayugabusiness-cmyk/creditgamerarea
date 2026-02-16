@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Resources & Tools - Credit Gamer Area</title>
+    <meta name="description" content="Free financial calculators, tools, and resources to help you manage your money. Credit score simulators, loan calculators, budgeting tools, and more.">
+    <meta name="keywords" content="financial calculators, credit score calculator, loan calculator, budgeting tools, money management resources">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.creditgamerarea.com/resources.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/resources.html">
+    <meta property="og:title" content="Financial Resources & Tools - Credit Gamer Area">
+    <meta property="og:description" content="Free financial calculators, tools, and resources to help you manage your money.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-resources.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/resources.html">
+    <meta property="twitter:title" content="Financial Resources & Tools - Credit Gamer Area">
+    <meta property="twitter:description" content="Free financial calculators, tools, and resources to help you manage your money.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-resources.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .resources-page { padding: 60px 0; background: #f8fafc; min-height: calc(100vh - 200px); }
+        .resources-page .container { max-width: 1000px; }
+        .resources-header { text-align: center; margin-bottom: 48px; }
+        .resources-header h1 { font-size: 2.5rem; color: #1e1b4b; margin-bottom: 16px; }
+        .resources-header p { font-size: 1.125rem; color: #64748b; max-width: 600px; margin: 0 auto; }
+        
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 48px; }
+        
+        .resource-card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .resource-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .resource-card h3 { font-size: 1.25rem; color: #1e1b4b; margin-bottom: 12px; }
+        .resource-card p { color: #64748b; line-height: 1.6; margin-bottom: 16px; }
+        .resource-card a { color: #6366f1; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .resource-card a:hover { text-decoration: underline; }
+        
+        .calculator-section { background: white; border-radius: 16px; padding: 32px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .calculator-section h2 { font-size: 1.5rem; color: #1e1b4b; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+        
+        .calc-form { display: grid; gap: 16px; }
+        .calc-form label { font-weight: 500; color: #374151; }
+        .calc-form input, .calc-form select { padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+        .calc-form input:focus, .calc-form select:focus { outline: none; border-color: #6366f1; }
+        .calc-btn { background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+        .calc-btn:hover { background: #4f46e5; }
+        
+        .calc-result { background: #f0fdf4; border: 2px solid #10b981; border-radius: 12px; padding: 20px; margin-top: 20px; display: none; }
+        .calc-result.show { display: block; }
+        .calc-result h4 { color: #047857; margin-bottom: 8px; }
+        .calc-result .amount { font-size: 2rem; font-weight: 800; color: #047857; }
+        
+        .external-links { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .external-links h2 { font-size: 1.5rem; color: #1e1b4b; margin-bottom: 24px; }
+        .external-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .external-link-item { padding: 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
+        .external-link-item h4 { font-size: 1rem; color: #1e1b4b; margin-bottom: 8px; }
+        .external-link-item p { font-size: 0.875rem; color: #64748b; margin-bottom: 12px; }
+        .external-link-item a { color: #6366f1; font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+        .external-link-item a:hover { text-decoration: underline; }
+        
+        .ad-container { margin: 40px auto; text-align: center; max-width: 700px; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        
+        @media (max-width: 768px) {
+            .resources-grid { grid-template-columns: 1fr; }
+            .resources-header h1 { font-size: 2rem; }
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="resources-page">
+        <div class="container">
+            <div class="resources-header">
+                <h1>🛠️ Financial Resources & Tools</h1>
+                <p>Free calculators, tools, and resources to help you take control of your finances. No sign-up required.</p>
+            </div>
+
+            <!-- Quick Tools Grid -->
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🧮</div>
+                    <h3>Credit Card Payoff Calculator</h3>
+                    <p>See how long it will take to pay off your credit card debt and how much interest you'll pay.</p>
+                    <a href="#payoff-calc">Use Calculator →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💰</div>
+                    <h3>Savings Goal Calculator</h3>
+                    <p>Calculate how much you need to save monthly to reach your financial goals.</p>
+                    <a href="#savings-calc">Use Calculator →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Credit Utilization Calculator</h3>
+                    <p>Find out your credit utilization ratio and see how it affects your credit score.</p>
+                    <a href="#utilization-calc">Use Calculator →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🚗</div>
+                    <h3>Auto Loan Calculator</h3>
+                    <p>Estimate your monthly car payment and total interest based on loan terms.</p>
+                    <a href="#auto-calc">Use Calculator →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🏠</div>
+                    <h3>Mortgage Estimator</h3>
+                    <p>Get an estimate of your monthly mortgage payment including principal and interest.</p>
+                    <a href="#mortgage-calc">Use Calculator →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📈</div>
+                    <h3>Compound Interest Calculator</h3>
+                    <p>See how much your money can grow with the power of compound interest.</p>
+                    <a href="#compound-calc">Use Calculator →</a>
+                </div>
+            </div>
+
+            <!-- Credit Card Payoff Calculator -->
+            <div class="calculator-section" id="payoff-calc">
+                <h2>🧮 Credit Card Payoff Calculator</h2>
+                <div class="calc-form">
+                    <div>
+                        <label>Current Balance ($)</label>
+                        <input type="number" id="payoffBalance" placeholder="5000" min="0">
+                    </div>
+                    <div>
+                        <label>Annual Interest Rate (APR %)</label>
+                        <input type="number" id="payoffRate" placeholder="22.99" min="0" max="100" step="0.01">
+                    </div>
+                    <div>
+                        <label>Monthly Payment ($)</label>
+                        <input type="number" id="payoffPayment" placeholder="200" min="0">
+                    </div>
+                    <button class="calc-btn" onclick="calculatePayoff()">Calculate Payoff</button>
+                </div>
+                <div class="calc-result" id="payoffResult">
+                    <h4>Results</h4>
+                    <p>Time to pay off: <strong id="payoffMonths"></strong></p>
+                    <p>Total interest paid: <span class="amount" id="payoffInterest"></span></p>
+                    <p>Total amount paid: <span class="amount" id="payoffTotal"></span></p>
+                </div>
+            </div>
+
+            <!-- Savings Goal Calculator -->
+            <div class="calculator-section" id="savings-calc">
+                <h2>💰 Savings Goal Calculator</h2>
+                <div class="calc-form">
+                    <div>
+                        <label>Savings Goal ($)</label>
+                        <input type="number" id="savingsGoal" placeholder="10000" min="0">
+                    </div>
+                    <div>
+                        <label>Current Savings ($)</label>
+                        <input type="number" id="savingsCurrent" placeholder="1000" min="0">
+                    </div>
+                    <div>
+                        <label>Annual Interest Rate (APY %)</label>
+                        <input type="number" id="savingsRate" placeholder="4.5" min="0" max="20" step="0.01">
+                    </div>
+                    <div>
+                        <label>Timeframe (Years)</label>
+                        <input type="number" id="savingsYears" placeholder="3" min="1" max="50">
+                    </div>
+                    <button class="calc-btn" onclick="calculateSavings()">Calculate Monthly Savings Needed</button>
+                </div>
+                <div class="calc-result" id="savingsResult">
+                    <h4>Results</h4>
+                    <p>You need to save: <span class="amount" id="savingsMonthly"></span> per month</p>
+                    <p>Total interest earned: <strong id="savingsInterest"></strong></p>
+                </div>
+            </div>
+
+            <!-- Credit Utilization Calculator -->
+            <div class="calculator-section" id="utilization-calc">
+                <h2>📊 Credit Utilization Calculator</h2>
+                <div class="calc-form">
+                    <div>
+                        <label>Total Credit Card Balances ($)</label>
+                        <input type="number" id="utilBalance" placeholder="1500" min="0">
+                    </div>
+                    <div>
+                        <label>Total Credit Limits ($)</label>
+                        <input type="number" id="utilLimit" placeholder="10000" min="1">
+                    </div>
+                    <button class="calc-btn" onclick="calculateUtilization()">Calculate Utilization</button>
+                </div>
+                <div class="calc-result" id="utilResult">
+                    <h4>Results</h4>
+                    <p>Your credit utilization: <span class="amount" id="utilPercent"></span></p>
+                    <p id="utilRating"></p>
+                    <p>To reach 10% utilization: Pay down to <strong id="utilTarget"></strong></p>
+                </div>
+            </div>
+
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- External Resources -->
+            <div class="external-links">
+                <h2>🔗 External Resources</h2>
+                <p style="color: #64748b; margin-bottom: 24px;">Trusted external tools and resources for your financial journey.</p>
+                
+                <div class="external-links-grid">
+                    <div class="external-link-item">
+                        <h4>Annual Credit Report</h4>
+                        <p>Get your free credit report from all three bureaus weekly.</p>
+                        <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+
+                    <div class="external-link-item">
+                        <h4>IRS Free File</h4>
+                        <p>Free tax filing for those who qualify based on income.</p>
+                        <a href="https://www.irs.gov/filing/free-file-do-your-federal-taxes-for-free" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+
+                    <div class="external-link-item">
+                        <h4>Consumer Financial Protection Bureau</h4>
+                        <p>Government resources for consumer financial protection.</p>
+                        <a href="https://www.consumerfinance.gov" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+
+                    <div class="external-link-item">
+                        <h4>NerdWallet</h4>
+                        <p>Credit card comparisons and financial product reviews.</p>
+                        <a href="https://www.nerdwallet.com" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+
+                    <div class="external-link-item">
+                        <h4>Investor.gov</h4>
+                        <p>SEC's resource for learning about investing.</p>
+                        <a href="https://www.investor.gov" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+
+                    <div class="external-link-item">
+                        <h4>Federal Student Aid</h4>
+                        <p>Official resource for federal student loans and aid.</p>
+                        <a href="https://studentaid.gov" target="_blank" rel="noopener">Visit Site →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/faq.html">FAQ</a> | <a href="/sitemap.html">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function calculatePayoff() {
+            const balance = parseFloat(document.getElementById('payoffBalance').value);
+            const rate = parseFloat(document.getElementById('payoffRate').value);
+            const payment = parseFloat(document.getElementById('payoffPayment').value);
+            
+            if (!balance || !rate || !payment) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const monthlyRate = rate / 100 / 12;
+            let remaining = balance;
+            let months = 0;
+            let totalInterest = 0;
+            
+            while (remaining > 0 && months < 600) {
+                const interest = remaining * monthlyRate;
+                totalInterest += interest;
+                remaining = remaining + interest - payment;
+                months++;
+                if (remaining < 0) remaining = 0;
+            }
+            
+            const years = Math.floor(months / 12);
+            const remainingMonths = months % 12;
+            let timeString = '';
+            if (years > 0) timeString += years + ' year' + (years > 1 ? 's' : '') + ' ';
+            if (remainingMonths > 0) timeString += remainingMonths + ' month' + (remainingMonths > 1 ? 's' : '');
+            
+            document.getElementById('payoffMonths').textContent = timeString || '0 months';
+            document.getElementById('payoffInterest').textContent = '$' + totalInterest.toFixed(2);
+            document.getElementById('payoffTotal').textContent = '$' + (balance + totalInterest).toFixed(2);
+            document.getElementById('payoffResult').classList.add('show');
+        }
+
+        function calculateSavings() {
+            const goal = parseFloat(document.getElementById('savingsGoal').value);
+            const current = parseFloat(document.getElementById('savingsCurrent').value) || 0;
+            const rate = parseFloat(document.getElementById('savingsRate').value);
+            const years = parseFloat(document.getElementById('savingsYears').value);
+            
+            if (!goal || !years) {
+                alert('Please fill in required fields');
+                return;
+            }
+            
+            const monthlyRate = rate / 100 / 12;
+            const months = years * 12;
+            const needed = goal - current;
+            
+            let monthlyPayment;
+            if (rate === 0) {
+                monthlyPayment = needed / months;
+            } else {
+                monthlyPayment = needed * monthlyRate / (Math.pow(1 + monthlyRate, months) - 1);
+            }
+            
+            const totalSaved = monthlyPayment * months;
+            const interestEarned = totalSaved - needed;
+            
+            document.getElementById('savingsMonthly').textContent = '$' + monthlyPayment.toFixed(2);
+            document.getElementById('savingsInterest').textContent = '$' + Math.max(0, interestEarned).toFixed(2);
+            document.getElementById('savingsResult').classList.add('show');
+        }
+
+        function calculateUtilization() {
+            const balance = parseFloat(document.getElementById('utilBalance').value);
+            const limit = parseFloat(document.getElementById('utilLimit').value);
+            
+            if (!balance && balance !== 0 || !limit) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const utilization = (balance / limit) * 100;
+            const targetBalance = limit * 0.1;
+            
+            let rating = '';
+            if (utilization <= 10) rating = '✅ Excellent - This utilization helps your credit score!';
+            else if (utilization <= 30) rating = '⚠️ Good - Under 30% is acceptable, but lower is better.';
+            else rating = '❌ High - This utilization is hurting your credit score. Try to pay down balances.';
+            
+            document.getElementById('utilPercent').textContent = utilization.toFixed(1) + '%';
+            document.getElementById('utilRating').innerHTML = rating;
+            document.getElementById('utilTarget').textContent = '$' + targetBalance.toFixed(2);
+            document.getElementById('utilResult').classList.add('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Credit Gamer Area</title>
+    <meta name="description" content="Find answers to common questions about credit scores, credit cards, investing, taxes, and personal finance. Your go-to resource for financial education.">
+    <meta name="keywords" content="credit FAQ, finance FAQ, credit score questions, credit card FAQ, personal finance help">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.creditgamerarea.com/faq.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/faq.html">
+    <meta property="og:title" content="Frequently Asked Questions - Credit Gamer Area">
+    <meta property="og:description" content="Find answers to common questions about credit scores, credit cards, investing, taxes, and personal finance.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-faq.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/faq.html">
+    <meta property="twitter:title" content="Frequently Asked Questions - Credit Gamer Area">
+    <meta property="twitter:description" content="Find answers to common questions about credit scores, credit cards, investing, taxes, and personal finance.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-faq.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .faq-page { padding: 60px 0; background: #f8fafc; min-height: calc(100vh - 200px); }
+        .faq-page .container { max-width: 900px; }
+        .faq-header { text-align: center; margin-bottom: 48px; }
+        .faq-header h1 { font-size: 2.5rem; color: #1e1b4b; margin-bottom: 16px; }
+        .faq-header p { font-size: 1.125rem; color: #64748b; max-width: 600px; margin: 0 auto; }
+        
+        .faq-categories { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+        .faq-category-btn { background: white; border: 2px solid #e2e8f0; padding: 10px 20px; border-radius: 24px; cursor: pointer; font-weight: 500; color: #64748b; transition: all 0.2s; }
+        .faq-category-btn:hover, .faq-category-btn.active { background: #6366f1; color: white; border-color: #6366f1; }
+        
+        .faq-section { margin-bottom: 48px; }
+        .faq-section-title { font-size: 1.5rem; color: #1e1b4b; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid #e2e8f0; }
+        
+        .faq-item { background: white; border-radius: 12px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .faq-question { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #1e1b4b; transition: background 0.2s; }
+        .faq-question:hover { background: #f8fafc; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #6366f1; transition: transform 0.2s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
+        .faq-item.active .faq-answer { padding: 0 24px 20px; max-height: 500px; }
+        .faq-answer p { color: #64748b; line-height: 1.7; margin: 0; }
+        .faq-answer a { color: #6366f1; text-decoration: underline; }
+        
+        .search-box { max-width: 600px; margin: 0 auto 40px; position: relative; }
+        .search-box input { width: 100%; padding: 16px 24px 16px 56px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; transition: border-color 0.2s; }
+        .search-box input:focus { outline: none; border-color: #6366f1; }
+        .search-box::before { content: '🔍'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.25rem; }
+        
+        .cta-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 48px; border-radius: 16px; text-align: center; margin-top: 48px; }
+        .cta-section h2 { font-size: 1.75rem; margin-bottom: 16px; }
+        .cta-section p { opacity: 0.9; margin-bottom: 24px; }
+        .cta-section .btn { background: white; color: #6366f1; padding: 14px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
+        
+        .ad-container { margin: 40px auto; text-align: center; max-width: 700px; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        
+        @media (max-width: 768px) {
+            .faq-header h1 { font-size: 2rem; }
+            .faq-categories { gap: 8px; }
+            .faq-category-btn { padding: 8px 16px; font-size: 0.875rem; }
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="faq-page">
+        <div class="container">
+            <div class="faq-header">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to the most common questions about credit, finance, and money management. Can't find what you're looking for? <a href="/contact.html">Contact us</a>.</p>
+            </div>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search FAQs..." id="faqSearch">
+            </div>
+
+            <div class="faq-categories">
+                <button class="faq-category-btn active" data-category="all">All</button>
+                <button class="faq-category-btn" data-category="credit">Credit Scores</button>
+                <button class="faq-category-btn" data-category="cards">Credit Cards</button>
+                <button class="faq-category-btn" data-category="banking">Banking</button>
+                <button class="faq-category-btn" data-category="investing">Investing</button>
+                <button class="faq-category-btn" data-category="taxes">Taxes</button>
+            </div>
+
+            <!-- Credit Scores Section -->
+            <div class="faq-section" data-category="credit">
+                <h2 class="faq-section-title">💳 Credit Scores</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is a good credit score?</div>
+                    <div class="faq-answer">
+                        <p>A good credit score typically falls between 670-739 on the FICO scale (300-850). Here's the breakdown: 300-579 (Poor), 580-669 (Fair), 670-739 (Good), 740-799 (Very Good), 800+ (Exceptional). The average American credit score is around 718. Generally, a score above 700 will qualify you for most credit products at competitive rates.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to build credit from scratch?</div>
+                    <div class="faq-answer">
+                        <p>It takes about 3-6 months of credit activity to generate your first FICO score. To build a <strong>good</strong> credit score (700+), expect 12-18 months of consistent on-time payments and responsible credit use. The key factors are payment history (35% of your score) and credit utilization (30%). Start with a secured credit card or become an authorized user on a parent's card. <a href="/blog-build-credit.html">Read our complete guide</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What factors affect my credit score?</div>
+                    <div class="faq-answer">
+                        <p>FICO scores are calculated using five factors: <strong>Payment History (35%)</strong>—paying on time is crucial; <strong>Credit Utilization (30%)</strong>—keep balances under 30% of limits; <strong>Length of Credit History (15%)</strong>—older accounts help; <strong>Credit Mix (10%)</strong>—having different types of credit; <strong>New Credit (10%)</strong>—limit hard inquiries. Payment history and utilization together make up 65% of your score, so focus there first.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I check my credit score for free?</div>
+                    <div class="faq-answer">
+                        <p>You have several options: <strong>AnnualCreditReport.com</strong> provides free credit reports from all three bureaus weekly. Many credit card companies (Discover, Capital One, Chase, Citi) offer free FICO scores to cardholders. <strong>Credit Karma</strong> and <strong>Credit Sesame</strong> offer free VantageScore monitoring. Avoid sites that ask for payment—free options are plentiful and legally mandated.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Does checking my credit score hurt my credit?</div>
+                    <div class="faq-answer">
+                        <p><strong>No.</strong> Checking your own credit score is a "soft inquiry" and has no impact on your score. You can check it daily without consequences. However, when a lender checks your credit (like when applying for a loan), that's a "hard inquiry" and can lower your score by a few points temporarily. Hard inquiries stay on your report for 2 years but only affect your score for about 12 months.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How long do negative items stay on my credit report?</div>
+                    <div class="faq-answer">
+                        <p>Most negative items remain on your credit report for <strong>7 years</strong> from the date of first delinquency. This includes late payments, collections, charge-offs, and settled accounts. Bankruptcies can stay for <strong>10 years</strong> (Chapter 7) or 7 years (Chapter 13). Hard inquiries stay for 2 years. The good news: negative items have less impact as they age, and positive behaviors can outweigh past mistakes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credit Cards Section -->
+            <div class="faq-section" data-category="cards">
+                <h2 class="faq-section-title">💰 Credit Cards</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is a secured credit card?</div>
+                    <div class="faq-answer">
+                        <p>A secured credit card requires a refundable security deposit (typically $200-$500) that becomes your credit limit. It works exactly like a regular credit card—you can use it anywhere, build credit history, and some even offer rewards. The deposit protects the issuer if you don't pay. Secured cards are designed for people with no credit or bad credit. After 6-12 months of responsible use, you can often "graduate" to an unsecured card and get your deposit back.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Should I pay my credit card in full or carry a balance?</div>
+                    <div class="faq-answer">
+                        <p><strong>Always pay in full.</strong> The myth that carrying a balance helps your credit score is false. Paying in full shows responsible credit use, avoids interest charges (which can be 20%+ APR), and keeps your utilization low. The only reason to carry a balance is if you can't afford to pay it off—but that's a sign you may be overspending. Set up autopay for the full statement balance to never miss a payment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is credit utilization and why does it matter?</div>
+                    <div class="faq-answer">
+                        <p>Credit utilization is the percentage of your available credit that you're using. It's calculated by dividing your balance by your credit limit. For example, a $500 balance on a $1,000 limit = 50% utilization. This factor makes up <strong>30% of your FICO score</strong>—making it the second most important factor. Keep utilization under 30% (ideally under 10%) for the best scores. Pro tip: Pay your balance before the statement closes to report lower utilization.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How many credit cards should I have?</div>
+                    <div class="faq-answer">
+                        <p>There's no magic number, but the average American has 3-4 cards. Having multiple cards can help your credit score by increasing your total available credit (lowering utilization) and diversifying your credit mix. However, only get cards you can manage responsibly. Start with 1-2 cards, build good habits, then add more if needed for specific benefits (travel rewards, cashback categories). <strong>Quality over quantity.</strong></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What happens if I miss a credit card payment?</div>
+                    <div class="faq-answer">
+                        <p>Missing a payment can have serious consequences: <strong>Late fee</strong> ($25-41), <strong>Penalty APR</strong> (up to 29.99% on some cards), and <strong>Credit score damage</strong> (30-100+ point drop if reported). Payments are only reported late if they're 30+ days past due. If you miss a payment, pay it ASAP and contact your issuer—many will waive the first late fee if you ask. Set up autopay to prevent future misses.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are credit card rewards worth it?</div>
+                    <div class="faq-answer">
+                        <p><strong>Yes—if you pay in full every month.</strong> The average optimized user earns $1,000-2,000+ annually in rewards. However, if you carry a balance and pay 20%+ interest, you're losing money. Rewards are only "free money" if you avoid interest charges. For beginners, simple 2% cashback cards are great. For advanced users, travel points can yield 5-10% value when optimized. <a href="/blog-rewards-optimization.html">Read our rewards optimization guide</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banking Section -->
+            <div class="faq-section" data-category="banking">
+                <h2 class="faq-section-title">🏦 Banking</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between a checking and savings account?</div>
+                    <div class="faq-answer">
+                        <p><strong>Checking accounts</strong> are for daily transactions—debit card purchases, bill payments, ATM withdrawals. They typically earn little to no interest but offer unlimited transactions. <strong>Savings accounts</strong> are for storing money you don't need immediately. They earn interest (currently 4-5% at online banks) but may limit withdrawals to 6 per month. Best practice: Keep 1-2 months of expenses in checking, emergency fund and short-term savings in a high-yield savings account.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are online banks safe?</div>
+                    <div class="faq-answer">
+                        <p><strong>Yes.</strong> Reputable online banks are FDIC-insured just like traditional banks, meaning your deposits are protected up to $250,000 per account type. Online banks often offer higher interest rates (4-5% vs. 0.01% at big banks) because they have lower overhead costs. Popular options include Marcus (Goldman Sachs), Ally, Capital One 360, and Discover. Always verify FDIC insurance before depositing money.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do Fed rate changes affect my savings?</div>
+                    <div class="faq-answer">
+                        <p>When the Federal Reserve raises interest rates, savings account yields eventually follow—but <strong>online banks adjust much faster than traditional banks</strong>. Big banks like Chase and Bank of America often keep savings rates at 0.01% even when the Fed raises rates. Online banks quickly pass along higher rates to remain competitive. If you have significant savings, moving from a 0.01% account to a 5% high-yield account can earn you hundreds or thousands more per year. <a href="/blog-fed-rates-impact.html">Learn more about Fed rates</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's APY and why does it matter?</div>
+                    <div class="faq-answer">
+                        <p><strong>APY (Annual Percentage Yield)</strong> is the real rate of return on your savings, accounting for compound interest. Unlike APR (which is what you <em>pay</em> on loans), APY is what you <em>earn</em> on savings. A 5% APY means you'll earn $50 on a $1,000 deposit over one year (with compounding). When comparing savings accounts, always look at APY, not just the interest rate. Higher APY = more money for you.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investing Section -->
+            <div class="faq-section" data-category="investing">
+                <h2 class="faq-section-title">📈 Investing</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much money do I need to start investing?</div>
+                    <div class="faq-answer">
+                        <p>You can start with as little as <strong>$1</strong>. Many brokerage apps (Robinhood, Webull, Fidelity) offer fractional shares, letting you buy portions of expensive stocks. For ETFs and index funds, minimums vary—some have no minimum, others require $100-3,000. The key is starting early, not starting big. Even $25/month invested consistently can grow to significant amounts over time thanks to compound interest. Time in the market beats timing the market.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between a 401(k) and an IRA?</div>
+                    <div class="faq-answer">
+                        <p><strong>401(k)s</strong> are employer-sponsored retirement accounts. Contributions are pre-tax, reducing your taxable income now. Many employers match contributions (free money!). 2025 contribution limit: $23,500 (or $31,000 if 50+). <strong>IRAs</strong> are individual accounts you open yourself. Traditional IRAs offer tax deductions now; Roth IRAs use after-tax money but grow tax-free. 2025 IRA limit: $7,000 (or $8,000 if 50+). Best strategy: Contribute enough to get your full 401(k) match, then max out an IRA, then return to the 401(k).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's an ETF and should I invest in one?</div>
+                    <div class="faq-answer">
+                        <p><strong>ETFs (Exchange-Traded Funds)</strong> are baskets of stocks or bonds that trade like individual stocks. They offer instant diversification—one share of an S&P 500 ETF gives you exposure to 500 companies. Benefits: Low fees (often 0.03-0.20%), diversification, flexibility (trade anytime), and transparency. For most beginners, broad market ETFs like VOO (S&P 500) or VTI (total market) are excellent starting points. They're the foundation of passive investing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is investing in stocks gambling?</div>
+                    <div class="faq-answer">
+                        <p><strong>Not if done correctly.</strong> Gambling is putting money on random outcomes with negative expected value. Long-term investing in diversified index funds has historically returned 7-10% annually with positive expected value. The key differences: time horizon (years vs. minutes), diversification (hundreds of companies vs. one bet), and strategy (fundamental analysis vs. luck). Day trading individual stocks can resemble gambling, but buy-and-hold index investing is wealth building. <a href="/investing-quiz.html">Test your investing knowledge</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Taxes Section -->
+            <div class="faq-section" data-category="taxes">
+                <h2 class="faq-section-title">📋 Taxes</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to file taxes if I only made a little money?</div>
+                    <div class="faq-answer">
+                        <p>For 2025, you must file if you made at least <strong>$13,850</strong> (single) or <strong>$27,700</strong> (married filing jointly). However, you may want to file even if below these thresholds—you might be owed a refund from withheld taxes or qualify for credits like the Earned Income Tax Credit. If you're a dependent, different rules apply. When in doubt, file—it's better to file unnecessarily than to miss a refund or face penalties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between a W-2 and 1099?</div>
+                    <div class="faq-answer">
+                        <p><strong>W-2</strong> forms are for employees. Your employer withholds taxes from your paycheck and sends you a W-2 showing your annual wages and withholdings. <strong>1099 forms</strong> are for independent contractors, freelancers, and other non-employee income. 1099-NEC for contract work, 1099-INT for interest, 1099-DIV for dividends. Key difference: W-2 employees have taxes withheld; 1099 workers must pay estimated taxes quarterly. If you're a gig worker or freelancer, set aside 25-30% of income for taxes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What tax deductions can I claim as a young adult?</div>
+                    <div class="faq-answer">
+                        <p>Common deductions for young adults: <strong>Student loan interest</strong> (up to $2,500), <strong>Standard deduction</strong> ($13,850 single for 2025), <strong>HSA contributions</strong> (if you have a high-deductible health plan), <strong>Traditional IRA contributions</strong>, and <strong>Charitable donations</strong>. Most young adults take the standard deduction rather than itemizing. Tax credits (which reduce tax dollar-for-dollar) include the Saver's Credit for retirement contributions and education credits like the American Opportunity Tax Credit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Should I do my own taxes or hire a professional?</div>
+                    <div class="faq-answer">
+                        <p>For simple situations (W-2 income, standard deduction), <strong>DIY tax software</strong> (FreeTaxUSA, Cash App Taxes, IRS Free File) is sufficient and often free. Consider a professional if you have: self-employment income, rental property, significant investments, business ownership, or complex deductions. The cost ($200-500+) is often worth it if they find deductions you missed or ensure compliance. Many young adults can handle their own taxes for years before needing professional help.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Still Have Questions?</h2>
+                <p>Test your knowledge with our interactive quizzes or explore our in-depth blog articles.</p>
+                <a href="/credit-basics-quiz.html" class="btn">Start with Credit Basics Quiz →</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/faq.html">FAQ</a> | <a href="/sitemap.html">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Category filtering
+        document.querySelectorAll('.faq-category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.faq-category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                
+                // Show/hide sections
+                document.querySelectorAll('.faq-section').forEach(section => {
+                    if (category === 'all' || section.dataset.category === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        document.getElementById('faqSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide sections based on visible items
+            document.querySelectorAll('.faq-section').forEach(section => {
+                const visibleItems = section.querySelectorAll('.faq-item[style="display: block;"], .faq-item:not([style])');
+                section.style.display = visibleItems.length > 0 ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

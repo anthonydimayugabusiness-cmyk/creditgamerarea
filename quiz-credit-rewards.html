@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Rewards Mastery Quiz - Test Your Rewards Knowledge</title>
+    <meta name="description" content="Master credit card rewards with our comprehensive quiz. Test your knowledge of cashback, points, signup bonuses, and optimization strategies.">
+    <meta name="keywords" content="credit card rewards quiz, cashback quiz, travel points quiz, rewards optimization test">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.creditgamerarea.com/quiz-credit-rewards.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/quiz-credit-rewards.html">
+    <meta property="og:title" content="Credit Card Rewards Mastery Quiz">
+    <meta property="og:description" content="Test your knowledge of credit card rewards, cashback strategies, and points optimization.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-quiz-credit-rewards.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/quiz-credit-rewards.html">
+    <meta property="twitter:title" content="Credit Card Rewards Mastery Quiz">
+    <meta property="twitter:description" content="Test your knowledge of credit card rewards, cashback strategies, and points optimization.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-quiz-credit-rewards.jpg">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .breadcrumb { background: #f8fafc; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+        .breadcrumb .container { max-width: 800px; }
+        .breadcrumb a { color: #6366f1; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #64748b; margin: 0 8px; }
+        
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #10b981, #34d399); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #10b981; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .next-btn { margin-top: 16px; background: #10b981; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #10b981; color: white; }
+        .btn-secondary { background: white; color: #10b981; border: 2px solid #10b981; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+        #quiz-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
+        #quiz-modal.active { display: block; }
+        .modal-content { background: white; max-width: 800px; margin: 40px auto; border-radius: 16px; padding: 40px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #64748b; }
+        
+        .related-quizzes { background: #f8fafc; padding: 24px; border-radius: 12px; margin: 32px 0; }
+        .related-quizzes h4 { margin-bottom: 16px; color: #1e1b4b; }
+        .related-quizzes ul { list-style: none; padding: 0; }
+        .related-quizzes li { margin-bottom: 8px; }
+        .related-quizzes a { color: #10b981; text-decoration: none; }
+        .related-quizzes a:hover { text-decoration: underline; }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-rewards-optimization.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/quizzes/">Quizzes</a> <span>/</span>
+            <a href="/credit-cards-quiz.html">Credit Cards</a> <span>/</span>
+            <span style="color: #64748b;">Rewards Mastery</span>
+        </div>
+    </div>
+
+    <!-- Top Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <span style="display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Credit Card Rewards</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Master Credit Card Rewards: From Beginner to Expert</h1>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 6 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Credit card rewards can be worth thousands of dollars annually—but only if you know how to maximize them. The difference between the average card user and a rewards optimizer can be $1,500+ per year in missed opportunities.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                This quiz will test your knowledge of cashback strategies, points optimization, signup bonuses, and the golden rules of rewards maximization. Whether you're a beginner looking to earn your first $500 in rewards or an experienced optimizer chasing premium travel redemptions, this quiz has something for you.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">The Foundation: Cashback vs. Points</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Before diving into strategies, you need to understand the fundamental choice: cashback or points? Cashback is simple—1% back means 1 cent per dollar spent. Points are more complex but potentially more valuable. Travel points can be worth 1-5+ cents each when transferred to airline and hotel partners, while cashback is always worth exactly 1 cent.
+            </p>
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">The Golden Rule</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Here's the most important rule of credit card rewards: <strong>Never pay interest.</strong> The average credit card APR is 20-25%, while the best rewards cards offer 2-5% back. Carry a balance for even one month, and you've wiped out years of rewards. Pay in full every month, and the bank is essentially paying you to use their money.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Category Bonuses: The Multi-Card Strategy</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Smart rewards earners don't use one card for everything. They build a "portfolio" of cards, each optimized for specific spending categories. One card for groceries (6% back), one for dining (4% back), one for gas (3% back), and a flat-rate 2% card for everything else. This strategy can push your average rewards rate from 1.5% to 3-4% across all spending.
+            </p>
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Signup Bonuses: The Fast Track</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Signup bonuses are the fastest way to accumulate rewards. A typical offer: "Spend $4,000 in 3 months, earn 60,000 points." That's $600-1,200 in value from spending you'd do anyway. Strategic card applications around big expenses (moving, weddings, holidays) can generate $2,000+ in annual rewards.
+            </p>
+
+            <div class="related-quizzes">
+                <h4>🎯 Related Quizzes</h4>
+                <ul>
+                    <li><a href="/credit-cards-quiz.html">Credit Cards 101 Quiz</a></li>
+                    <li><a href="/credit-basics-quiz.html">Credit Basics Quiz</a></li>
+                    <li><a href="/banking-quiz.html">Banking Basics Quiz</a></li>
+                    <li><a href="/quiz-fed-rates.html">Fed Rates & Your Money Quiz</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🎮 Ready to Test Your Rewards Knowledge?</h2>
+            <p>Take our free 10-question quiz to see if you're maximizing your credit card rewards potential.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ 5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a> | <a href="/faq.html" style="color: #a5b4fc;">FAQ</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('rewards_score', '0');
+            window.location.href = '/quiz/credit-rewards/q1.html';
+        }
+    </script>
+</body>
+</html>

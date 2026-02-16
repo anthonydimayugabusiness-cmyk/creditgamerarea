@@ -22,6 +22,12 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
     <link rel="stylesheet" href="/styles.css">
     <style>
+        .breadcrumb { background: #f8fafc; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+        .breadcrumb .container { max-width: 800px; }
+        .breadcrumb a { color: #6366f1; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { color: #64748b; margin: 0 8px; }
+        
         .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
         .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
         .quiz-header { text-align: center; margin-bottom: 32px; }
@@ -79,6 +85,15 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/quizzes/">Quizzes</a> <span>/</span>
+            <span style="color: #64748b;">Credit Cards 101</span>
+        </div>
+    </div>
 
     <div class="ad-container">
         <div class="ad-label">Advertisement</div>
