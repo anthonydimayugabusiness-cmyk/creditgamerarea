@@ -30,6 +30,25 @@
     </style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
     <script src="/quiz-token.js"></script>
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
+    <script>
+        // reCAPTCHA v3 - Invisible bot protection
+        grecaptcha.ready(function() {
+            grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', {action: 'quiz_page'}).then(function(token) {
+                // Store token for validation
+                window.recaptchaToken = token;
+                console.log('reCAPTCHA score received');
+            });
+        });
+        
+        // Refresh token every 2 minutes
+        setInterval(function() {
+            grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', {action: 'quiz_page'}).then(function(token) {
+                window.recaptchaToken = token;
+            });
+        }, 120000);
+    </script>
 </head>
 <body>
     <nav class="navbar">
