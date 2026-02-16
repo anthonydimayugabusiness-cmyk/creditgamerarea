@@ -112,7 +112,10 @@
 
         let currentQuestion = 0, score = 0, answers = [];
 
-        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
+        function startQuiz() {
+            sessionStorage.setItem('makemoneyonline_score', '0');
+            window.location.href = '/quiz/make-money-online/q1.html';
+        }
 
         function showQuestion() {
             const q = quizData.data[currentQuestion];
