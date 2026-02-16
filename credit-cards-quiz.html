@@ -207,7 +207,10 @@
 
         function openQuiz() { document.getElementById('quiz-modal').classList.add('active'); document.body.style.overflow = 'hidden'; startQuiz(); }
         function closeQuiz() { document.getElementById('quiz-modal').classList.remove('active'); document.body.style.overflow = 'auto'; }
-        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
+        function startQuiz() {
+            sessionStorage.setItem('credit-cards_score', '0');
+            window.location.href = '/quiz/credit-cards/q1.html';
+        }
 
         function showQuestion() {
             const q = quizData.questions[currentQuestion];
