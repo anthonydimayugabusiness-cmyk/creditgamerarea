@@ -131,7 +131,7 @@ function handleSubscribe(e) {
 
 // Start quiz function
 function startQuiz() {
-    alert('🎮 Starting Credit Basics Quiz!\n\n10 questions • 5 minutes • Instant results\n\n(In production, this would launch the interactive quiz)');
+    window.location.href = '/credit-basics-quiz.html';
 }
 
 // Scroll to learn section
