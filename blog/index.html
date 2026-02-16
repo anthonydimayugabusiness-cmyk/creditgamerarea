@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Credit Gamer Area | Finance Tips, Market Updates & Money Guides</title>
+    <meta name="description" content="Read the latest finance tips, market updates, credit guides, and money-making strategies. Level up your financial game with Credit Gamer Area.">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .blog-page { padding: 60px 0; }
+        .blog-header { text-align: center; margin-bottom: 48px; }
+        .blog-header h1 { font-size: 2.5rem; margin-bottom: 16px; }
+        .blog-header p { color: #64748b; font-size: 1.125rem; }
+        
+        .blog-categories { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .category-btn { padding: 8px 20px; border-radius: 20px; border: 1px solid #e2e8f0; background: white; color: #64748b; cursor: pointer; font-size: 0.875rem; transition: all 0.2s; }
+        .category-btn:hover, .category-btn.active { background: #6366f1; color: white; border-color: #6366f1; }
+        
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; }
+        
+        .blog-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+        .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        
+        .blog-image { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .blog-tag { position: absolute; top: 16px; left: 16px; background: rgba(255,255,255,0.95); padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        
+        .blog-content { padding: 24px; }
+        .blog-content h3 { font-size: 1.25rem; margin-bottom: 12px; line-height: 1.4; color: #1e1b4b; }
+        .blog-content p { color: #64748b; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px; }
+        .blog-meta { display: flex; gap: 12px; color: #94a3b8; font-size: 0.875rem; }
+        
+        .featured-post { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+        .featured-post .blog-image { height: 100%; min-height: 300px; }
+        .featured-post .blog-content { display: flex; flex-direction: column; justify-content: center; padding: 40px; }
+        .featured-post .blog-content h3 { font-size: 1.75rem; }
+        
+        @media (max-width: 768px) {
+            .featured-post { grid-template-columns: 1fr; }
+            .featured-post .blog-image { min-height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="blog-page">
+        <div class="container">
+            <div class="blog-header">
+                <h1>📚 Credit Gamer Blog</h1>
+                <p>Deep dives into credit, investing, market updates, and leveling up your money game</p>
+            </div>
+            
+            <div class="blog-categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Market Updates</button>
+                <button class="category-btn">Credit</button>
+                <button class="category-btn">Investing</button>
+                <button class="category-btn">News</button>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <a href="/blog/market-update-2026-02-17.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                        <span class="blog-tag">Market Update</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Market Update: Big Tech Gets Battered, Crypto Bulls Take a Breather</h3>
+                        <p>The S&P 500 is treading water while Big Tech faces a reality check. Bitcoin slides toward $50K predictions. Here's what moved markets this week.</p>
+                        <div class="blog-meta">
+                            <span>Feb 17, 2026</span>
+                            <span>•</span>
+                            <span>5 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Regular Posts -->
+                <a href="/blog/credit-card-interest-rate-cap.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);">
+                        <span class="blog-tag">News</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Trump's 10% Credit Card Interest Rate Cap: What It Means for Your Wallet</h3>
+                        <p>Analysis of the proposed 10% credit card interest rate cap, its potential impact on consumers, rewards programs, and credit availability.</p>
+                        <div class="blog-meta">
+                            <span>Feb 17, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/gen-z-investing-early.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);">
+                        <span class="blog-tag">Investing</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Gen Z Investing Trends: How Young Investors Are Changing Wall Street</h3>
+                        <p>From meme stocks to crypto, discover how Gen Z is reshaping investment strategies and what you can learn from their approach.</p>
+                        <div class="blog-meta">
+                            <span>Feb 17, 2026</span>
+                            <span>•</span>
+                            <span>9 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog-build-credit.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span class="blog-tag">Credit</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Build Credit from Zero: A Gamer's Guide</h3>
+                        <p>Just turned 18? No credit history? Here's your step-by-step quest to a 700+ credit score. From secured cards to credit-builder loans.</p>
+                        <div class="blog-meta">
+                            <span>Feb 16, 2026</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog-make-money.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span class="blog-tag">Side Hustle</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>10 Ways Gamers Can Make Money Online in 2026</h3>
+                        <p>From streaming to game testing to NFTs, discover legitimate ways to turn your gaming passion into real income.</p>
+                        <div class="blog-meta">
+                            <span>Feb 14, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: #0f0d2e; color: white; padding: 60px 0 30px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div class="footer-brand">
+                    <h3 style="font-size: 1.25rem; margin-bottom: 16px;">💳 Credit Gamer Area</h3>
+                    <p style="color: #94a3b8; font-size: 0.875rem; line-height: 1.6;">Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 style="font-size: 1rem; margin-bottom: 16px;">Learn</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="/credit-basics-quiz.html" style="color: #94a3b8; text-decoration: none;">Credit Basics</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/investing-quiz.html" style="color: #94a3b8; text-decoration: none;">Investing</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/quizzes/" style="color: #94a3b8; text-decoration: none;">All Quizzes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 style="font-size: 1rem; margin-bottom: 16px;">Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none;">Blog</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/resources.html" style="color: #94a3b8; text-decoration: none;">Calculators</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/faq.html" style="color: #94a3b8; text-decoration: none;">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p style="text-align: center; color: #64748b;">&copy; 2026 Credit Gamer Area. Not financial advice.</p>
+        </div>
+    </footer>
+</body>
+</html>
