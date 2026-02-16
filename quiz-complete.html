@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Complete - Credit Gamer Area</title>
+    <meta name="description" content="You completed the quiz! View your results and try more quizzes.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .results-page { padding: 60px 0; min-height: calc(100vh - 200px); background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .results-container { max-width: 600px; margin: 0 auto; background: white; border-radius: 24px; padding: 48px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .results-emoji { font-size: 5rem; margin-bottom: 24px; }
+        .results-message { font-size: 2rem; font-weight: 700; color: #1e1b4b; margin-bottom: 8px; }
+        .results-score { font-size: 4rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 24px 0; }
+        .results-percentage { font-size: 1.5rem; color: #64748b; margin-bottom: 32px; }
+        .results-details { background: #f8fafc; border-radius: 16px; padding: 24px; margin: 32px 0; text-align: left; }
+        .results-details h3 { margin-bottom: 16px; color: #1e1b4b; }
+        .results-details p { color: #64748b; margin-bottom: 12px; }
+        .btn { padding: 16px 32px; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1.125rem; margin: 8px; }
+        .btn-primary { background: #6366f1; color: white; }
+        .btn-secondary { background: white; color: #6366f1; border: 2px solid #6366f1; }
+        .quiz-recommendation { margin-top: 40px; padding-top: 40px; border-top: 2px solid #e2e8f0; }
+        .quiz-recommendation h3 { margin-bottom: 24px; color: #1e1b4b; }
+        .ad-container { max-width: 600px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+    </style>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- 
+    ========================================
+    ADD YOUR CUSTOM JAVASCRIPT TAGS HERE
+    ========================================
+    Examples:
+    - Google Analytics conversion tracking
+    - Facebook Pixel events
+    - Affiliate conversion pixels
+    - Custom analytics
+    ========================================
+    -->
+    <script>
+        // Quiz completion data will be available here
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const quiz = urlParams.get('quiz');
+            const score = urlParams.get('score');
+            const total = urlParams.get('total');
+            const percentage = urlParams.get('pct');
+            
+            // Display results
+            if (score && total) {
+                document.getElementById('score-display').textContent = score + '/' + total;
+                document.getElementById('percentage-display').textContent = percentage + '%';
+                
+                // Set message based on percentage
+                const pct = parseInt(percentage);
+                let msg = '', emoji = '';
+                if (pct >= 90) { msg = '🏆 Quiz Master!'; emoji = '🏆'; }
+                else if (pct >= 70) { msg = '⭐ Well Done!'; emoji = '⭐'; }
+                else if (pct >= 50) { msg = '📚 Keep Learning!'; emoji = '📚'; }
+                else { msg = '💪 Study More!'; emoji = '💪'; }
+                
+                document.getElementById('result-message').textContent = msg;
+                document.getElementById('result-emoji').textContent = emoji;
+                document.getElementById('quiz-name').textContent = quiz ? quiz.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'Quiz';
+                
+                // ========================================
+                // ADD YOUR CONVERSION TRACKING HERE
+                // ========================================
+                // Example: gtag('event', 'quiz_complete', { ... });
+                // Example: fbq('track', 'CompleteRegistration', { ... });
+                // ========================================
+                
+                console.log('Quiz completed:', { quiz, score, total, percentage });
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="results-page">
+        <div class="container">
+            <div class="results-container">
+                <div id="result-emoji" class="results-emoji">🎉</div>
+                <h1 id="result-message" class="results-message">Quiz Complete!</h1>
+                <p style="color: #64748b; margin-bottom: 8px;">You completed:</p>
+                <p id="quiz-name" style="font-size: 1.25rem; font-weight: 600; color: #1e1b4b; margin-bottom: 24px;">Quiz</p>
+                
+                <div class="results-score" id="score-display">0/0</div>
+                <div class="results-percentage" id="percentage-display">0%</div>
+                
+                <div class="results-details">
+                    <h3>📊 Your Performance</h3>
+                    <p>Great job completing the quiz! Your results show how well you understand the material.</p>
+                    <ul style="margin: 16px 0; padding-left: 24px; color: #64748b;">
+                        <li>90-100%: Expert level knowledge</li>
+                        <li>70-89%: Solid understanding</li>
+                        <li>50-69%: Good start, keep learning</li>
+                        <li>Below 50%: Review the material and try again</li>
+                    </ul>
+                </div>
+                
+                <div style="margin: 32px 0;">
+                    <a href="/quizzes/" class="btn btn-primary">Try More Quizzes →</a>
+                    <button onclick="history.back()" class="btn btn-secondary">Retake This Quiz</button>
+                </div>
+                
+                <!-- Ad Unit -->
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                
+                <div class="quiz-recommendation">
+                    <h3>🎯 Recommended For You</h3>
+                    <div style="display: grid; gap: 16px;">
+                        <a href="/credit-basics-quiz.html" style="display: block; background: #f8fafc; padding: 16px; border-radius: 12px; text-decoration: none; color: inherit;">
+                            <div style="font-weight: 600; color: #1e1b4b;">Credit Basics Quiz</div>
+                            <div style="font-size: 0.875rem; color: #64748b;">Learn about credit scores and building credit →</div>
+                        </a>
+                        <a href="/investing-quiz.html" style="display: block; background: #f8fafc; padding: 16px; border-radius: 12px; text-decoration: none; color: inherit;">
+                            <div style="font-weight: 600; color: #1e1b4b;">Investing Basics Quiz</div>
+                            <div style="font-size: 0.875rem; color: #64748b;">Stocks, ETFs, and how to start investing →</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

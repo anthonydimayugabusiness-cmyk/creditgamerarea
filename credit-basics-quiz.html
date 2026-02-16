@@ -283,18 +283,8 @@
 
         function showResults() {
             const pct = Math.round((score / quizData.questions.length) * 100);
-            let msg = pct >= 90 ? '🏆 Finance Master!' : pct >= 70 ? '⭐ Well Done!' : pct >= 50 ? '📚 Keep Learning!' : '💪 Study More!';
-            document.getElementById('quiz-container').innerHTML = `
-                <div class="results-container">
-                    <div style="font-size: 4rem; margin-bottom: 16px;">${msg.split(' ')[0]}</div>
-                    <div class="results-message">${msg.split(' ').slice(1).join(' ')}</div>
-                    <div class="results-score">${score}/${quizData.questions.length}</div>
-                    <div class="results-subtitle">${pct}% correct</div>
-                    <div class="results-actions">
-                        <button class="btn btn-primary" onclick="startQuiz()">Retake Quiz</button>
-                        <button class="btn btn-secondary" onclick="closeQuiz()">Back to Article</button>
-                    </div>
-                </div>`;
+            // Redirect to completion page with results
+            window.location.href = `/quiz-complete.html?quiz=credit-basics&score=${score}&total=${quizData.questions.length}&pct=${pct}`;
         }
     </script>
 </body>
