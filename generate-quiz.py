@@ -148,6 +148,38 @@ QUIZ_DATA = {
             {"q": "What is user testing?", "opts": ["Software development", "Getting paid to test websites/apps", "Product manufacturing", "Quality control"], "correct": 1, "expl": "User testing pays you to provide feedback on websites and apps, typically $10 per 20-minute test."},
             {"q": "What is the most important factor for online success?", "opts": ["Luck", "Consistency and providing value", "Having money to start", "Being first to market"], "correct": 1, "expl": "Consistently showing up and genuinely helping your audience beats get-rich-quick schemes every time."},
         ]
+    },
+    "credit-rewards": {
+        "title": "Credit Card Rewards",
+        "landing": "/quiz-credit-rewards.html",
+        "questions": [
+            {"q": "What is a credit card signup bonus?", "opts": ["Annual fee waiver", "Reward for spending threshold", "Lower APR", "Higher credit limit"], "correct": 1, "expl": "Signup bonuses reward you with points/cash back after spending a certain amount in the first months."},
+            {"q": "Which type of reward is most flexible?", "opts": ["Airline miles", "Hotel points", "Cash back", "Store credit"], "correct": 2, "expl": "Cash back is the most flexible - you can use it for anything, not just travel or specific stores."},
+            {"q": "What is the typical value of 1 credit card point?", "opts": ["$0.01", "$0.05", "$0.10", "$1.00"], "correct": 0, "expl": "Most points are worth about 1 cent each, though travel redemptions can increase this value."},
+            {"q": "What is a rotating category card?", "opts": ["Card with fixed rewards", "Card with changing bonus categories", "Card with no rewards", "Card for rotating balances"], "correct": 1, "expl": "Rotating category cards offer 5% back in categories that change quarterly, like gas, groceries, or Amazon."},
+            {"q": "What is point devaluation?", "opts": ["Points gaining value", "Points losing value over time", "Points expiring", "Points being stolen"], "correct": 1, "expl": "Point devaluation occurs when issuers increase redemption costs, making your points worth less."},
+            {"q": "What is the best strategy for maximizing rewards?", "opts": ["Use one card for everything", "Use multiple cards for different categories", "Only use debit cards", "Avoid credit cards entirely"], "correct": 1, "expl": "Using multiple cards strategically - like 5% on groceries, 3% on dining, 2% on everything else - maximizes rewards."},
+            {"q": "What is a statement credit?", "opts": ["A loan", "Money applied to your credit card bill", "A late fee", "An annual fee"], "correct": 1, "expl": "Statement credits reduce your credit card balance - it's like getting cash back applied directly to your bill."},
+            {"q": "Do credit card rewards expire?", "opts": ["Never", "Always after 1 year", "It depends on the program", "Only cash back expires"], "correct": 2, "expl": "Some rewards never expire, others expire after periods of inactivity or fixed timeframes - check your program terms."},
+            {"q": "What is transfer partner optimization?", "opts": ["Moving balances between cards", "Transferring points to airline/hotel programs for better value", "Selling points", "Buying points"], "correct": 1, "expl": "Transferring points to partners like airlines can increase value from 1 cent to 2+ cents per point."},
+            {"q": "What should you do before canceling a rewards card?", "opts": ["Nothing", "Use or transfer all your points", "Max out the credit limit", "Apply for a new card first"], "correct": 1, "expl": "Before canceling, use or transfer your points - you typically lose them when you close the account."},
+        ]
+    },
+    "fed-rates": {
+        "title": "Fed Rates & Your Money",
+        "landing": "/quiz-fed-rates.html",
+        "questions": [
+            {"q": "What does the Federal Reserve control?", "opts": ["Stock prices", "The federal funds rate", "Tax rates", "Mortgage rates directly"], "correct": 1, "expl": "The Fed controls the federal funds rate - the rate banks charge each other for overnight loans."},
+            {"q": "How do Fed rate changes affect credit cards?", "opts": ["No effect", "APR changes with prime rate", "Only affects new cards", "Only affects business cards"], "correct": 1, "expl": "Most credit cards have variable APRs tied to the prime rate, which follows Fed rate changes."},
+            {"q": "What happens to savings rates when the Fed raises rates?", "opts": ["They decrease", "They typically increase", "Nothing changes", "They become taxable"], "correct": 1, "expl": "When the Fed raises rates, banks usually increase savings account and CD rates to compete for deposits."},
+            {"q": "How quickly do Fed rate changes affect mortgage rates?", "opts": ["Immediately", "Within days", "Mortgage rates are more influenced by long-term bonds", "Only affects new mortgages"], "correct": 2, "expl": "Mortgage rates follow 10-year Treasury yields more closely than the Fed funds rate - it's an indirect relationship."},
+            {"q": "What is the prime rate?", "opts": ["The best interest rate available", "The rate banks charge their best customers", "The Fed funds rate", "The inflation rate"], "correct": 1, "expl": "The prime rate is what banks charge their most creditworthy customers, typically 3% above the Fed funds rate."},
+            {"q": "Why does the Fed change interest rates?", "opts": ["To control inflation and employment", "To help the stock market", "To set mortgage rates", "To increase bank profits"], "correct": 0, "expl": "The Fed's dual mandate is to maintain price stability (control inflation) and maximum employment."},
+            {"q": "What happens to car loans when rates rise?", "opts": ["Rates decrease", "Rates increase, making payments higher", "Only used cars are affected", "No effect on auto loans"], "correct": 1, "expl": "Auto loan rates typically rise with Fed rates, increasing monthly payments for the same car price."},
+            {"q": "How often does the Federal Reserve meet?", "opts": ["Monthly", "8 times per year", "Quarterly", "Annually"], "correct": 1, "expl": "The Federal Open Market Committee (FOMC) meets 8 times per year to set monetary policy."},
+            {"q": "What is quantitative easing?", "opts": ["Raising interest rates", "The Fed buying bonds to lower rates", "Increasing taxes", "Reducing the money supply"], "correct": 1, "expl": "Quantitative easing is when the Fed buys government bonds to increase money supply and lower long-term rates."},
+            {"q": "Should you pay off debt faster when rates rise?", "opts": ["No, keep minimum payments", "Yes, especially variable-rate debt", "Only pay off mortgages", "Wait for rates to fall again"], "correct": 1, "expl": "When rates rise, paying off variable-rate debt (credit cards, HELOCs) faster saves more money."},
+        ]
     }
 }
 

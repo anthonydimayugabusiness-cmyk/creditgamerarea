@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prediction Markets Quiz - Question 9 of 10</title>
-    <meta name="description" content="Prediction Markets Quiz - Test your knowledge. Question 9 of 10.">
+    <title>Fed Rates & Your Money Quiz - Question 4 of 10</title>
+    <meta name="description" content="Fed Rates & Your Money Quiz - Test your knowledge. Question 4 of 10.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="/styles.css">
     <style>
@@ -41,35 +41,35 @@
     <div id="error-msg" class="error-message" style="max-width: 700px; margin: 40px auto;">
         <h3>⚠️ Invalid Access</h3>
         <p>Please start the quiz from the beginning.</p>
-        <a href="/prediction-markets-quiz.html" class="next-btn">Go to Quiz Start</a>
+        <a href="/quiz-fed-rates.html" class="next-btn">Go to Quiz Start</a>
     </div>
 
     <section class="quiz-page" id="quiz-content">
         <div class="container">
             <div class="quiz-container">
                 <div class="quiz-header">
-                    <span class="category-tag">Prediction Markets - Question 9 of 10</span>
+                    <span class="category-tag">Fed Rates & Your Money - Question 4 of 10</span>
                 </div>
                 
                 <div class="progress-container">
                     <div class="progress-bar-bg">
-                        <div class="progress-bar" style="width: 90%;"></div>
+                        <div class="progress-bar" style="width: 40%;"></div>
                     </div>
-                    <div class="progress-text">Question 9 of 10</div>
+                    <div class="progress-text">Question 4 of 10</div>
                 </div>
                 
                 <div class="question-container">
-                    <h2>What is the 'wisdom of crowds'?</h2>
+                    <h2>How quickly do Fed rate changes affect mortgage rates?</h2>
                     <div class="options-list">
-                        <button class="option" onclick="selectAnswer(0, 1)">Group decisions are always right</button>
-                        <button class="option" onclick="selectAnswer(1, 1)">Aggregated predictions often beat experts</button>
-                        <button class="option" onclick="selectAnswer(2, 1)">Crowdfunding markets</button>
-                        <button class="option" onclick="selectAnswer(3, 1)">Social trading</button>
+                        <button class="option" onclick="selectAnswer(0, 2)">Immediately</button>
+                        <button class="option" onclick="selectAnswer(1, 2)">Within days</button>
+                        <button class="option" onclick="selectAnswer(2, 2)">Mortgage rates are more influenced by long-term bonds</button>
+                        <button class="option" onclick="selectAnswer(3, 2)">Only affects new mortgages</button>
                     </div>
                     
                     <div id="explanation" class="explanation">
                         <h4 id="result-text"></h4>
-                        <p>The wisdom of crowds theory says aggregated group predictions often outperform individual experts.</p>
+                        <p>Mortgage rates follow 10-year Treasury yields more closely than the Fed funds rate - it's an indirect relationship.</p>
                         <button id="next-btn" class="next-btn" onclick="goToNext()">Next Question →</button>
                     </div>
                 </div>
@@ -90,8 +90,8 @@
     </footer>
 
     <script>
-        const QUIZ_NAME = 'prediction-markets';
-        const QUESTION_NUM = 9;
+        const QUIZ_NAME = 'fed-rates';
+        const QUESTION_NUM = 4;
         const IS_LAST = false;
         
         // Validate token on page load
@@ -100,7 +100,7 @@
             
             // First question doesn't need token
             if (QUESTION_NUM === 1) {
-                sessionStorage.setItem('pred_score', '0');
+                sessionStorage.setItem('fedr_score', '0');
                 return;
             }
             
@@ -110,12 +110,12 @@
                 document.getElementById('error-msg').style.display = 'block';
             } else {
                 // Update score from token
-                sessionStorage.setItem('pred_score', params.score.toString());
+                sessionStorage.setItem('fedr_score', params.score.toString());
             }
         });
         
         let answered = false;
-        let currentScore = parseInt(sessionStorage.getItem('pred_score') || '0');
+        let currentScore = parseInt(sessionStorage.getItem('fedr_score') || '0');
         
         function selectAnswer(selected, correct) {
             if (answered) return;
@@ -141,7 +141,7 @@
             
             if (isCorrect) {
                 currentScore++;
-                sessionStorage.setItem('pred_score', currentScore.toString());
+                sessionStorage.setItem('fedr_score', currentScore.toString());
             }
         }
         
@@ -151,7 +151,7 @@
                 window.location.href = QuizToken.buildUrl('/quiz-complete.html', QUIZ_NAME, 'complete', currentScore);
             } else {
                 // Go to next question with token
-                window.location.href = QuizToken.buildUrl('q10.html', QUIZ_NAME, QUESTION_NUM + 1, currentScore);
+                window.location.href = QuizToken.buildUrl('q5.html', QUIZ_NAME, QUESTION_NUM + 1, currentScore);
             }
         }
     </script>
