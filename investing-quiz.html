@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investing Quiz for Beginners - Stocks, ETFs, 401k (Free)</title>
-    <meta name="description" content="Start investing with confidence! Our free quiz teaches stocks, ETFs, 401k basics, compound interest, and how to start with just $100.">
-    <meta name="keywords" content="investing quiz, learn investing, stocks, ETFs, 401k, compound interest, beginner investing, free quiz">
+    <title>Investing Basics Quiz - Stocks, ETFs, 401k, and how to start with $100 (Free)</title>
+    <meta name="description" content="Take our free Investing Basics Quiz! Stocks, ETFs, 401k, and how to start with $100. 10 questions with instant results and detailed explanations.">
+    <meta name="keywords" content="investing quiz, learn investing, personal finance, money tips, free quiz">
     <meta name="author" content="Credit Gamer Area">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.creditgamerarea.com/investing-quiz.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.creditgamerarea.com/investing-quiz.html">
-    <meta property="og:title" content="Investing Quiz for Beginners - Stocks, ETFs, 401k">
-    <meta property="og:description" content="Start investing with confidence! Learn stocks, ETFs, 401k basics, compound interest, and how to start with just $100.">
+    <meta property="og:title" content="Investing Basics Quiz - Stocks, ETFs, 401k, and how to start with $100">
+    <meta property="og:description" content="Take our free Investing Basics Quiz! Stocks, ETFs, 401k, and how to start with $100.">
     <meta property="og:image" content="https://www.creditgamerarea.com/og-investing.jpg">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.creditgamerarea.com/investing-quiz.html">
-    <meta property="twitter:title" content="Investing Quiz for Beginners - Stocks, ETFs, 401k">
-    <meta property="twitter:description" content="Start investing with confidence! Learn stocks, ETFs, 401k basics, compound interest, and how to start with just $100.">
+    <meta property="twitter:title" content="Investing Basics Quiz - Stocks, ETFs, 401k, and how to start with $100">
+    <meta property="twitter:description" content="Take our free Investing Basics Quiz! Stocks, ETFs, 401k, and how to start with $100.">
     <meta property="twitter:image" content="https://www.creditgamerarea.com/og-investing.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
     <link rel="stylesheet" href="/styles.css">
@@ -42,8 +42,6 @@
         .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
         .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
         .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
-        .explanation.correct h4 { color: #047857; }
-        .explanation.incorrect h4 { color: #b91c1c; }
         .next-btn { margin-top: 16px; background: #10b981; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
         .results-container { text-align: center; padding: 40px 20px; }
         .results-emoji { font-size: 4rem; margin-bottom: 16px; }
@@ -54,148 +52,138 @@
         .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
         .btn-primary { background: #10b981; color: white; }
         .btn-secondary { background: white; color: #10b981; border: 2px solid #10b981; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
         .start-screen { text-align: center; padding: 40px 20px; }
         .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
         .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #10b981, #34d399); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section class="quiz-page">
-        <div class="container">
-            <div id="quiz-content" class="quiz-container">
-                <div class="start-screen">
-                    <span class="category-tag">Investing</span>
-                    <h2>📈 Investing Basics Quiz</h2>
-                    <p>Stocks, ETFs, 401k, and how to start with $100</p>
-                    <div class="quiz-meta">
-                        <span>📝 10 Questions</span>
-                        <span>⏱️ ~5 min</span>
-                        <span>📊 Medium</span>
-                    </div>
-                    <button class="btn btn-primary" onclick="startMultiPageQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
+    <!-- Top Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <span style="display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Investing</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Investing 101: Building Wealth for Your Future</h1>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <!-- Inline Ad 1 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Investing is how you turn your savings into wealth. While saving money in a bank account protects it, investing grows it. Thanks to compound interest, even small investments made early can grow into significant sums over time. The key is starting early, staying consistent, and letting time do the heavy lifting.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                The stock market has historically returned about 10% annually before inflation. That means $1,000 invested today could be worth over $6,700 in 20 years, even without adding another dime. Add regular monthly contributions, and the growth becomes even more powerful. This is why starting in your 20s gives you such an advantage over those who wait until their 30s or 40s.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Getting Started with Little Money</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                You don't need thousands of dollars to start investing. Many brokers now offer fractional shares, letting you buy pieces of expensive stocks with as little as $1. Index funds and ETFs allow you to own hundreds or thousands of companies with a single purchase, providing instant diversification. Start with whatever you can afford—even $25 per month—and increase as your income grows.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Understanding Risk and Return</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                All investments carry risk, but not all risks are equal. Generally, higher potential returns come with higher risk. Stocks are riskier than bonds but have historically provided better returns. Cryptocurrency is even riskier but has the potential for massive gains—or total loss. The key is diversification: don't put all your eggs in one basket. Spread your investments across different asset classes, industries, and geographies.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Your risk tolerance should match your timeline. Money you'll need in the next 3-5 years should be in safer investments like high-yield savings or bonds. Money you won't touch for decades can be invested more aggressively in stocks. As you approach your goal, gradually shift to more conservative investments to protect your gains.
+            </p>
+
+            <!-- Inline Ad 2 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Take the quiz above to test your investing knowledge. Remember, time in the market beats timing the market. The best day to start investing was yesterday. The second best day is today.
+            </p>
+
+            <!-- Inline Ad 3 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        const quizData = {
-            title: "Investing Basics",
-            category: "Investing",
-            description: "Stocks, ETFs, 401k, and how to start with $100",
-            questions: 10,
-            difficulty: "Medium",
-            time: "5 min",
-            data: [
-                { question: "What is a stock?", options: ["A loan to a company", "Ownership share in a company", "A type of bond", "A savings account"], correct: 1, explanation: "A stock represents partial ownership in a company. When you buy stock, you own a piece of that company." },
-                { question: "What does ETF stand for?", options: ["Electronic Transfer Fund", "Exchange-Traded Fund", "Equity Trading Fund", "Extended Term Finance"], correct: 1, explanation: "ETF = Exchange-Traded Fund. It's a basket of stocks that trades like a single stock." },
-                { question: "What is a 401(k)?", options: ["A type of stock", "An employer-sponsored retirement account", "A government bond", "A savings account"], correct: 1, explanation: "A 401(k) is an employer-sponsored retirement plan where contributions are often matched by your employer." },
-                { question: "What is compound interest?", options: ["Interest on your original investment only", "Interest earned on interest", "A type of stock dividend", "Bank fees"], correct: 1, explanation: "Compound interest is when you earn interest on both your original investment AND the interest you've already earned." },
-                { question: "What is the S&P 500?", options: ["A single stock", "An index of 500 large US companies", "A type of bond", "A savings account rate"], correct: 1, explanation: "The S&P 500 is an index tracking 500 of the largest publicly traded companies in the US." },
-                { question: "What is diversification?", options: ["Putting all money in one stock", "Spreading investments across different assets", "Only investing in tech companies", "Keeping cash under your mattress"], correct: 1, explanation: "Diversification means spreading your investments across different assets to reduce risk." },
-                { question: "What is a bear market?", options: ["When stocks go up 20%", "When stocks drop 20% from recent highs", "A market with only tech stocks", "A foreign stock market"], correct: 1, explanation: "A bear market is when stock prices fall 20% or more from recent highs, typically accompanied by negative investor sentiment." },
-                { question: "What is dollar-cost averaging?", options: ["Investing all at once", "Investing regular amounts over time", "Only buying when prices drop", "Selling everything at once"], correct: 1, explanation: "Dollar-cost averaging means investing a fixed amount regularly, regardless of market conditions, which reduces timing risk." },
-                { question: "What is an expense ratio?", options: ["The cost to buy a stock", "Annual fee charged by funds", "Trading commission", "Account maintenance fee"], correct: 1, explanation: "Expense ratio is the annual fee expressed as a percentage of assets that funds charge to manage your money." },
-                { question: "How much should you have in an emergency fund before investing?", options: ["$100", "$500", "3-6 months of expenses", "Nothing, invest everything"], correct: 2, explanation: "Financial advisors recommend having 3-6 months of living expenses saved before investing, so you don't need to sell investments during emergencies." }
-            ]
-        };
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-        let currentQuestion = 0, score = 0, answers = [];
-
-        function startMultiPageQuiz() {
-            sessionStorage.setItem('investing_score', '0');
-            window.location.href = '/quiz/investing/q1';
-        }
-
-        function showQuestion() {
-            const q = quizData.data[currentQuestion];
-            const progress = ((currentQuestion + 1) / quizData.data.length) * 100;
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="quiz-header"><span class="category-tag">${quizData.category}</span><h1>${quizData.title}</h1></div>
-                <div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div><div class="progress-text">Question ${currentQuestion + 1} of ${quizData.data.length}</div></div>
-                <div class="question-container"><h2>${q.question}</h2><div class="options-list" id="options">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div></div>`;
-        }
-
-        function selectAnswer(index) {
-            const q = quizData.data[currentQuestion];
-            const isCorrect = index === q.correct;
-            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
-            if (isCorrect) score++;
-            document.querySelectorAll('.option').forEach(btn => { btn.classList.add('disabled'); if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct'); else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect'); });
-            document.querySelector('.question-container').innerHTML += `<div class="explanation ${isCorrect ? 'correct' : 'incorrect'}"><h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4><p>${q.explanation}</p><button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.data.length - 1 ? 'Next →' : 'See Results'}</button></div>`;
-        }
-
-        function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.data.length) showQuestion(); else showResults(); }
-
-        function showResults() {
-            const pct = Math.round((score / quizData.data.length) * 100);
-            let msg = pct >= 90 ? 'Investing Pro!' : pct >= 70 ? 'Well Done!' : pct >= 50 ? 'Keep Learning!' : 'Study More!';
-            let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '📚' : '💪';
-            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startMultiPageQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
-        }
-    </script>
-
-    <!-- Blog Content Section -->
-    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
-        <div class="container" style="max-width: 800px;">
-            <h2 style="font-size: 2rem; margin-bottom: 24px; color: #1e1b4b;">Investing Basics: Building Wealth for Your Future</h2>
-
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #10b981, #34d399); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                📈 Stock Market Growth<br>(300x250)
+    <!-- CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>📈 Ready to Test Your Knowledge?</h2>
+            <p>Take our free 10-question quiz to see how much you've learned about investing. Get instant results and detailed explanations for each question.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ ~5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
             </div>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Investing is the single most powerful tool for building long-term wealth, yet many young adults feel intimidated by the complexity and risks involved. The truth is, you don't need to be a Wall Street expert or have thousands of dollars to start investing. What you need is time, consistency, and a basic understanding of how markets work. The earlier you start, the more powerful compound interest becomes—turning even small contributions into significant wealth over decades.
-            </p>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                At its core, investing means putting your money to work so it can grow. When you buy a stock, you're purchasing a small piece of ownership in a company. When that company grows and becomes more valuable, your shares increase in value too. When you buy a bond, you're essentially lending money to a company or government in exchange for regular interest payments. The key difference between investing and saving is growth potential—while savings accounts offer safety, they rarely keep pace with inflation. Investments carry risk but offer the potential for real returns that outpace inflation.
-            </p>
-
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">The Power of Compound Interest</h3>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Compound interest is often called the eighth wonder of the world, and for good reason. It's the phenomenon where your investment earnings start earning their own earnings, creating a snowball effect that accelerates over time. For example, if you invest $500 per month starting at age 25 with an average 7% annual return, you could have over $1.2 million by age 65. Wait until age 35 to start, and you'd have only about $600,000—half as much despite investing for 30 years instead of 40. This is why starting early matters more than starting big.
-            </p>
-
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #3b82f6, #60a5fa); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                🎯 Diversified Portfolio<br>(300x250)
-            </div>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Diversification is the strategy of spreading your investments across different assets to reduce risk. Instead of putting all your money in one company's stock, you might invest in hundreds of companies across various industries and countries. This way, if one investment performs poorly, others may perform well, balancing out your overall returns. Exchange-traded funds (ETFs) and index funds make diversification easy and affordable, allowing you to own a piece of hundreds or thousands of companies with a single purchase.
-            </p>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                For beginners, target-date funds and broad market index funds like those tracking the S&P 500 are excellent starting points. These funds provide instant diversification and are managed professionally. They typically have low fees, which is crucial because high fees can significantly eat into your returns over time. Look for funds with expense ratios under 0.5%—every dollar you pay in fees is a dollar that isn't compounding for your future.
-            </p>
-
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">Getting Started with Small Amounts</h3>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                You don't need thousands of dollars to start investing. Many brokerages now offer fractional shares, allowing you to invest as little as $1 in expensive stocks. Apps like Robinhood, Fidelity, and Vanguard make it easy to start with small amounts. The key is consistency—setting up automatic transfers from your checking account to your investment account ensures you invest regularly without having to think about it. This approach, called dollar-cost averaging, also helps smooth out market volatility.
-            </p>
-
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Before you start investing, make sure you have a solid financial foundation. Pay off high-interest debt first—carrying credit card debt at 20% APR while earning 7% in the market is a losing proposition. Build an emergency fund covering 3-6 months of expenses so you won't need to sell investments during a crisis. Once these basics are covered, every dollar you invest is a step toward financial freedom. Take the quiz above to test your investing knowledge and start your wealth-building journey today.
-            </p>
-
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="/quizzes/" class="btn" style="background: #6366f1; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Try More Quizzes →</a>
-            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
         </div>
     </section>
 
     <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
         </div>
     </footer>
+
+    <script>
+        function startMultiPageQuiz() {
+            sessionStorage.setItem('investing_score', '0');
+            window.location.href = '/quiz/investing/q1';
+        }
+    </script>
 </body>
 </html>
