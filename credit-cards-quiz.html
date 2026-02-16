@@ -42,8 +42,6 @@
         .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
         .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
         .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
-        .explanation.correct h4 { color: #047857; }
-        .explanation.incorrect h4 { color: #b91c1c; }
         .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
         .results-container { text-align: center; padding: 40px 20px; }
         .results-emoji { font-size: 4rem; margin-bottom: 16px; }
@@ -54,97 +52,55 @@
         .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
         .btn-primary { background: #6366f1; color: white; }
         .btn-secondary { background: white; color: #6366f1; border: 2px solid #6366f1; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
         .start-screen { text-align: center; padding: 40px 20px; }
         .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
         .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+        #quiz-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
+        #quiz-modal.active { display: block; }
+        .modal-content { background: white; max-width: 800px; margin: 40px auto; border-radius: 16px; padding: 40px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #64748b; }
     </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog-build-credit.html">Blog</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section class="quiz-page">
-        <div class="container">
-            <div id="quiz-content" class="quiz-container">
-                <div class="start-screen">
-                    <span class="category-tag">Credit</span>
-                    <h2>💳 Credit Cards 101 Quiz</h2>
-                    <p>Learn how to use cards responsibly, avoid debt, and maximize rewards</p>
-                    <div class="quiz-meta">
-                        <span>📝 10 Questions</span>
-                        <span>⏱️ ~5 min</span>
-                        <span>📊 Easy</span>
-                    </div>
-                    <button class="btn btn-primary" onclick="startQuiz()" style="font-size: 1.125rem; padding: 16px 32px;">Start Quiz</button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-    <script>
-        const quizData = {
-            title: "Credit Cards 101",
-            category: "Credit",
-            description: "Learn how to use cards responsibly, avoid debt, and maximize rewards",
-            questions: 10,
-            difficulty: "Easy",
-            time: "5 min",
-            data: [
-                { question: "What is the most important rule for using credit cards?", options: ["Always carry a balance", "Pay in full every month", "Max out your limit", "Make minimum payments"], correct: 1, explanation: "Paying in full every month avoids interest charges and builds good credit history." },
-                { question: "What is the typical APR range for credit cards?", options: ["5-10%", "15-25%", "30-40%", "50%+"], correct: 1, explanation: "Most credit cards have APRs between 15-25%. Some go higher for subprime borrowers." },
-                { question: "What does 'grace period' mean?", options: ["Time to dispute charges", "Interest-free period to pay balance", "Time to cancel card", "Late payment forgiveness"], correct: 1, explanation: "The grace period (usually 21-25 days) is when you can pay your balance without owing interest." },
-                { question: "Which is better for building credit?", options: ["Having multiple cards with small balances", "One card paid in full monthly", "Maxing out cards and paying minimum", "Opening and closing cards frequently"], correct: 1, explanation: "One card paid in full monthly shows responsible use without complexity." },
-                { question: "What is a credit card 'statement balance'?", options: ["Your total credit limit", "What you owe at the end of billing cycle", "Your minimum payment", "Your available credit"], correct: 1, explanation: "The statement balance is what you owe when the billing cycle closes." },
-                { question: "How much should you spend on a credit card with a $1,000 limit?", options: ["$900-1000", "$500-700", "$100-300", "As much as possible"], correct: 2, explanation: "Keep utilization under 30% ($300 on $1,000 limit) for best credit scores." },
-                { question: "What happens if you only pay the minimum payment?", options: ["Nothing, that's fine", "You pay interest on the remaining balance", "Your credit score goes up", "You get rewards bonus"], correct: 1, explanation: "Paying minimum means you carry a balance and pay interest on the rest." },
-                { question: "What is a 'secured' credit card?", options: ["A card with fraud protection", "A card requiring a deposit", "A card with high limits", "A card for businesses only"], correct: 1, explanation: "Secured cards require a security deposit, making them accessible for building credit." },
-                { question: "How many credit cards should a beginner have?", options: ["0", "1-2", "5-10", "As many as possible"], correct: 1, explanation: "Start with 1-2 cards to build credit without overwhelming yourself." },
-                { question: "What is a cash advance on a credit card?", options: ["Free money from ATM", "Withdrawing cash with high fees and interest", "Cashback rewards", "Balance transfer"], correct: 1, explanation: "Cash advances have high fees (3-5%) and immediate interest accrual. Avoid them." }
-            ]
-        };
-
-        let currentQuestion = 0, score = 0, answers = [];
-
-        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
-
-        function showQuestion() {
-            const q = quizData.data[currentQuestion];
-            const progress = ((currentQuestion + 1) / quizData.data.length) * 100;
-            document.getElementById('quiz-content').innerHTML = `
-                <div class="quiz-header"><span class="category-tag">${quizData.category}</span><h1>${quizData.title}</h1></div>
-                <div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div><div class="progress-text">Question ${currentQuestion + 1} of ${quizData.data.length}</div></div>
-                <div class="question-container"><h2>${q.question}</h2><div class="options-list" id="options">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div></div>`;
-        }
-
-        function selectAnswer(index) {
-            const q = quizData.data[currentQuestion];
-            const isCorrect = index === q.correct;
-            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
-            if (isCorrect) score++;
-            document.querySelectorAll('.option').forEach(btn => { btn.classList.add('disabled'); if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct'); else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect'); });
-            document.querySelector('.question-container').innerHTML += `<div class="explanation ${isCorrect ? 'correct' : 'incorrect'}"><h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4><p>${q.explanation}</p><button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.data.length - 1 ? 'Next →' : 'See Results'}</button></div>`;
-        }
-
-        function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.data.length) showQuestion(); else showResults(); }
-
-        function showResults() {
-            const pct = Math.round((score / quizData.data.length) * 100);
-            let msg = pct >= 90 ? 'Credit Card Pro!' : pct >= 70 ? 'Well Done!' : pct >= 50 ? 'Keep Learning!' : 'Study More!';
-            let emoji = pct >= 90 ? '🏆' : pct >= 70 ? '⭐' : pct >= 50 ? '📚' : '💪';
-            document.getElementById('quiz-content').innerHTML = `<div class="results-container"><div class="results-emoji">${emoji}</div><h2>${msg}</h2><div class="results-score">${score}/${quizData.data.length}</div><div class="results-subtitle">${pct}%</div><div class="results-actions"><button class="btn btn-primary" onclick="startQuiz()">Retake</button><a href="/" class="btn btn-secondary">More Quizzes →</a></div></div>`;
-        }
-    </script>
-
-    <!-- Blog Content Section -->
     <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
         <div class="container" style="max-width: 800px;">
-            <h2 style="font-size: 2rem; margin-bottom: 24px; color: #1e1b4b;">Credit Cards 101: Your Guide to Smart Credit Card Use</h2>
+            <span style="display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Credit</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Credit Cards 101: Your Guide to Smart Credit Card Use</h1>
             
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #6366f1, #8b5cf6); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                💳 Credit Card Rewards<br>(300x250)
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
             </div>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
@@ -155,48 +111,135 @@
                 At their core, credit cards are revolving lines of credit. Unlike a debit card that draws from your bank account, a credit card lets you borrow money up to a certain limit. The credit card company pays the merchant, and you owe the credit card company. If you pay your full statement balance by the due date, you pay no interest. This grace period, typically 21-25 days, is one of the most powerful features of credit cards—essentially giving you an interest-free short-term loan.
             </p>
             
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">Building Credit with Your First Card</h3>
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Building Credit with Your First Card</h2>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
                 For young adults and credit beginners, the first credit card is a milestone. But getting approved can be challenging without existing credit history. This is where secured credit cards shine. With a secured card, you put down a refundable security deposit (typically $200-$500) that becomes your credit limit. The card works exactly like a regular credit card—you make purchases, receive statements, and pay bills. The key difference is that the deposit protects the issuer, making approval much easier.
             </p>
-            
-            <div class="blog-image" style="width: 300px; height: 250px; background: linear-gradient(135deg, #f59e0b, #fbbf24); border-radius: 12px; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.25rem; text-align: center; padding: 20px;">
-                📊 Credit Utilization<br>(300x250)
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
             </div>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Credit utilization—the percentage of your available credit that you're using—is the second most important factor in your credit score, accounting for 30% of your FICO score. If you have a $1,000 credit limit and carry a $500 balance, your utilization is 50%, which is too high. Experts recommend keeping utilization under 30%, and ideally under 10%. This doesn't mean you shouldn't use your card; it means you should pay it off strategically. Some people make multiple payments per month to keep their reported balance low.
+                Credit utilization—the percentage of your available credit that you're using—is the second most important factor in your credit score, accounting for 30% of your FICO score. If you have a $1,000 credit limit and carry a $500 balance, your utilization is 50%, which is too high. Experts recommend keeping utilization under 30%, and ideally under 10%. This doesn't mean you shouldn't use your card; it means you should pay it off strategically.
             </p>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                The minimum payment trap is one of the most expensive mistakes credit card users make. Paying only the minimum (typically 1-3% of your balance) extends your debt for years and costs you thousands in interest. For example, a $5,000 balance at 20% APR with only minimum payments could take over 20 years to pay off and cost more than $10,000 total. Always pay your statement balance in full if possible. If you can't, pay as much as you can and have a plan to eliminate the debt quickly.
+                The minimum payment trap is one of the most expensive mistakes credit card users make. Paying only the minimum (typically 1-3% of your balance) extends your debt for years and costs you thousands in interest. For example, a $5,000 balance at 20% APR with only minimum payments could take over 20 years to pay off and cost more than $10,000 total. Always pay your statement balance in full if possible.
             </p>
             
-            <h3 style="font-size: 1.5rem; margin: 32px 0 16px; color: #1e1b4b;">Maximizing Rewards and Benefits</h3>
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Maximizing Rewards and Benefits</h2>
             
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Modern credit cards offer incredible rewards—cashback, travel points, purchase protection, extended warranties, and more. The key is choosing a card that matches your spending habits. If you spend heavily on groceries and gas, look for cards that bonus those categories. If you travel frequently, a travel rewards card might be best. Just remember: rewards are only valuable if you're not carrying a balance. Paying 20% interest to earn 2% cashback is a losing proposition.
+                Modern credit cards offer incredible rewards—cashback, travel points, purchase protection, extended warranties, and more. The key is choosing a card that matches your spending habits. If you spend heavily on groceries and gas, look for cards that bonus those categories. If you travel frequently, a travel rewards card might be best. Just remember: rewards are only valuable if you're not carrying a balance.
             </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Safety is another major advantage of credit cards over debit cards. If your debit card is compromised, thieves have direct access to your bank account. With credit cards, you're protected by federal law—your liability for unauthorized charges is capped at $50, and most issuers offer zero liability protection. Additionally, credit cards offer purchase protection, price protection, and extended warranties that can save you money and headaches.
-            </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Take the quiz above to test your credit card knowledge. Whether you're considering your first card or looking to optimize your current cards, understanding these fundamentals will help you use credit as a tool for financial success rather than a trap for debt. Remember: credit cards don't create debt—habits do. Build good habits from the start, and your credit cards will serve you well for life.
-            </p>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="/quizzes/" class="btn" style="background: #6366f1; color: white; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600;">Try More Quizzes →</a>
+
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
             </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Safety is another major advantage of credit cards over debit cards. If your debit card is compromised, thieves have direct access to your bank account. With credit cards, you're protected by federal law—your liability for unauthorized charges is capped at $50, and most issuers offer zero liability protection. Additionally, credit cards offer purchase protection, price protection, and extended warranties.
+            </p>
         </div>
     </section>
 
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🎮 Ready to Test Your Knowledge?</h2>
+            <p>Take our free 10-question quiz to see how much you've learned about credit cards. Get instant results and detailed explanations.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ 5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
+            </div>
+            <button class="btn btn-primary btn-large" onclick="openQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
+
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div id="quiz-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeQuiz()">✕</button>
+            <div id="quiz-container"></div>
+        </div>
+    </div>
+
     <footer class="footer" style="background: #1e1b4b; color: white; padding: 40px 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+            <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html" style="color: #a5b4fc;">Privacy</a> | <a href="/terms.html" style="color: #a5b4fc;">Terms</a></p>
         </div>
     </footer>
+
+    <script>
+        const quizData = {
+            title: "Credit Cards 101",
+            category: "Credit",
+            questions: [
+                { question: "What is a credit card 'statement balance'?", options: ["Your total credit limit", "What you owe at the end of billing cycle", "Your minimum payment", "Your available credit"], correct: 1, explanation: "The statement balance is what you owe when the billing cycle closes. Pay this to avoid interest." },
+                { question: "How much should you spend on a $1,000 limit card?", options: ["$900-1000", "$500-700", "$100-300", "As much as possible"], correct: 2, explanation: "Keep utilization under 30% ($300 on $1,000 limit) for best credit scores." },
+                { question: "What happens if you only pay the minimum?", options: ["Nothing, that's fine", "You pay interest on the remaining balance", "Your credit score goes up", "You get rewards bonus"], correct: 1, explanation: "Paying minimum means you carry a balance and pay interest on the rest—often 20%+ APR." },
+                { question: "What is a 'secured' credit card?", options: ["A card with fraud protection", "A card requiring a deposit", "A card with high limits", "A card for businesses only"], correct: 1, explanation: "Secured cards require a security deposit, making them accessible for building credit." },
+                { question: "How many credit cards should a beginner have?", options: ["0", "1-2", "5-10", "As many as possible"], correct: 1, explanation: "Start with 1-2 cards to build credit without overwhelming yourself." },
+                { question: "What is a cash advance?", options: ["Free money from ATM", "Withdrawing cash with high fees and interest", "Cashback rewards", "Balance transfer"], correct: 1, explanation: "Cash advances have high fees (3-5%) and immediate interest accrual. Avoid them." },
+                { question: "When do you pay interest on purchases?", options: ["Immediately", "If you don't pay full statement balance", "Never with credit cards", "Only on cash advances"], correct: 1, explanation: "Pay your full statement balance by the due date to avoid interest charges." },
+                { question: "What is a 'grace period'?", options: ["Time to return purchases", "Interest-free period between purchase and due date", "Late payment forgiveness", "Annual fee waiver"], correct: 1, explanation: "The grace period (21-25 days) lets you pay without interest if you pay in full." },
+                { question: "Does applying for a card hurt your credit?", options: ["No, never", "Yes, slightly via hard inquiry", "Only if denied", "Only if approved"], correct: 1, explanation: "Each application creates a hard inquiry that can temporarily lower your score 5-10 points." },
+                { question: "What is the best way to use credit cards?", options: ["Max them out and pay minimum", "Pay in full every month", "Only use for emergencies", "Never use them"], correct: 1, explanation: "Pay in full monthly to build credit, earn rewards, and pay zero interest." }
+            ]
+        };
+
+        let currentQuestion = 0, score = 0, answers = [];
+
+        function openQuiz() { document.getElementById('quiz-modal').classList.add('active'); document.body.style.overflow = 'hidden'; startQuiz(); }
+        function closeQuiz() { document.getElementById('quiz-modal').classList.remove('active'); document.body.style.overflow = 'auto'; }
+        function startQuiz() { currentQuestion = 0; score = 0; answers = []; showQuestion(); }
+
+        function showQuestion() {
+            const q = quizData.questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="quiz-header"><span class="category-tag">${quizData.category}</span><h1>${quizData.title} Quiz</h1></div>
+                <div class="progress-container"><div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div><div class="progress-text">Question ${currentQuestion + 1} of ${quizData.questions.length}</div></div>
+                <div class="question-container"><h2>${q.question}</h2><div class="options-list">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div></div>`;
+        }
+
+        function selectAnswer(index) {
+            const q = quizData.questions[currentQuestion];
+            const isCorrect = index === q.correct;
+            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
+            if (isCorrect) score++;
+            document.querySelectorAll('.option').forEach(btn => {
+                btn.classList.add('disabled');
+                if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct');
+                else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect');
+            });
+            document.querySelector('.question-container').innerHTML += `
+                <div class="explanation ${isCorrect ? 'correct' : 'incorrect'}"><h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4><p>${q.explanation}</p><button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.questions.length - 1 ? 'Next →' : 'See Results'}</button></div>`;
+        }
+
+        function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questions.length) showQuestion(); else showResults(); }
+
+        function showResults() {
+            const pct = Math.round((score / quizData.questions.length) * 100);
+            let msg = pct >= 90 ? '🏆 Credit Card Pro!' : pct >= 70 ? '⭐ Well Done!' : pct >= 50 ? '📚 Keep Learning!' : '💪 Study More!';
+            document.getElementById('quiz-container').innerHTML = `
+                <div class="results-container"><div style="font-size: 4rem; margin-bottom: 16px;">${msg.split(' ')[0]}</div><div class="results-message">${msg.split(' ').slice(1).join(' ')}</div><div class="results-score">${score}/${quizData.questions.length}</div><div class="results-subtitle">${pct}% correct</div><div class="results-actions"><button class="btn btn-primary" onclick="startQuiz()">Retake Quiz</button><button class="btn btn-secondary" onclick="closeQuiz()">Back to Article</button></div></div>`;
+        }
+    </script>
 </body>
 </html>
