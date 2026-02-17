@@ -1,213 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLP-1 Effects on Mind & Finances Quiz - Question 10 of 10</title>
-    <meta name="description" content="GLP-1 Effects on Mind & Finances Quiz - Test your knowledge. Question 10 of 10.">
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="/styles.css">
-    <style>
-        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
-        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .quiz-header { text-align: center; margin-bottom: 32px; }
-        .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
-        .progress-container { margin-bottom: 32px; }
-        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
-        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; }
-        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
-        .question-container h2 { font-size: 1.5rem; margin-bottom: 24px; line-height: 1.5; }
-        .options-list { display: flex; flex-direction: column; gap: 12px; }
-        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
-        .option:hover { border-color: #6366f1; background: #f8fafc; }
-        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; display: none; }
-        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; display: block; }
-        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; display: block; }
-        .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; }
-        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
-        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
-        .error-message { background: #fee2e2; border: 1px solid #ef4444; color: #b91c1c; padding: 20px; border-radius: 12px; text-align: center; display: none; }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-    <script src="/quiz-token.js"></script>
-    <!-- reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=YOUR_RECAPTCHA_SITE_KEY"></script>
-    <script>
-        // reCAPTCHA v3 - Invisible bot protection
-        grecaptcha.ready(function() {
-            grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', {action: 'quiz_page'}).then(function(token) {
-                // Store token for validation
-                window.recaptchaToken = token;
-                console.log('reCAPTCHA score received');
-            });
-        });
-        
-        // Refresh token every 2 minutes
-        setInterval(function() {
-            grecaptcha.execute('YOUR_RECAPTCHA_SITE_KEY', {action: 'quiz_page'}).then(function(token) {
-                window.recaptchaToken = token;
-            });
-        }, 120000);
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLP-1 Effects - Question 10</title>
+<link rel="stylesheet" href="/styles.css">
+<style>
+.quiz-container { max-width: 700px; margin: 40px auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.category-tag { background: #14b8a6; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+.question { font-size: 1.5rem; margin: 24px 0; }
+.option { display: block; width: 100%; padding: 16px; margin: 8px 0; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1rem; text-align: left; }
+.option:hover { border-color: #14b8a6; }
+.option.correct { background: #d1fae5; border-color: #10b981; }
+.option.wrong { background: #fee2e2; border-color: #ef4444; }
+.explanation { display: none; margin-top: 24px; padding: 20px; border-radius: 12px; }
+.explanation.show { display: block; }
+.next-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; background: #14b8a6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
+</style>
 </head>
 <body>
-        <nav class="navbar">
-        <div class="container">
-            <a href="/" class="logo">💳 Credit Gamer Area</a>
-            <ul class="nav-links">
-                <li><a href="/quizzes/">Quizzes</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <div id="error-msg" class="error-message" style="max-width: 700px; margin: 40px auto;">
-        <h3>⚠️ Invalid Access</h3>
-        <p>Please start the quiz from the beginning.</p>
-        <a href="/glp1-effects-quiz.html" class="next-btn">Go to Quiz Start</a>
-    </div>
+<nav class="navbar"><div class="container"><a href="/" class="logo">💳 Credit Gamer Area</a></div></nav>
 
-    <section class="quiz-page" id="quiz-content">
-        <div class="container">
-            <div class="quiz-container">
-                <div class="quiz-header">
-                    <span class="category-tag">GLP-1 Effects on Mind & Finances - Question 10 of 10</span>
-                </div>
-                
-                <div class="progress-container">
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar" style="width: 100%;"></div>
-                    </div>
-                    <div class="progress-text">Question 10 of 10</div>
-                </div>
-                
-                <div class="question-container">
-                    <h2>What is 'food noise' that GLP-1 users mention?</h2>
-                    <div class="options-list">
-                        <button class="option" onclick="selectAnswer(0, 1)">Loud eating sounds</button>
-                        <button class="option" onclick="selectAnswer(1, 1)">Constant obsessive thoughts about food and eating</button>
-                        <button class="option" onclick="selectAnswer(2, 1)">Restaurant background music</button>
-                        <button class="option" onclick="selectAnswer(3, 1)">Cooking sounds</button>
-                    </div>
-                    
-                    <div id="explanation" class="explanation">
-                        <h4 id="result-text"></h4>
-                        <p>Food noise refers to persistent, intrusive thoughts about food, eating, and cravings that many people experience - often reduced by GLP-1 medications.</p>
-                        <button id="next-btn" class="next-btn" onclick="goToNext()">See Results →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ad-container">
-                <div class="ad-label">Advertisement</div>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-    </section>
+<div class="quiz-container">
+<span class="category-tag">GLP-1 Effects - Question 10 of 10</span>
+<div class="question">What is 'food noise' that GLP-1 users mention?</div>
 
-    
+<button class="option" id="opt0" onclick="answer(0)">Loud eating sounds</button>
+<button class="option" id="opt1" onclick="answer(1)">Constant obsessive thoughts about food and eating</button>
+<button class="option" id="opt2" onclick="answer(2)">Restaurant background music</button>
+<button class="option" id="opt3" onclick="answer(3)">Cooking sounds</button>
 
-    <script>
-        const QUIZ_NAME = 'glp1-effects';
-        const QUESTION_NUM = 10;
-        const IS_LAST = true;
-        
-        // Validate token on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const params = QuizToken.getParams();
-            
-            // First question doesn't need token
-            if (QUESTION_NUM === 1) {
-                sessionStorage.setItem('glp1_score', '0');
-                return;
-            }
-            
-            // Validate token for subsequent questions
-            if (!params.token || !QuizToken.validate(params.token, QUIZ_NAME, QUESTION_NUM - 1, params.score)) {
-                document.getElementById('quiz-content').style.display = 'none';
-                document.getElementById('error-msg').style.display = 'block';
-            } else {
-                // Update score from token
-                sessionStorage.setItem('glp1_score', params.score.toString());
-            }
-        });
-        
-        let answered = false;
-        let currentScore = parseInt(sessionStorage.getItem('glp1_score') || '0');
-        
-        function selectAnswer(selected, correct) {
-            if (answered) return;
-            answered = true;
-            
-            const isCorrect = selected === correct;
-            const explanation = document.getElementById('explanation');
-            const resultText = document.getElementById('result-text');
-            
-            document.querySelectorAll('.option').forEach((btn, idx) => {
-                btn.style.pointerEvents = 'none';
-                if (idx === correct) {
-                    btn.style.borderColor = '#10b981';
-                    btn.style.background = '#d1fae5';
-                } else if (idx === selected && !isCorrect) {
-                    btn.style.borderColor = '#ef4444';
-                    btn.style.background = '#fee2e2';
-                }
-            });
-            
-            explanation.className = 'explanation ' + (isCorrect ? 'correct' : 'incorrect');
-            resultText.textContent = isCorrect ? '✓ Correct!' : '✗ Incorrect';
-            
-            if (isCorrect) {
-                currentScore++;
-                sessionStorage.setItem('glp1_score', currentScore.toString());
-            }
-        }
-        
-        function goToNext() {
-            if (answered) {
-                const nextBtn = document.getElementById('next-btn');
-                const href = nextBtn.getAttribute('href');
-                if (href) {
-                    window.location.href = href;
-                }
-            }
-        }
-    </script>
+<div id="exp" class="explanation">
+<strong id="res"></strong><br><br>
+Please start the quiz from the beginning.<br><br>
+<a href="/quiz-complete.html" class="next-btn">See Results →</a>
+</div>
+</div>
 
-    <!-- Footer -->
-        <footer class="footer" style="background: #0f0d2e; color: white; padding: 60px 0 30px; margin-top: 40px;">
-        <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div class="footer-brand">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 16px;">💳 Credit Gamer Area</h3>
-                    <p style="color: #94a3b8; font-size: 0.875rem; line-height: 1.6;">Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 style="font-size: 1rem; margin-bottom: 16px; color: white;">Learn</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 8px;"><a href="/credit-basics-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Credit Basics</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/investing-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Investing</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/quizzes/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">All Quizzes</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 style="font-size: 1rem; margin-bottom: 16px; color: white;">Resources</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Blog</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/resources.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Calculators</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/faq.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom" style="border-top: 1px solid #1e293b; padding-top: 20px; text-align: center;">
-                <p style="color: #64748b; font-size: 0.875rem;">&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
-            </div>
-        </div>
-    </footer>
+<script>
+var correct = 1;
+var answered = false;
+function answer(n) {
+  if (answered) return;
+  answered = true;
+  document.getElementById('opt' + correct).classList.add('correct');
+  if (n != correct) document.getElementById('opt' + n).classList.add('wrong');
+  document.getElementById('exp').classList.add('show');
+  document.getElementById('res').textContent = (n == correct) ? '✓ Correct!' : '✗ Incorrect';
+}
+</script>
 
 </body>
 </html>
