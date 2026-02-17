@@ -170,8 +170,6 @@
                 const href = nextBtn.getAttribute('href');
                 if (href) window.location.href = href;
             }
-        } else {
-                // Go to next question with token
                 window.location.href = QuizToken.buildUrl('q2', QUIZ_NAME, QUESTION_NUM, currentScore);
             }
         }

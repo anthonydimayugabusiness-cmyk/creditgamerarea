@@ -168,11 +168,12 @@
             if (answered) {
                 const nextBtn = document.getElementById('next-btn');
                 const href = nextBtn.getAttribute('href');
-                if (href) window.location.href = href;
-            }
-        } else {
-                // Go to next question with token
-                window.location.href = QuizToken.buildUrl('q2', QUIZ_NAME, QUESTION_NUM, currentScore);
+                if (href) {
+                    window.location.href = href;
+                } else {
+                    // Build URL with token if href not set
+                    window.location.href = QuizToken.buildUrl('q2', QUIZ_NAME, QUESTION_NUM, currentScore);
+                }
             }
         }
     </script>
