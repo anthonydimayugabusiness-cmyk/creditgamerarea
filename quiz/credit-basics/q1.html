@@ -162,6 +162,10 @@
                 currentScore++;
                 sessionStorage.setItem('cred_score', currentScore.toString());
             }
+            
+            // Set up next button URL
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.setAttribute('href', QuizToken.buildUrl('q2', QUIZ_NAME, QUESTION_NUM, currentScore));
         }
         
         function goToNext() {
@@ -170,11 +174,9 @@
                 const href = nextBtn.getAttribute('href');
                 if (href) {
                     window.location.href = href;
-                } else {
-                    // Build URL with token if href not set
-                    window.location.href = QuizToken.buildUrl('q2', QUIZ_NAME, QUESTION_NUM, currentScore);
                 }
             }
+        }
         }
     </script>
 
