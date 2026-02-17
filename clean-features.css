@@ -1,0 +1,177 @@
+/* Clean Feature Cards - Minimal Design */
+
+.why-credit {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.why-credit .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+}
+
+.why-credit h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e1b4b;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.why-credit .section-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Clean Feature Grid */
+.feature-grid-clean {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.feature-card-clean {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card-clean::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card-clean:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: #c7d2fe;
+}
+
+.feature-card-clean:hover::before {
+    opacity: 1;
+}
+
+.feature-card-clean .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-card-clean h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e1b4b;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.feature-card-clean p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Clean CTA Box */
+.cta-box-clean {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box-clean::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, transparent 70%);
+    animation: pulse-bg 4s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.cta-box-clean p {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-box-clean strong {
+    color: #fcd34d;
+}
+
+.cta-box-clean .btn-primary {
+    background: white;
+    color: #1e1b4b;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-box-clean .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .feature-grid-clean {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .why-credit h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .feature-grid-clean {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .feature-card-clean {
+        padding: 24px;
+    }
+    
+    .cta-box-clean {
+        padding: 32px 24px;
+    }
+    
+    .why-credit h2 {
+        font-size: 1.75rem;
+    }
+}
