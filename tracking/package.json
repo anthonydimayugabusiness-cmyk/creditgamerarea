@@ -1,0 +1,9 @@
+{
+  "name": "cg-tracking",
+  "version": "1.0.0",
+  "description": "S2S Tracking API for Credit Gamer Area",
+  "main": "api/track/click.js",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}

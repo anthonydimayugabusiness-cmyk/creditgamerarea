@@ -68,8 +68,18 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
     
+    <script src="/tracking/tracking.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Track conversion
+            const quizName = sessionStorage.getItem('last_quiz') || 'unknown';
+            const score = parseInt(sessionStorage.getItem('last_score') || '0');
+            
+            if (window.CGTracking) {
+                window.CGTracking.trackConversion(quizName, score, 0)
+                    .then(result => console.log('Conversion tracked:', result));
+            }
+            
             // Get score data
             const urlParams = new URLSearchParams(window.location.search);
             let score = parseInt(urlParams.get('s') || sessionStorage.getItem('cred_score') || sessionStorage.getItem('quiz_score') || '0');
