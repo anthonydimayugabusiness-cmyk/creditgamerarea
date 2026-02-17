@@ -1,54 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Credit Basics - Question 7</title>
-<link rel="stylesheet" href="/styles.css">
-<style>
-.quiz-container { max-width: 700px; margin: 40px auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-.category-tag { background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-bottom: 16px; }
-.question { font-size: 1.5rem; margin: 24px 0; }
-.option { display: block; width: 100%; padding: 16px; margin: 8px 0; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1rem; text-align: left; }
-.option:hover { border-color: #6366f1; }
-.option.correct { background: #d1fae5; border-color: #10b981; }
-.option.wrong { background: #fee2e2; border-color: #ef4444; }
-.explanation { display: none; margin-top: 24px; padding: 20px; border-radius: 12px; }
-.explanation.show { display: block; }
-.next-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; background: #6366f1; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Basics Quiz - Question 7 of 10</title>
+    <meta name="description" content="Test your knowledge of Credit Basics - Question 7 of 10">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 300px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question { font-size: 1.5rem; margin: 24px 0; line-height: 1.5; font-weight: 600; }
+        .option { display: block; width: 100%; padding: 16px 20px; margin: 8px 0; border: 2px solid #e2e8f0; border-radius: 12px; background: white; cursor: pointer; font-size: 1rem; text-align: left; transition: all 0.2s; }
+        .option:hover { border-color: #6366f1; background: #f8fafc; }
+        .option.correct { background: #d1fae5; border-color: #10b981; }
+        .option.wrong { background: #fee2e2; border-color: #ef4444; }
+        .explanation { display: none; margin-top: 24px; padding: 20px; border-radius: 12px; background: #f8fafc; border: 1px solid #e2e8f0; }
+        .explanation.show { display: block; }
+        .explanation strong { font-size: 1.125rem; }
+        .next-btn { display: inline-block; margin-top: 16px; padding: 14px 28px; background: #6366f1; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: opacity 0.2s; }
+        .next-btn:hover { opacity: 0.9; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav class="navbar"><div class="container"><a href="/" class="logo">💳 Credit Gamer Area</a></div></nav>
+    <section class="quiz-page">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <span class="category-tag">Credit Basics - Question 7 of 10</span>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                    </div>
+                    <div class="progress-text">Question 7 of 10</div>
+                </div>
+                
+                <div class="question">How long does it take to build credit from scratch?</div>
+                
+                <button class="option" id="opt0" onclick="answer(0)">1 month</button>
+                <button class="option" id="opt1" onclick="answer(1)">3-6 months</button>
+                <button class="option" id="opt2" onclick="answer(2)">1 year</button>
+                <button class="option" id="opt3" onclick="answer(3)">2 years</button>
+                
+                <div id="exp" class="explanation">
+                    <strong id="res"></strong><br><br>
+                    Most negative items fall off your credit report after 7 years (10 years for bankruptcies).<br><br>
+                    <a href="q8.html" class="next-btn">Next Question →</a>
+                </div>
+            </div>
+            
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+    </section>
 
-<div class="quiz-container">
-<span class="category-tag">Credit Basics - Question 7 of 10</span>
-<div class="question">How long does it take to build credit from scratch?</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>💳 Credit Gamer Area</h3>
+                    <p>Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Discord</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/credit-basics-quiz.html">Credit Basics</a></li>
+                        <li><a href="/credit-cards-quiz.html">Credit Cards</a></li>
+                        <li><a href="/taxes-quiz.html">Taxes</a></li>
+                        <li><a href="/investing-quiz.html">Investing</a></li>
+                        <li><a href="/student-loans-quiz.html">Student Loans</a></li>
+                        <li><a href="/budgeting-quiz.html">Budgeting</a></li>
+                        <li><a href="/banking-quiz.html">Banking</a></li>
+                        <li><a href="/make-money-online-quiz.html">Make Money Online</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/quizzes/">All Quizzes</a></li>
+                        <li><a href="/resources.html">Financial Calculators</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/sitemap.html">Sitemap</a></li>
+                        <li><a href="/blog/">Credit Guides</a></li>
+                        <li><a href="/blog/">Money Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
+            </div>
+        </div>
+    </footer>
 
-<button class="option" id="opt0" onclick="answer(0)">1 month</button>
-<button class="option" id="opt1" onclick="answer(1)">3-6 months</button>
-<button class="option" id="opt2" onclick="answer(2)">1 year</button>
-<button class="option" id="opt3" onclick="answer(3)">2 years</button>
-
-<div id="exp" class="explanation">
-<strong id="res"></strong><br><br>Most negative items fall off your credit report after 7 years (10 years for bankruptcies).<br><br>
-<a href="q8.html" class="next-btn">Next Question →</a>
-</div>
-</div>
-
-<script>
-var correct = 1;
-var answered = false;
-function answer(n) {
-  if (answered) return;
-  answered = true;
-  document.getElementById('opt' + correct).classList.add('correct');
-  if (n != correct) document.getElementById('opt' + n).classList.add('wrong');
-  document.getElementById('exp').classList.add('show');
-  document.getElementById('res').textContent = (n == correct) ? '✓ Correct!' : '✗ Incorrect';
-}
-</script>
-
+    <script>
+        var correct = 1;
+        var answered = false;
+        function answer(n) {{
+            if (answered) return;
+            answered = true;
+            document.getElementById('opt' + correct).classList.add('correct');
+            if (n != correct) document.getElementById('opt' + n).classList.add('wrong');
+            document.getElementById('exp').classList.add('show');
+            document.getElementById('res').textContent = (n == correct) ? '✓ Correct!' : '✗ Incorrect';
+        }}
+    </script>
 </body>
 </html>
