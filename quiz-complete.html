@@ -71,21 +71,18 @@
     <script src="/tracking/tracking.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Track conversion
-            const quizName = sessionStorage.getItem('last_quiz') || 'unknown';
-            const score = parseInt(sessionStorage.getItem('last_score') || '0');
-            
-            if (window.CGTracking) {
-                window.CGTracking.trackConversion(quizName, score, 0)
-                    .then(result => console.log('Conversion tracked:', result));
-            }
-            
             // Get score data
             const urlParams = new URLSearchParams(window.location.search);
-            let score = parseInt(urlParams.get('s') || sessionStorage.getItem('cred_score') || sessionStorage.getItem('quiz_score') || '0');
+            let score = parseInt(urlParams.get('s') || sessionStorage.getItem('cred_score') || sessionStorage.getItem('quiz_score') || sessionStorage.getItem('cb_score') || '0');
             let quizName = urlParams.get('quiz') || sessionStorage.getItem('last_quiz') || 'Credit Basics';
             const total = 10;
             const percentage = Math.round((score / total) * 100);
+            
+            // Track conversion
+            if (window.CGTracking) {
+                window.CGTracking.trackConversion(quizName, score, percentage)
+                    .then(result => console.log('Conversion tracked:', result));
+            }
             
             // Store for sharing
             sessionStorage.setItem('last_score', score);
@@ -95,6 +92,7 @@
             document.getElementById('score-display').textContent = score + '/' + total;
             document.getElementById('percentage-display').textContent = percentage + '%';
             document.getElementById('quiz-name').textContent = quizName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+            document.getElementById('leaderboard-your-score').textContent = score + '/' + total;
             
             // Determine result message and styling
             let title, subtitle, emoji, comparisonClass = '';
@@ -138,17 +136,28 @@
                 comparisonEl.classList.add('below-average');
             }
             
-            // Update share buttons
+            // Update share buttons with working URLs
             const shareText = `I scored ${score}/${total} on the ${quizName} quiz! Can you beat me? 🎮💰`;
             const shareUrl = 'https://www.creditgamerarea.com';
+            const encodedText = encodeURIComponent(shareText);
+            const encodedUrl = encodeURIComponent(shareUrl);
             
-            document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
-            document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
-            document.getElementById('reddit-share').href = `https://reddit.com/submit?title=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            // Twitter/X
+            document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+            
+            // Facebook
+            document.getElementById('facebook-share').href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`;
+            
+            // Reddit
+            document.getElementById('reddit-share').href = `https://www.reddit.com/submit?title=${encodedText}&url=${encodedUrl}`;
+            
+            // LinkedIn
+            document.getElementById('linkedin-share').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
             
             // Copy link button
             document.getElementById('copy-btn').addEventListener('click', function() {
-                navigator.clipboard.writeText(shareUrl).then(function() {
+                const fullText = `${shareText} ${shareUrl}`;
+                navigator.clipboard.writeText(fullText).then(function() {
                     const toast = document.getElementById('copy-toast');
                     toast.classList.add('show');
                     setTimeout(() => toast.classList.remove('show'), 2000);
@@ -161,6 +170,7 @@
             // Clear session storage
             sessionStorage.removeItem('cb_score');
             sessionStorage.removeItem('quiz_score');
+            sessionStorage.removeItem('cred_score');
         });
     </script>
 </head>
@@ -196,10 +206,11 @@
                     <div class="share-title">🚀 Challenge Your Friends</div>
                     <div class="share-subtitle">Share your score and see if they can beat you!</div>
                     <div class="share-buttons">
-                        <a id="twitter-share" href="#" class="share-btn twitter" target="_blank">🐦 Tweet Score</a>
+                        <a id="twitter-share" href="#" class="share-btn twitter" target="_blank">🐦 Tweet</a>
                         <a id="facebook-share" href="#" class="share-btn facebook" target="_blank">📘 Share</a>
                         <a id="reddit-share" href="#" class="share-btn reddit" target="_blank">🔴 Reddit</a>
-                        <button id="copy-btn" class="share-btn copy">📋 Copy Link</button>
+                        <a id="linkedin-share" href="#" class="share-btn linkedin" target="_blank" style="background: #0077b5;">💼 LinkedIn</a>
+                        <button id="copy-btn" class="share-btn copy">📋 Copy</button>
                     </div>
                 </div>
                 
