@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
-    
+
     <title>Credit Gamer Area - Learn Money Skills Through Quizzes</title>
     <meta name="description" content="Free quizzes that actually teach you about credit, investing, taxes, and making money. No signup. No BS.">
-    
+
     <link rel="canonical" href="https://www.creditgamerarea.com/">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary: #6366f1;
@@ -25,94 +25,210 @@
             --light: #f8fafc;
             --success: #10b981;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             background: #fff;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         /* Navigation */
         nav {
             padding: 20px 0;
             border-bottom: 1px solid #e2e8f0;
         }
-        
+
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--dark);
             text-decoration: none;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
-        
+
         .nav-links a {
             color: var(--gray);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
-        
+
         .nav-links a:hover {
             color: var(--primary);
         }
-        
-        /* Hero */
+
+        /* Hero - Redesigned */
         .hero {
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
             text-align: center;
+            background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.1;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
             margin-bottom: 24px;
-            letter-spacing: -0.02em;
         }
-        
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            color: var(--dark);
+        }
+
         .hero h1 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
             color: var(--primary);
         }
-        
+
+        .trust-badges {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.875rem;
+            background: white;
+            padding: 10px 16px;
+            border-radius: 100px;
+            border: 1px solid #e2e8f0;
+        }
+
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto 40px;
         }
-        
+
         .hero-cta {
             display: flex;
             gap: 16px;
             justify-content: center;
             margin-bottom: 48px;
         }
-        
+
         .btn {
             padding: 16px 32px;
             border-radius: 8px;
@@ -123,85 +239,56 @@
             text-decoration: none;
             display: inline-block;
         }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--dark);
-            border: 2px solid #e2e8f0;
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        .trust-badges {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            color: var(--gray);
-            font-size: 0.875rem;
-        }
-        
+
         /* Why Section */
+        .why-section {
         .why-section {
             padding: 80px 0;
             background: var(--light);
         }
-        
+
         .why-section h2 {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 16px;
         }
-        
+
         .why-section > .container > p {
             text-align: center;
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto 48px;
         }
-        
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-bottom: 48px;
         }
-        
+
         .feature {
             background: white;
             padding: 32px;
             border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
-        
+
         .feature-icon {
             font-size: 2rem;
             margin-bottom: 16px;
         }
-        
+
         .feature h3 {
             font-size: 1.125rem;
             margin-bottom: 8px;
         }
-        
+
         .feature p {
             color: var(--gray);
             font-size: 0.9375rem;
         }
-        
+
         .cta-box {
             background: var(--dark);
             color: white;
@@ -209,35 +296,35 @@
             border-radius: 12px;
             text-align: center;
         }
-        
+
         .cta-box p {
             font-size: 1.125rem;
             margin-bottom: 20px;
         }
-        
+
         /* Quizzes Section */
         .quizzes {
             padding: 80px 0;
         }
-        
+
         .quizzes h2 {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 16px;
         }
-        
+
         .quizzes > .container > p {
             text-align: center;
             color: var(--gray);
             margin-bottom: 48px;
         }
-        
+
         .quiz-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
-        
+
         .quiz-card {
             background: white;
             border: 1px solid #e2e8f0;
@@ -248,13 +335,13 @@
             transition: all 0.2s;
             position: relative;
         }
-        
+
         .quiz-card:hover {
             border-color: var(--primary);
             transform: translateY(-4px);
             box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
         }
-        
+
         .quiz-badge {
             position: absolute;
             top: 16px;
@@ -266,116 +353,116 @@
             padding: 4px 10px;
             border-radius: 20px;
         }
-        
+
         .quiz-icon {
             font-size: 2.5rem;
             margin-bottom: 16px;
         }
-        
+
         .quiz-card h3 {
             font-size: 1.125rem;
             margin-bottom: 8px;
         }
-        
+
         .quiz-card p {
             color: var(--gray);
             font-size: 0.875rem;
             margin-bottom: 16px;
         }
-        
+
         .quiz-meta {
             display: flex;
             gap: 16px;
             font-size: 0.875rem;
             color: var(--gray);
         }
-        
+
         /* Featured Quiz */
         .featured {
             padding: 80px 0;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
         }
-        
+
         .featured .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 64px;
             align-items: center;
         }
-        
+
         .featured h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
+
         .featured p {
             font-size: 1.125rem;
             opacity: 0.9;
             margin-bottom: 32px;
         }
-        
+
         .featured-list {
             list-style: none;
             margin-bottom: 32px;
         }
-        
+
         .featured-list li {
             padding: 8px 0;
             padding-left: 28px;
             position: relative;
         }
-        
+
         .featured-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
             font-weight: 700;
         }
-        
+
         .stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
         }
-        
+
         .stat {
             background: rgba(255,255,255,0.1);
             padding: 24px;
             border-radius: 12px;
             text-align: center;
         }
-        
+
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             display: block;
         }
-        
+
         .stat-label {
             font-size: 0.875rem;
             opacity: 0.8;
         }
-        
+
         /* Footer */
         footer {
             padding: 60px 0 30px;
             border-top: 1px solid #e2e8f0;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 48px;
             margin-bottom: 48px;
         }
-        
+
         .footer-brand p {
             color: var(--gray);
             margin-top: 16px;
             font-size: 0.9375rem;
         }
-        
+
         .footer-links h4 {
             font-size: 0.875rem;
             font-weight: 600;
@@ -383,25 +470,25 @@
             letter-spacing: 0.05em;
             margin-bottom: 16px;
         }
-        
+
         .footer-links ul {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
             color: var(--gray);
             text-decoration: none;
             font-size: 0.9375rem;
         }
-        
+
         .footer-links a:hover {
             color: var(--primary);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -409,25 +496,25 @@
             color: var(--gray);
             font-size: 0.875rem;
         }
-        
+
         /* Mobile */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero-cta {
                 flex-direction: column;
             }
-            
+
             .nav-links {
                 display: none;
             }
-            
+
             .featured .container {
                 grid-template-columns: 1fr;
             }
-            
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -450,6 +537,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
+            <div class="hero-badge">Free Financial Education</div>
             <h1>Learn Money Skills.<br><span>No BS. No Signup.</span></h1>
             <p class="hero-subtitle">Free quizzes that actually teach you about credit, investing, taxes, and making money. Take them. Learn something. Move on with your life.</p>
             <div class="hero-cta">
@@ -457,9 +545,9 @@
                 <a href="#quizzes" class="btn btn-secondary">See All Quizzes</a>
             </div>
             <div class="trust-badges">
-                <span>⚡ 2-5 minutes each</span>
-                <span>🎯 Actually educational</span>
-                <span>🔒 No email required</span>
+                <div class="trust-badge">⚡ 2-5 minutes each</div>
+                <div class="trust-badge">🎯 Actually educational</div>
+                <div class="trust-badge">🔒 No email required</div>
             </div>
         </div>
     </section>
@@ -491,7 +579,7 @@
                     <p>No signup. No "join our newsletter." No selling your data. Just free education.</p>
                 </div>
             </div>
-            
+
             <div class="cta-box">
                 <p>🎯 <strong>The Challenge:</strong> Take the Credit Basics Quiz. If you score 8/10 or higher, you know more than most adults.</p>
                 <a href="/credit-basics-quiz.html" class="btn btn-primary">Accept Challenge →</a>
@@ -504,7 +592,7 @@
         <div class="container">
             <h2>All Quizzes</h2>
             <p>Pick a topic. Test yourself. Learn something.</p>
-            
+
             <div class="quiz-grid">
                 <a href="/credit-basics-quiz.html" class="quiz-card">
                     <span class="quiz-badge">Start Here</span>
@@ -516,7 +604,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/credit-cards-quiz.html" class="quiz-card">
                     <div class="quiz-icon">💰</div>
                     <h3>Credit Cards 101</h3>
@@ -526,7 +614,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/investing-quiz.html" class="quiz-card">
                     <div class="quiz-icon">📈</div>
                     <h3>Investing Basics</h3>
@@ -536,7 +624,7 @@
                         <span>~4 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/taxes-quiz.html" class="quiz-card">
                     <div class="quiz-icon">📋</div>
                     <h3>Taxes for Beginners</h3>
@@ -546,7 +634,7 @@
                         <span>~4 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/budgeting-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🎯</div>
                     <h3>Budgeting</h3>
@@ -556,7 +644,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/student-loans-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🎓</div>
                     <h3>Student Loans</h3>
@@ -566,7 +654,7 @@
                         <span>~4 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/banking-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🏦</div>
                     <h3>Banking Basics</h3>
@@ -576,7 +664,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/make-money-online-quiz.html" class="quiz-card">
                     <span class="quiz-badge">Popular</span>
                     <div class="quiz-icon">💻</div>
@@ -587,7 +675,7 @@
                         <span>~4 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/side-hustle-scam-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🛡️</div>
                     <h3>Side Hustle Scams</h3>
@@ -597,7 +685,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/games-that-pay-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🎮</div>
                     <h3>Games That Pay</h3>
@@ -607,7 +695,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/auto-insurance-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🚗</div>
                     <h3>Auto Insurance</h3>
@@ -617,7 +705,7 @@
                         <span>~3 min</span>
                     </div>
                 </a>
-                
+
                 <a href="/prediction-markets-quiz.html" class="quiz-card">
                     <div class="quiz-icon">🎲</div>
                     <h3>Prediction Markets</h3>
@@ -636,18 +724,18 @@
         <div class="container">
             <div>
                 <h2>Start With Credit Basics</h2>
-                <p>Credit affects everything — apartments, car loans, even jobs. This 10-question quiz covers the stuff you actually need to know.</p>
-                
+                <p>Credit affects everything - apartments, car loans, even jobs. This 10-question quiz covers the stuff you actually need to know.</p>
+
                 <ul class="featured-list">
                     <li>What actually goes into your FICO score</li>
                     <li>Why credit utilization matters more than you think</li>
                     <li>How to build credit from zero (or fix bad credit)</li>
                     <li>Myths that keep people broke</li>
                 </ul>
-                
+
                 <a href="/credit-basics-quiz.html" class="btn btn-primary" style="background: white; color: var(--primary);">Take the Quiz →</a>
             </div>
-            
+
             <div class="stats">
                 <div class="stat">
                     <span class="stat-number">10</span>
@@ -677,7 +765,7 @@
                     <div class="logo">💳 Credit Gamer Area</div>
                     <p>Free financial education for people who hate boring finance content.</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Quizzes</h4>
                     <ul>
@@ -687,7 +775,7 @@
                         <li><a href="/budgeting-quiz.html">Budgeting</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
@@ -696,7 +784,7 @@
                         <li><a href="/faq.html">FAQ</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-links">
                     <h4>Legal</h4>
                     <ul>
@@ -707,7 +795,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>© 2026 Credit Gamer Area. Not financial advice. Just education.</p>
             </div>
@@ -718,13 +806,13 @@
         // reCAPTCHA v3
         (function() {
             const SITE_KEY = '6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji';
-            
+
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.ready(function() {
                     grecaptcha.execute(SITE_KEY, { action: 'page_load' });
                 });
             }
-            
+
             // Track quiz clicks
             document.querySelectorAll('.quiz-card').forEach(function(card) {
                 card.addEventListener('click', function() {
