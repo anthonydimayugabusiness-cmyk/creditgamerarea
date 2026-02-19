@@ -90,6 +90,7 @@
 
     <script>
         sessionStorage.setItem('gtp_score', '0');
+        let score = 0;
         
         
         function answer(selected) {
@@ -104,6 +105,7 @@
                 else if (idx === selected && idx !== correct) opt.classList.add('wrong');
             });
             
+            let score = parseInt(sessionStorage.getItem('gtp_score')) || 0;
             if (selected === correct) {
                 score++;
                 sessionStorage.setItem('gtp_score', score.toString());
