@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Update: Big Tech Gets Battered, Crypto Bulls Take a Breather | Credit Gamer Area</title>
-    <meta name="description" content="The S&P 500 is treading water while Big Tech faces a reality check. Bitcoin slides toward $50K predictions. Here's what moved markets this week.">
+    <title>Market Update: S&P 500 Stuck at 7K, Big Tech Bleeds, Crypto Catches Its Breath | Credit Gamer Area</title>
+    <meta name="description" content="The S&P 500 can't break 7,000, Big Tech is getting hammered, and Bitcoin is holding steady. Here's your gamer-friendly market breakdown for Feb 14-17, 2026.">
     <link rel="stylesheet" href="/styles.css">
     <style>
-        .blog-post { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        .blog-header { text-align: center; margin-bottom: 40px; }
-        .blog-meta { color: #64748b; font-size: 0.875rem; margin-bottom: 16px; }
-        .blog-title { font-size: 2.5rem; margin-bottom: 16px; line-height: 1.2; }
-        .blog-image { width: 100%; height: 300px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); border-radius: 16px; margin-bottom: 32px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-        .blog-content p { font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #334155; }
-        .blog-content h2 { font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b; }
-        .blog-content h3 { font-size: 1.25rem; margin: 32px 0 16px; color: #1e1b4b; }
-        .stock-card { background: #f8fafc; border-radius: 12px; padding: 20px; margin: 16px 0; border-left: 4px solid #6366f1; }
-        .stock-card.up { border-left-color: #10b981; }
-        .stock-card.down { border-left-color: #ef4444; }
-        .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .stock-ticker { font-weight: 700; font-size: 1.25rem; }
-        .stock-move { font-weight: 700; font-size: 1.125rem; }
-        .stock-move.up { color: #10b981; }
-        .stock-move.down { color: #ef4444; }
-        .highlight-box { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 12px; padding: 24px; margin: 32px 0; }
-        .highlight-box h3 { margin-top: 0; }
-        .tag { display: inline-block; background: #e0e7ff; color: #4338ca; padding: 4px 12px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-right: 8px; }
-        .cta-box { background: #1e1b4b; color: white; border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
-        .cta-box h3 { color: white; margin-bottom: 16px; }
+        .blog-post { padding: 60px 0; }
+        .blog-post-header { text-align: center; margin-bottom: 48px; }
+        .blog-post-header h1 { font-size: 2.5rem; margin-bottom: 16px; line-height: 1.3; }
+        .blog-post-meta { display: flex; gap: 16px; justify-content: center; color: #64748b; font-size: 0.875rem; margin-bottom: 24px; }
+        .blog-post-tag { background: #6366f1; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        
+        .blog-content { max-width: 800px; margin: 0 auto; font-size: 1.0625rem; line-height: 1.8; color: #334155; }
+        .blog-content h2 { font-size: 1.5rem; color: #1e1b4b; margin-top: 40px; margin-bottom: 16px; }
+        .blog-content h3 { font-size: 1.25rem; color: #1e1b4b; margin-top: 28px; margin-bottom: 12px; }
+        .blog-content p { margin-bottom: 20px; }
+        .blog-content ul { margin-bottom: 20px; padding-left: 24px; }
+        .blog-content li { margin-bottom: 8px; }
+        
+        .highlight-box { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 24px; border-radius: 12px; margin: 32px 0; }
+        .highlight-box h3 { color: white; margin-top: 0; }
+        
+        .stock-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .stock-card h4 { color: #1e1b4b; margin: 0 0 8px 0; font-size: 1.1rem; }
+        .stock-card .ticker { color: #6366f1; font-weight: 600; }
+        .stock-card .change-up { color: #10b981; font-weight: 600; }
+        .stock-card .change-down { color: #ef4444; font-weight: 600; }
+        
+        .watch-list { background: #f0fdf4; border-left: 4px solid #10b981; padding: 20px 24px; margin: 32px 0; }
+        .watch-list h3 { color: #166534; margin-top: 0; }
+        
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: #6366f1; text-decoration: none; font-weight: 500; margin-bottom: 24px; }
+        .back-link:hover { text-decoration: underline; }
+        
+        @media (max-width: 768px) {
+            .blog-post-header h1 { font-size: 1.75rem; }
+            .blog-content { padding: 0 16px; }
+        }
     </style>
 </head>
 <body>
@@ -36,155 +47,155 @@
             <a href="/" class="logo">💳 Credit Gamer Area</a>
             <ul class="nav-links">
                 <li><a href="/quizzes/">Quizzes</a></li>
-                <li><a href="/blog-build-credit.html">Blog</a></li>
+                <li><a href="/blog/">Blog</a></li>
             </ul>
         </div>
     </nav>
 
     <article class="blog-post">
-        <div class="blog-header">
-            <div class="blog-meta">
-                <span class="tag">Market Update</span>
-                <span>February 17, 2026</span> &bull; <span>5 min read</span>
-            </div>
-            <h1 class="blog-title">Market Update: Big Tech Gets Battered, Crypto Bulls Take a Breather</h1>
-        </div>
-
-        <div class="blog-image">📉📊🪙</div>
-
-        <div class="blog-content">
-            <p>
-                <strong>TL;DR:</strong> The stock market's having an identity crisis. The S&P 500 is basically flat for the year after a rough February start, Big Tech's getting a reality check, and crypto traders are watching Bitcoin flirt with $50K predictions. If you're new to investing, this is what "volatility" looks like in real-time.
-            </p>
-
-            <h2>The Big Picture: S&P 500 Treading Water</h2>
+        <div class="container">
+            <a href="/blog/" class="back-link">← Back to Blog</a>
             
-            <p>
-                The S&P 500 started 2026 strong, but February's been a different story. After dropping 1.23% in early February, the index has been bouncing around like a ping-pong ball. Friday saw a tiny 0.1% gain—basically a rounding error. For the year? We're barely positive, if at all.
-            </p>
-
-            <p>
-                What's wild is how much this market depends on just a handful of stocks. The "Magnificent Seven" (Apple, Microsoft, Google, Amazon, Nvidia, Meta, Tesla) have been carrying the entire market on their backs. When they sneeze, the S&P 500 catches a cold. And right now? They're all coughing.
-            </p>
-
-            <div class="highlight-box">
-                <h3>🎮 Gamer Translation</h3>
-                <p>Think of the S&P 500 like a team-based shooter where one player (Big Tech) has 60% of the kills. If they lag, the whole team struggles—even if everyone else is playing fine.</p>
-            </div>
-
-            <h2>Big Tech's Reality Check</h2>
-
-            <p>
-                The tech giants that powered 2024's rally are facing some hard questions in 2026. AI spending is still massive, but investors want to see actual profits, not just promises. Here's the tea:
-            </p>
-
-            <div class="stock-card down">
-                <div class="stock-header">
-                    <span class="stock-ticker">NVDA 🎮</span>
-                    <span class="stock-move down">-8% (Feb)</span>
+            <div class="blog-post-header">
+                <span class="blog-post-tag">Market Update</span>
+                <h1>Market Update: S&P 500 Stuck at 7K, Big Tech Bleeds, Crypto Catches Its Breath</h1>
+                <div class="blog-post-meta">
+                    <span>February 17, 2026</span>
+                    <span>•</span>
+                    <span>7 min read</span>
                 </div>
-                <p>The AI chip king is getting hit as investors worry about competition and whether the AI boom is cooling off. Still up huge over 2 years, but the easy money might be behind us.</p>
             </div>
+            
+            <div class="blog-content">
+                <p><strong>Yo, what's good traders?</strong> It's been a wild few days in the markets, and if you've been too busy grinding ranked or catching up on sleep, don't worry—I got you. Here's everything that went down from Valentine's Day through Presidents' Day weekend.</p>
+                
+                <p>Spoiler alert: Big Tech is taking Ls, the S&P 500 is playing hard to get with that 7,000 level, and crypto is... actually being surprisingly chill? Let's dive in.</p>
 
-            <div class="stock-card down">
-                <div class="stock-header">
-                    <span class="stock-ticker">TSLA ⚡</span>
-                    <span class="stock-move down">-12% (Feb)</span>
+                <h2>📊 The Big Picture: S&P 500 Can't Catch a Break</h2>
+                
+                <p>The S&P 500 has been flirting with the 7,000 mark like that one situationship you can't seem to escape. It touched the level earlier in the week, got rejected harder than a Bronze player in Diamond lobbies, and now we're sitting around <strong>6,917</strong>.</p>
+                
+                <p>The Nasdaq took an even bigger hit, dropping over 1% as tech stocks got absolutely demolished. The Dow? Yeah, it joined the pity party too, shedding over 600 points at one point this week. Not exactly the vibes we were hoping for.</p>
+                
+                <p>What's driving this? A combo of profit-taking after the recent run-up, some nervousness about Fed policy, and honestly—Big Tech earnings didn't deliver the dopamine hit investors were craving.</p>
+
+                <h2>💻 Big Tech: The Magnificent Seven Become the Magnificent... Meh</h2>
+                
+                <p>Remember when the "Magnificent Seven" could do no wrong? Yeah, about that...</p>
+
+                <div class="stock-card">
+                    <h4><span class="ticker">MSFT</span> Microsoft</h4>
+                    <p>Down a brutal <span class="change-down">16.75% YTD</span>—the worst performer of the bunch. Azure growth is slowing, and Wall Street is questioning whether that massive AI spend is actually paying off. Satya's gonna need to cook something special on the next earnings call.</p>
                 </div>
-                <p>Tesla's been a rollercoaster. EV competition is heating up, and the robotaxi promises are still just... promises. Elon's political involvement isn't helping the stock price either.</p>
-            </div>
 
-            <div class="stock-card">
-                <div class="stock-header">
-                    <span class="stock-ticker">GOOGL 🔍</span>
-                    <span class="stock-move up">+3% (Feb)</span>
+                <div class="stock-card">
+                    <h4><span class="ticker">AMZN</span> Amazon</h4>
+                    <p>Also getting clapped with a <span class="change-down">13.24% drop</span> this year. AWS is still the cloud king, but growth is decelerating and retail margins are getting squeezed. That $200 billion capex announcement? Investors are side-eyeing it hard.</p>
                 </div>
-                <p>Google's actually holding up better than most. Their AI integration (Gemini) and cloud business are showing real revenue. Sometimes being second to the AI party means you learn from the first guy's mistakes.</p>
-            </div>
 
-            <h2>Crypto: The $50K Question</h2>
+                <div class="stock-card">
+                    <h4><span class="ticker">NVDA</span> Nvidia</h4>
+                    <p>Trading around $183, basically flat over the past 6 months. The AI chip demand story is still solid (analysts have a median price target of $265), but concerns about custom AI chips from competitors and China export restrictions are keeping a lid on things. Is this a buying opportunity or a value trap? Place your bets.</p>
+                </div>
 
-            <p>
-                Bitcoin's been on a wild ride. After hitting highs above $100K in late 2025, it's been sliding and now trades in the mid-$60K range. That's still up huge from 2024, but the momentum has definitely shifted.
-            </p>
+                <div class="stock-card">
+                    <h4><span class="ticker">TSLA</span> Tesla</h4>
+                    <p>Down <span class="change-down">6.58%</span> this year. The Cybertruck hype is fading, competition in EVs is heating up globally, and Elon's been... well, Elon. Robotaxis are still "coming soon" (where have we heard that before?).</p>
+                </div>
 
-            <p>
-                Here's where it gets spicy: <strong>Standard Chartered</strong>, a major international bank, just predicted Bitcoin could fall to <strong>$50,000</strong> and Ethereum to <strong>$1,400</strong> before recovering later in 2026. Their end-of-year targets? Still bullish at $100K BTC and $4K ETH—but they expect pain first.
-            </p>
+                <div class="stock-card">
+                    <h4><span class="ticker">AAPL</span> Apple</h4>
+                    <p>Relatively "okay" with a <span class="change-down">4.50% decline</span>. The Vision Pro hasn't exactly set the world on fire, and iPhone sales are plateauing. But hey, at least they're not Microsoft!</p>
+                </div>
 
-            <p>
-                Why the drop? A few things:
-            </p>
+                <p><strong>The takeaway?</strong> The AI trade is getting a reality check. All that capex spending (we're talking $700 billion combined from Meta, Amazon, and Google alone) needs to start showing actual returns, or investors are gonna keep rage-quitting these positions.</p>
 
-            <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #334155;">
-                <li><strong>ETF flows slowing:</strong> The Bitcoin ETF hype train is losing steam</li>
-                <li><strong>Fed uncertainty:</strong> Rate cut hopes are fading</li>
-                <li><strong>Profit taking:</strong> After massive gains, some investors are cashing out</li>
-                <li><strong>Macro worries:</strong> Geopolitical tensions and inflation concerns</li>
-            </ul>
+                <h2>₿ Crypto Corner: Bitcoin Holds the Line, Ethereum Takes a Nap</h2>
+                
+                <p>While stocks were bleeding, crypto was surprisingly resilient. Here's the TL;DR:</p>
 
-            <div class="highlight-box">
-                <h3>💡 The Takeaway</h3>
-                <p>If you're dollar-cost averaging into crypto (buying a little bit regularly), this volatility is actually your friend. Lower prices = more coins for your money. Just don't invest more than you can afford to lose.</p>
-            </div>
+                <ul>
+                    <li><strong>Bitcoin (BTC):</strong> Holding steady around <strong>$68,000-$69,000</strong>. After dipping below $67K earlier in the week, the bulls stepped in and defended the key support level. Classic "buy the dip" behavior.</li>
+                    <li><strong>Ethereum (ETH):</strong> Trading near <strong>$2,050</strong>, down from recent highs but not catastrophic. Some analysts are still bullish long-term with predictions of $7K-$9K by 2030, but short-term momentum is meh.</li>
+                </ul>
 
-            <h2>What to Watch This Week</h2>
+                <h3>🔥 Crypto News That Actually Matters</h3>
+                
+                <p><strong>ETF Boom Continues:</strong> Crypto ETFs are gaining serious traction in 2026. Regulatory tailwinds are helping, with faster approval timelines and more products hitting the market. BlackRock dropped a bombshell prediction: even a <strong>1% crypto allocation in Asia could unlock $2 trillion</strong> in new flows. That's not a typo. Trillion with a T.</p>
+                
+                <p><strong>Institutional Adoption:</strong> Big banks are finally getting in on the action. Morgan Stanley and other major players are rolling out crypto services to clients. The "institutional money is coming" meme is becoming reality.</p>
+                
+                <p><strong>Regulatory Clarity:</strong> The SEC seems to be chilling out a bit (relatively speaking). Fewer enforcement actions, more guidance, and a generally more constructive tone from regulators. Is this the beginning of crypto's "adult phase"? Maybe.</p>
 
-            <p>
-                <strong>1. Fed Minutes (Wednesday):</strong> The Federal Reserve releases minutes from their last meeting. Any hints about rate cuts (or lack thereof) will move markets.
-            </p>
+                <div class="highlight-box">
+                    <h3>🎮 Gamer Take</h3>
+                    <p>If you're holding crypto, this is actually a decent time to DCA (dollar-cost average) if you believe in the long-term thesis. Bitcoin holding $68K despite stock market volatility shows there's real demand underneath. Just don't yolo your rent money—this is still crypto, and it can still nuke 50% overnight because some whale sneezed.</p>
+                </div>
 
-            <p>
-                <strong>2. Earnings Season Wrap-Up:</strong> Most big companies have reported, but watch for any surprise warnings or optimistic guidance that could shift sentiment.
-            </p>
+                <h2>🌍 Macro Watch: Fed, Geopolitics, and Economic Data</h2>
+                
+                <p>Here's what's moving the macro needle:</p>
 
-            <p>
-                <strong>3. Crypto ETF Flows:</strong> Keep an eye on whether money is flowing into or out of Bitcoin ETFs. It's been a good predictor of price direction.
-            </p>
+                <ul>
+                    <li><strong>Fed Policy:</strong> The Fed is in "watch and wait" mode. Inflation data has been sticky, and traders are pricing in fewer rate cuts than they were hoping for. The market wants rate cuts. The Fed is saying "not so fast." Classic standoff.</li>
+                    <li><strong>Geopolitical Tensions:</strong> Turmoil in Venezuela and Iran, plus tighter sanctions on Russia, are keeping oil prices elevated and adding uncertainty to the mix. Not great for risk assets.</li>
+                    <li><strong>Economic Data:</strong> Mixed signals overall. Some indicators show the economy is cooling, others show resilience. The "soft landing" narrative is still alive, but it's looking a bit more fragile than it did a month ago.</li>
+                </ul>
 
-            <h2>The Bottom Line</h2>
+                <p>The Federal Reserve also released its 2026 stress test scenarios, which is basically them saying "here's how we'd break the banks if we wanted to." It's a routine exercise, but it reminds everyone that the financial system is being monitored closely.</p>
 
-            <p>
-                Markets are in a weird spot. The AI revolution is real, but the hype got ahead of reality. Crypto proved it wasn't a one-way ticket to the moon. And the Fed's still figuring out if they can cut rates without reigniting inflation.
-            </p>
+                <div class="watch-list">
+                    <h3>👀 What to Watch This Week</h3>
+                    <ul>
+                        <li><strong>More Big Tech Earnings:</strong> Keep an eye on any guidance updates. If management sounds nervous about AI ROI, expect more selling.</li>
+                        <li><strong>Fed Speaker Circuit:</strong> Any Fed officials dropping hints about rate cut timing will move markets instantly.</li>
+                        <li><strong>Crypto ETF Flows:</strong> Watch for sustained inflows into Bitcoin and Ethereum ETFs. That's your signal that institutional adoption is real, not just hype.</li>
+                        <li><strong>S&P 500 at 7,000:</strong> Can we finally break and hold this level? Or are we looking at a deeper pullback? The next few sessions will be telling.</li>
+                        <li><strong>Nvidia Earnings (Next Month):</strong> This could be the catalyst that either reignites the AI trade or buries it. No pressure, Jensen.</li>
+                    </ul>
+                </div>
 
-            <p>
-                For young investors, this is actually a good thing. Volatility creates opportunities. Just remember:
-            </p>
+                <h2>🎯 Final Boss Thoughts</h2>
+                
+                <p>The market is in a weird spot right now. We've had a massive run-up, valuations are stretched, and the easy money from the AI hype train is getting harder to find. But the economy isn't collapsing, earnings are still decent (just not amazing), and there's plenty of liquidity sloshing around.</p>
+                
+                <p>For the 18-30 crowd: This is actually a good time to zoom out and remember why you're investing. If you're dollar-cost averaging into index funds, keep doing your thing. If you're picking individual stocks, be selective—quality matters more in choppy markets. And if you're in crypto, make sure you're only risking what you can afford to lose completely.</p>
+                
+                <p>The game isn't over. It's just getting harder. Time to level up your strategy.</p>
+                
+                <p><em>Stay liquid, stay informed, and may your portfolios be ever green. 🎮📈</em></p>
 
-            <ul style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #334155;">
-                <li>Don't panic sell when things drop</li>
-                <li>Don't FOMO buy when things pump</li>
-                <li>Diversify (don't put everything in one stock or crypto)</li>
-                <li>Invest for the long term (5+ years)</li>
-            </ul>
-
-            <p>
-                Want to test your market knowledge? Take our <a href="/investing-quiz.html">Investing Basics Quiz</a> and see if you can spot the difference between a dip and a crash.
-            </p>
-
-            <div class="cta-box">
-                <h3>Level Up Your Finance Game 🎮</h3>
-                <p>New to investing? Start with our free quizzes to learn the basics before you risk real money.</p>
-                <a href="/quizzes/" class="btn btn-primary">Take a Quiz →</a>
+                <hr style="margin: 48px 0; border: none; border-top: 1px solid #e2e8f0;">
+                
+                <p style="font-size: 0.875rem; color: #64748b;"><em>Disclaimer: This is not financial advice. I'm just a blog post. Do your own research, consult with a financial advisor, and never invest more than you can afford to lose. Past performance doesn't guarantee future results. You know the drill.</em></p>
             </div>
         </div>
     </article>
 
+    <!-- Footer -->
     <footer class="footer" style="background: #0f0d2e; color: white; padding: 60px 0 30px;">
         <div class="container">
             <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
                 <div class="footer-brand">
                     <h3 style="font-size: 1.25rem; margin-bottom: 16px;">💳 Credit Gamer Area</h3>
-                    <p style="color: #94a3b8; font-size: 0.875rem; line-height: 1.6;">Helping gamers and young adults master credit, finance, and money-making skills.</p>
+                    <p style="color: #94a3b8; font-size: 0.875rem; line-height: 1.6;">Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4 style="font-size: 1rem; margin-bottom: 16px;">Learn</h4>
                     <ul style="list-style: none; padding: 0;">
-                        <li><a href="/credit-basics-quiz.html" style="color: #94a3b8; text-decoration: none;">Credit Basics</a></li>
-                        <li><a href="/investing-quiz.html" style="color: #94a3b8; text-decoration: none;">Investing</a></li>
-                        <li><a href="/quizzes/" style="color: #94a3b8; text-decoration: none;">All Quizzes</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/credit-basics-quiz.html" style="color: #94a3b8; text-decoration: none;">Credit Basics</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/investing-quiz.html" style="color: #94a3b8; text-decoration: none;">Investing</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/quizzes/" style="color: #94a3b8; text-decoration: none;">All Quizzes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 style="font-size: 1rem; margin-bottom: 16px;">Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none;">Blog</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/resources.html" style="color: #94a3b8; text-decoration: none;">Calculators</a></li>
+                        <li style="margin-bottom: 8px;"><a href="/faq.html" style="color: #94a3b8; text-decoration: none;">FAQ</a></li>
                     </ul>
                 </div>
             </div>
