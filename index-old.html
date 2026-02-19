@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TGP4RRFC');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers (meta equivalent for static sites) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.googletagmanager.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <!-- Google Tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CWB6BPJRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Default consent - denied until user accepts
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+        
+        // Configure GA4
+        gtag('config', 'G-3CWB6BPJRN', {
+            'send_page_view': false,
+            'cookie_flags': 'SameSite=None;Secure',
+            'cookie_expires': 63072000,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': false,
+            'transport_type': 'beacon',
+            'custom_map': {
+                'dimension1': 'user_type',
+                'dimension2': 'quiz_completed',
+                'dimension3': 'content_category'
+            }
+        });
+        
+        // Check for existing consent
+        const consent = localStorage.getItem('cookie-consent');
+        if (consent === 'accepted') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            gtag('event', 'page_view');
+        }
+    </script>
+    
+    <title>Credit Gamer Area - Learn Credit & Finance Through Quizzes (Free)</title>
+    <meta name="description" content="Master credit scores, taxes, investing, and money-making with free interactive quizzes. Built for gamers and young adults ages 18-30. No sign-up required.">
+    <meta name="keywords" content="credit quiz, finance quiz, learn credit, credit score, personal finance, money tips, investing quiz, taxes quiz, financial literacy">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.creditgamerarea.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/">
+    <meta property="og:title" content="Credit Gamer Area - Learn Credit & Finance Through Quizzes">
+    <meta property="og:description" content="Master credit scores, taxes, investing, and money-making with free interactive quizzes. Built for gamers and young adults.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/">
+    <meta property="twitter:title" content="Credit Gamer Area - Learn Credit & Finance Through Quizzes">
+    <meta property="twitter:description" content="Master credit scores, taxes, investing, and money-making with free interactive quizzes.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="square-quiz-cards.css">
+    <link rel="stylesheet" href="clean-features.css">
+    <link rel="stylesheet" href="stats-bar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 with Cookie Consent -->
+    <script src="creditgamerarea-ga.js"></script>
+    
+    <!-- Cookie Consent Banner -->
+    <script src="creditgamerarea-consent.js" defer></script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Credit Gamer Area",
+        "url": "https://www.creditgamerarea.com/",
+        "description": "Master credit, finance, taxes, and money-making strategies with free interactive quizzes designed for gamers and Gen Z.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.creditgamerarea.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Credit Gamer Area",
+            "url": "https://www.creditgamerarea.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.creditgamerarea.com/logo.png"
+            },
+            "sameAs": [
+                "https://twitter.com/CreditGamerArea"
+            ],
+            "founder": {
+                "@type": "Organization",
+                "name": "Credit Gamer Area Team"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Credit Basics Quiz",
+                    "url": "https://www.creditgamerarea.com/credit-basics-quiz.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Credit Cards Quiz",
+                    "url": "https://www.creditgamerarea.com/credit-cards-quiz.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Investing Quiz",
+                    "url": "https://www.creditgamerarea.com/investing-quiz.html"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- FAQ Structured Data for AI/LLM -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Credit Gamer Area?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Credit Gamer Area is a free educational platform that helps gamers and young adults learn personal finance through interactive quizzes. Topics include credit building, investing, taxes, budgeting, and making money online."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the quizzes really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all quizzes on Credit Gamer Area are 100% free. No sign-up required, no hidden fees, and no premium content. Everything is accessible immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who is Credit Gamer Area for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Credit Gamer Area is designed for gamers, Gen Z, young adults (ages 18-30), and anyone who wants to learn personal finance in a fun, engaging way. The content uses gaming metaphors and RPG-style progression to make finance approachable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What topics do the quizzes cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Quizzes cover credit basics, credit cards, investing, taxes, student loans, budgeting, banking, making money online, auto insurance, prediction markets, car shopping, auto loans, and AI skills for earning."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.creditgamerarea.com/"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Credit Gamer Area",
+        "url": "https://www.creditgamerarea.com/",
+        "logo": "https://www.creditgamerarea.com/logo.png",
+        "sameAs": [
+            "https://twitter.com/CreditGamerArea"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGP4RRFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#quizzes">Quizzes</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+            <button class="nav-cta" onclick="window.location.href='/recommended.html'">⭐ Best Tools</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🔥 50,000+ People Leveled Up Their Credit</div>
+                <h1>Can You Beat the Average Credit Score?</h1>
+                <p class="hero-subtitle">Take this 2-minute quiz to find out if your money IQ is Elite, Average, or Needs Work. <strong>72% of people fail question 7.</strong></p>
+                <div class="hero-cta">
+                    <button class="btn-primary pulse" onclick="startQuiz()">🎮 Start Quiz (Free)</button>
+                    <button class="btn-secondary" onclick="scrollToLearn()">See Leaderboard</button>
+                </div>
+                
+                <div class="hero-trust">
+                    <span>⚡ 2 Min Quiz</span>
+                    <span>🏆 Instant Score</span>
+                    <span>📤 Share Results</span>
+                </div>
+                
+                <div class="social-proof-bar">
+                    <div class="live-counter">🔴 <span id="live-users">1,247</span> people taking the quiz right now</div>
+                    <div class="recent-scores">
+                        <span class="score-pill">Alex got 9/10 ⭐</span>
+                        <span class="score-pill">Jordan got 7/10</span>
+                        <span class="score-pill">Taylor got 10/10 🔥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Unit 1 -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <!-- Google AdSense Ad Unit -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Why Credit Matters Section -->
+    <section class="why-credit" id="learn">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Gamers Are Obsessed With Credit</h2>
+                <p class="section-subtitle">Your credit score is your real-life character stat. Higher score = unlock better gear (apartments, cars, credit cards with insane rewards).</p>
+            </div>
+            
+            <div class="feature-grid-clean">
+                <div class="feature-card-clean">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Premium Credit Cards</h3>
+                    <p>$500+ signup bonuses, 5% cashback, and free travel perks</p>
+                </div>
+                
+                <div class="feature-card-clean">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Dream Apartment</h3>
+                    <p>Instant approval, zero deposit, first pick of units</p>
+                </div>
+                
+                <div class="feature-card-clean">
+                    <div class="feature-icon">💰</div>
+                    <h3>Save on Your Car</h3>
+                    <p>Save $10,000+ in interest on a $25k auto loan</p>
+                </div>
+                
+                <div class="feature-card-clean">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Side Hustle Funding</h3>
+                    <p>Business credit cards and loans to scale your hustle</p>
+                </div>
+            </div>
+            
+            <div class="cta-box-clean">
+                <p>🎯 <strong>Challenge:</strong> Take the Credit Basics Quiz. Score 8/10+ and you know more than 70% of Americans.</p>
+                <button class="btn-primary" onclick="startQuiz()">Accept Challenge →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section class="topics" id="topics">
+        <div class="container">
+            <h2>Learn & Quiz Yourself</h2>
+            <p class="section-subtitle">Master these essential money topics through 10-question quizzes</p>
+            
+            <div class="topic-grid">
+                <a href="/credit-basics-quiz.html" class="topic-card credit">
+                    <div class="topic-badge">🔥 Popular</div>
+                    <div class="topic-icon">💳</div>
+                    <h3>Credit Basics</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.9</span>
+                    </div>
+                </a>
+                <a href="/credit-cards-quiz.html" class="topic-card credit">
+                    <div class="topic-icon">💰</div>
+                    <h3>Credit Cards 101</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                </a>
+                <a href="/taxes-quiz.html" class="topic-card taxes">
+                    <div class="topic-badge">🆕 New</div>
+                    <div class="topic-icon">📋</div>
+                    <h3>Taxes for Beginners</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                </a>
+                <a href="/student-loans-quiz.html" class="topic-card banking">
+                    <div class="topic-icon">🎓</div>
+                    <h3>Student Loans</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.6</span>
+                    </div>
+                </a>
+                <a href="/investing-quiz.html" class="topic-card investing">
+                    <div class="topic-icon">📈</div>
+                    <h3>Investing Basics</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                </a>
+                <a href="/make-money-online-quiz.html" class="topic-card side-hustle">
+                    <div class="topic-badge">📈 Trending</div>
+                    <div class="topic-icon">💻</div>
+                    <h3>Make Money Online</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.9</span>
+                    </div>
+                </a>
+                <a href="/budgeting-quiz.html" class="topic-card banking">
+                    <div class="topic-icon">🎯</div>
+                    <h3>Budgeting</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                </a>
+                <a href="/banking-quiz.html" class="topic-card banking">
+                    <div class="topic-icon">🏦</div>
+                    <h3>Banking Basics</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.5</span>
+                    </div>
+                </a>
+                <a href="/prediction-markets-quiz.html" class="topic-card prediction">
+                    <div class="topic-icon">🎲</div>
+                    <h3>Prediction Markets</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.6</span>
+                    </div>
+                </a>
+                <a href="/quiz-credit-rewards.html" class="topic-card credit">
+                    <div class="topic-badge">🆕 New</div>
+                    <div class="topic-icon">🎁</div>
+                    <h3>Credit Card Rewards</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.9</span>
+                    </div>
+                </a>
+                <a href="/quiz-fed-rates.html" class="topic-card investing">
+                    <div class="topic-badge">🆕 New</div>
+                    <div class="topic-icon">📊</div>
+                    <h3>Fed Rates & Your Money</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                </a>
+                <a href="/auto-loans-quiz.html" class="topic-card auto">
+                    <div class="topic-icon">🚗</div>
+                    <h3>Auto Loans</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.5</span>
+                    </div>
+                </a>
+                <a href="/car-shopping-quiz.html" class="topic-card auto">
+                    <div class="topic-icon">🚙</div>
+                    <h3>Car Shopping</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.6</span>
+                    </div>
+                </a>
+                <a href="/auto-insurance-quiz.html" class="topic-card insurance">
+                    <div class="topic-icon">🛡️</div>
+                    <h3>Auto Insurance</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.5</span>
+                    </div>
+                </a>
+                <a href="/ai-skills-quiz.html" class="topic-card career">
+                    <div class="topic-icon">🤖</div>
+                    <h3>AI Skills</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                </a>
+                <a href="/glp1-effects-quiz.html" class="topic-card health">
+                    <div class="topic-icon">💉</div>
+                    <h3>GLP-1 Effects</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.6</span>
+                    </div>
+                </a>
+                <a href="/side-hustle-scam-quiz.html" class="topic-card side-hustle">
+                    <div class="topic-icon">🛡️</div>
+                    <h3>Side Hustle Scams</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                </a>
+
+                <a href="/games-that-pay-quiz.html" class="topic-card side-hustle">
+                    <div class="topic-icon">🎮</div>
+                    <h3>Games That Pay</h3>
+                    <div class="topic-meta">
+                        <span>10 Questions</span>
+                        <span>⭐ 4.9</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Unit 2 -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Featured Quiz Section -->
+    <section class="featured-quiz" id="quizzes">
+        <div class="container">
+            <div class="featured-quiz-content">
+                <div class="featured-quiz-text">
+                    <div class="featured-badge">⭐ Featured Quiz</div>
+                    <h2>The Ultimate Credit Score Quiz</h2>
+                    <p>Think you know credit? Test your knowledge with our most popular quiz. 10 questions covering everything from FICO scores to credit utilization.</p>
+                    
+                    <ul class="quiz-features">
+                        <li>✓ Learn why your score matters</li>
+                        <li>✓ Understand credit utilization</li>
+                        <li>✓ Discover how to boost your score fast</li>
+                        <li>✓ Get personalized tips at the end</li>
+                    </ul>
+                    
+                    <button class="btn-primary btn-large" onclick="startQuiz()">
+                        🎮 Start Quiz Now
+                    </button>
+                </div>
+                
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-icon">👥</span>
+                        <div class="stat-content">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Players</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-icon">⭐</span>
+                        <div class="stat-content">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-icon">❓</span>
+                        <div class="stat-content">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Questions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="stat-icon">⏱️</span>
+                        <div class="stat-content">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>Latest from the Blog</h2>
+            <p class="section-subtitle">Deep dives into credit, finance, and leveling up your money game</p>
+            
+            <div class="blog-grid">
+                <a href="/blog/ai-for-moms-part-1.html" class="blog-card featured">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);">
+                        <span class="blog-tag">AI Skills</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI for Working Moms: 15 Skills to Make Money (No Coding)</h3>
+                        <p>Learn how to use AI to make extra income. No technical skills needed - just practical AI skills any working mom can master.</p>
+                        
+                        <div class="blog-meta">
+                            <span>Feb 20, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/ai-for-moms-part-2.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <span class="blog-tag">AI Skills</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI for Working Moms: 15 Skills to Streamline Your Life</h3>
+                        <div class="blog-meta">
+                            <span>Feb 20, 2026</span>
+                            <span>•</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/ai-skills-for-moms-quiz.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);">
+                        <span class="blog-tag">Quiz</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Quiz: Which AI Skills Should You Learn?</h3>
+                        <div class="blog-meta">
+                            <span>Feb 20, 2026</span>
+                            <span>•</span>
+                            <span>5 min quiz</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/lower-car-insurance.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="blog-tag">Insurance</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Lower Your Car Insurance: 8 Proven Strategies That Work</h3>
+                        <p>Save $500+ per year with these proven strategies. Working moms can cut premiums without sacrificing coverage. I personally saved $647 in just 3 hours of research.</p>
+                        
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/best-finance-youtubers.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        <span class="blog-tag">YouTube</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>15 Best Finance YouTubers to Watch in 2026</h3>
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/best-budget-youtubers.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="blog-tag">Budgeting</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>12 Best Budget YouTubers to Follow</h3>
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/best-budgeting-apps-working-moms.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                        <span class="blog-tag">Budgeting</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>7 Best Budgeting Apps for Working Moms in 2026</h3>
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/best-high-yield-savings.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span class="blog-tag">Banking</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Best High-Yield Savings Accounts for Working Moms</h3>
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/best-finance-instagram-moms.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #e1306c 0%, #f77737 100%);">
+                        <span class="blog-tag">Instagram</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>10 Best Finance Instagram Accounts for Working Moms</h3>
+                        <div class="blog-meta">
+                            <span>Feb 19, 2026</span>
+                            <span>•</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="/blog/" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span class="blog-tag">Side Hustle</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>10 Ways Gamers Can Make Money Online in 2026</h3>
+                        <div class="blog-meta">
+                            <span>Feb 14, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="center-cta">
+                <a href="/blog-interest-rate-cap.html" class="btn-secondary">Read All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">🎯</div>
+                <h2>Level Up Your Finance Game</h2>
+                <p>Get new quizzes, money tips, and exclusive content delivered weekly. No spam, just value.</p>
+                
+                <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+                
+                <p class="newsletter-disclaimer">Join 10,000+ gamers learning to master their money 💰</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>💳 Credit Gamer Area</h3>
+                    <p>Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                    
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">TikTok</a>
+                        <a href="#">Discord</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/credit-basics-quiz.html">Credit Basics</a></li>
+                        <li><a href="/credit-cards-quiz.html">Credit Cards</a></li>
+                        <li><a href="/taxes-quiz.html">Taxes</a></li>
+                        <li><a href="/investing-quiz.html">Investing</a></li>
+                        <li><a href="/student-loans-quiz.html">Student Loans</a></li>
+                        <li><a href="/budgeting-quiz.html">Budgeting</a></li>
+                        <li><a href="/banking-quiz.html">Banking</a></li>
+                        <li><a href="/make-money-online-quiz.html">Make Money Online</a></li>
+                        <li><a href="/side-hustle-scam-quiz.html">Side Hustle Scams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/quizzes/">All Quizzes</a></li>
+                        <li><a href="/resources.html">Financial Calculators</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/sitemap.html">Sitemap</a></li>
+                        <li><a href="/blog/">Credit Guides</a></li>
+                        <li><a href="/blog/">Money Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- GA4 Event Tracking -->
+    <script>
+        // Track quiz starts
+        function trackQuizStart(quizName) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'quiz_start', {
+                    'quiz_name': quizName,
+                    'location': 'homepage',
+                    'user_type': localStorage.getItem('cookie-consent') === 'accepted' ? 'consented' : 'anonymous'
+                });
+            }
+        }
+        
+        // Track CTA clicks
+        function trackCTA(ctaName, location) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'cta_name': ctaName,
+                    'location': location,
+                    'user_type': localStorage.getItem('cookie-consent') === 'accepted' ? 'consented' : 'anonymous'
+                });
+            }
+        }
+        
+        // Track quiz card clicks
+        document.querySelectorAll('.topic-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const quizName = this.querySelector('h3')?.textContent || 'unknown';
+                trackQuizStart(quizName);
+            });
+        });
+        
+        // Track newsletter signup
+        function handleSubscribe(event) {
+            event.preventDefault();
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'newsletter_signup', {
+                    'location': 'homepage_footer',
+                    'user_type': localStorage.getItem('cookie-consent') === 'accepted' ? 'consented' : 'anonymous'
+                });
+            }
+            // Your existing subscribe logic
+            alert('Thanks for subscribing!');
+        }
+        
+        // Track scroll depth
+        let scrollTracked = {25: false, 50: false, 75: false, 90: false};
+        window.addEventListener('scroll', function() {
+            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            
+            Object.keys(scrollTracked).forEach(depth => {
+                if (scrollPercent >= depth && !scrollTracked[depth]) {
+                    scrollTracked[depth] = true;
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll_depth', {
+                            'depth': depth + '%',
+                            'page': 'homepage'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Track time on page
+        let timeOnPage = 0;
+        setInterval(function() {
+            timeOnPage += 10;
+            if (timeOnPage === 30 || timeOnPage === 60 || timeOnPage === 180) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'time_on_page', {
+                        'time_seconds': timeOnPage,
+                        'page': 'homepage'
+                    });
+                }
+            }
+        }, 10000);
+        
+        // Override startQuiz to track
+        const originalStartQuiz = window.startQuiz;
+        window.startQuiz = function() {
+            trackQuizStart('main_hero_quiz');
+            if (originalStartQuiz) originalStartQuiz();
+        };
+        
+        // Track outbound clicks
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'outbound_click', {
+                        'url': this.href,
+                        'text': this.textContent.trim()
+                    });
+                }
+            });
+        });
+        
+        // Add source tracking to quiz links
+        document.querySelectorAll('a[href*="-quiz.html"]').forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('utm_source', 'homepage');
+            url.searchParams.set('utm_medium', 'quiz_card');
+            url.searchParams.set('utm_campaign', 'quiz_discovery');
+            link.href = url.toString();
+        });
+        
+        // reCAPTCHA v3 - Bot Protection
+        (function() {
+            const SITE_KEY = '6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji';
+            
+            window.recaptchaToken = null;
+            window.recaptchaReady = false;
+            
+            function initRecaptcha() {
+                if (typeof grecaptcha === 'undefined') {
+                    setTimeout(initRecaptcha, 100);
+                    return;
+                }
+                grecaptcha.ready(function() {
+                    window.recaptchaReady = true;
+                    executeRecaptcha('page_load');
+                });
+            }
+            
+            window.executeRecaptcha = function(action) {
+                return new Promise((resolve, reject) => {
+                    if (!window.recaptchaReady) {
+                        reject('Not ready');
+                        return;
+                    }
+                    grecaptcha.execute(SITE_KEY, { action: action })
+                        .then(function(token) {
+                            window.recaptchaToken = token;
+                            sessionStorage.setItem('recaptcha_token', JSON.stringify({
+                                token: token,
+                                timestamp: Date.now(),
+                                action: action
+                            }));
+                            resolve(token);
+                        })
+                        .catch(reject);
+                });
+            };
+            
+            // Track quiz interactions with reCAPTCHA
+            document.querySelectorAll('a[href*="-quiz.html"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    executeRecaptcha('quiz_start');
+                });
+            });
+            
+            // Refresh token every 90 seconds
+            setInterval(function() {
+                if (window.recaptchaReady) executeRecaptcha('token_refresh');
+            }, 90000);
+            
+            initRecaptcha();
+        })();
+    </script>
+</body>
+</html>
