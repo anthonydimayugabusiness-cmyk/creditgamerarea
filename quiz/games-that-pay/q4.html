@@ -62,15 +62,16 @@
                 <div class="question">JustPlay's biggest advantage is:</div>
                 
                 <button class="option" id="opt0" onclick="answer(0)">Highest payouts</button>
-                <button class="option" id="opt1" onclick="answer(1)">No minimum cashout threshold</button>
-                <button class="option" id="opt2" onclick="answer(2)">Best games</button>
-                <button class="option" id="opt3" onclick="answer(3)">Referral bonuses</button>
+                <button class="option" id="opt1" onclick="answer(1)">Best games</button>
+                <button class="option" id="opt2" onclick="answer(2)">Referral bonuses</button>
+                <button class="option" id="opt3" onclick="answer(3)">No minimum cashout threshold</button>
                 
                 <div id="exp" class="explanation">
                     <strong id="res"></strong><br><br>
                     JustPlay lets you cash out instantly to PayPal with no minimum. Most apps require -25 to cash out.<br><br>
                     <a href="q5.html" class="next-btn">Next Question →</a>
                 </div>
+                
             </div>
             
             <div class="ad-container">
@@ -88,10 +89,11 @@
     </footer>
 
     <script>
+        
         let score = parseInt(sessionStorage.getItem('gtp_score') || '0');
         
         function answer(selected) {
-            const correct = 1;
+            const correct = 3;
             const options = document.querySelectorAll('.option');
             const exp = document.getElementById('exp');
             const res = document.getElementById('res');
@@ -114,6 +116,7 @@
             
             exp.classList.add('show');
         }
+        
     </script>
 </body>
 </html>

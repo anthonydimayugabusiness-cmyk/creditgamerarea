@@ -62,15 +62,16 @@
                 <div class="question">A gaming app asks for your Social Security Number to 'verify payouts.' You should:</div>
                 
                 <button class="option" id="opt0" onclick="answer(0)">Provide it - they need it for taxes</button>
-                <button class="option" id="opt1" onclick="answer(1)">Delete the app - never give SSN to games</button>
-                <button class="option" id="opt2" onclick="answer(2)">Give a fake one</button>
-                <button class="option" id="opt3" onclick="answer(3)">Ask support why</button>
+                <button class="option" id="opt1" onclick="answer(1)">Give a fake one</button>
+                <button class="option" id="opt2" onclick="answer(2)">Ask support why</button>
+                <button class="option" id="opt3" onclick="answer(3)">Delete the app - never give SSN to games</button>
                 
                 <div id="exp" class="explanation">
                     <strong id="res"></strong><br><br>
                     NEVER give your SSN to gaming apps. Legit apps pay through PayPal or gift cards without sensitive info.<br><br>
                     <a href="q9.html" class="next-btn">Next Question →</a>
                 </div>
+                
             </div>
             
             <div class="ad-container">
@@ -88,10 +89,11 @@
     </footer>
 
     <script>
+        
         let score = parseInt(sessionStorage.getItem('gtp_score') || '0');
         
         function answer(selected) {
-            const correct = 1;
+            const correct = 3;
             const options = document.querySelectorAll('.option');
             const exp = document.getElementById('exp');
             const res = document.getElementById('res');
@@ -114,6 +116,7 @@
             
             exp.classList.add('show');
         }
+        
     </script>
 </body>
 </html>

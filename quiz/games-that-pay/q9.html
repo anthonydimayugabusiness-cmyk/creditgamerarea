@@ -61,8 +61,8 @@
                 
                 <div class="question">Which payout method is SAFEST for gaming apps?</div>
                 
-                <button class="option" id="opt0" onclick="answer(0)">Direct bank transfer</button>
-                <button class="option" id="opt1" onclick="answer(1)">PayPal or gift cards</button>
+                <button class="option" id="opt0" onclick="answer(0)">PayPal or gift cards</button>
+                <button class="option" id="opt1" onclick="answer(1)">Direct bank transfer</button>
                 <button class="option" id="opt2" onclick="answer(2)">Cryptocurrency</button>
                 <button class="option" id="opt3" onclick="answer(3)">Check by mail</button>
                 
@@ -71,6 +71,7 @@
                     PayPal and gift cards are safest. Never give bank details to gaming apps.<br><br>
                     <a href="q10.html" class="next-btn">Next Question →</a>
                 </div>
+                
             </div>
             
             <div class="ad-container">
@@ -88,10 +89,11 @@
     </footer>
 
     <script>
+        
         let score = parseInt(sessionStorage.getItem('gtp_score') || '0');
         
         function answer(selected) {
-            const correct = 1;
+            const correct = 0;
             const options = document.querySelectorAll('.option');
             const exp = document.getElementById('exp');
             const res = document.getElementById('res');
@@ -114,6 +116,7 @@
             
             exp.classList.add('show');
         }
+        
     </script>
 </body>
 </html>

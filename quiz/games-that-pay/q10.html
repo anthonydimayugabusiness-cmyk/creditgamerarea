@@ -31,11 +31,6 @@
         .next-btn:hover { opacity: 0.9; }
         .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
         .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
-        .results-container { text-align: center; padding: 40px 20px; }
-        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
-        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #8b5cf6, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
-        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
-        .results-subtitle { color: #64748b; margin-bottom: 32px; }
     </style>
 </head>
 <body>
@@ -64,25 +59,25 @@
                     <div class="progress-text">Question 10 of 10</div>
                 </div>
                 
-                <div class="question">What's the smartest way to use gaming app earnings? 🎯</div>
+                <div class="question">How should you track gaming app earnings for taxes?</div>
                 
-                <button class="option" id="opt0" onclick="answer(0)">Spend it immediately on in-game purchases</button>
-                <button class="option" id="opt1" onclick="answer(1)">Save it in a separate fund for specific goals</button>
-                <button class="option" id="opt2" onclick="answer(2)">Ignore it - it's not real money</button>
-                <button class="option" id="opt3" onclick="answer(3)">Tell your partner it's "fun money" and hide it</button>
+                <button class="option" id="opt0" onclick="answer(0)">You don't need to track under 00</button>
+                <button class="option" id="opt1" onclick="answer(1)">The apps send you everything</button>
+                <button class="option" id="opt2" onclick="answer(2)">Screenshot cashouts + simple spreadsheet</button>
+                <button class="option" id="opt3" onclick="answer(3)">Only track cash, not gift cards</button>
                 
                 <div id="exp" class="explanation">
                     <strong id="res"></strong><br><br>
-                    Treat gaming earnings like any other income. Save for goals, track for taxes, and make it work for your family's future.<br><br>
+                    ALL income is taxable. Screenshot every cashout. Keep records even under 00.<br><br>
                     <button class="next-btn" onclick="showResults()">See Results →</button>
                 </div>
                 
                 <div id="results" style="display: none;">
-                    <div class="results-container">
-                        <div class="results-emoji">🎮</div>
-                        <div class="results-score" id="finalScore">0/10</div>
-                        <div class="results-message" id="resultMessage">Gaming Guru!</div>
-                        <div class="results-subtitle" id="resultSubtitle">You know how to spot scams and maximize earnings!</div>
+                    <div class="results-container" style="text-align: center; padding: 40px 20px;">
+                        <div class="results-emoji" style="font-size: 4rem; margin-bottom: 16px;">🎮</div>
+                        <div class="results-score" id="finalScore" style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #8b5cf6, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0;">0/10</div>
+                        <div class="results-message" id="resultMessage" style="font-size: 1.5rem; font-weight: 600; margin-bottom: 8px;">Gaming Guru!</div>
+                        <div class="results-subtitle" id="resultSubtitle" style="color: #64748b; margin-bottom: 32px;">You know how to spot scams and maximize earnings!</div>
                         
                         <a href="/recommended.html" class="next-btn" style="margin-right: 16px;">Get Paid to Play →</a>
                         <a href="/quizzes/" class="next-btn" style="background: white; color: #8b5cf6; border: 2px solid #8b5cf6;">More Quizzes</a>
@@ -105,10 +100,11 @@
     </footer>
 
     <script>
+        
         let score = parseInt(sessionStorage.getItem('gtp_score') || '0');
         
         function answer(selected) {
-            const correct = 1;
+            const correct = 2;
             const options = document.querySelectorAll('.option');
             const exp = document.getElementById('exp');
             const res = document.getElementById('res');
@@ -133,33 +129,32 @@
         }
         
         function showResults() {
-            document.getElementById('exp').style.display = 'none';
-            document.querySelector('.question').style.display = 'none';
-            document.querySelectorAll('.option').forEach(o => o.style.display = 'none');
-            document.querySelector('.progress-container').style.display = 'none';
+            document.getElementById("exp").style.display = "none";
+            document.querySelector(".question").style.display = "none";
+            document.querySelectorAll(".option").forEach(o => o.style.display = "none");
+            document.querySelector(".progress-container").style.display = "none";
             
-            const resultsDiv = document.getElementById('results');
-            const scoreDiv = document.getElementById('finalScore');
-            const msgDiv = document.getElementById('resultMessage');
-            const subDiv = document.getElementById('resultSubtitle');
+            const resultsDiv = document.getElementById("results");
+            const scoreDiv = document.getElementById("finalScore");
+            const msgDiv = document.getElementById("resultMessage");
+            const subDiv = document.getElementById("resultSubtitle");
             
-            scoreDiv.textContent = score + '/10';
+            scoreDiv.textContent = score + "/10";
             
             const pct = (score / 10) * 100;
             if (pct >= 80) {
-                msgDiv.textContent = '🎮 Gaming Guru!';
-                subDiv.textContent = 'You know how to spot scams and maximize earnings!';
+                msgDiv.textContent = "🎮 Gaming Guru!";
+                subDiv.textContent = "You know how to spot scams and maximize earnings!";
             } else if (pct >= 60) {
-                msgDiv.textContent = '👍 Smart Player';
-                subDiv.textContent = 'Good knowledge! Check out our recommended apps to level up.';
+                msgDiv.textContent = "👍 Smart Player";
+                subDiv.textContent = "Good knowledge! Check out our recommended apps to level up.";
             } else {
-                msgDiv.textContent = '📚 Gaming Newbie';
-                subDiv.textContent = 'Read our guide and try again - your wallet will thank you!';
+                msgDiv.textContent = "📚 Gaming Newbie";
+                subDiv.textContent = "Read our guide and try again - your wallet will thank you!";
             }
             
-            resultsDiv.style.display = 'block';
-            
-            sessionStorage.removeItem('gtp_score');
+            resultsDiv.style.display = "block";
+            sessionStorage.removeItem("gtp_score");
         }
     </script>
 </body>

@@ -62,8 +62,8 @@
                 <div class="question">Which of these is a LEGIT way gaming apps pay you?</div>
                 
                 <button class="option" id="opt0" onclick="answer(0)">They sell your data to advertisers</button>
-                <button class="option" id="opt1" onclick="answer(1)">They share ad revenue with players</button>
-                <button class="option" id="opt2" onclick="answer(2)">You pay a fee to unlock earnings</button>
+                <button class="option" id="opt1" onclick="answer(1)">You pay a fee to unlock earnings</button>
+                <button class="option" id="opt2" onclick="answer(2)">They share ad revenue with players</button>
                 <button class="option" id="opt3" onclick="answer(3)">They charge other players to play against you</button>
                 
                 <div id="exp" class="explanation">
@@ -71,6 +71,7 @@
                     Real apps make money from ads and share a portion with you. You never pay to earn.<br><br>
                     <a href="q3.html" class="next-btn">Next Question →</a>
                 </div>
+                
             </div>
             
             <div class="ad-container">
@@ -88,10 +89,11 @@
     </footer>
 
     <script>
+        
         let score = parseInt(sessionStorage.getItem('gtp_score') || '0');
         
         function answer(selected) {
-            const correct = 1;
+            const correct = 2;
             const options = document.querySelectorAll('.option');
             const exp = document.getElementById('exp');
             const res = document.getElementById('res');
@@ -114,6 +116,7 @@
             
             exp.classList.add('show');
         }
+        
     </script>
 </body>
 </html>

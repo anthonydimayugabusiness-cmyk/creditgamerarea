@@ -59,18 +59,19 @@
                     <div class="progress-text">Question 1 of 10</div>
                 </div>
                 
-                <div class="question">You see a game ad: "Play Solitaire and win $500 instantly!" What's the red flag? 🚩</div>
+                <div class="question">You see a game ad: 'Play Solitaire and win 00 instantly!' What's the red flag?</div>
                 
                 <button class="option" id="opt0" onclick="answer(0)">Solitaire is a boring game</button>
-                <button class="option" id="opt1" onclick="answer(1)">The promise of $500 instantly</button>
+                <button class="option" id="opt1" onclick="answer(1)">The promise of 00 instantly</button>
                 <button class="option" id="opt2" onclick="answer(2)">It's a card game</button>
                 <button class="option" id="opt3" onclick="answer(3)">You have to download an app</button>
                 
                 <div id="exp" class="explanation">
                     <strong id="res"></strong><br><br>
-                    Real gaming apps pay $1-5/day, not $500 instantly. If it sounds too good to be true, it's a scam trying to get your personal info or show you endless ads.<br><br>
+                    Real gaming apps pay -5/day, not 00 instantly. If it sounds too good to be true, it's a scam trying to get your personal info or show you endless ads.<br><br>
                     <a href="q2.html" class="next-btn">Next Question →</a>
                 </div>
+                
             </div>
             
             <div class="ad-container">
@@ -90,6 +91,7 @@
     <script>
         sessionStorage.setItem('gtp_score', '0');
         
+        
         function answer(selected) {
             const correct = 1;
             const options = document.querySelectorAll('.option');
@@ -103,7 +105,8 @@
             });
             
             if (selected === correct) {
-                sessionStorage.setItem('gtp_score', '1');
+                score++;
+                sessionStorage.setItem('gtp_score', score.toString());
                 res.textContent = '✓ Correct!';
                 res.style.color = '#10b981';
             } else {
@@ -113,6 +116,7 @@
             
             exp.classList.add('show');
         }
+        
     </script>
 </body>
 </html>
