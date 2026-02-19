@@ -1,16 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TGP4RRFC');</script>
+    <!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers (meta equivalent for static sites) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.googletagmanager.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera()">
+    
+    <!-- Google Tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CWB6BPJRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Default consent - denied until user accepts
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+        
+        // Configure GA4
+        gtag('config', 'G-3CWB6BPJRN', {
+            'send_page_view': false,
+            'cookie_flags': 'SameSite=None;Secure',
+            'cookie_expires': 63072000,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': false,
+            'transport_type': 'beacon'
+        });
+        
+        // Check for existing consent
+        const consent = localStorage.getItem('cookie-consent');
+        if (consent === 'accepted') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            gtag('event', 'page_view');
+        }
+    </script>
+    
     <title>Frequently Asked Questions - Credit Gamer Area</title>
     <meta name="description" content="Find answers to common questions about credit scores, credit cards, investing, taxes, and personal finance. Your go-to resource for financial education.">
     <meta name="keywords" content="credit FAQ, finance FAQ, credit score questions, credit card FAQ, personal finance help">
     <meta name="author" content="Credit Gamer Area">
     <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.creditgamerarea.com/faq.html">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.creditgamerarea.com/faq.html">
     <meta property="og:title" content="Frequently Asked Questions - Credit Gamer Area">
@@ -24,41 +75,9 @@
     <meta property="twitter:description" content="Find answers to common questions about credit scores, credit cards, investing, taxes, and personal finance.">
     <meta property="twitter:image" content="https://www.creditgamerarea.com/og-faq.jpg">
     
-    <!-- Schema.org Structured Data for FAQPage -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a good credit score?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A good credit score typically falls between 670-739 on the FICO scale (300-850). The average American credit score is around 718. Generally, a score above 700 will qualify you for most credit products at competitive rates."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does it take to build credit from scratch?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "It takes about 3-6 months of credit activity to generate your first FICO score. To build a good credit score (700+), expect 12-18 months of consistent on-time payments and responsible credit use."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is a secured credit card?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A secured credit card requires a refundable security deposit (typically $200-$500) that becomes your credit limit. It works exactly like a regular credit card and is designed for people with no credit or bad credit."
-                }
-            }
-        ]
-    }
-    </script>
-    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    
     <link rel="stylesheet" href="/styles.css">
     <style>
         .faq-page { padding: 60px 0; background: #f8fafc; min-height: calc(100vh - 200px); }
@@ -103,17 +122,65 @@
             .faq-category-btn { padding: 8px 16px; font-size: 0.875rem; }
         }
     </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 with Cookie Consent -->
+    <script src="creditgamerarea-ga.js"></script>
+    
+    <!-- Cookie Consent Banner -->
+    <script src="creditgamerarea-consent.js" defer></script>
+    
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <!-- Schema.org Structured Data for FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good credit score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good credit score typically falls between 670-739 on the FICO scale (300-850). The average American credit score is around 718. Generally, a score above 700 will qualify you for most credit products at competitive rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to build credit from scratch?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It takes about 3-6 months of credit activity to generate your first FICO score. To build a good credit score (700+), expect 12-18 months of consistent on-time payments and responsible credit use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a secured credit card?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A secured credit card requires a refundable security deposit (typically $200-$500) that becomes your credit limit. It works exactly like a regular credit card and is designed for people with no credit or bad credit."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGP4RRFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">💳 Credit Gamer Area</a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
                 <li><a href="/quizzes/">Quizzes</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/resources.html">Resources</a></li>
             </ul>
         </div>
     </nav>
@@ -351,10 +418,63 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>💳 Credit Gamer Area</h3>
+                    <p>Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                    
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">TikTok</a>
+                        <a href="#">Discord</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/credit-basics-quiz.html">Credit Basics</a></li>
+                        <li><a href="/credit-cards-quiz.html">Credit Cards</a></li>
+                        <li><a href="/taxes-quiz.html">Taxes</a></li>
+                        <li><a href="/investing-quiz.html">Investing</a></li>
+                        <li><a href="/student-loans-quiz.html">Student Loans</a></li>
+                        <li><a href="/budgeting-quiz.html">Budgeting</a></li>
+                        <li><a href="/banking-quiz.html">Banking</a></li>
+                        <li><a href="/make-money-online-quiz.html">Make Money Online</a></li>
+                        <li><a href="/side-hustle-scam-quiz.html">Side Hustle Scams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/quizzes/">All Quizzes</a></li>
+                        <li><a href="/resources.html">Financial Calculators</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/sitemap.html">Sitemap</a></li>
+                        <li><a href="/blog/">Credit Guides</a></li>
+                        <li><a href="/blog/">Money Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/faq.html">FAQ</a> | <a href="/sitemap.html">Sitemap</a></p>
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
             </div>
         </div>
     </footer>
