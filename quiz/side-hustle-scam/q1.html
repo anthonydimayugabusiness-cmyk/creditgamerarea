@@ -88,6 +88,9 @@
     </footer>
 
     <script>
+        // Initialize score for this quiz
+        sessionStorage.setItem('shs_score', '0');
+        
         function answer(selected) {
             const correct = 1;
             const options = document.querySelectorAll('.option');
@@ -104,6 +107,7 @@
             });
             
             if (selected === correct) {
+                sessionStorage.setItem('shs_score', '1');
                 res.textContent = '✓ Correct!';
                 res.style.color = '#10b981';
             } else {
