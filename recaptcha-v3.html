@@ -1,0 +1,141 @@
+<!-- reCAPTCHA v3 Implementation for Credit Gamer Area -->
+<!-- Site Key: 6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji -->
+
+<!-- Load reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+
+<script>
+// reCAPTCHA v3 - Invisible bot protection
+// Executes on page load and before form submissions
+
+(function() {
+    'use strict';
+    
+    const SITE_KEY = '6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji';
+    
+    // Store reCAPTCHA token
+    window.recaptchaToken = null;
+    window.recaptchaReady = false;
+    
+    // Initialize reCAPTCHA on page load
+    function initRecaptcha() {
+        if (typeof grecaptcha === 'undefined') {
+            setTimeout(initRecaptcha, 100);
+            return;
+        }
+        
+        grecaptcha.ready(function() {
+            window.recaptchaReady = true;
+            
+            // Execute on page load for baseline score
+            executeRecaptcha('page_load');
+        });
+    }
+    
+    // Execute reCAPTCHA and get token
+    window.executeRecaptcha = function(action) {
+        return new Promise((resolve, reject) => {
+            if (!window.recaptchaReady) {
+                reject('reCAPTCHA not ready');
+                return;
+            }
+            
+            grecaptcha.execute(SITE_KEY, { action: action })
+                .then(function(token) {
+                    window.recaptchaToken = token;
+                    
+                    // Store token with timestamp
+                    const tokenData = {
+                        token: token,
+                        timestamp: Date.now(),
+                        action: action
+                    };
+                    sessionStorage.setItem('recaptcha_token', JSON.stringify(tokenData));
+                    
+                    resolve(token);
+                })
+                .catch(function(error) {
+                    console.error('reCAPTCHA error:', error);
+                    reject(error);
+                });
+        });
+    };
+    
+    // Get valid token (refresh if expired - tokens valid for 2 minutes)
+    window.getRecaptchaToken = function() {
+        const stored = sessionStorage.getItem('recaptcha_token');
+        if (stored) {
+            const data = JSON.parse(stored);
+            // Token expires after 2 minutes
+            if (Date.now() - data.timestamp < 120000) {
+                return data.token;
+            }
+        }
+        return null;
+    };
+    
+    // Auto-execute on quiz interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        initRecaptcha();
+        
+        // Re-execute on quiz start
+        const quizButtons = document.querySelectorAll('[data-quiz-start], .quiz-start-btn, .start-quiz-btn');
+        quizButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                executeRecaptcha('quiz_start');
+            });
+        });
+        
+        // Re-execute on answer selection
+        const answerOptions = document.querySelectorAll('.answer-option, .quiz-option, [data-answer]');
+        answerOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                executeRecaptcha('quiz_answer');
+            });
+        });
+        
+        // Re-execute on quiz completion
+        const completeButtons = document.querySelectorAll('[data-quiz-complete], .quiz-complete-btn');
+        completeButtons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                executeRecaptcha('quiz_complete');
+            });
+        });
+        
+        // Re-execute before form submissions
+        const forms = document.querySelectorAll('form');
+        forms.forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                executeRecaptcha('form_submit').then(function(token) {
+                    // Add token to form
+                    let input = form.querySelector('input[name="recaptcha_token"]');
+                    if (!input) {
+                        input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'recaptcha_token';
+                        form.appendChild(input);
+                    }
+                    input.value = token;
+                    
+                    // Submit form
+                    form.submit();
+                }).catch(function() {
+                    // If reCAPTCHA fails, still allow submission
+                    // Server should handle missing/invalid tokens gracefully
+                    form.submit();
+                });
+            });
+        });
+    });
+    
+    // Periodic token refresh (every 90 seconds)
+    setInterval(function() {
+        if (window.recaptchaReady) {
+            executeRecaptcha('token_refresh');
+        }
+    }, 90000);
+    
+})();
+</script>

@@ -15,6 +15,9 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
     
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
     <!-- Google Tag (gtag.js) - GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CWB6BPJRN"></script>
     <script>
@@ -904,6 +907,59 @@
             url.searchParams.set('utm_campaign', 'quiz_discovery');
             link.href = url.toString();
         });
+        
+        // reCAPTCHA v3 - Bot Protection
+        (function() {
+            const SITE_KEY = '6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji';
+            
+            window.recaptchaToken = null;
+            window.recaptchaReady = false;
+            
+            function initRecaptcha() {
+                if (typeof grecaptcha === 'undefined') {
+                    setTimeout(initRecaptcha, 100);
+                    return;
+                }
+                grecaptcha.ready(function() {
+                    window.recaptchaReady = true;
+                    executeRecaptcha('page_load');
+                });
+            }
+            
+            window.executeRecaptcha = function(action) {
+                return new Promise((resolve, reject) => {
+                    if (!window.recaptchaReady) {
+                        reject('Not ready');
+                        return;
+                    }
+                    grecaptcha.execute(SITE_KEY, { action: action })
+                        .then(function(token) {
+                            window.recaptchaToken = token;
+                            sessionStorage.setItem('recaptcha_token', JSON.stringify({
+                                token: token,
+                                timestamp: Date.now(),
+                                action: action
+                            }));
+                            resolve(token);
+                        })
+                        .catch(reject);
+                });
+            };
+            
+            // Track quiz interactions with reCAPTCHA
+            document.querySelectorAll('a[href*="-quiz.html"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    executeRecaptcha('quiz_start');
+                });
+            });
+            
+            // Refresh token every 90 seconds
+            setInterval(function() {
+                if (window.recaptchaReady) executeRecaptcha('token_refresh');
+            }, 90000);
+            
+            initRecaptcha();
+        })();
     </script>
 </body>
 </html>

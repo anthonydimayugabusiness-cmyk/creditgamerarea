@@ -80,6 +80,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
     <!-- Google Analytics 4 with Cookie Consent -->
     <script src="creditgamerarea-ga.js"></script>
     
@@ -300,5 +303,46 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // reCAPTCHA v3 - Protect contact form
+        (function() {
+            const SITE_KEY = '6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji';
+            
+            // Execute on page load
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute(SITE_KEY, { action: 'page_load' });
+                });
+            }
+            
+            // Protect form submission
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (typeof grecaptcha !== 'undefined') {
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute(SITE_KEY, { action: 'contact_submit' })
+                                .then(function(token) {
+                                    // Add token to form
+                                    let input = form.querySelector('input[name="recaptcha_token"]');
+                                    if (!input) {
+                                        input = document.createElement('input');
+                                        input.type = 'hidden';
+                                        input.name = 'recaptcha_token';
+                                        form.appendChild(input);
+                                    }
+                                    input.value = token;
+                                    form.submit();
+                                });
+                        });
+                    } else {
+                        form.submit();
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

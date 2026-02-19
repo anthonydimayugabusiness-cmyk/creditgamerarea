@@ -21,6 +21,8 @@
     <meta property="twitter:image" content="https://www.creditgamerarea.com/og-credit-basics.jpg">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
     <link rel="stylesheet" href="/styles.css">
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
     <style>
         .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
         .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
@@ -331,14 +333,35 @@
 
         function showResults() {
             const pct = Math.round((score / quizData.questions.length) * 100);
+            // Execute reCAPTCHA before redirect
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_complete' });
+                });
+            }
             // Redirect to completion page with results
             window.location.href = `/quiz-complete.html?quiz=credit-basics&score=${score}&total=${quizData.questions.length}&pct=${pct}`;
         }
 
         function startMultiPageQuiz() {
+            // Execute reCAPTCHA on quiz start
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_start' });
+                });
+            }
             sessionStorage.setItem('cred_score', '0');
             window.location.href = '/quiz/credit-basics/q1';
         }
+        
+        // Initialize reCAPTCHA on page load
+        (function() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'page_load' });
+                });
+            }
+        })();
     </script>
 </body>
 </html>
