@@ -721,6 +721,15 @@
                 }
             });
         });
+        
+        // Add source tracking to quiz links
+        document.querySelectorAll('a[href*="-quiz.html"]').forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('utm_source', 'homepage');
+            url.searchParams.set('utm_medium', 'quiz_card');
+            url.searchParams.set('utm_campaign', 'quiz_discovery');
+            link.href = url.toString();
+        });
     </script>
 </body>
 </html>
