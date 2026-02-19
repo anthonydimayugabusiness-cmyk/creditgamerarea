@@ -105,9 +105,111 @@
         "@type": "WebSite",
         "name": "Credit Gamer Area",
         "url": "https://www.creditgamerarea.com/",
-        "description": "Master credit, finance, taxes, and money-making strategies with free interactive quizzes.",
+        "description": "Master credit, finance, taxes, and money-making strategies with free interactive quizzes designed for gamers and Gen Z.",
         "potentialAction": {
             "@type": "SearchAction",
+            "target": "https://www.creditgamerarea.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Credit Gamer Area",
+            "url": "https://www.creditgamerarea.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.creditgamerarea.com/logo.png"
+            },
+            "sameAs": [
+                "https://twitter.com/CreditGamerArea"
+            ],
+            "founder": {
+                "@type": "Person",
+                "name": "Anthony Dimayuga"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Credit Basics Quiz",
+                    "url": "https://www.creditgamerarea.com/credit-basics-quiz.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Credit Cards Quiz",
+                    "url": "https://www.creditgamerarea.com/credit-cards-quiz.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Investing Quiz",
+                    "url": "https://www.creditgamerarea.com/investing-quiz.html"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- FAQ Structured Data for AI/LLM -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Credit Gamer Area?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Credit Gamer Area is a free educational platform that helps gamers and young adults learn personal finance through interactive quizzes. Topics include credit building, investing, taxes, budgeting, and making money online."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the quizzes really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all quizzes on Credit Gamer Area are 100% free. No sign-up required, no hidden fees, and no premium content. Everything is accessible immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who is Credit Gamer Area for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Credit Gamer Area is designed for gamers, Gen Z, young adults (ages 18-30), and anyone who wants to learn personal finance in a fun, engaging way. The content uses gaming metaphors and RPG-style progression to make finance approachable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What topics do the quizzes cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Quizzes cover credit basics, credit cards, investing, taxes, student loans, budgeting, banking, making money online, auto insurance, prediction markets, car shopping, auto loans, and AI skills for earning."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.creditgamerarea.com/"
+            }
+        ]
+    }
+    </script>
             "target": "https://www.creditgamerarea.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
