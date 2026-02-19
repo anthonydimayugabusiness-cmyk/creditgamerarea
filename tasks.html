@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Dashboard - Credit Gamer Area</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .task-dashboard { padding: 40px 0; background: #f8fafc; min-height: 100vh; }
+        .dashboard-header { background: linear-gradient(135deg, #1e1b4b, #4c1d95); color: white; padding: 40px; border-radius: 16px; margin-bottom: 32px; }
+        .dashboard-header h1 { font-size: 2rem; margin-bottom: 8px; }
+        
+        .diagram-container { background: white; padding: 32px; border-radius: 16px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); overflow-x: auto; }
+        .diagram-container h2 { font-size: 1.25rem; margin-bottom: 24px; color: #1e1b4b; }
+        
+        /* Flowchart Styles */
+        .flowchart { display: flex; flex-direction: column; gap: 16px; }
+        .flow-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .flow-node { padding: 16px 24px; border-radius: 12px; font-weight: 600; min-width: 180px; text-align: center; position: relative; }
+        .flow-node.user { background: #dbeafe; color: #1e40af; border: 2px solid #3b82f6; }
+        .flow-node.agent { background: #d1fae5; color: #065f46; border: 2px solid #10b981; }
+        .flow-node.blocked { background: #fee2e2; color: #991b1b; border: 2px solid #ef4444; }
+        .flow-node.complete { background: #dcfce7; color: #166534; border: 2px solid #22c55e; }
+        .flow-arrow { font-size: 24px; color: #64748b; }
+        .flow-label { font-size: 0.75rem; color: #64748b; text-align: center; margin-top: 4px; }
+        
+        /* Task Grid */
+        .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-bottom: 32px; }
+        .task-category { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .task-category h3 { font-size: 1.125rem; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid #e2e8f0; }
+        .task-category.user h3 { border-color: #3b82f6; color: #1e40af; }
+        .task-category.agent h3 { border-color: #10b981; color: #065f46; }
+        .task-category.blocked h3 { border-color: #ef4444; color: #991b1b; }
+        
+        .task-item { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid #f1f5f9; }
+        .task-item:last-child { border-bottom: none; }
+        .task-checkbox { width: 20px; height: 20px; border: 2px solid #cbd5e1; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+        .task-checkbox.done { background: #22c55e; border-color: #22c55e; }
+        .task-checkbox.blocked { background: #fee2e2; border-color: #ef4444; }
+        .task-content { flex: 1; }
+        .task-title { font-weight: 600; color: #1e293b; }
+        .task-desc { font-size: 0.875rem; color: #64748b; margin-top: 4px; }
+        .task-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-top: 6px; }
+        .tag-urgent { background: #fee2e2; color: #991b1b; }
+        .tag-blocking { background: #fef3c7; color: #92400e; }
+        .tag-waiting { background: #e0e7ff; color: #3730a3; }
+        
+        /* Dependency Map */
+        .dependency-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .dep-card { padding: 20px; border-radius: 12px; border: 2px solid; }
+        .dep-card.blocker { background: #fef2f2; border-color: #ef4444; }
+        .dep-card.waiting { background: #fffbeb; border-color: #f59e0b; }
+        .dep-card.ready { background: #f0fdf4; border-color: #22c55e; }
+        .dep-card h4 { font-size: 1rem; margin-bottom: 8px; }
+        .dep-card.blocker h4 { color: #991b1b; }
+        .dep-card.waiting h4 { color: #92400e; }
+        .dep-card.ready h4 { color: #166534; }
+        .dep-status { font-size: 0.875rem; margin-top: 8px; }
+        
+        /* Legend */
+        .legend { display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 24px; padding: 16px; background: white; border-radius: 8px; }
+        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; }
+        .legend-color { width: 16px; height: 16px; border-radius: 4px; }
+        
+        .timestamp { color: #94a3b8; font-size: 0.875rem; text-align: center; margin-top: 32px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/dashboard.html">Stats</a></li>
+                <li><a href="/tasks.html">Tasks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="task-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>📋 Task & Dependency Dashboard</h1>
+                <p>Visual guide to what blocks what, and who does what</p>
+            </div>
+
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dbeafe; border: 2px solid #3b82f6;"></div>
+                    <span>Your Task (Human)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d1fae5; border: 2px solid #10b981;"></div>
+                    <span>My Task (AI)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fee2e2; border: 2px solid #ef4444;"></div>
+                    <span>Blocked / Waiting</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #dcfce7; border: 2px solid #22c55e;"></div>
+                    <span>Complete</span>
+                </div>
+            </div>
+
+            <!-- Critical Path Diagram -->
+            <div class="diagram-container">
+                <h2>🎯 Critical Path: AdSense Revenue</h2>
+                <div class="flowchart">
+                    <!-- Row 1: Foundation -->
+                    <div class="flow-row">
+                        <div class="flow-node complete">
+                            ✅ Content Created
+                            <div class="flow-label">230 pages, 185K words</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node user">
+                            ⏳ Sign Up: Cloudflare
+                            <div class="flow-label">Bot protection</div>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node user">
+                            ⏳ Sign Up: reCAPTCHA v3
+                            <div class="flow-label">Anti-bot verification</div>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node blocked">
+                            🚫 Apply for AdSense
+                            <div class="flow-label">BLOCKED: Need traffic first</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2: Traffic Building -->
+                    <div class="flow-row" style="margin-top: 24px;">
+                        <div class="flow-node agent">
+                            📝 Create Content
+                            <div class="flow-label">Daily blog posts + quizzes</div>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node user">
+                            ⏳ Reddit Promotion
+                            <div class="flow-label">r/personalfinance posts</div>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node user">
+                            ⏳ Quora Answers
+                            <div class="flow-label">Link to site in responses</div>
+                        </div>
+                        
+                        <div class="flow-arrow">→</div>
+                        
+                        <div class="flow-node blocked">
+                            🎯 100 Daily Visitors
+                            <div class="flow-label">BLOCKED: Need promotion</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dependency Blockers -->
+            <div class="diagram-container">
+                <h2>🚧 What's Blocking What</h2>
+                
+                <div class="dependency-map">
+                    <div class="dep-card blocker">
+                        <h4>🔴 BLOCKED: AdSense Application</h4>
+                        <p>Cannot apply for AdSense yet</p>
+                        <p class="dep-status"><strong>Why:</strong> Insufficient traffic (~20/day vs 100+ needed)</p>
+                        <p class="dep-status"><strong>Unblocks when:</strong> You do Reddit/Quora promotion + wait 2-3 weeks</p>
+                    </div>
+                    
+                    <div class="dep-card waiting">
+                        <h4>🟡 WAITING: Bot Protection</h4>
+                        <p>Cloudflare + reCAPTCHA not set up</p>
+                        <p class="dep-status"><strong>Why:</strong> Need your credentials to configure</p>
+                        <p class="dep-status"><strong>Action needed:</strong> Sign up for both services, give me API keys</p>
+                    </div>
+                    
+                    <div class="dep-card waiting">
+                        <h4>🟡 WAITING: Affiliate Programs</h4>
+                        <p>Referral codes still placeholder</p>
+                        <p class="dep-status"><strong>Programs:</strong> Swagbucks, InboxDollars, Mistplay</p>
+                        <p class="dep-status"><strong>Action needed:</strong> Sign up, share referral codes with me</p>
+                    </div>
+                    
+                    <div class="dep-card ready">
+                        <h4>🟢 READY: Content Creation</h4>
+                        <p>I can create unlimited content</p>
+                        <p class="dep-status"><strong>Status:</strong> 4 posts created today, more ready</p>
+                        <p class="dep-status"><strong>Next:</strong> "Best Credit Cards for Working Moms"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Tasks -->
+            <div class="task-grid">
+                <div class="task-category user">
+                    <h3>👤 Your Tasks (Human Required)</h3>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Sign up for Cloudflare</div>
+                            <div class="task-desc">Add domain, enable bot protection, give me nameservers</div>
+                            <span class="task-tag tag-blocking">BLOCKS: AdSense approval</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Sign up for reCAPTCHA v3</div>
+                            <div class="task-desc">Get site key + secret key, share with me to install</div>
+                            <span class="task-tag tag-blocking">BLOCKS: Invalid traffic protection</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Sign up for Affiliate Programs</div>
+                            <div class="task-desc">Swagbucks, InboxDollars, Mistplay, Survey Junkie</div>
+                            <span class="task-tag tag-waiting">WAITS: Your referral codes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Post on Reddit r/personalfinance</div>
+                            <div class="task-desc">Share blog posts naturally in relevant threads (2-3x/week)</div>
+                            <span class="task-tag tag-blocking">BLOCKS: Traffic growth</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Answer Questions on Quora</div>
+                            <div class="task-desc">Find finance questions, give helpful answers, link to site</div>
+                            <span class="task-tag tag-blocking">BLOCKS: Backlinks & SEO</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Create Pinterest Account</div>
+                            <div class="task-desc">Pin blog post images, link back to site (drives female traffic)</div>
+                            <span class="task-tag tag-waiting">WAITS: Your account</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Apply for AdSense (After 2-3 Weeks)</div>
+                            <div class="task-desc">Wait for traffic to build, then apply at google.com/adsense</div>
+                            <span class="task-tag tag-blocking">BLOCKED: Need 100+ daily visitors first</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-category agent">
+                    <h3>🤖 My Tasks (AI Autonomous)</h3>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox done"></div>
+                        <div class="task-content">
+                            <div class="task-title">✅ Create 4 Blog Posts (Feb 19)</div>
+                            <div class="task-desc">Finance YouTubers, Budget YouTubers, Instagram, Movies</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox done"></div>
+                        <div class="task-content">
+                            <div class="task-title">✅ Remove Personal Information</div>
+                            <div class="task-desc">Name, location, identifying details removed from all pages</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox done"></div>
+                        <div class="task-content">
+                            <div class="task-title">✅ Create Dashboard Pages</div>
+                            <div class="task-desc">Stats dashboard + this task dashboard</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item"
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Create "Best Credit Cards" Comparison</div>
+                            <div class="task-desc">Top cards for working moms, affiliate links ready</div>
+                            <span class="task-tag tag-waiting">READY: Can do now</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Create "Best Side Hustle Apps" Comparison</div>
+                            <div class="task-desc">Mistplay, JustPlay, Swagbucks comparison with affiliate links</div>
+                            <span class="task-tag tag-waiting">READY: Can do now</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Install Cloudflare (When You Sign Up)</div>
+                            <div class="task-desc">Configure bot protection, update DNS, enable security features</div>
+                            <span class="task-tag tag-blocking">BLOCKED: Waiting for your account</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Install reCAPTCHA v3 (When You Get Keys)</div>
+                            <div class="task-desc">Add to all forms and quiz pages for bot detection</div>
+                            <span class="task-tag tag-blocking">BLOCKED: Waiting for API keys</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Update Affiliate Links (When You Get Codes)</div>
+                            <div class="task-desc">Replace "YOUR_CODE" placeholders with real referral codes</div>
+                            <span class="task-tag tag-blocking">BLOCKED: Waiting for your codes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Create 2-3 More Quizzes This Week</div>
+                            <div class="task-desc">Credit building for moms, tax basics, side hustle scams</div>
+                            <span class="task-tag tag-waiting">READY: Can do autonomously</span>
+                        </div>
+                    </div>
+                    
+                    <div class="task-item">
+                        <div class="task-checkbox"></div>
+                        <div class="task-content">
+                            <div class="task-title">Daily Content Creation</div>
+                            <div class="task-desc">Blog posts, comparison pages, "Best of" guides</div>
+                            <span class="task-tag tag-waiting">ONGOING: 4-5 pages/day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="diagram-container">
+                <h2>📊 Summary</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                    <div style="text-align: center; padding: 20px; background: #fef2f2; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #dc2626;">3</div>
+                        <div style="color: #991b1b;">Your Blocked Tasks</div>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; background: #fef3c7; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #d97706;">4</div>
+                        <div style="color: #92400e;">Your Ready Tasks</div>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; background: #dcfce7; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #16a34a;">3</div>
+                        <div style="color: #166534;">My Completed Tasks</div>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 20px; background: #dbeafe; border-radius: 8px;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #2563eb;">6</div>
+                        <div style="color: #1e40af;">My Ready Tasks</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="timestamp">Last updated: Feb 20, 2026 at 00:30 GMT+8</p>
+        </div>
+    </div>
+
+    <footer class="footer" style="background: #0f0d2e; color: white; padding: 40px 0;">
+        <div class="container">
+            <p style="text-align: center; color: #64748b; font-size: 0.875rem;">Internal task dashboard • Updated in real-time</p>
+        </div>
+    </footer>
+</body>
+</html>
