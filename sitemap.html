@@ -1,30 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TGP4RRFC');</script>
+    <!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers (meta equivalent for static sites) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.googletagmanager.com;">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera()">
+    
+    <!-- Google Tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CWB6BPJRN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Default consent - denied until user accepts
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted'
+        });
+        
+        // Configure GA4
+        gtag('config', 'G-3CWB6BPJRN', {
+            'send_page_view': false,
+            'cookie_flags': 'SameSite=None;Secure',
+            'cookie_expires': 63072000,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': false,
+            'transport_type': 'beacon'
+        });
+        
+        // Check for existing consent
+        const consent = localStorage.getItem('cookie-consent');
+        if (consent === 'accepted') {
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            gtag('event', 'page_view');
+        }
+    </script>
+    
     <title>Sitemap - Credit Gamer Area</title>
     <meta name="description" content="Complete sitemap of Credit Gamer Area. Find all our quizzes, blog articles, and resources about credit, finance, and money management.">
     <meta name="keywords" content="sitemap, credit gamer area, finance quizzes, credit guides">
     <meta name="author" content="Credit Gamer Area">
     <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.creditgamerarea.com/sitemap.html">
     
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.creditgamerarea.com/sitemap.html">
     <meta property="og:title" content="Sitemap - Credit Gamer Area">
     <meta property="og:description" content="Complete sitemap of Credit Gamer Area. Find all our quizzes, blog articles, and resources.">
-    <meta property="og:image" content="https://www.creditgamerarea.com/og-sitemap.jpg">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-image.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.creditgamerarea.com/sitemap.html">
     <meta property="twitter:title" content="Sitemap - Credit Gamer Area">
     <meta property="twitter:description" content="Complete sitemap of Credit Gamer Area. Find all our quizzes, blog articles, and resources.">
-    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-sitemap.jpg">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-image.jpg">
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    
     <link rel="stylesheet" href="/styles.css">
     <style>
         .sitemap-page { padding: 60px 0; background: #f8fafc; min-height: calc(100vh - 200px); }
@@ -52,17 +105,31 @@
             .sitemap-header h1 { font-size: 2rem; }
         }
     </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics 4 with Cookie Consent -->
+    <script src="creditgamerarea-ga.js"></script>
+    
+    <!-- Cookie Consent Banner -->
+    <script src="creditgamerarea-consent.js" defer></script>
+    
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGP4RRFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="/" class="logo">💳 Credit Gamer Area</a>
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
                 <li><a href="/quizzes/">Quizzes</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/resources.html">Resources</a></li>
             </ul>
         </div>
     </nav>
@@ -88,8 +155,8 @@
                         <li><a href="/">Homepage</a></li>
                         <li><a href="/about.html">About Us</a></li>
                         <li><a href="/contact.html">Contact</a></li>
-                        <li><a href="/faq.html">FAQ</span></a></li>
-                        <li><a href="/resources.html">Resources & Tools</span></a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/resources.html">Resources & Tools</a></li>
                         <li><a href="/privacy.html">Privacy Policy</a></li>
                         <li><a href="/terms.html">Terms of Service</a></li>
                     </ul>
@@ -99,16 +166,16 @@
                 <div class="sitemap-section">
                     <h2>🎮 Quizzes</h2>
                     <ul>
-                        <li><a href="/credit-basics-quiz.html">Credit Basics Quiz</span> <span class="popular-badge">Popular</span></a></li>
-                        <li><a href="/credit-cards-quiz.html">Credit Cards 101 Quiz</span></a></li>
-                        <li><a href="/investing-quiz.html">Investing Basics Quiz</span></a></li>
-                        <li><a href="/taxes-quiz.html">Taxes for Beginners Quiz</span></a></li>
-                        <li><a href="/student-loans-quiz.html">Student Loans Quiz</span></a></li>
-                        <li><a href="/budgeting-quiz.html">Budgeting Quiz</span></a></li>
-                        <li><a href="/banking-quiz.html">Banking Basics Quiz</span></a></li>
-                        <li><a href="/make-money-online-quiz.html">Make Money Online Quiz</span> <span class="popular-badge">Trending</span></a></li>
-                        <li><a href="/quiz-credit-rewards.html">Credit Card Rewards Mastery Quiz</span> <span class="new-badge">New</span></a></li>
-                        <li><a href="/quiz-fed-rates.html">Fed Rates & Your Money Quiz</span> <span class="new-badge">New</span></a></li>
+                        <li><a href="/credit-basics-quiz.html">Credit Basics Quiz <span class="popular-badge">Popular</span></a></li>
+                        <li><a href="/credit-cards-quiz.html">Credit Cards 101 Quiz</a></li>
+                        <li><a href="/investing-quiz.html">Investing Basics Quiz</a></li>
+                        <li><a href="/taxes-quiz.html">Taxes for Beginners Quiz</a></li>
+                        <li><a href="/student-loans-quiz.html">Student Loans Quiz</a></li>
+                        <li><a href="/budgeting-quiz.html">Budgeting Quiz</a></li>
+                        <li><a href="/banking-quiz.html">Banking Basics Quiz</a></li>
+                        <li><a href="/make-money-online-quiz.html">Make Money Online Quiz <span class="popular-badge">Trending</span></a></li>
+                        <li><a href="/quiz-credit-rewards.html">Credit Card Rewards Mastery Quiz <span class="new-badge">New</span></a></li>
+                        <li><a href="/quiz-fed-rates.html">Fed Rates & Your Money Quiz <span class="new-badge">New</span></a></li>
                     </ul>
                 </div>
 
@@ -116,12 +183,12 @@
                 <div class="sitemap-section">
                     <h2>📝 Blog Articles</h2>
                     <ul>
-                        <li><a href="/blog/">How to Build Credit from Zero: A Gamer's Guide</span> <span class="popular-badge">Popular</span></a></li>
-                        <li><a href="/blog/">10 Ways Gamers Can Make Money Online in 2026</span></a></li>
-                        <li><a href="/blog-interest-rate-cap.html">Trump's 10% Credit Card Interest Rate Cap: What It Means for You</span> <span class="new-badge">New</span></a></li>
-                        <li><a href="/blog-gen-z-investing.html">Gen Z Investing Trends: How Young Investors Are Changing Wall Street</span> <span class="new-badge">New</span></a></li>
-                        <li><a href="/blog-fed-rates-impact.html">How Fed Rate Changes Impact Your Credit Cards and Savings</span> <span class="new-badge">New</span></a></li>
-                        <li><a href="/blog-rewards-optimization.html">Credit Card Rewards Optimization: Maximize Every Dollar</span> <span class="new-badge">New</span></a></li>
+                        <li><a href="/blog/">How to Build Credit from Zero: A Gamer's Guide <span class="popular-badge">Popular</span></a></li>
+                        <li><a href="/blog/">10 Ways Gamers Can Make Money Online in 2026</a></li>
+                        <li><a href="/blog-interest-rate-cap.html">Trump's 10% Credit Card Interest Rate Cap: What It Means for You <span class="new-badge">New</span></a></li>
+                        <li><a href="/blog-gen-z-investing.html">Gen Z Investing Trends: How Young Investors Are Changing Wall Street <span class="new-badge">New</span></a></li>
+                        <li><a href="/blog-fed-rates-impact.html">How Fed Rate Changes Impact Your Credit Cards and Savings <span class="new-badge">New</span></a></li>
+                        <li><a href="/blog-rewards-optimization.html">Credit Card Rewards Optimization: Maximize Every Dollar <span class="new-badge">New</span></a></li>
                     </ul>
                 </div>
 
@@ -129,8 +196,8 @@
                 <div class="sitemap-section">
                     <h2>🛠️ Resources</h2>
                     <ul>
-                        <li><a href="/resources.html">Financial Calculators & Tools</span> <span class="new-badge">New</span></a></li>
-                        <li><a href="/faq.html">Frequently Asked Questions</span> <span class="new-badge">New</span></a></li>
+                        <li><a href="/resources.html">Financial Calculators & Tools <span class="new-badge">New</span></a></li>
+                        <li><a href="/faq.html">Frequently Asked Questions <span class="new-badge">New</span></a></li>
                         <li><a href="/sitemap.html">Sitemap</a></li>
                         <li><a href="/sitemap.xml">XML Sitemap (for search engines)</a></li>
                     </ul>
@@ -145,10 +212,63 @@
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>💳 Credit Gamer Area</h3>
+                    <p>Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                    
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">TikTok</a>
+                        <a href="#">Discord</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/credit-basics-quiz.html">Credit Basics</a></li>
+                        <li><a href="/credit-cards-quiz.html">Credit Cards</a></li>
+                        <li><a href="/taxes-quiz.html">Taxes</a></li>
+                        <li><a href="/investing-quiz.html">Investing</a></li>
+                        <li><a href="/student-loans-quiz.html">Student Loans</a></li>
+                        <li><a href="/budgeting-quiz.html">Budgeting</a></li>
+                        <li><a href="/banking-quiz.html">Banking</a></li>
+                        <li><a href="/make-money-online-quiz.html">Make Money Online</a></li>
+                        <li><a href="/side-hustle-scam-quiz.html">Side Hustle Scams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="/quizzes/">All Quizzes</a></li>
+                        <li><a href="/resources.html">Financial Calculators</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/sitemap.html">Sitemap</a></li>
+                        <li><a href="/blog/">Credit Guides</a></li>
+                        <li><a href="/blog/">Money Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a> | <a href="/faq.html">FAQ</a> | <a href="/sitemap.html">Sitemap</a></p>
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
             </div>
         </div>
     </footer>
