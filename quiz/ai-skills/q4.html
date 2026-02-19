@@ -9,13 +9,16 @@
         .quiz-page { padding: 60px 0; background: #f8fafc; min-height: 100vh; }
         .quiz-container { max-width: 700px; margin: 0 auto; padding: 0 20px; }
         .progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; margin-bottom: 40px; }
-        .progress-fill { height: 100%; background: linear-gradient(90deg, #8b5cf6, #06b6d4); border-radius: 4px; width: 26%; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #8b5cf6, #06b6d4); border-radius: 4px; width: 26.6%; }
         .question { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .question-number { color: #8b5cf6; font-weight: 700; margin-bottom: 12px; }
         .question h2 { font-size: 1.5rem; margin-bottom: 32px; color: #1e1b4b; }
         .options { display: flex; flex-direction: column; gap: 12px; }
         .option { padding: 20px 24px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; transition: all 0.2s; text-align: left; font-size: 1rem; }
         .option:hover { border-color: #8b5cf6; background: #faf5ff; }
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 32px; }
+        .btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .btn-secondary { background: #e2e8f0; color: #475569; }
     </style>
 </head>
 <body>
@@ -24,17 +27,23 @@
         <div class="progress-bar"><div class="progress-fill"></div></div>
         <div class="question">
             <div class="question-number">Question 4 of 15</div>
-            <h2>Question 4 loading...</h2>
+            <h2>What's your biggest time drain right now?</h2>
             <div class="options">
-                <button class="option" onclick="next()">Option A</button>
-                <button class="option" onclick="next()">Option B</button>
-                <button class="option" onclick="next()">Option C</button>
-                <button class="option" onclick="next()">Option D</button>
+                <button class="option" onclick="answer(0)">🍽️ Meal planning and grocery shopping</button>
+                <button class="option" onclick="answer(1)">📧 Managing emails and communication</button>
+                <button class="option" onclick="answer(2)">👨‍👩‍👧‍👦 Helping kids with homework and activities</button>
+                <button class="option" onclick="answer(3)">🧹 Household chores and organization</button>
+            </div>
+            <div class="nav-buttons">
+                <a href="/quiz/ai-skills/q3.html" class="btn btn-secondary">← Back</a>
             </div>
         </div>
     </div></div>
     <script>
-        function next() {
+        function answer(selected) {
+            let time = parseInt(sessionStorage.getItem('ai_time')) || 0;
+            time += selected;
+            sessionStorage.setItem('ai_time', time);
             window.location.href = '/quiz/ai-skills/q5.html';
         }
     </script>
