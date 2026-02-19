@@ -302,79 +302,151 @@
             margin-bottom: 20px;
         }
 
-        /* Quizzes Section */
+        /* Quizzes Section - Redesigned */
         .quizzes {
-            padding: 80px 0;
+            padding: 100px 0;
+            background: #fff;
         }
 
         .quizzes h2 {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 16px;
+            font-weight: 800;
         }
 
         .quizzes > .container > p {
             text-align: center;
             color: var(--gray);
             margin-bottom: 48px;
+            font-size: 1.125rem;
         }
 
         .quiz-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
         }
 
         .quiz-card {
             background: white;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 16px;
+            padding: 0;
             text-decoration: none;
             color: inherit;
-            transition: all 0.2s;
+            transition: all 0.25s ease;
             position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .quiz-card:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.25);
         }
+
+        .quiz-card-header {
+            padding: 24px 24px 16px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .quiz-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .quiz-card.credit .quiz-icon-wrap { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .quiz-card.investing .quiz-icon-wrap { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+        .quiz-card.taxes .quiz-icon-wrap { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+        .quiz-card.budget .quiz-icon-wrap { background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); }
+        .quiz-card.loans .quiz-icon-wrap { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); }
+        .quiz-card.banking .quiz-icon-wrap { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+        .quiz-card.money .quiz-icon-wrap { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); }
+        .quiz-card.scam .quiz-icon-wrap { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+        .quiz-card.games .quiz-icon-wrap { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .quiz-card.insurance .quiz-icon-wrap { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+        .quiz-card.prediction .quiz-icon-wrap { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); }
 
         .quiz-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
             background: var(--accent);
             color: white;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 12px;
             border-radius: 20px;
+            white-space: nowrap;
         }
 
-        .quiz-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
+        .quiz-card-body {
+            padding: 0 24px 20px;
+            flex-grow: 1;
         }
 
         .quiz-card h3 {
-            font-size: 1.125rem;
+            font-size: 1.25rem;
+            font-weight: 700;
             margin-bottom: 8px;
+            color: var(--dark);
         }
 
         .quiz-card p {
             color: var(--gray);
-            font-size: 0.875rem;
-            margin-bottom: 16px;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .quiz-card-footer {
+            padding: 16px 24px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .quiz-meta {
             display: flex;
+            align-items: center;
             gap: 16px;
             font-size: 0.875rem;
             color: var(--gray);
+        }
+
+        .quiz-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .quiz-arrow {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            transition: all 0.2s;
+        }
+
+        .quiz-card:hover .quiz-arrow {
+            background: var(--primary);
+            color: white;
         }
 
         /* Featured Quiz */
@@ -594,125 +666,209 @@
             <p>Pick a topic. Test yourself. Learn something.</p>
 
             <div class="quiz-grid">
-                <a href="/credit-basics-quiz.html" class="quiz-card">
-                    <span class="quiz-badge">Start Here</span>
-                    <div class="quiz-icon">💳</div>
-                    <h3>Credit Basics</h3>
-                    <p>FICO scores, credit reports, utilization, and how to actually build credit.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/credit-basics-quiz.html" class="quiz-card credit">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">💳</div>
+                        <span class="quiz-badge">Start Here</span>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Credit Basics</h3>
+                        <p>FICO scores, credit reports, utilization, and how to actually build credit.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/credit-cards-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">💰</div>
-                    <h3>Credit Cards 101</h3>
-                    <p>How they work, interest, rewards, and avoiding debt traps.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/credit-cards-quiz.html" class="quiz-card credit">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">💰</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Credit Cards 101</h3>
+                        <p>How they work, interest, rewards, and avoiding debt traps.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/investing-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">📈</div>
-                    <h3>Investing Basics</h3>
-                    <p>Stocks, ETFs, 401k, compound interest, and getting started with $0.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~4 min</span>
+                <a href="/investing-quiz.html" class="quiz-card investing">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">📈</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Investing Basics</h3>
+                        <p>Stocks, ETFs, 401k, compound interest, and getting started with $0.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~4 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/taxes-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">📋</div>
-                    <h3>Taxes for Beginners</h3>
-                    <p>W-4s, W-2s, deductions, credits, and why your refund isn't free money.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~4 min</span>
+                <a href="/taxes-quiz.html" class="quiz-card taxes">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">📋</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Taxes for Beginners</h3>
+                        <p>W-4s, W-2s, deductions, credits, and why your refund isn't free money.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~4 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/budgeting-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🎯</div>
-                    <h3>Budgeting</h3>
-                    <p>50/30/20 rule, tracking spending, and systems that actually stick.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/budgeting-quiz.html" class="quiz-card budget">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🎯</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Budgeting</h3>
+                        <p>50/30/20 rule, tracking spending, and systems that actually stick.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/student-loans-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🎓</div>
-                    <h3>Student Loans</h3>
-                    <p>Federal vs private, repayment plans, and forgiveness programs.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~4 min</span>
+                <a href="/student-loans-quiz.html" class="quiz-card loans">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🎓</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Student Loans</h3>
+                        <p>Federal vs private, repayment plans, and forgiveness programs.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~4 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/banking-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🏦</div>
-                    <h3>Banking Basics</h3>
-                    <p>Checking vs savings, APY, fees, and picking the right bank.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/banking-quiz.html" class="quiz-card banking">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🏦</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Banking Basics</h3>
+                        <p>Checking vs savings, APY, fees, and picking the right bank.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/make-money-online-quiz.html" class="quiz-card">
-                    <span class="quiz-badge">Popular</span>
-                    <div class="quiz-icon">💻</div>
-                    <h3>Make Money Online</h3>
-                    <p>Real ways to earn, scams to avoid, and what actually works.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~4 min</span>
+                <a href="/make-money-online-quiz.html" class="quiz-card money">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">💻</div>
+                        <span class="quiz-badge">Popular</span>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Make Money Online</h3>
+                        <p>Real ways to earn, scams to avoid, and what actually works.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~4 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/side-hustle-scam-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🛡️</div>
-                    <h3>Side Hustle Scams</h3>
-                    <p>Spot the red flags before you waste time or lose money.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/side-hustle-scam-quiz.html" class="quiz-card scam">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🛡️</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Side Hustle Scams</h3>
+                        <p>Spot the red flags before you waste time or lose money.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/games-that-pay-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🎮</div>
-                    <h3>Games That Pay</h3>
-                    <p>Which games actually pay real money and which are wastes of time.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/games-that-pay-quiz.html" class="quiz-card games">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🎮</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Games That Pay</h3>
+                        <p>Which games actually pay real money and which are wastes of time.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/auto-insurance-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🚗</div>
-                    <h3>Auto Insurance</h3>
-                    <p>Coverage types, what you actually need, and how to save.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~3 min</span>
+                <a href="/auto-insurance-quiz.html" class="quiz-card insurance">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🚗</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Auto Insurance</h3>
+                        <p>Coverage types, what you actually need, and how to save.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~3 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
 
-                <a href="/prediction-markets-quiz.html" class="quiz-card">
-                    <div class="quiz-icon">🎲</div>
-                    <h3>Prediction Markets</h3>
-                    <p>Kalshi, Polymarket, and betting on real-world events legally.</p>
-                    <div class="quiz-meta">
-                        <span>10 questions</span>
-                        <span>~4 min</span>
+                <a href="/prediction-markets-quiz.html" class="quiz-card prediction">
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-wrap">🎲</div>
+                    </div>
+                    <div class="quiz-card-body">
+                        <h3>Prediction Markets</h3>
+                        <p>Kalshi, Polymarket, and betting on real-world events legally.</p>
+                    </div>
+                    <div class="quiz-card-footer">
+                        <div class="quiz-meta">
+                            <span>⚡ 10 questions</span>
+                            <span>⏱️ ~4 min</span>
+                        </div>
+                        <div class="quiz-arrow">→</div>
                     </div>
                 </a>
             </div>
