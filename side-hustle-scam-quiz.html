@@ -3,307 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side Hustle Quiz: Can You Spot the Scam? - Credit Gamer Area</title>
-    <meta name="description" content="Test your knowledge on reward apps, survey sites, and side hustles. Learn which ones actually pay and which are scams.">
+    <title>Side Hustle Scam Quiz - Can You Spot Fake Money-Making Apps? (Free)</title>
+    <meta name="description" content="Take our free Side Hustle Scam Quiz! Learn to spot fake reward apps, survey scams, and protect your personal information while earning extra income.">
+    <meta name="keywords" content="side hustle scam quiz, reward app scams, survey scams, fake money apps, protect personal info, free quiz">
+    <meta name="author" content="Credit Gamer Area">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.creditgamerarea.com/side-hustle-scam-quiz.html">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.creditgamerarea.com/side-hustle-scam-quiz.html">
+    <meta property="og:title" content="Side Hustle Scam Quiz - Can You Spot Fake Money-Making Apps?">
+    <meta property="og:description" content="Learn to spot fake reward apps and survey scams with our free interactive quiz.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/og-side-hustle-scam.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.creditgamerarea.com/side-hustle-scam-quiz.html">
+    <meta property="twitter:title" content="Side Hustle Scam Quiz - Can You Spot Fake Money-Making Apps?">
+    <meta property="twitter:description" content="Learn to spot fake reward apps and survey scams with our free interactive quiz.">
+    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-side-hustle-scam.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
+        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .quiz-header { text-align: center; margin-bottom: 32px; }
+        .quiz-header .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
+        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
+        .progress-container { margin-bottom: 32px; }
+        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
+        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
+        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
+        .options-list { display: flex; flex-direction: column; gap: 12px; }
+        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
+        .option:hover { border-color: #6366f1; background: #f8fafc; }
+        .option.correct { border-color: #10b981; background: #d1fae5; }
+        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
+        .option.disabled { pointer-events: none; opacity: 0.7; }
+        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
+        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
+        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
+        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
+        .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
+        .results-container { text-align: center; padding: 40px 20px; }
+        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
+        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
+        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
+        .results-subtitle { color: #64748b; margin-bottom: 32px; }
+        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
+        .btn-primary { background: #6366f1; color: white; }
+        .btn-secondary { background: white; color: #6366f1; border: 2px solid #6366f1; }
+        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
+        .start-screen { text-align: center; padding: 40px 20px; }
+        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
+        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
+        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
+        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
+        .quiz-cta-section { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
+        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
+        #quiz-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
+        #quiz-modal.active { display: block; }
+        .modal-content { background: white; max-width: 800px; margin: 40px auto; border-radius: 16px; padding: 40px; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #64748b; }
+    </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TGP4RRFC');</script>
+    <!-- End Google Tag Manager -->
 </head>
-<body data-quiz-name="Side Hustle Scam Quiz">
+<body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGP4RRFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <div class="quiz-container">
-        <div class="quiz-header">
-            <a href="/" class="back-link">← Back to Home</a>
-            <h1>Side Hustle Quiz: Can You Spot the Scam? 🕵️‍♀️</h1>
-            <p class="quiz-intro">You play Design Home, The Sims, or earn on JustPlay for extra cash. But do you know which side hustles are legit? Test your scam radar! </p>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <div id="quiz-content">
-            <!-- Question 1 -->
-            <div class="question active" data-question-number="1">
-                <div class="question-number">Question 1 of 10</div>
-                <h2>You see an ad: "Earn $500/day playing games! Just download our app and watch ads." What's the red flag? 🚩</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) You have to download an app</button>
-                    <button class="option" data-correct="true">B) The promise of $500/day for minimal effort</button>
-                    <button class="option" data-correct="false">C) You have to watch ads</button>
-                    <button class="option" data-correct="false">D) It's a mobile game</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>Real reward apps (like JustPlay, Mistplay) pay $1-5/day, not $500. If it sounds too good to be true, it is. Scams use unrealistic earnings to get your personal info or make you pay upfront fees.</p>
+    <!-- Top Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Blog Content Section -->
+    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container" style="max-width: 800px;">
+            <span style="display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Side Hustles</span>
+            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Protecting Yourself from Side Hustle Scams: A Working Mom's Guide</h1>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
+                <strong>Reading time:</strong> 6 minutes | <strong>Quiz:</strong> 10 questions
+            </p>
+
+            <!-- Inline Ad 1 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                You're a working mom who unwinds with Design Home during lunch breaks or plays The Sims after the kids go to bed. Somewhere along the way, you discovered reward apps like JustPlay or Mistplay that actually pay you for playing games. But for every legitimate app, there are ten scams waiting to steal your time, personal information, or worse—your money.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                The side hustle economy has exploded, and scammers have noticed. They know working moms are looking for flexible ways to earn extra income. They know you're busy, tired, and maybe a bit desperate for financial breathing room. And they use that knowledge to create increasingly sophisticated traps.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">The "Too Good To Be True" Trap</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Here's the reality check that could save you thousands: Legitimate reward apps pay $1-5 per day for active use. That's $30-150 per month—not life-changing money, but real money for real effort. Scams promise $500+ per day for minimal work. The math doesn't lie.
+            </p>
 
-            <!-- Question 2 -->
-            <div class="question" data-question-number="2" style="display:none;">
-                <div class="question-number">Question 2 of 10</div>
-                <h2>You're cashing out $25 from a survey app. Which payout method is SAFEST? 💳</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Wire transfer to your bank</button>
-                    <button class="option" data-correct="true">B) PayPal or gift card to major retailer</button>
-                    <button class="option" data-correct="false">C) Cryptocurrency wallet transfer</button>
-                    <button class="option" data-correct="false">D) Check mailed to your home address</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>PayPal and major gift cards (Amazon, Target) are the safest payout methods. Never give your bank account details or home address to survey apps. Crypto payouts from unknown apps are often scams.</p>
+            <!-- Inline Ad 2 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Real apps make money through advertising and data (with your consent). They share a small portion with you. Scams make money by charging you upfront fees, selling your personal information, or installing malware on your device. Understanding this fundamental difference is your first line of defense.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Red Flags Every Working Mom Should Know</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                You don't have time to research every app thoroughly. That's why you need a mental checklist. Does the app require payment to start earning? Red flag. Does it promise unrealistic earnings? Red flag. Does it ask for your Social Security Number during signup? Major red flag. Legitimate apps need minimal information to get started.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Another warning sign: private Facebook groups or Discord servers that require recruitment. "Join our exclusive community of moms making $1000/month!" These are often pyramid schemes disguised as side hustles. The money comes from recruiting other moms, not from actual app usage.
+            </p>
 
-            <!-- Question 3 -->
-            <div class="question" data-question-number="3" style="display:none;">
-                <div class="question-number">Question 3 of 10</div>
-                <h2>A "design app" asks you to pay $19.99 upfront to "unlock premium earning features." What do you do? 🎨</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Pay it - you have to spend money to make money</button>
-                    <button class="option" data-correct="true">B) Close the app - legit apps don't require upfront payment</button>
-                    <button class="option" data-correct="false">C) Check reviews first, then decide</button>
-                    <button class="option" data-correct="false">D) Pay with a credit card so you can dispute it</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>Legit reward apps (Design Home, JustPlay, Mistplay) are FREE. Any app requiring upfront payment to "earn" is a scam. Real apps make money from ads, not from you.</p>
+            <!-- Inline Ad 3 -->
+            <div class="ad-inline">
+                <div>
+                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Protecting Your Personal Information</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                As a working mom, your identity is valuable—to you and to criminals. Never provide your Social Security Number, bank account details, or home address to gaming or survey apps. Legitimate platforms pay through PayPal or gift cards without needing sensitive information upfront.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Create a dedicated email address for reward apps. Use a unique password (managed by a password manager). These simple steps create barriers that stop most identity theft attempts. Your family's financial security is worth the extra five minutes of setup.
+            </p>
+            
+            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">The Tax Reality Nobody Talks About</h2>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Here's something most side hustle guides won't tell you: That $50 you earned is taxable income. Even if it's under $600 and you don't get a 1099 form, you still owe taxes on it. The IRS doesn't care if you made it playing games or working overtime.
+            </p>
+            
+            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
+                Set aside 20% of every payout for taxes. Screenshot your earnings. Keep a simple spreadsheet. These habits take five minutes per month but save hours of stress at tax time. Working moms have enough to worry about—don't let tax surprises be one of them.
+            </p>
+        </div>
+    </section>
 
-            <!-- Question 4 -->
-            <div class="question" data-question-number="4" style="display:none;">
-                <div class="question-number">Question 4 of 10</div>
-                <h2>You earned $50 on a reward app. How much should you set aside for taxes? 💰</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Nothing - it's under $600 so it's not taxable</button>
-                    <button class="option" data-correct="false">B) 10% - that's the standard rate</button>
-                    <button class="option" data-correct="true">C) 15-30% depending on your total income</button>
-                    <button class="option" data-correct="false">D) Reward app income isn't taxable</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>ALL income is taxable, even under $600. The $600 threshold is just when apps send you a 1099 form. Set aside 15-30% based on your tax bracket. Working moms especially - this affects your total household income!</p>
-                </div>
+    <!-- Quiz CTA Section -->
+    <section class="quiz-cta-section">
+        <div class="container" style="max-width: 600px;">
+            <h2>🛡️ Ready to Test Your Scam Radar?</h2>
+            <p>Take our free 10-question quiz to see if you can spot fake money-making apps. Learn to protect yourself and your family from side hustle scams.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ 5 Minutes</span>
+                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
             </div>
+            
+            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
+        </div>
+    </section>
 
-            <!-- Question 5 -->
-            <div class="question" data-question-number="5" style="display:none;">
-                <div class="question-number">Question 5 of 10</div>
-                <h2>Which of these is a REAL way to earn from gaming apps? 🎮</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Sending your gaming earnings to a "trader" who doubles it</button>
-                    <button class="option" data-correct="true">B) Redeeming points for PayPal cash or gift cards</button>
-                    <button class="option" data-correct="false">C) Paying a fee to "unlock" your earnings</button>
-                    <button class="option" data-correct="false">D) Recruiting friends for a pyramid bonus</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>Real apps (JustPlay, Mistplay, Swagbucks) let you redeem points for gift cards or PayPal. Never pay to access earnings, never send money to "traders," and watch out for MLM/pyramid structures disguised as gaming apps.</p>
-                </div>
-            </div>
+    <!-- Bottom Ad Unit -->
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
 
-            <!-- Question 6 -->
-            <div class="question" data-question-number="6" style="display:none;">
-                <div class="question-number">Question 6 of 10</div>
-                <h2>You're a working mom earning $200/month on reward apps. What's the smartest financial move? 👩‍👧‍👦</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Spend it on Design Home diamonds - you earned it!</button>
-                    <button class="option" data-correct="true">B) Put it in a high-yield savings or investment account</button>
-                    <button class="option" data-correct="false">C) Don't report it - it's just "fun money"</button>
-                    <button class="option" data-correct="false">D) Use it for daily coffee and treats</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>$200/month = $2,400/year! That's a family vacation fund, emergency savings, or investment seed money. Working moms know every dollar counts. Make your side hustle work FOR your family's future.</p>
-                </div>
-            </div>
-
-            <!-- Question 7 -->
-            <div class="question" data-question-number="7" style="display:none;">
-                <div class="question-number">Question 7 of 10</div>
-                <h2>An app asks for your Social Security Number to "verify your identity" for a $5 signup bonus. You should: 🔒</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Provide it - they need it for tax purposes</button>
-                    <button class="option" data-correct="true">B) Delete the app immediately - never give SSN for small rewards</button>
-                    <button class="option" data-correct="false">C) Give a fake SSN to get the bonus</button>
-                    <button class="option" data-correct="false">D) Ask your husband/partner what to do</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>NEVER give your SSN to gaming/reward apps. Identity theft is real and devastating. Legit apps pay through PayPal or gift cards without needing your SSN upfront. Only established platforms (like Swagbucks after high earnings) might need tax info.</p>
-                </div>
-            </div>
-
-            <!-- Question 8 -->
-            <div class="question" data-question-number="8" style="display:none;">
-                <div class="question-number">Question 8 of 10</div>
-                <h2>What's the biggest time waster in "beer money" apps? ⏰</h2>
-                <div class="options">
-                    <button class="option" data-correct="false">A) Watching the ads</button>
-                    <button class="option" data-correct="true">B) Apps with high minimum cashouts ($50+) that take forever</button>
-                    <button class="option" data-correct="false">C) Playing the games</button>
-                    <button class="option" data-correct="false">D) Checking your earnings balance</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>Apps with $50+ minimum cashouts are designed so you never actually get paid. Good apps (JustPlay, Mistplay) let you cash out at $1-5. Working moms don't have time for games that don't pay. Check cashout minimums BEFORE you start!</p>
-                </div>
-            </div>
-
-            <!-- Question 9 -->
-            <div class="question" data-question-number="9" style="display:none;">
-                <div class="question-number">Question 9 of 10</div>
-                <h2>You see a Facebook group: "Moms Making $1000/Month Playing Games!" The admin DMs you to join. What's the scam? 👩‍💻</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) The group is private</button>
-                    <button class="option" data-correct="true">B) They'll ask you to pay for a "training course" or recruit others</button>
-                    <button class="option" data-correct="false">C) They use Facebook instead of email</button>
-                    <button class="option" data-correct="false">D) The earnings claim is too specific</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>These are MLM/pyramid schemes targeting working moms. They sell "courses" or require you to recruit other moms. Real reward apps don't need private groups or recruitment. If the money comes from recruiting, not from actual app usage, it's a scam.</p>
-                </div>
-            </div>
-
-            <!-- Question 10 -->
-            <div class="question" data-question-number="10" style="display:none;">
-                <div class="question-number">Question 10 of 10</div>
-                <h2>Best way to track your reward app earnings for taxes? 📊</h2>
-                
-                <div class="options">
-                    <button class="option" data-correct="false">A) Just check your PayPal at year-end</button>
-                    <button class="option" data-correct="true">B) Screenshot cashouts monthly + simple spreadsheet</button>
-                    <button class="option" data-correct="false">C) The apps will send you everything you need</button>
-                    <button class="option" data-correct="false">D) You don't need to track under $600</button>
-                </div>
-                
-                <div class="explanation" style="display:none;">
-                    <strong>Correct! 🎯</strong>
-                    <p>Screenshot every cashout with date and amount. Use a simple spreadsheet (Google Sheets is free). Working moms are busy - spend 5 minutes monthly, save hours at tax time. Apps often don't send 1099s under $600, but YOU still owe taxes on that income.</p>
-                </div>
-            </div>
-
-            <!-- Results -->
-            <div id="quiz-results" style="display:none;">
-                <div class="results-container">
-                    <h2>Quiz Complete! 🎉</h2>
-                    
-                    <div class="score-display">
-                        <div class="score-number" id="score">0/10</div>
-                        <div class="score-label">Your Score</div>
-                    </div>
-
-                    <div class="result-tier" id="result-tier">
-                        <h3>Scam Spotter Level: Loading...</h3>
-                        <p id="result-message"></p>
-                    </div>
-
-                    <div class="next-steps">
-                        <h3>Keep Your Money Safe 💪</h3>
-                        
-                        <ul>
-                            <li>✅ Never pay upfront for "earning opportunities"</li>
-                            <li>✅ Set aside 20% of earnings for taxes</li>
-                            <li>✅ Screenshot all cashouts monthly</li>
-                            <li>✅ Stick to well-known apps: JustPlay, Mistplay, Swagbucks</li>
-                            <li>✅ If it sounds too good to be true, it is</li>
-                        </ul>
-
-                        <a href="/" class="btn-primary">Take Another Quiz →</a>
-                        <a href="/blog/side-hustle-tax-guide.html" class="btn-secondary">Read: Tax Guide for Side Hustles</a>
-                    </div>
-                </div>
+    <!-- Quiz Modal -->
+    <div id="quiz-modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeQuiz()">✕</button>
+            <div id="quiz-container">
+                <!-- Quiz loads here -->
             </div>
         </div>
     </div>
 
-    <script src="quiz-tracking.js"></script>
     <script>
-        // Quiz functionality
-        let currentQuestion = 1;
+        const quizData = {
+            title: "Side Hustle Scam Quiz",
+            questions: [
+                {
+                    question: "You see an ad: 'Earn $500/day playing games! Just download our app and watch ads.' What's the red flag?",
+                    options: [
+                        "You have to download an app",
+                        "The promise of $500/day for minimal effort",
+                        "You have to watch ads",
+                        "It's a mobile game"
+                    ],
+                    correct: 1,
+                    explanation: "Real reward apps pay $1-5/day, not $500. If it sounds too good to be true, it is. Scams use unrealistic earnings to get your personal info."
+                },
+                {
+                    question: "You're cashing out $25 from a survey app. Which payout method is SAFEST?",
+                    options: [
+                        "Wire transfer to your bank",
+                        "PayPal or gift card to major retailer",
+                        "Cryptocurrency wallet transfer",
+                        "Check mailed to your home address"
+                    ],
+                    correct: 1,
+                    explanation: "PayPal and major gift cards are safest. Never give bank details or home address to survey apps. Crypto payouts from unknown apps are often scams."
+                },
+                {
+                    question: "A 'design app' asks you to pay $19.99 upfront to 'unlock premium earning features.' What do you do?",
+                    options: [
+                        "Pay it - you have to spend money to make money",
+                        "Close the app - legit apps don't require upfront payment",
+                        "Check reviews first, then decide",
+                        "Pay with a credit card so you can dispute it"
+                    ],
+                    correct: 1,
+                    explanation: "Legit reward apps are FREE. Any app requiring upfront payment to 'earn' is a scam. Real apps make money from ads, not from you."
+                },
+                {
+                    question: "You earned $50 on a reward app. How much should you set aside for taxes?",
+                    options: [
+                        "Nothing - it's under $600 so it's not taxable",
+                        "10% - that's the standard rate",
+                        "15-30% depending on your total income",
+                        "Reward app income isn't taxable"
+                    ],
+                    correct: 2,
+                    explanation: "ALL income is taxable, even under $600. The $600 threshold is just when apps send a 1099. Set aside 15-30% based on your tax bracket."
+                },
+                {
+                    question: "Which of these is a REAL way to earn from gaming apps?",
+                    options: [
+                        "Sending your gaming earnings to a 'trader' who doubles it",
+                        "Redeeming points for PayPal cash or gift cards",
+                        "Paying a fee to 'unlock' your earnings",
+                        "Recruiting friends for a pyramid bonus"
+                    ],
+                    correct: 1,
+                    explanation: "Real apps let you redeem points for gift cards or PayPal. Never pay to access earnings, never send money to 'traders,' and watch out for MLM structures."
+                },
+                {
+                    question: "You're a working mom earning $200/month on reward apps. What's the smartest financial move?",
+                    options: [
+                        "Spend it on Design Home diamonds - you earned it!",
+                        "Put it in a high-yield savings or investment account",
+                        "Don't report it - it's just 'fun money'",
+                        "Use it for daily coffee and treats"
+                    ],
+                    correct: 1,
+                    explanation: "$200/month = $2,400/year! That's a family vacation fund, emergency savings, or investment seed money. Make your side hustle work FOR your family's future."
+                },
+                {
+                    question: "An app asks for your Social Security Number to 'verify your identity' for a $5 signup bonus. You should:",
+                    options: [
+                        "Provide it - they need it for tax purposes",
+                        "Delete the app immediately - never give SSN for small rewards",
+                        "Give a fake SSN to get the bonus",
+                        "Ask your husband/partner what to do"
+                    ],
+                    correct: 1,
+                    explanation: "NEVER give your SSN to gaming/reward apps. Identity theft is real and devastating. Legit apps pay through PayPal or gift cards without needing your SSN upfront."
+                },
+                {
+                    question: "What's the biggest time waster in 'beer money' apps?",
+                    options: [
+                        "Watching the ads",
+                        "Apps with high minimum cashouts ($50+) that take forever",
+                        "Playing the games",
+                        "Checking your earnings balance"
+                    ],
+                    correct: 1,
+                    explanation: "Apps with $50+ minimum cashouts are designed so you never actually get paid. Good apps let you cash out at $1-5. Working moms don't have time for games that don't pay."
+                },
+                {
+                    question: "You see a Facebook group: 'Moms Making $1000/Month Playing Games!' The admin DMs you to join. What's the scam?",
+                    options: [
+                        "The group is private",
+                        "They'll ask you to pay for a 'training course' or recruit others",
+                        "They use Facebook instead of email",
+                        "The earnings claim is too specific"
+                    ],
+                    correct: 1,
+                    explanation: "These are MLM/pyramid schemes targeting working moms. They sell 'courses' or require you to recruit other moms. Real reward apps don't need private groups or recruitment."
+                },
+                {
+                    question: "Best way to track your reward app earnings for taxes?",
+                    options: [
+                        "Just check your PayPal at year-end",
+                        "Screenshot cashouts monthly + simple spreadsheet",
+                        "The apps will send you everything you need",
+                        "You don't need to track under $600"
+                    ],
+                    correct: 1,
+                    explanation: "Screenshot every cashout with date and amount. Use a simple spreadsheet. Working moms are busy - spend 5 minutes monthly, save hours at tax time."
+                }
+            ]
+        };
+
+        let currentQuestion = 0;
         let score = 0;
-        const totalQuestions = 10;
 
-        document.querySelectorAll('.option').forEach(option => {
-            option.addEventListener('click', function() {
-                const question = this.closest('.question');
-                const isCorrect = this.dataset.correct === 'true';
+        function startMultiPageQuiz() {
+            document.getElementById('quiz-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            showQuestion();
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+            document.body.style.overflow = '';
+            currentQuestion = 0;
+            score = 0;
+        }
+
+        function showQuestion() {
+            const container = document.getElementById('quiz-container');
+            const question = quizData.questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+
+            container.innerHTML = `
+                <div class="quiz-header">
+                    <span class="category-tag">Side Hustles</span>
+                    <h1>${quizData.title}</h1>
+                </div>
                 
-                if (isCorrect) score++;
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" style="width: ${progress}%"></div>
+                    </div>
+                    <div class="progress-text">Question ${currentQuestion + 1} of ${quizData.questions.length}</div>
+                </div>
                 
-                // Show explanation
-                question.querySelector('.explanation').style.display = 'block';
-                
-                // Disable all options
-                question.querySelectorAll('.option').forEach(opt => {
-                    opt.disabled = true;
-                    if (opt.dataset.correct === 'true') {
-                        opt.classList.add('correct');
-                    } else if (opt === this && !isCorrect) {
-                        opt.classList.add('incorrect');
-                    }
-                });
-                
-                // Next button
-                setTimeout(() => {
-                    if (currentQuestion < totalQuestions) {
-                        document.querySelector(`[data-question-number="${currentQuestion}"]`).style.display = 'none';
-                        currentQuestion++;
-                        document.querySelector(`[data-question-number="${currentQuestion}"]`).style.display = 'block';
-                    } else {
-                        showResults();
-                    }
-                }, 2500);
+                <div class="question-container">
+                    <h2>${question.question}</h2>
+                    <div class="options-list">
+                        ${question.options.map((option, index) => `
+                            <button class="option" onclick="selectOption(${index})">${option}</button>
+                        `).join('')}
+                    </div>
+                    
+                    <div id="explanation" style="display: none;"></div>
+                </div>
+            `;
+        }
+
+        function selectOption(selectedIndex) {
+            const question = quizData.questions[currentQuestion];
+            const options = document.querySelectorAll('.option');
+            const explanationDiv = document.getElementById('explanation');
+
+            options.forEach((option, index) => {
+                option.classList.add('disabled');
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (index === selectedIndex && index !== question.correct) {
+                    option.classList.add('incorrect');
+                }
             });
-        });
 
-        function showResults() {
-            document.getElementById('quiz-content').style.display = 'none';
-            document.getElementById('quiz-results').style.display = 'block';
-            document.getElementById('score').textContent = `${score}/${totalQuestions}`;
-            
-            let tier, message;
-            const percentage = (score / totalQuestions) * 100;
-            
-            if (percentage >= 80) {
-                tier = '🛡️ Scam Shield Master';
-                message = 'Amazing! You know how to protect yourself and your family from scams. Your side hustle money is safe with you!';
-            } else if (percentage >= 60) {
-                tier = '🔍 Scam Detective';
-                message = 'Good job! You spotted most scams, but there\'s still room to level up. Review the explanations and try again!';
-            } else {
-                tier = '📚 Scam Student';
-                message = 'Don\'t worry - learning to spot scams takes practice. Read through all the explanations carefully before trying reward apps!';
+            if (selectedIndex === question.correct) {
+                score++;
             }
-            
-            document.getElementById('result-tier').querySelector('h3').textContent = `Scam Spotter Level: ${tier}`;
-            document.getElementById('result-message').textContent = message;
-            
-            // Track completion
-            if (typeof QUIZ_TRACKING !== 'undefined') {
-                QUIZ_TRACKING.trackQuizComplete('Side Hustle Scam Quiz', score, totalQuestions);
+
+            explanationDiv.innerHTML = `
+                <div class="explanation ${selectedIndex === question.correct ? 'correct' : 'incorrect'}">
+                    <h4>${selectedIndex === question.correct ? '✅ Correct!' : '❌ Not quite!'}</h4>
+                    <p>${question.explanation}</p>
+                    <button class="next-btn" onclick="nextQuestion()">
+                        ${currentQuestion < quizData.questions.length - 1 ? 'Next Question →' : 'See Results'}
+                    </button>
+                </div>
+            `;
+            explanationDiv.style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.questions.length) {
+                showQuestion();
+            } else {
+                showResults();
             }
         }
+
+        function showResults() {
+            const container = document.getElementById('quiz-container');
+            const percentage = (score / quizData.questions.length) * 100;
+            let emoji, message, subtitle;
+
+            if (percentage >= 80) {
+                emoji = '🛡️';
+                message = 'Scam Shield Master!';
+                subtitle = 'Amazing! You know how to protect yourself and your family from scams. Your side hustle money is safe with you!';
+            } else if (percentage >= 60) {
+                emoji = '🔍';
+                message = 'Scam Detective';
+                subtitle = 'Good job! You spotted most scams, but there\'s still room to level up. Review the explanations and try again!';
+            } else {
+                emoji = '📚';
+                message = 'Scam Student';
+                subtitle = 'Don\'t worry - learning to spot scams takes practice. Read through all the explanations carefully before trying reward apps!';
+            }
+
+            container.innerHTML = `
+                <div class="results-container">
+                    <div class="results-emoji">${emoji}</div>
+                    <div class="results-score">${score}/${quizData.questions.length}</div>
+                    <div class="results-message">${message}</div>
+                    <div class="results-subtitle">${subtitle}</div>
+                    
+                    <div class="results-actions">
+                        <a href="/" class="btn btn-primary">Take Another Quiz →</a>
+                        <a href="/blog/" class="btn btn-secondary">Read More Articles</a>
+                    </div>
+                </div>
+            `;
+
+            // Track completion
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'quiz_complete', {
+                    'quiz_name': 'Side Hustle Scam Quiz',
+                    'score': score,
+                    'total_questions': quizData.questions.length
+                });
+            }
+        }
+
+        // Close modal on outside click
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
     </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </body>
 </html>
