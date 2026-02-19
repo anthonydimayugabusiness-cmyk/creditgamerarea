@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your AI Skills Results</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .results-page { padding: 60px 0; background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%); min-height: 100vh; color: white; }
+        .results-container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .results-header { text-align: center; margin-bottom: 48px; }
+        .results-header h1 { font-size: 2.5rem; margin-bottom: 16px; }
+        
+        .result-card { background: white; color: #1e293b; padding: 40px; border-radius: 20px; margin-bottom: 24px; }
+        .result-card h2 { color: #1e1b4b; margin-bottom: 16px; }
+        .result-card p { color: #64748b; margin-bottom: 24px; }
+        
+        .skill-recommendation { background: #f8fafc; padding: 24px; border-radius: 12px; margin: 16px 0; border-left: 4px solid #8b5cf6; }
+        .skill-recommendation h4 { color: #1e1b4b; margin-bottom: 8px; }
+        .skill-recommendation p { margin-bottom: 12px; }
+        
+        .btn-primary { display: inline-block; background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+        
+        .share-buttons { display: flex; gap: 12px; justify-content: center; margin-top: 32px; }
+        .share-btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .share-twitter { background: #1da1f2; color: white; }
+        .share-facebook { background: #4267b2; color: white; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="background: rgba(255,255,255,0.1);">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+        </div>
+    </nav>
+
+    <div class="results-page">
+        <div class="results-container">
+            <div class="results-header">
+                <h1>🎉 Your Results Are In!</h1>
+                <p>Based on your answers, here are the AI skills perfect for you</p>
+            </div>
+
+            <div class="result-card">
+                <h2>Your AI Skill Profile</h2>
+                <p>You scored highest in: <strong id="top-category">Loading...</strong></p>
+                
+                <div id="recommendations">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+
+            <div class="result-card">
+                <h2>🚀 Your Next Steps</h2>
+                <ol>
+                    <li>Read the detailed guides in our blog series</li>
+                    <li>Pick ONE skill to start with (don't try to learn everything at once)</li>
+                    <li>Spend 2-3 hours this week exploring the recommended tools</li>
+                    <li>Do a small practice project to build confidence</li>
+                </ol>
+                
+                <a href="/blog/ai-for-moms-part-1.html" class="btn-primary">Read Part 1: Make Money →</a>
+                <a href="/blog/ai-for-moms-part-2.html" class="btn-primary" style="margin-left: 12px;">Read Part 2: Save Time →</a>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn share-twitter" id="twitter-share">Share on Twitter</a>
+                <a href="#" class="share-btn share-facebook" onclick="shareFacebook()">Share on Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const money = parseInt(sessionStorage.getItem('ai_money')) || 0;
+        const time = parseInt(sessionStorage.getItem('ai_time')) || 0;
+        const career = parseInt(sessionStorage.getItem('ai_career')) || 0;
+        
+        let topCategory = '';
+        let recommendations = '';
+        
+        if (money >= time && money >= career) {
+            topCategory = 'Making Money with AI';
+            recommendations = `
+                <div class="skill-recommendation">
+                    <h4>💰 Top Skill: AI Content Writing</h4>
+                    <p>Perfect for your goals. Start with ChatGPT to write blog posts, social media, or email newsletters.</p>
+                    <a href="https://chat.openai.com" target="_blank" class="btn-primary">Try ChatGPT Free →</a>
+                </div>
+                <div class="skill-recommendation">
+                    <h4>🎨 Runner Up: AI Image Creation</h4>
+                    <p>Create digital products for Etsy. Great if you're creative and want passive income.</p>
+                    <a href="https://www.canva.com" target="_blank" class="btn-primary">Try Canva AI →</a>
+                </div>
+            `;
+        } else if (time >= money && time >= career) {
+            topCategory = 'Saving Time with AI';
+            recommendations = `
+                <div class="skill-recommendation">
+                    <h4>🍽️ Top Skill: AI Meal Planning</h4>
+                    <p>Save 2-3 hours every week. Get personalized meal plans, recipes, and grocery lists instantly.</p>
+                    <a href="https://chat.openai.com" target="_blank" class="btn-primary">Try It Now →</a>
+                </div>
+                <div class="skill-recommendation">
+                    <h4>📧 Runner Up: AI Email Management</h4>
+                    <p>Draft responses in seconds. Perfect for handling school emails, work communication, and customer service.</p>
+                </div>
+            `;
+        } else {
+            topCategory = 'Career Advancement with AI';
+            recommendations = `
+                <div class="skill-recommendation">
+                    <h4>📚 Top Skill: AI Learning Assistant</h4>
+                    <p>Learn any topic faster with AI as your personal tutor. Great for certifications or skill building.</p>
+                </div>
+            `;
+        }
+        
+        document.getElementById('top-category').textContent = topCategory;
+        document.getElementById('recommendations').innerHTML = recommendations;
+        
+        // Twitter share
+        const shareText = encodeURIComponent(`I just took the "Which AI Skills Should You Learn?" quiz and got: ${topCategory}! Take the quiz: https://www.creditgamerarea.com/ai-skills-for-moms-quiz.html`);
+        document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${shareText}`;
+        
+        function shareFacebook() {
+            const url = encodeURIComponent('https://www.creditgamerarea.com/ai-skills-for-moms-quiz.html');
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        }
+    </script>
+</body>
+</html>
