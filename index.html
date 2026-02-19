@@ -516,23 +516,31 @@
             opacity: 0.8;
         }
 
-        /* Footer */
+        /* Footer - Dark Theme */
         footer {
-            padding: 60px 0 30px;
-            border-top: 1px solid #e2e8f0;
+            padding: 80px 0 40px;
+            background: #0f172a;
+            color: white;
+        }
+
+        footer .logo {
+            color: white;
+            font-size: 1.5rem;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 48px;
-            margin-bottom: 48px;
+            margin-bottom: 64px;
         }
 
         .footer-brand p {
-            color: var(--gray);
+            color: #94a3b8;
             margin-top: 16px;
-            font-size: 0.9375rem;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 300px;
         }
 
         .footer-links h4 {
@@ -540,7 +548,8 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
+            color: white;
         }
 
         .footer-links ul {
@@ -548,24 +557,25 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
-            color: var(--gray);
+            color: #94a3b8;
             text-decoration: none;
             font-size: 0.9375rem;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--primary);
+            color: white;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            color: var(--gray);
+            padding-top: 40px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
             font-size: 0.875rem;
         }
 
@@ -588,7 +598,12 @@
             }
 
             .footer-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .footer-brand p {
+                max-width: 100%;
             }
         }
     </style>
