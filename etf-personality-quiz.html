@@ -432,6 +432,12 @@
                     <span>⏱️ ~3 Minutes</span>
                     <span>🎯 Personalized Result</span>
                 </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin: 24px 0; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <p style="color: #64748b; font-size: 0.8125rem; line-height: 1.5; margin: 0;">
+                        ⚠️ <strong>Not Financial Advice:</strong> This quiz is for educational purposes only. Always consult a financial advisor before making investment decisions.
+                    </p>
+                </div>
                 
                 <button class="btn btn-primary" onclick="startQuiz()">Start Quiz →</button>
             </div>
@@ -926,6 +932,13 @@
                     <ul class="trait-list">
                         ${result.traits.map(trait => `<li>${trait}</li>`).join('')}
                     </ul>
+                </div>
+
+                <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 12px; padding: 20px; margin: 32px 0; text-align: left;">
+                    <h4 style="color: #92400e; margin-bottom: 12px; font-size: 1rem;">⚠️ Important Disclaimer</h4>
+                    <p style="color: #92400e; font-size: 0.875rem; line-height: 1.6; margin: 0;">
+                        This quiz is for <strong>educational and entertainment purposes only</strong>. It is not financial advice, investment advice, or a recommendation to buy or sell any security. ETF recommendations are based on general personality types and should not be the sole basis for investment decisions. Past performance does not guarantee future results. Always do your own research, consider your personal financial situation, and consult with a qualified financial advisor before making investment decisions. Investing involves risk, including possible loss of principal.
+                    </p>
                 </div>
 
                 <div class="results-actions">
