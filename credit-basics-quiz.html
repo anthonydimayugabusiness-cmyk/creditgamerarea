@@ -3,78 +3,734 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Basics Quiz - Test Your Credit Score Knowledge (Free)</title>
-    <meta name="description" content="Take our free Credit Basics Quiz! Learn about credit scores, credit reports, and how to build credit. 10 questions with instant results and detailed explanations.">
-    <meta name="keywords" content="credit basics quiz, credit score quiz, learn credit, credit report, build credit, credit education, free quiz">
-    <meta name="author" content="Credit Gamer Area">
-    <meta name="robots" content="index, follow">
+    <title>Credit Basics: The Game Tutorial | Credit Gamer Area</title>
+    <meta name="description" content="Learn to play the Credit Game! Master credit building like a pro gamer. Tutorial + practical quiz to level up your financial skills.">
     <link rel="canonical" href="https://www.creditgamerarea.com/credit-basics-quiz.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.creditgamerarea.com/credit-basics-quiz.html">
-    <meta property="og:title" content="Credit Basics Quiz - Test Your Credit Score Knowledge">
-    <meta property="og:description" content="Learn about credit scores, credit reports, and how to build credit with our free interactive quiz.">
-    <meta property="og:image" content="https://www.creditgamerarea.com/og-credit-basics.jpg">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.creditgamerarea.com/credit-basics-quiz.html">
-    <meta property="twitter:title" content="Credit Basics Quiz - Test Your Credit Score Knowledge">
-    <meta property="twitter:description" content="Learn about credit scores, credit reports, and how to build credit with our free interactive quiz.">
-    <meta property="twitter:image" content="https://www.creditgamerarea.com/og-credit-basics.jpg">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>">
     <link rel="stylesheet" href="/styles.css">
-    <!-- reCAPTCHA v3 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
     <style>
-        .quiz-page { padding: 40px 0; min-height: calc(100vh - 200px); }
-        .quiz-container { max-width: 700px; margin: 0 auto; background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .quiz-header { text-align: center; margin-bottom: 32px; }
-        .quiz-header .category-tag { display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px; }
-        .quiz-header h1 { font-size: 1.875rem; margin-bottom: 8px; }
-        .progress-container { margin-bottom: 32px; }
-        .progress-bar-bg { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; }
-        .progress-bar { background: linear-gradient(90deg, #6366f1, #8b5cf6); height: 100%; border-radius: 4px; transition: width 0.3s ease; }
-        .progress-text { font-size: 0.875rem; color: #64748b; margin-top: 8px; text-align: center; }
-        .question-container h2 { font-size: 1.375rem; margin-bottom: 24px; line-height: 1.5; }
-        .options-list { display: flex; flex-direction: column; gap: 12px; }
-        .option { background: white; border: 2px solid #e2e8f0; padding: 16px 20px; border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 1rem; text-align: left; }
-        .option:hover { border-color: #6366f1; background: #f8fafc; }
-        .option.correct { border-color: #10b981; background: #d1fae5; }
-        .option.incorrect { border-color: #ef4444; background: #fee2e2; }
-        .option.disabled { pointer-events: none; opacity: 0.7; }
-        .explanation { margin-top: 24px; padding: 20px; border-radius: 12px; }
-        .explanation.correct { background: #d1fae5; border: 1px solid #10b981; }
-        .explanation.incorrect { background: #fee2e2; border: 1px solid #ef4444; }
-        .explanation h4 { margin-bottom: 8px; font-size: 1.125rem; }
-        .next-btn { margin-top: 16px; background: #6366f1; color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 1rem; }
-        .results-container { text-align: center; padding: 40px 20px; }
-        .results-emoji { font-size: 4rem; margin-bottom: 16px; }
-        .results-score { font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 16px 0; }
-        .results-message { font-size: 1.5rem; font-weight: 600; margin-bottom: 8px; }
-        .results-subtitle { color: #64748b; margin-bottom: 32px; }
-        .results-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; cursor: pointer; border: none; font-size: 1rem; }
-        .btn-primary { background: #6366f1; color: white; }
-        .btn-secondary { background: white; color: #6366f1; border: 2px solid #6366f1; }
-        .btn-large { font-size: 1.25rem; padding: 18px 36px; }
-        .start-screen { text-align: center; padding: 40px 20px; }
-        .quiz-meta { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
-        .quiz-meta span { display: flex; align-items: center; gap: 8px; color: #64748b; }
-        .ad-container { max-width: 700px; margin: 32px auto; text-align: center; }
-        .ad-label { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px; }
-        .ad-inline { width: 300px; height: 250px; background: #e2e8f0; margin: 24px auto; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; }
-        .quiz-cta-section { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; padding: 60px 20px; text-align: center; margin: 40px 0; border-radius: 16px; }
-        .quiz-cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
-        .quiz-cta-section p { font-size: 1.125rem; margin-bottom: 24px; opacity: 0.9; }
-        #quiz-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; overflow-y: auto; }
-        #quiz-modal.active { display: block; }
-        .modal-content { background: white; max-width: 800px; margin: 40px auto; border-radius: 16px; padding: 40px; position: relative; }
-        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #64748b; }
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --danger: #ef4444;
+            --xp: #fbbf24;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Game Container */
+        .game-container {
+            padding: 40px 0;
+        }
+
+        /* Tutorial Phase */
+        .tutorial-phase {
+            display: none;
+        }
+
+        .tutorial-phase.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Welcome Screen */
+        .welcome-screen {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .game-icon {
+            font-size: 5rem;
+            margin-bottom: 24px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .welcome-screen h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-screen .subtitle {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .difficulty-selector {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .difficulty-btn {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .difficulty-btn:hover, .difficulty-btn.selected {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .start-btn {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+            border: none;
+            padding: 20px 48px;
+            border-radius: 16px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Tutorial Cards */
+        .tutorial-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .tutorial-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .level-badge {
+            background: linear-gradient(135deg, var(--xp), #f59e0b);
+            color: #1e1b4b;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 0.875rem;
+        }
+
+        .tutorial-header h2 {
+            font-size: 1.75rem;
+            color: var(--dark);
+        }
+
+        .tutorial-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        .tutorial-content p {
+            margin-bottom: 16px;
+        }
+
+        /* Game Tip Box */
+        .game-tip {
+            background: linear-gradient(135deg, #ede9fe, #f0f9ff);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+
+        .game-tip h4 {
+            color: #5b21b6;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .game-tip h4::before {
+            content: "💡";
+        }
+
+        /* Stats Display */
+        .stats-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #f8fafc, white);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Power-Up Cards */
+        .powerup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .powerup-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .powerup-card:hover {
+            border-color: var(--success);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(16, 185, 129, 0.2);
+        }
+
+        .powerup-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .powerup-name {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .powerup-desc {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Boss Warning */
+        .boss-warning {
+            background: linear-gradient(135deg, #fef3c7, #ffedd5);
+            border: 2px solid #f59e0b;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .boss-warning h4 {
+            color: #92400e;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .boss-warning p {
+            color: #92400e;
+            margin-bottom: 0;
+        }
+
+        /* Navigation Buttons */
+        .tutorial-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+            gap: 16px;
+        }
+
+        .nav-btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .nav-btn.secondary {
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        .nav-btn.primary {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Quiz Phase */
+        .quiz-phase {
+            display: none;
+        }
+
+        .quiz-phase.active {
+            display: block;
+        }
+
+        .quiz-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .quiz-header .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--xp), #f59e0b);
+            color: #1e1b4b;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .quiz-header h1 {
+            font-size: 1.875rem;
+            color: var(--dark);
+        }
+
+        /* XP Bar */
+        .xp-container {
+            margin-bottom: 32px;
+        }
+
+        .xp-bar-bg {
+            background: #e2e8f0;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .xp-bar {
+            background: linear-gradient(90deg, var(--xp), #f59e0b);
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .xp-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Question */
+        .question-container h2 {
+            font-size: 1.375rem;
+            margin-bottom: 24px;
+            line-height: 1.5;
+            color: var(--dark);
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 20px 24px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+            transform: translateX(4px);
+        }
+
+        .option.correct {
+            border-color: var(--success);
+            background: #d1fae5;
+        }
+
+        .option.incorrect {
+            border-color: var(--danger);
+            background: #fee2e2;
+        }
+
+        .option.disabled {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .option-letter {
+            background: #e2e8f0;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gray);
+            flex-shrink: 0;
+        }
+
+        .option:hover .option-letter {
+            background: var(--primary);
+            color: white;
+        }
+
+        .option.correct .option-letter {
+            background: var(--success);
+            color: white;
+        }
+
+        .option.incorrect .option-letter {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* Explanation */
+        .explanation {
+            margin-top: 24px;
+            padding: 24px;
+            border-radius: 16px;
+        }
+
+        .explanation.correct {
+            background: #d1fae5;
+            border: 2px solid var(--success);
+        }
+
+        .explanation.incorrect {
+            background: #fee2e2;
+            border: 2px solid var(--danger);
+        }
+
+        .explanation h4 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .explanation.correct h4 {
+            color: #065f46;
+        }
+
+        .explanation.incorrect h4 {
+            color: #991b1b;
+        }
+
+        .next-btn {
+            margin-top: 16px;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -8px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Results */
+        .results-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .results-badge {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--xp), #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 20px 40px -10px rgba(251, 191, 36, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .results-score {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 16px 0;
+        }
+
+        .results-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .results-message {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+
+        .unlock-section {
+            background: linear-gradient(135deg, #ede9fe, #f0f9ff);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .unlock-section h3 {
+            color: #5b21b6;
+            margin-bottom: 16px;
+        }
+
+        .unlock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .unlock-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .unlock-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .unlock-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .unlock-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.2);
+        }
+
+        /* Progress Dots */
+        .progress-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        .dot.completed {
+            background: var(--success);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .welcome-screen h1 { font-size: 1.75rem; }
+            .tutorial-card { padding: 24px; }
+            .quiz-container { padding: 24px; }
+            .results-score { font-size: 3rem; }
+        }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar">
+    <nav>
         <div class="container">
-            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <a href="/" class="logo">🎮 Credit Gamer Area</a>
             <ul class="nav-links">
                 <li><a href="/quizzes/">Quizzes</a></li>
                 <li><a href="/blog/">Blog</a></li>
@@ -82,279 +738,536 @@
         </div>
     </nav>
 
-    <!-- Top Ad Unit -->
-    <div class="ad-container">
-        <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Blog Content Section -->
-    <section class="quiz-blog-content" style="padding: 60px 0; background: #f8fafc;">
-        <div class="container" style="max-width: 800px;">
-            <span style="display: inline-block; background: #6366f1; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 16px;">Credit</span>
-            <h1 style="font-size: 2.5rem; margin-bottom: 24px; color: #1e1b4b;">Understanding Credit Basics: Your Financial Foundation</h1>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px; color: #64748b;">
-                <strong>Reading time:</strong> 5 minutes | <strong>Quiz:</strong> 10 questions
-            </p>
-
-            <!-- Inline Ad 1 -->
-            <div class="ad-inline">
-                <div>
-                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
-                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Your credit score is more than just a number—it's the key that unlocks financial opportunities throughout your life. Whether you're applying for your first apartment, buying a car, or eventually purchasing a home, your credit score plays a crucial role in determining your eligibility and the interest rates you'll pay. Understanding credit basics isn't just about knowing definitions; it's about mastering a system that can save you thousands of dollars over your lifetime.
-            </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                At its core, credit is trust in financial form. When lenders, landlords, or even employers check your credit, they're asking one fundamental question: "Can we trust this person to fulfill their financial obligations?" Your credit score, ranging from 300 to 850, is the numerical answer to that question. A score above 700 generally indicates good credit management, while scores above 750 are considered excellent and can unlock the best rates and terms available.
-            </p>
-            
-            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Why Credit Matters for Young Adults</h2>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                For young adults aged 18-30, building credit early is one of the smartest financial moves you can make. The length of your credit history accounts for 15% of your FICO score, which means the sooner you start, the better. Think of credit building like leveling up a character in a game—the earlier you start grinding, the stronger your character becomes. By establishing good credit habits now, you're setting yourself up for easier approvals, lower interest rates, and better financial opportunities when you need them most.
-            </p>
-
-            <!-- Inline Ad 2 -->
-            <div class="ad-inline">
-                <div>
-                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
-                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                The five factors that make up your credit score are payment history (35%), credit utilization (30%), length of credit history (15%), credit mix (10%), and new credit inquiries (10%). Payment history is the heavyweight champion here—just one late payment can drop your score by 50-100 points and stay on your report for seven years. That's why setting up automatic payments and keeping track of due dates is absolutely critical.
-            </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Credit utilization, the second-biggest factor, measures how much of your available credit you're using. If you have a $1,000 credit limit and carry a $500 balance, your utilization is 50%—which is too high. Experts recommend keeping utilization under 30%, and ideally under 10% for the best scores. This doesn't mean you shouldn't use your credit cards; it means you should pay them off in full each month if possible.
-            </p>
-            
-            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Building Credit from Scratch</h2>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Building credit from scratch can feel like a catch-22: you need credit to get credit. But there are proven strategies to break this cycle. Secured credit cards, where you put down a deposit that becomes your credit limit, are designed specifically for credit building. Credit-builder loans from community banks or credit unions are another excellent option. Becoming an authorized user on a parent's credit card can also help establish your credit history, provided they have good credit habits themselves.
-            </p>
-
-            <!-- Inline Ad 3 -->
-            <div class="ad-inline">
-                <div>
-                    <div style="font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Advertisement</div>
-                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-            </div>
-            
-            <h2 style="font-size: 1.75rem; margin: 40px 0 20px; color: #1e1b4b;">Common Credit Mistakes to Avoid</h2>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Many young adults make costly credit mistakes simply because they weren't taught how the system works. Maxing out credit cards, making only minimum payments, applying for too many cards at once, and ignoring their credit reports are all common pitfalls. Each of these mistakes can set you back years in your credit-building journey. The good news is that credit is forgiving—negative marks fade over time, and positive behaviors consistently practiced will eventually outweigh past mistakes.
-            </p>
-            
-            <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 20px;">
-                Monitoring your credit is essential. You're entitled to one free credit report per year from each of the three major bureaus (Equifax, Experian, and TransUnion) through AnnualCreditReport.com. Many credit card companies now offer free credit score monitoring as a cardholder benefit. Regular monitoring helps you catch errors, detect identity theft early, and track your progress as you build your credit.
-            </p>
-        </div>
-    </section>
-
-    <!-- Quiz CTA Section -->
-    <section class="quiz-cta-section">
-        <div class="container" style="max-width: 600px;">
-            <h2>🎮 Ready to Test Your Knowledge?</h2>
-            <p>Take our free 10-question quiz to see how much you've learned about credit basics. Get instant results and detailed explanations for each question.</p>
-            
-            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
-                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📝 10 Questions</span>
-                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⏱️ 5 Minutes</span>
-                <span style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📊 Instant Results</span>
-            </div>
-            
-            <button class="btn btn-primary btn-large" onclick="startMultiPageQuiz()">Start the Quiz →</button>
-        </div>
-    </section>
-
-    <!-- Bottom Ad Unit -->
-    <div class="ad-container">
-        <div class="ad-label">Advertisement</div>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-
-    <!-- Quiz Modal -->
-    <div id="quiz-modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeQuiz()">✕</button>
-            <div id="quiz-container">
-                <!-- Quiz loads here -->
-            </div>
-        </div>
-    </div>
-
-        
-    <!-- Footer -->
-    <footer class="footer" style="background: #0f0d2e; color: white; padding: 60px 0 30px;">
+    <div class="game-container">
         <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div class="footer-brand">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 16px;">💳 Credit Gamer Area</h3>
-                    <p style="color: #94a3b8; font-size: 0.875rem; line-height: 1.6; margin-bottom: 20px;">Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 style="font-size: 1rem; margin-bottom: 16px; color: white;">Learn</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 8px;"><a href="/credit-basics-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Credit Basics</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/credit-cards-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Credit Cards</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/taxes-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Taxes</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/investing-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Investing</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/student-loans-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Student Loans</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/budgeting-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Budgeting</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/banking-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Banking</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/make-money-online-quiz.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Make Money Online</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 style="font-size: 1rem; margin-bottom: 16px; color: white;">Company</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 8px;"><a href="/about.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">About Us</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Blog</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/contact.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Contact</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/privacy.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/terms.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 style="font-size: 1rem; margin-bottom: 16px; color: white;">Resources</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-bottom: 8px;"><a href="/quizzes/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">All Quizzes</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/resources.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Financial Calculators</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/faq.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">FAQ</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/sitemap.html" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Sitemap</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Credit Guides</a></li>
-                        <li style="margin-bottom: 8px;"><a href="/blog/" style="color: #94a3b8; text-decoration: none; font-size: 0.875rem;">Money Tips</a></li>
-                    </ul>
-                </div>
-            </div>
             
-            <div class="footer-bottom" style="border-top: 1px solid #1e293b; padding-top: 20px; text-align: center;">
-                <p style="color: #64748b; font-size: 0.875rem;">&copy; 2026 Credit Gamer Area. All rights reserved. | Not financial advice</p>
+            <!-- WELCOME SCREEN -->
+            <div id="welcome-screen" class="welcome-screen">
+                <div class="game-icon">🎯</div>
+                <h1>Welcome to The Credit Game</h1>
+                <p class="subtitle">Master credit building like a pro gamer! Learn the rules, unlock power-ups, defeat debt bosses, and level up your financial score.</p>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 24px; border-radius: 16px; margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    <h3 style="color: #fbbf24; margin-bottom: 16px;">🎮 What You'll Learn</h3>
+                    <ul style="text-align: left; color: #cbd5e1; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 12px;">✅ Why credit is a game you CAN win</li>
+                        <li style="margin-bottom: 12px;">✅ Your starting stats (credit score breakdown)</li>
+                        <li style="margin-bottom: 12px;">✅ Power-ups to boost your score fast</li>
+                        <li style="margin-bottom: 12px;">✅ Boss battles to avoid (credit killers)</li>
+                        <li>✅ Test your skills in the final challenge!</li>
+                    </ul>
+                </div>
+                
+                <button class="start-btn" onclick="startTutorial()">
+                    🚀 Start Tutorial
+                </button>
             </div>
+
+            <!-- TUTORIAL PHASE 1: THE GAME CONCEPT -->
+            <div id="tutorial-1" class="tutorial-phase">
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <span class="level-badge">LEVEL 1: THE BASICS</span>
+                    </div>
+                    
+                    <div class="tutorial-content">
+                        <h2 style="margin-bottom: 20px;">🎮 Credit IS a Game — Here's Why</h2>
+                        
+                        <p>Think of your credit score like a <strong>player rating</strong> in a video game. Just like how a high-level character unlocks better gear and quests, a high credit score unlocks better loans, lower interest rates, and financial opportunities.</p>
+                        
+                        <div class="stats-display">
+                            <div class="stat-card">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-value">850</div>
+                                <div class="stat-label">Max Level</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">⭐</div>
+                                <div class="stat-value">718</div>
+                                <div class="stat-label">Average Player</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🎯</div>
+                                <div class="stat-value">750+</div>
+                                <div class="stat-label">Elite Tier</div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-tip">
+                            <h4>Pro Gamer Tip</h4>
+                            <p>The <strong>earlier you start</strong> building credit, the better. Just like grinding XP in an RPG, time is your biggest advantage. Someone who starts at 18 can have an 800+ score by their mid-20s with minimal effort.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-nav">
+                        <button class="nav-btn secondary" onclick="showWelcome()">← Back</button>
+                        <button class="nav-btn primary" onclick="showTutorial(2)">Next: Your Stats →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TUTORIAL PHASE 2: YOUR STATS -->
+            <div id="tutorial-2" class="tutorial-phase">
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <span class="level-badge">LEVEL 2: KNOW YOUR STATS</span>
+                    </div>
+                    
+                    <div class="tutorial-content">
+                        <h2 style="margin-bottom: 20px;">📊 Understanding Your Credit Stats</h2>
+                        
+                        <p>Your FICO score (the one 90% of lenders use) is calculated from <strong>5 main stats</strong>. Think of them like attributes in an RPG:</p>
+                        
+                        <div class="powerup-grid">
+                            <div class="powerup-card">
+                                <div class="powerup-icon">⚔️</div>
+                                <div class="powerup-name">Payment History</div>
+                                <div class="powerup-desc">35% — Your attack power. Never miss a payment!</div>
+                            </div>
+                            
+                            <div class="powerup-card">
+                                <div class="powerup-icon">🛡️</div>
+                                <div class="powerup-name">Credit Utilization</div>
+                                <div class="powerup-desc">30% — Your defense. Keep it under 30%!</div>
+                            </div>
+                            
+                            <div class="powerup-card">
+                                <div class="powerup-icon">⏱️</div>
+                                <div class="powerup-name">Credit Age</div>
+                                <div class="powerup-desc">15% — Time played. Older = better!</div>
+                            </div>
+                            
+                            <div class="powerup-card">
+                                <div class="powerup-icon">🎒</div>
+                                <div class="powerup-name">Credit Mix</div>
+                                <div class="powerup-desc">10% — Variety of gear. Cards + loans!</div>
+                            </div>
+                            
+                            <div class="powerup-card">
+                                <div class="powerup-icon">🔍</div>
+                                <div class="powerup-name">New Credit</div>
+                                <div class="powerup-desc">10% — Recent activity. Don't spam apps!</div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-tip">
+                            <h4>The 80/20 Rule</h4>
+                            <p>Focus on <strong>Payment History (35%)</strong> and <strong>Credit Utilization (30%)</strong> — together they're 65% of your score! Master these two and you'll be in the top tier.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-nav">
+                        <button class="nav-btn secondary" onclick="showTutorial(1)">← Back</button>
+                        <button class="nav-btn primary" onclick="showTutorial(3)">Next: Power-Ups →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TUTORIAL PHASE 3: POWER-UPS -->
+            <div id="tutorial-3" class="tutorial-phase">
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <span class="level-badge">LEVEL 3: POWER-UPS</span>
+                    </div>
+                    
+                    <div class="tutorial-content">
+                        <h2 style="margin-bottom: 20px;">⚡ Unlock These Credit Power-Ups</h2>
+                        
+                        <p>Just like power-ups in games boost your abilities, these credit strategies boost your score:</p>
+                        
+                        <div style="margin: 24px 0;">
+                            <div style="background: linear-gradient(135deg, #ecfdf5, #d1fae5); padding: 20px; border-radius: 12px; margin-bottom: 16px; border-left: 4px solid var(--success);">
+                                <h4 style="color: #065f46; margin-bottom: 8px;">🚀 Auto-Pay Buff</h4>
+                                <p style="margin: 0; color: #334155;">Set up automatic payments = Never miss a payment = +35% score protection. This is the most powerful buff in the game!</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(135deg, #ede9fe, #ddd6fe); padding: 20px; border-radius: 12px; margin-bottom: 16px; border-left: 4px solid #8b5cf6;">
+                                <h4 style="color: #5b21b6; margin-bottom: 8px;">💳 The 10% Rule</h4>
+                                <p style="margin: 0; color: #334155;">Keep credit card balance under 10% of limit for maximum score boost. If you have a $1,000 limit, never carry more than $100.</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(135deg, #fef3c7, #fde68a); padding: 20px; border-radius: 12px; margin-bottom: 16px; border-left: 4px solid #f59e0b;">
+                                <h4 style="color: #92400e; margin-bottom: 8px;">🎁 Authorized User Hack</h4>
+                                <p style="margin: 0; color: #334155;">Ask parents to add you as authorized user on their old card. You inherit their credit history instantly!</p>
+                            </div>
+                            
+                            <div style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); padding: 20px; border-radius: 12px; border-left: 4px solid #3b82f6;">
+                                <h4 style="color: #1e40af; margin-bottom: 8px;">🔒 Secured Card Starter</h4>
+                                <p style="margin: 0; color: #334155;">No credit history? Get a secured card ($200 deposit). Use it, pay it off, build history. Upgrade to unsecured in 6-12 months!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-nav">
+                        <button class="nav-btn secondary" onclick="showTutorial(2)">← Back</button>
+                        <button class="nav-btn primary" onclick="showTutorial(4)">Next: Boss Battles →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TUTORIAL PHASE 4: BOSS BATTLES -->
+            <div id="tutorial-4" class="tutorial-phase">
+                <div class="tutorial-card">
+                    <div class="tutorial-header">
+                        <span class="level-badge">LEVEL 4: BOSS BATTLES</span>
+                    </div>
+                    
+                    <div class="tutorial-content">
+                        <h2 style="margin-bottom: 20px;">👹 Defeat These Credit Bosses</h2>
+                        
+                        <p>Every game has bosses that can wreck your progress. Here's how to beat them:</p>
+                        
+                        <div class="boss-warning">
+                            <h4>☠️ THE LATE PAYMENT DEMON</h4>
+                            <p><strong>Damage:</strong> -50 to -100 points per hit. Stays on your report for 7 YEARS!<br><strong>Counter:</strong> Auto-pay everything. Set calendar reminders. Pay minimum if you must, but NEVER miss.</p>
+                        </div>
+                        
+                        <div class="boss-warning">
+                            <h4>💀 THE MAXED OUT CREDIT CARD DRAGON</h4>
+                            <p><strong>Damage:</strong> High utilization crushes your score, even if you pay on time!<br><strong>Counter:</strong> Pay down to under 30% before statement date. Under 10% for max points.</p>
+                        </div>
+                        
+                        <div class="boss-warning">
+                            <h4>🧟 THE HARD INQUIRY HORDE</strong></h4>
+                            <p><strong>Damage:</strong> Each application = -5 to -10 points. Too many = lenders think you're desperate.<br><strong>Counter:>/strong> Space applications 6+ months apart. Research before applying. Use pre-qualification tools.</p>
+                        </div>
+                        
+                        <div class="game-tip">
+                            <h4>🛡️ Your Best Defense</h4>
+                            <p><strong>Check your credit report FREE at AnnualCreditReport.com</strong> (official government site). Spot errors early. Dispute mistakes. Monitor for identity theft.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tutorial-nav">
+                        <button class="nav-btn secondary" onclick="showTutorial(3)">← Back</button>
+                        <button class="nav-btn primary" onclick="startQuiz()">🎮 Start Challenge →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUIZ PHASE -->
+            <div id="quiz-phase" class="quiz-phase">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <span class="category-tag">🎮 FINAL CHALLENGE</span>
+                        <h1>Test Your Credit Game Skills</h1>
+                    </div>
+                    
+                    <div class="progress-dots" id="progress-dots"></div>
+                    
+                    <div class="xp-container">
+                        <div class="xp-bar-bg">
+                            <div class="xp-bar" id="xp-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="xp-text" id="xp-text">Question 1 of 8</div>
+                    </div>
+                    
+                    <div id="question-container">
+                        <!-- Questions load here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS PHASE -->
+            <div id="results-phase" class="quiz-phase">
+                <div class="quiz-container">
+                    <div class="results-container">
+                        <div class="results-badge" id="result-badge">🏆</div>
+                        
+                        <div class="results-score" id="final-score">0/8</div>
+                        
+                        <div class="results-title" id="result-title">Credit Novice</div>
+                        
+                        <div class="results-message" id="result-message">
+                            Keep practicing! Review the tutorial and try again.
+                        </div>
+                        
+                        <div class="unlock-section">
+                            <h3>🎁 Unlocks Earned</h3>
+                            <p>Based on your score, here are your next challenges:</p>
+                            
+                            <div class="unlock-grid" id="unlock-grid">
+                                <!-- Unlocks load here -->
+                            </div>
+                        </div>
+                        
+                        <div class="results-actions">
+                            <button class="btn btn-secondary" onclick="restartGame()">
+                                🔄 Play Again
+                            </button>
+                            <a href="/quizzes/" class="btn btn-primary">
+                                🎮 More Games →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </footer>
+    </div>
 
     <script>
+        // Game Data
         const quizData = {
-            title: "Credit Basics",
-            category: "Credit",
             questions: [
-                { question: "What is the most commonly used credit scoring model?", options: ["VantageScore", "FICO Score", "Experian Score", "TransUnion Score"], correct: 1, explanation: "FICO Score is used by 90% of top lenders. It ranges from 300-850." },
-                { question: "What percentage of your credit score is based on payment history?", options: ["15%", "35%", "50%", "65%"], correct: 1, explanation: "Payment history makes up 35% of your FICO score - the single biggest factor." },
-                { question: "How long do negative items stay on your credit report?", options: ["3 years", "5 years", "7 years", "10 years"], correct: 2, explanation: "Most negative items stay for 7 years. Bankruptcies can stay for 10." },
-                { question: "What is the recommended credit utilization ratio?", options: ["Under 10%", "Under 30%", "Under 50%", "Under 70%"], correct: 1, explanation: "Keep utilization under 30% (ideally under 10%) for best scores." },
-                { question: "How often can you get a free credit report from each bureau?", options: ["Monthly", "Every 6 months", "Annually", "Every 3 years"], correct: 2, explanation: "AnnualCreditReport.com gives you one free report per bureau per year." },
-                { question: "What is a 'hard inquiry'?", options: ["Checking your own score", "A lender checking your credit", "A soft credit check", "An error"], correct: 1, explanation: "Hard inquiries happen when you apply for credit and can lower your score slightly." },
-                { question: "How long does it take to build credit from scratch?", options: ["1 month", "3-6 months", "1 year", "2 years"], correct: 1, explanation: "It takes 3-6 months of credit activity to generate a FICO score." },
-                { question: "What is the best first credit card for beginners?", options: ["Premium travel card", "Secured credit card", "Business credit card", "Store credit card"], correct: 1, explanation: "Secured cards require a deposit and are designed for building credit." },
-                { question: "Does closing a credit card help your score?", options: ["Yes, always", "Yes, if it has a balance", "No, it usually hurts", "No effect"], correct: 2, explanation: "Closing cards reduces available credit and can hurt your utilization ratio." },
-                { question: "What is the average credit score in the US?", options: ["650", "700", "718", "750"], correct: 2, explanation: "The average FICO score is around 718 as of 2024." }
+                {
+                    question: "You have a credit card with a $1,000 limit. What's the MAXIMUM balance you should carry to keep your credit score healthy?",
+                    options: ["$500 (50%)", "$300 (30%)", "$100 (10%)", "$0 (0%)"],
+                    correct: 2,
+                    explanation: "✅ Correct! Keeping utilization under 10% ($100 on a $1,000 limit) gives you the maximum score boost. Under 30% is good, but under 10% is elite tier!"
+                },
+                {
+                    question: "Which of these has the BIGGEST impact on your credit score?",
+                    options: ["Credit mix (having different types of credit)", "Payment history (paying on time)", "Credit inquiries (applying for new cards)", "Credit age (how long you've had credit)"],
+                    correct: 1,
+                    explanation: "✅ Correct! Payment history is 35% of your score — the single biggest factor. Never miss a payment! Set up auto-pay to protect this stat."
+                },
+                {
+                    question: "You missed a payment by 5 days. How long will this hurt your credit score?",
+                    options: ["1 month", "6 months", "3 years", "7 years"],
+                    correct: 3,
+                    explanation: "✅ Correct! Late payments stay on your report for 7 years. However, the impact lessens over time, and one late payment won't ruin you if everything else is good."
+                },
+                {
+                    question: "What's the best 'starter strategy' for someone with NO credit history?",
+                    options: ["Apply for 5 credit cards at once", "Get a secured credit card or become an authorized user", "Take out a personal loan", "Wait until you're older"],
+                    correct: 1,
+                    explanation: "✅ Correct! Secured cards (with a deposit) or becoming an authorized user on a parent's card are the best ways to build credit from scratch."
+                },
+                {
+                    question: "How often should you check your credit report for errors?",
+                    options: ["Never — if there's a problem, someone will tell you", "Once every 3 years", "Once per year (free from each bureau)", "Every month (paid service)"],
+                    correct: 2,
+                    explanation: "✅ Correct! You're entitled to one FREE report per year from each bureau at AnnualCreditReport.com. That's 3 free reports per year!"
+                },
+                {
+                    question: "You want to apply for a new credit card AND a car loan. What's the smart play?",
+                    options: ["Apply for both on the same day", "Apply for both in the same week", "Space them out by at least 6 months", "Apply for 10 cards to increase approval odds"],
+                    correct: 2,
+                    explanation: "✅ Correct! Multiple hard inquiries in a short time hurt your score and make lenders nervous. Space major credit applications 6+ months apart."
+                },
+                {
+                    question: "Your credit card has a $2,000 limit. You spend $1,800 on it. What's your utilization?",
+                    options: ["9%", "90%", "45%", "18%"],
+                    correct: 1,
+                    explanation: "✅ Correct! $1,800 ÷ $2,000 = 90% utilization. This is TERRIBLE for your score! Pay it down to under $200 (10%) before your statement date."
+                },
+                {
+                    question: "Which action will NOT help build your credit?",
+                    options: ["Paying rent through a credit-building service", "Paying your utility bills on time", "Using a debit card for all purchases", "Getting a credit-builder loan"],
+                    correct: 2,
+                    explanation: "✅ Correct! Debit card usage doesn't build credit — it's just spending your own money. You NEED to use credit (and pay it back) to build credit history."
+                }
             ]
         };
 
-        let currentQuestion = 0, score = 0, answers = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let answers = [];
 
-        function openQuiz() {
-            document.getElementById('quiz-modal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-            startQuiz();
+        // Navigation Functions
+        function showWelcome() {
+            document.querySelectorAll('.tutorial-phase, .quiz-phase').forEach(el => el.classList.remove('active'));
+            document.getElementById('welcome-screen').style.display = 'block';
         }
 
-        function closeQuiz() {
-            document.getElementById('quiz-modal').classList.remove('active');
-            document.body.style.overflow = 'auto';
+        function startTutorial() {
+            document.getElementById('welcome-screen').style.display = 'none';
+            showTutorial(1);
+        }
+
+        function showTutorial(level) {
+            document.querySelectorAll('.tutorial-phase').forEach(el => el.classList.remove('active'));
+            document.getElementById(`tutorial-${level}`).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
         }
 
         function startQuiz() {
-            currentQuestion = 0; score = 0; answers = [];
+            currentQuestion = 0;
+            score = 0;
+            answers = [];
+            
+            document.querySelectorAll('.tutorial-phase').forEach(el => el.classList.remove('active'));
+            document.getElementById('quiz-phase').classList.add('active');
+            
+            createProgressDots();
             showQuestion();
+            window.scrollTo(0, 0);
+        }
+
+        function createProgressDots() {
+            const dotsContainer = document.getElementById('progress-dots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < quizData.questions.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                dot.id = `dot-${i}`;
+                dotsContainer.appendChild(dot);
+            }
         }
 
         function showQuestion() {
             const q = quizData.questions[currentQuestion];
             const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
-            document.getElementById('quiz-container').innerHTML = `
-                <div class="quiz-header">
-                    <span class="category-tag">${quizData.category}</span>
-                    <h1>${quizData.title} Quiz</h1>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar-bg"><div class="progress-bar" style="width: ${progress}%"></div></div>
-                    <div class="progress-text">Question ${currentQuestion + 1} of ${quizData.questions.length}</div>
-                </div>
+            
+            // Update XP bar
+            document.getElementById('xp-bar').style.width = `${progress}%`;
+            document.getElementById('xp-text').textContent = `Question ${currentQuestion + 1} of ${quizData.questions.length}`;
+            
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, i) => {
+                dot.classList.remove('active', 'completed');
+                if (i < currentQuestion) dot.classList.add('completed');
+                if (i === currentQuestion) dot.classList.add('active');
+            });
+            
+            // Show question
+            const letters = ['A', 'B', 'C', 'D'];
+            document.getElementById('question-container').innerHTML = `
                 <div class="question-container">
                     <h2>${q.question}</h2>
-                    <div class="options-list">${q.options.map((opt, i) => `<button class="option" onclick="selectAnswer(${i})" data-index="${i}">${opt}</button>`).join('')}</div>
-                </div>`;
+                    <div class="options-list">
+                        ${q.options.map((opt, i) => `
+                            <button class="option" onclick="selectAnswer(${i})" data-index="${i}">
+                                <span class="option-letter">${letters[i]}</span>
+                                <span>${opt}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
         }
 
         function selectAnswer(index) {
             const q = quizData.questions[currentQuestion];
             const isCorrect = index === q.correct;
-            answers.push({ question: q.question, selected: index, correct: q.correct, isCorrect });
+            
+            answers.push({
+                question: q.question,
+                selected: index,
+                correct: q.correct,
+                isCorrect: isCorrect
+            });
+            
             if (isCorrect) score++;
+            
+            // Disable all options and show correct/incorrect
             document.querySelectorAll('.option').forEach(btn => {
                 btn.classList.add('disabled');
-                if (parseInt(btn.dataset.index) === q.correct) btn.classList.add('correct');
-                else if (parseInt(btn.dataset.index) === index && !isCorrect) btn.classList.add('incorrect');
+                const btnIndex = parseInt(btn.dataset.index);
+                
+                if (btnIndex === q.correct) {
+                    btn.classList.add('correct');
+                } else if (btnIndex === index && !isCorrect) {
+                    btn.classList.add('incorrect');
+                }
             });
+            
+            // Show explanation
             document.querySelector('.question-container').innerHTML += `
                 <div class="explanation ${isCorrect ? 'correct' : 'incorrect'}">
-                    <h4>${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</h4>
+                    <h4>${isCorrect ? '✅ Correct! +XP' : '❌ Not quite!'}</h4>
                     <p>${q.explanation}</p>
-                    <button class="next-btn" onclick="nextQuestion()">${currentQuestion < quizData.questions.length - 1 ? 'Next →' : 'See Results'}</button>
-                </div>`;
+                    <button class="next-btn" onclick="nextQuestion()">
+                        ${currentQuestion < quizData.questions.length - 1 ? 'Next Question →' : 'See Results 🏆'}
+                    </button>
+                </div>
+            `;
         }
 
         function nextQuestion() {
             currentQuestion++;
-            if (currentQuestion < quizData.questions.length) showQuestion();
-            else showResults();
+            
+            if (currentQuestion < quizData.questions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
         }
 
         function showResults() {
+            document.getElementById('quiz-phase').classList.remove('active');
+            document.getElementById('results-phase').classList.add('active');
+            
             const pct = Math.round((score / quizData.questions.length) * 100);
-            // Execute reCAPTCHA before redirect
+            const total = quizData.questions.length;
+            
+            // Set score
+            document.getElementById('final-score').textContent = `${score}/${total}`;
+            
+            // Determine rank
+            let title, message, badge, unlocks;
+            
+            if (score >= 7) {
+                title = "🏆 CREDIT LEGEND";
+                message = "Outstanding! You've mastered the Credit Game. You're ready for elite-tier financial moves!";
+                badge = "👑";
+                unlocks = [
+                    { icon: "💳", name: "Credit Card Pro Quiz" },
+                    { icon: "🏠", name: "Mortgage Ready Guide" },
+                    { icon: "📈", name: "Investing 101" },
+                    { icon: "🎯", name: "Advanced Credit Strategies" }
+                ];
+            } else if (score >= 5) {
+                title = "⭐ CREDIT EXPERT";
+                message = "Great job! You know your stuff. A little more practice and you'll be unstoppable!";
+                badge = "⭐";
+                unlocks = [
+                    { icon: "💳", name: "Credit Card Pro Quiz" },
+                    { icon: "🏠", name: "First Apartment Guide" },
+                    { icon: "🚗", name: "Auto Loans 101" }
+                ];
+            } else if (score >= 3) {
+                title = "🎮 CREDIT APPRENTICE";
+                message = "Good start! Review the tutorial sections you missed and try again to level up!";
+                badge = "🎮";
+                unlocks = [
+                    { icon: "📚", name: "Review Tutorial" },
+                    { icon: "💳", name: "Secured Cards Guide" },
+                    { icon: "🎯", name: "Try Again" }
+                ];
+            } else {
+                title = "🌱 CREDIT NEWBIE";
+                message = "Everyone starts somewhere! Go through the tutorial again — you'll get it!";
+                badge = "🌱";
+                unlocks = [
+                    { icon: "📚", name: "Review Tutorial" },
+                    { icon: "🎮", name: "Play Again" },
+                    { icon: "📖", name: "Credit Basics Blog" }
+                ];
+            }
+            
+            document.getElementById('result-title').textContent = title;
+            document.getElementById('result-message').textContent = message;
+            document.getElementById('result-badge').textContent = badge;
+            
+            // Render unlocks
+            document.getElementById('unlock-grid').innerHTML = unlocks.map(u => `
+                <div class="unlock-card">
+                    <div class="unlock-icon">${u.icon}</div>
+                    <div class="unlock-name">${u.name}</div>
+                </div>
+            `).join('');
+            
+            // reCAPTCHA
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.ready(function() {
                     grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_complete' });
                 });
             }
-            // Redirect to completion page with results
-            window.location.href = `/quiz-complete.html?quiz=credit-basics&score=${score}&total=${quizData.questions.length}&pct=${pct}`;
         }
 
-        function startMultiPageQuiz() {
-            // Execute reCAPTCHA on quiz start
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_start' });
-                });
-            }
-            sessionStorage.setItem('cred_score', '0');
-            window.location.href = '/quiz/credit-basics/q1';
+        function restartGame() {
+            showWelcome();
         }
+
+        // Initialize
+        document.getElementById('welcome-screen').style.display = 'block';
         
-        // Initialize reCAPTCHA on page load
+        // reCAPTCHA on load
         (function() {
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.ready(function() {
