@@ -1,133 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.creditgamerarea.com/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Main Sections -->
   <url>
     <loc>https://www.creditgamerarea.com/quizzes/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://www.creditgamerarea.com/blog/</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/student-loans-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
+
+  <!-- Quiz Pages -->
   <url>
     <loc>https://www.creditgamerarea.com/credit-basics-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.creditgamerarea.com/images/og-credit-basics.jpg</image:loc>
+      <image:title>Credit Basics Quiz</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/student-loans-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://www.creditgamerarea.com/budgeting-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/glp1-effects-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://www.creditgamerarea.com/banking-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/auto-insurance-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://www.creditgamerarea.com/investing-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/prediction-markets-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/credit-cards-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/car-shopping-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/auto-loans-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/ai-skills-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.creditgamerarea.com/make-money-online-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://www.creditgamerarea.com/taxes-quiz.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/market-update-2026-02-17.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/make-money-online-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/side-hustle-scam-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/etf-personality-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/investing-app-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/auto-insurance-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/auto-loans-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/car-shopping-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/credit-cards-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/prediction-markets-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/ai-skills-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/ai-skills-for-moms-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/games-that-pay-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/glp1-effects-quiz.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Blog Posts - Recent -->
   <url>
-    <loc>https://www.creditgamerarea.com/blog/gen-z-investing-early.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/gold-silver-copper-surge-ai-connection.html</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Credit Gamer Area</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>Why Gold, Silver, and Copper Are Surging: The AI Connection</news:title>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/blog/breaking-supreme-court-trump-tariffs-ruling.html</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Credit Gamer Area</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-02-21</news:publication_date>
+      <news:title>BREAKING: Supreme Court Strikes Down Trump's Tariffs</news:title>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/blog/start-at-home-business-guide.html</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/blog/thomas-frank-notion-templates.html</loc>
+    <lastmod>2026-02-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/blog/market-update-2026-02-20.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/make-money-gaming-2026.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/ai-for-moms-part-1.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/rewards-optimization.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/ai-for-moms-part-2.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/build-credit-from-zero.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/lower-car-insurance.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/gen-z-investing.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/best-finance-youtubers.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/fed-rates-impact.html</loc>
-    <lastmod>2026-02-17</lastmod>
+    <loc>https://www.creditgamerarea.com/blog/best-budget-youtubers.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Static Pages -->
   <url>
-    <loc>https://www.creditgamerarea.com/blog/credit-card-interest-rate-cap.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.7</priority>
+    <loc>https://www.creditgamerarea.com/about.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://www.creditgamerarea.com/blog/interest-rate-cap.html</loc>
-    <lastmod>2026-02-17</lastmod>
-    <priority>0.7</priority>
+    <loc>https://www.creditgamerarea.com/faq.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/contact.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/privacy.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/terms.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.creditgamerarea.com/cookies.html</loc>
+    <lastmod>2026-02-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>

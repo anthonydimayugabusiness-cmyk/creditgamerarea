@@ -5,9 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Credit Gamer Area | Finance Tips, Market Updates & Money Guides</title>
     <meta name="description" content="Read the latest finance tips, market updates, credit guides, and money-making strategies. Level up your financial game with Credit Gamer Area.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/blog/">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Credit Gamer Area Blog",
+      "description": "Finance tips, market updates, credit guides, and money-making strategies",
+      "url": "https://www.creditgamerarea.com/blog/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Credit Gamer Area",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.creditgamerarea.com/logo.png"
+        }
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="/styles.css">
     <style>
-        .blog-page { padding: 60px 0; }
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            padding: 16px 0;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        .breadcrumb a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            margin: 0 8px;
+            color: #94a3b8;
+        }
+        
+        .blog-page { padding: 40px 0 60px; }
         .blog-header { text-align: center; margin-bottom: 48px; }
         .blog-header h1 { font-size: 2.5rem; margin-bottom: 16px; }
         .blog-header p { color: #64748b; font-size: 1.125rem; }
@@ -53,6 +92,13 @@
 
     <section class="blog-page">
         <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <span aria-current="page">Blog</span>
+            </nav>
+            
             <div class="blog-header">
                 <h1>📚 Credit Gamer Blog</h1>
                 <p>Deep dives into credit, investing, market updates, and leveling up your money game</p>
