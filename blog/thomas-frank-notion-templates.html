@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How This Former Teacher Makes $50K/Month Selling Notion Templates</title>
+    <meta name="description" content="Meet Thomas Frank: The YouTuber who turned productivity templates into a 7-figure business. Learn how he built his empire selling digital products on Notion.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/blog/thomas-frank-notion-templates.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        /* Blog Header */
+        .blog-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .blog-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-meta {
+            color: var(--gray);
+            font-size: 0.9375rem;
+            margin-bottom: 24px;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .author-title {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 60px 0;
+        }
+
+        .blog-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            color: #334155;
+        }
+
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            color: var(--dark);
+        }
+
+        .blog-content h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin: 32px 0 16px;
+            color: var(--dark);
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .blog-content li {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        .blog-content strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #ede9fe, #f0f9ff);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 1.125rem;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Stats Box */
+        .stats-box {
+            background: var(--dark);
+            color: white;
+            padding: 32px;
+            border-radius: 16px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat-item {
+            padding: 16px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
+        /* Quote */
+        blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--gray);
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 12px;
+            font-style: normal;
+            font-size: 0.9375rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            background: var(--light);
+            padding: 60px 0;
+        }
+
+        .related-posts h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 32px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .related-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -8px rgba(0,0,0,0.1);
+        }
+
+        .related-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+        }
+
+        .related-card p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 1.75rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .blog-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <a href="/blog/" style="color: var(--gray); text-decoration: none; font-weight: 500;">← All Posts</a>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <div class="container">
+            <span class="blog-tag">Real Money Stories</span>
+            <h1>How This Former Teacher Makes $50K/Month Selling Notion Templates</h1>
+            <div class="blog-meta">
+                February 21, 2026 • 8 min read • Money From Home Series #1
+            </div>
+            
+            <div class="author-box">
+                <div class="author-avatar">C</div>
+                <div class="author-info">
+                    <div class="author-name">Credit Gamer Area</div>
+                    <div class="author-title">Personal Finance Writer</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article class="blog-content">
+        <div class="container">
+            <p><strong>Thomas Frank never set out to build a 7-figure business.</strong> In 2010, he was a college student struggling to stay organized. By 2024, he was making over $50,000 per month selling productivity templates on Notion — all while running a YouTube channel with 2.9 million subscribers.</p>
+
+            <p>His story isn't about luck or overnight success. It's about identifying a problem, building an audience, and creating products people actually want to pay for. And the best part? You can replicate his model.</p>
+
+            <div class="stats-box">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">$50K+</span>
+                        <span class="stat-label">Monthly Revenue</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2.9M</span>
+                        <span class="stat-label">YouTube Subscribers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">14+</span>
+                        <span class="stat-label">Years Building</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Who Is Thomas Frank?</h2>
+
+            <p>Thomas Frank started as a productivity blogger in college. While studying at Iowa State University, he created <strong>College Info Geek</strong> — a website helping students study smarter, not harder. He graduated debt-free and turned his side project into a full-time business.</p>
+
+            <p>For years, he made money through YouTube ad revenue, sponsorships, and affiliate marketing. But in 2021, everything changed when he discovered Notion.</p>
+
+            <blockquote>
+                "I was using Notion to organize my entire life and business. People kept asking how I set it up. So I made a video showing my system, and it went viral."
+                <cite>— Thomas Frank</cite>
+            </blockquote>
+
+            <h2>The Pivot to Product Sales</h2>
+
+            <p>That viral video — <em>"My Notion Setup for Productivity"</em> — changed everything. Viewers didn't just want to see his setup; they wanted to <strong>buy it</strong>. They wanted his exact templates, pre-built and ready to use.</p>
+
+            <p>Thomas listened. He packaged his personal productivity system into the <strong>Ultimate Brain</strong> template — a complete life and business management system for Notion. He priced it at $99 and launched it to his email list.</p>
+
+            <div class="highlight-box">
+                <h4>💡 The Business Model</h4>
+                <p>Thomas didn't just sell templates. He sold <strong>transformation</strong>. His templates promise to turn chaotic lives into organized, productive systems. People pay for the outcome, not the file.</p>
+            </div>
+
+            <h2>Breaking Down the Numbers</h2>
+
+            <p>Here's what Thomas's business looks like today:</p>
+
+            <ul>
+                <li><strong>Ultimate Brain template:</strong> $99 (one-time) — his flagship product</li>
+                <li><strong>Creator's Companion:</strong> $149 (one-time) — for content creators</li>
+                <li><strong>Notion Fundamentals course:</strong> $197 — teaches people to build their own systems</li>
+                <li><strong>YouTube ad revenue:</strong> ~$15K-25K/month</li>
+                <li><strong>Affiliate marketing:</strong> ~$5K-10K/month</li>
+            </ul>
+
+            <p>Combined, his various income streams generate over <strong>$50,000 per month</strong> — and that's after expenses. His profit margins are incredibly high because digital products cost almost nothing to replicate.</p>
+
+            <h2>How You Can Do This Too</h2>
+
+            <p>Thomas's success isn't magic. It's a repeatable system:</p>
+
+            <h3>1. Build an Audience First</h3>
+
+            <p>Thomas spent <strong>10 years</strong> building his YouTube channel before launching products. He gave away free value — study tips, productivity hacks, app tutorials — and built trust with his audience.</p>
+
+            <p><strong>Your move:</strong> Start creating content about something you're good at. You don't need millions of followers — even 1,000 true fans can support a business.</p>
+
+            <h3>2. Identify a Pain Point</h3>
+
+            <p>Thomas noticed people struggled with productivity and organization. He experienced the problem himself and built a solution that worked.</p>
+
+            <p><strong>Your move:</strong> What problems do you solve for friends and family? What do people ask your advice about? That's your product opportunity.</p>
+
+            <h3>3. Create Once, Sell Forever</h3>
+
+            <p>Digital products are the ultimate passive income. Thomas spent months building his Ultimate Brain template. Now it sells while he sleeps, with minimal ongoing work.</p>
+
+            <p><strong>Your move:</strong> What digital product could you create? Templates, courses, ebooks, presets, spreadsheets — the options are endless.</p>
+
+            <h3>4. Price for Value, Not Time</h3>
+
+            <p>Thomas charges $99-149 for his templates. That might seem high for a digital file, but he's not selling a file — he's selling hours of saved time, reduced stress, and improved productivity.</p>
+
+            <p><strong>Your move:</strong> Don't undercharge. Calculate the value your product delivers and price accordingly.</p>
+
+            <h2>The Tools Thomas Uses</h2>
+
+            <ul>
+                <li><strong>Notion:</strong> The platform where his products live</li>
+                <li><strong>Gumroad:</strong> Payment processing and delivery (takes 10% fee)</li>
+                <li><strong>ConvertKit:</strong> Email marketing to his 500K+ subscribers</li>
+                <li><strong>YouTube:</strong> Free marketing and audience building</li>
+                <li><strong>Loom:</strong> Creating tutorial videos for his products</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+
+            <p>Thomas Frank's story proves you don't need venture capital, a fancy degree, or even a physical product to build a 7-figure business. You need:</p>
+
+            <ol>
+                <li><strong>A skill or system</strong> that solves real problems</li>
+                <li><strong>An audience</strong> that trusts your expertise</li>
+                <li><strong>The willingness</strong> to create and sell digital products</li>
+                <li><strong>Patience</strong> to build something over years, not weeks</li>
+            </ol>
+
+            <p>Thomas spent 14 years building to this point. But his first dollar came from a simple blog post in college. The journey of a thousand miles begins with a single step — or in this case, a single template.</p>
+
+            <div class="cta-box">
+                <h3>Want to Make Money From Home?</h3>
+                <p>Take our quiz to discover which online income stream matches your skills and personality.</p>
+                <a href="/make-money-online-quiz.html" class="btn">Find Your Money-Making Path →</a>
+            </div>
+
+            <p><em>Note: Income figures are estimates based on publicly available information, interviews, and industry analysis. Thomas Frank has not publicly confirmed exact revenue numbers. This article is for educational purposes only.</em></p>
+        </div>
+    </article>
+
+    <section class="related-posts">
+        <div class="container">
+            <h2>More Money-Making Stories</h2>
+            
+            <div class="related-grid">
+                <a href="/blog/" class="related-card">
+                    <h3>Coming Soon: The Coupon Blogger Making $100K/Year</h3>
+                    <p>How one mom turned grocery savings into a full-time income.</p>
+                </a>
+                
+                <a href="/make-money-online-quiz.html" class="related-card">
+                    <h3>Quiz: What's Your Best Side Hustle?</h3>
+                    <p>Find the money-making method that fits your lifestyle.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // reCAPTCHA
+        (function() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'page_load' });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
