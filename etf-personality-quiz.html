@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What ETF Should You Invest In? - Personalized Quiz</title>
+    <meta name="description" content="Take our quiz to find the perfect ETF for your values, risk tolerance, and view of the future economy. Personalized recommendations in 2 minutes.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/etf-personality-quiz.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        /* Quiz Container */
+        .quiz-page {
+            padding: 60px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .quiz-header .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .quiz-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .quiz-header p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 40px;
+        }
+
+        .progress-bar-bg {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Question */
+        .question-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px -4px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 20px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+        }
+
+        .option-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            flex-grow: 1;
+        }
+
+        .option-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .option-desc {
+            font-size: 0.875rem;
+            color: var(--gray);
+            display: block;
+        }
+
+        /* Results */
+        .results-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .results-emoji {
+            font-size: 5rem;
+            margin-bottom: 24px;
+        }
+
+        .results-type {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .results-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-description {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .etf-recommendation {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: white;
+            padding: 32px;
+            border-radius: 16px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .etf-recommendation h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .etf-card {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .etf-ticker {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .etf-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .etf-desc {
+            font-size: 0.9375rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .etf-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .etf-tag {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .personality-traits {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .personality-traits h3 {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .trait-list {
+            list-style: none;
+        }
+
+        .trait-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--gray);
+        }
+
+        .trait-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .start-screen h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .start-screen p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .quiz-meta-info {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .quiz-header h1 { font-size: 1.75rem; }
+            .question-container { padding: 24px; }
+            .question-container h2 { font-size: 1.25rem; }
+            .results-title { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <a href="/" style="color: var(--gray); text-decoration: none; font-weight: 500;">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="quiz-page">
+        <div class="container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <span class="category-tag">Investing</span>
+                <h1>What's Your ETF Personality?</h1>
+                <p>Discover the perfect ETF for your values, risk tolerance, and economic outlook. 10 questions, personalized results.</p>
+            </div>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="start-screen">
+                <h2>Find Your Perfect ETF Match</h2>
+                <p>This quiz analyzes your investment personality — your values, risk tolerance, and view of the future — to recommend ETFs that align with who you are.</p>
+                
+                <div class="quiz-meta-info">
+                    <span>📝 10 Questions</span>
+                    <span>⏱️ ~3 Minutes</span>
+                    <span>🎯 Personalized Result</span>
+                </div>
+                
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz →</button>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" id="progress-bar" style="width: 10%;"></div>
+                    </div>
+                    <div class="progress-text">Question <span id="current-question">1</span> of 10</div>
+                </div>
+
+                <div class="question-container" id="question-container">
+                    <!-- Questions injected here -->
+                </div>
+            </div>
+
+            <!-- Results Container -->
+            <div id="results-container" class="results-container" style="display: none;">
+                <!-- Results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data
+        const quizData = {
+            questions: [
+                {
+                    question: "What's your primary investment goal?",
+                    options: [
+                        { icon: "🛡️", title: "Preserve Wealth", desc: "Protect what I have, grow slowly and steadily", scores: { conservative: 3, balanced: 1 } },
+                        { icon: "📈", title: "Build Wealth", desc: "Grow my money over time, willing to accept some risk", scores: { balanced: 3, growth: 1 } },
+                        { icon: "🚀", title: "Maximize Returns", desc: "Aggressive growth, I can handle volatility", scores: { growth: 3, aggressive: 2 } },
+                        { icon: "🌍", title: "Make an Impact", desc: "Invest in companies that align with my values", scores: { esg: 3, thematic: 1 } }
+                    ]
+                },
+                {
+                    question: "How do you feel about the future of technology?",
+                    options: [
+                        { icon: "🤖", title: "AI Will Transform Everything", desc: "Artificial intelligence is the next industrial revolution", scores: { tech: 3, growth: 1 } },
+                        { icon: "⚡", title: "Clean Energy is the Future", desc: "Renewable energy will replace fossil fuels", scores: { clean: 3, esg: 1 } },
+                        { icon: "💊", title: "Biotech Will Extend Life", desc: "Medical breakthroughs will change healthcare", scores: { biotech: 3, growth: 1 } },
+                        { icon: "🏭", title: "Traditional Industries Persist", desc: "Established companies will continue dominating", scores: { value: 3, dividend: 1 } }
+                    ]
+                },
+                {
+                    question: "What's your risk tolerance?",
+                    options: [
+                        { icon: "😰", title: "Low Risk", desc: "I lose sleep when my portfolio drops 5%", scores: { conservative: 3, bond: 2 } },
+                        { icon: "😐", title: "Moderate Risk", desc: "I can handle 10-15% drops for long-term gains", scores: { balanced: 3, value: 1 } },
+                        { icon: "😎", title: "High Risk", desc: "30% swings don't bother me if growth potential is there", scores: { growth: 3, tech: 1 } },
+                        { icon: "🎰", title: "Very High Risk", desc: "I'm willing to bet on emerging trends early", scores: { aggressive: 3, thematic: 2 } }
+                    ]
+                },
+                {
+                    question: "Which economic trend concerns you most?",
+                    options: [
+                        { icon: "📉", title: "Market Volatility", desc: "Frequent crashes and unpredictable swings", scores: { conservative: 2, bond: 2 } },
+                        { icon: "🌡️", title: "Climate Change", desc: "Environmental risks to businesses and society", scores: { esg: 3, clean: 2 } },
+                        { icon: "🏛️", title: "Government Debt", desc: "Rising national debt and inflation risks", scores: { gold: 2, value: 1 } },
+                        { icon: "🤖", title: "Job Automation", desc: "AI replacing workers and disrupting industries", scores: { tech: 2, growth: 1 } }
+                    ]
+                },
+                {
+                    question: "How do you want to generate returns?",
+                    options: [
+                        { icon: "💰", title: "Dividend Income", desc: "Regular cash payments from established companies", scores: { dividend: 3, value: 2 } },
+                        { icon: "📊", title: "Price Appreciation", desc: "Buying low and selling high for capital gains", scores: { growth: 3, tech: 1 } },
+                        { icon: "🎯", title: "Thematic Exposure", desc: "Betting on specific trends like EVs or crypto", scores: { thematic: 3, aggressive: 1 } },
+                        { icon: "⚖️", title: "Balanced Approach", desc: "Mix of income and growth across sectors", scores: { balanced: 3, total: 2 } }
+                    ]
+                },
+                {
+                    question: "What's your view on international investing?",
+                    options: [
+                        { icon: "🇺🇸", title: "US-First", desc: "American companies are the safest bet", scores: { sp500: 3, value: 1 } },
+                        { icon: "🌏", title: "Global Diversification", desc: "Opportunities exist worldwide, not just US", scores: { international: 3, emerging: 1 } },
+                        { icon: "🐉", title: "Emerging Markets", desc: "China, India, and developing economies will grow fastest", scores: { emerging: 3, international: 1 } },
+                        { icon: "🏠", title: "Home Bias", desc: "I prefer investing in companies I know and use", scores: { total: 2, sp500: 2 } }
+                    ]
+                },
+                {
+                    question: "How important are ESG (Environmental, Social, Governance) factors?",
+                    options: [
+                        { icon: "✅", title: "Critical", desc: "I only invest in companies with strong ethics", scores: { esg: 4, clean: 1 } },
+                        { icon: "👍", title: "Important", desc: "I prefer ESG-friendly but returns matter too", scores: { esg: 2, balanced: 1 } },
+                        { icon: "🤷", title: "Neutral", desc: "I don't actively consider ESG in decisions", scores: { total: 2, sp500: 1 } },
+                        { icon: "❌", title: "Not Important", desc: "I focus purely on financial returns", scores: { value: 2, dividend: 1 } }
+                    ]
+                },
+                {
+                    question: "What's your investment time horizon?",
+                    options: [
+                        { icon: "⏰", title: "Short Term", desc: "1-3 years — I need the money relatively soon", scores: { bond: 3, conservative: 2 } },
+                        { icon: "📅", title: "Medium Term", desc: "3-7 years — Building toward a specific goal", scores: { balanced: 3, value: 1 } },
+                        { icon: "🗓️", title: "Long Term", desc: "7-15 years — Retirement or major life milestone", scores: { growth: 3, total: 1 } },
+                        { icon: "♾️", title: "Very Long Term", desc: "15+ years — Generational wealth building", scores: { aggressive: 2, thematic: 2 } }
+                    ]
+                },
+                {
+                    question: "Which sector excites you most?",
+                    options: [
+                        { icon: "💻", title: "Technology", desc: "Software, AI, semiconductors, cloud computing", scores: { tech: 4, growth: 1 } },
+                        { icon: "⚡", title: "Energy Transition", desc: "Solar, wind, batteries, electric vehicles", scores: { clean: 4, esg: 1 } },
+                        { icon: "💊", title: "Healthcare", desc: "Pharma, biotech, medical devices", scores: { biotech: 4, growth: 1 } },
+                        { icon: "🏦", title: "Financial Services", desc: "Banks, insurance, fintech, real estate", scores: { value: 3, dividend: 1 } }
+                    ]
+                },
+                {
+                    question: "How do you react to a 20% market drop?",
+                    options: [
+                        { icon: "😱", title: "Panic Sell", desc: "I sell everything to stop the bleeding", scores: { bond: 3, conservative: 2 } },
+                        { icon: "😰", title: "Hold and Wait", desc: "I don't sell but I'm very stressed", scores: { balanced: 3, dividend: 1 } },
+                        { icon: "😐", title: "Stay the Course", desc: "I know markets recover, I stick to my plan", scores: { total: 3, sp500: 1 } },
+                        { icon: "🛒", title: "Buy the Dip", desc: "I see it as a sale and invest more", scores: { growth: 3, aggressive: 2 } }
+                    ]
+                }
+            ]
+        };
+
+        // ETF Recommendations
+        const etfRecommendations = {
+            conservative: {
+                type: "Capital Preserver",
+                emoji: "🛡️",
+                title: "The Steady Eddie",
+                description: "You prioritize protecting your wealth over aggressive growth. You value stability and sleep well knowing your investments are safe.",
+                etf: {
+                    ticker: "BND",
+                    name: "Vanguard Total Bond Market ETF",
+                    desc: "A broad bond index fund that provides steady income with minimal volatility. Perfect for capital preservation.",
+                    tags: ["Bonds", "Low Risk", "Income"]
+                },
+                altETF: {
+                    ticker: "VTIP",
+                    name: "Vanguard Short-Term Inflation-Protected Securities",
+                    desc: "Protects against inflation while maintaining stability.",
+                    tags: ["TIPS", "Inflation Hedge"]
+                },
+                traits: ["Risk-averse", "Stability-focused", "Income-oriented", "Long-term planner"]
+            },
+            balanced: {
+                type: "Balanced Investor",
+                emoji: "⚖️",
+                title: "The Moderate",
+                description: "You seek a balance between growth and stability. You understand risk is necessary but prefer a measured approach.",
+                etf: {
+                    ticker: "VTI",
+                    name: "Vanguard Total Stock Market ETF",
+                    desc: "Owns the entire US stock market — large, mid, and small cap. Diversified growth with moderate risk.",
+                    tags: ["Total Market", "Diversified", "Core Holding"]
+                },
+                altETF: {
+                    ticker: "VT",
+                    name: "Vanguard Total World Stock ETF",
+                    desc: "Global diversification across US and international markets.",
+                    tags: ["Global", "Diversified"]
+                },
+                traits: ["Balanced", "Diversified", "Patient", "Goal-oriented"]
+            },
+            growth: {
+                type: "Growth Investor",
+                emoji: "📈",
+                title: "The Builder",
+                description: "You're focused on building wealth over time. You accept volatility in exchange for higher long-term returns.",
+                etf: {
+                    ticker: "VUG",
+                    name: "Vanguard Growth ETF",
+                    desc: "Invests in growth companies with strong earnings potential. Higher volatility but greater upside potential.",
+                    tags: ["Growth", "Large Cap", "High Returns"]
+                },
+                altETF: {
+                    ticker: "QQQ",
+                    name: "Invesco QQQ Trust",
+                    desc: "Tracks the Nasdaq-100, heavy in tech giants with strong growth profiles.",
+                    tags: ["Tech-Heavy", "Nasdaq", "Aggressive Growth"]
+                },
+                traits: ["Growth-focused", "Long-term thinker", "Risk-tolerant", "Ambitious"]
+            },
+            tech: {
+                type: "Tech Believer",
+                emoji: "🚀",
+                title: "The Innovator",
+                description: "You believe technology will continue transforming the world. You're betting on innovation and disruption.",
+                etf: {
+                    ticker: "VGT",
+                    name: "Vanguard Information Technology ETF",
+                    desc: "Pure-play technology exposure including Apple, Microsoft, NVIDIA, and emerging tech leaders.",
+                    tags: ["Technology", "Innovation", "High Growth"]
+                },
+                altETF: {
+                    ticker: "BOTZ",
+                    name: "Global X Robotics & Artificial Intelligence ETF",
+                    desc: "Focused on AI and robotics companies leading the automation revolution.",
+                    tags: ["AI", "Robotics", "Future Tech"]
+                },
+                traits: ["Tech-savvy", "Forward-thinking", "Innovation-driven", "Risk-embracing"]
+            },
+            esg: {
+                type: "Impact Investor",
+                emoji: "🌍",
+                title: "The Conscious Capitalist",
+                description: "You want your money to reflect your values. Environmental and social impact matter as much as returns.",
+                etf: {
+                    ticker: "ESGV",
+                    name: "Vanguard ESG U.S. Stock ETF",
+                    desc: "Broad US market exposure excluding companies with poor ESG practices. Do well by doing good.",
+                    tags: ["ESG", "Sustainable", "Values-Aligned"]
+                },
+                altETF: {
+                    ticker: "ICLN",
+                    name: "iShares Global Clean Energy ETF",
+                    desc: "Invests in companies producing energy from solar, wind, and other renewable sources.",
+                    tags: ["Clean Energy", "Climate", "Impact"]
+                },
+                traits: ["Values-driven", "Socially conscious", "Long-term oriented", "Purposeful"]
+            },
+            clean: {
+                type: "Clean Energy Investor",
+                emoji: "⚡",
+                title: "The Eco Warrior",
+                description: "You believe the energy transition is the investment opportunity of our lifetime. You're betting on a sustainable future.",
+                etf: {
+                    ticker: "PBW",
+                    name: "Invesco WilderHill Clean Energy ETF",
+                    desc: "Focused on companies leading the clean energy transition — solar, wind, electric vehicles, and more.",
+                    tags: ["Clean Energy", "Green Tech", "High Growth"]
+                },
+                altETF: {
+                    ticker: "LIT",
+                    name: "Global X Lithium & Battery Tech ETF",
+                    desc: "Plays the battery supply chain critical for EVs and grid storage.",
+                    tags: ["Batteries", "EVs", "Materials"]
+                },
+                traits: ["Environmentally focused", "Future-oriented", "Impact-driven", "Conviction investor"]
+            },
+            dividend: {
+                type: "Income Investor",
+                emoji: "💰",
+                title: "The Cash Flow King",
+                description: "You prioritize regular income over capital appreciation. You want your investments to pay you back.",
+                etf: {
+                    ticker: "VYM",
+                    name: "Vanguard High Dividend Yield ETF",
+                    desc: "Invests in stocks with above-average dividend yields. Get paid while you wait for growth.",
+                    tags: ["Dividends", "Income", "Value"]
+                },
+                altETF: {
+                    ticker: "SCHD",
+                    name: "Schwab US Dividend Equity ETF",
+                    desc: "Quality dividend growers with strong track records of increasing payouts.",
+                    tags: ["Dividend Growth", "Quality", "Income"]
+                },
+                traits: ["Income-focused", "Patient", "Value-oriented", "Steady"]
+            },
+            value: {
+                type: "Value Investor",
+                emoji: "💎",
+                title: "The Bargain Hunter",
+                description: "You believe in buying quality companies at fair prices. You're patient and think independently.",
+                etf: {
+                    ticker: "VTV",
+                    name: "Vanguard Value ETF",
+                    desc: "Invests in undervalued large-cap companies. Warren Buffett's approach in ETF form.",
+                    tags: ["Value", "Large Cap", "Proven"]
+                },
+                altETF: {
+                    ticker: "AVUV",
+                    name: "Avantis U.S. Small Cap Value ETF",
+                    desc: "Small-cap value stocks with higher return potential and academic backing.",
+                    tags: ["Small Cap", "Value", "Research-Backed"]
+                },
+                traits: ["Contrarian", "Patient", "Research-driven", "Independent thinker"]
+            },
+            aggressive: {
+                type: "Aggressive Growth Investor",
+                emoji: "🎯",
+                title: "The Moonshot",
+                description: "You're willing to take big risks for potentially massive returns. You invest in the future, not the present.",
+                etf: {
+                    ticker: "ARKK",
+                    name: "ARK Innovation ETF",
+                    desc: "Active management focused on disruptive innovation — genomics, AI, energy storage, and more.",
+                    tags: ["Disruptive", "High Risk/Reward", "Active"]
+                },
+                altETF: {
+                    ticker: "IPO",
+                    name: "Renaissance IPO ETF",
+                    desc: "Invests in recent IPOs with strong growth potential. High volatility, high upside.",
+                    tags: ["IPOs", "New Companies", "Speculative"]
+                },
+                traits: ["Risk-embracing", "Visionary", "Conviction-driven", "Long-term focused"]
+            },
+            thematic: {
+                type: "Thematic Investor",
+                emoji: "🎪",
+                title: "The Trend Rider",
+                description: "You invest in specific themes and trends you believe will shape the future. You're a specialist, not a generalist.",
+                etf: {
+                    ticker: "KWEB",
+                    name: "KraneShares CSI China Internet ETF",
+                    desc: "Chinese tech giants — Alibaba, Tencent, JD. High growth potential with geopolitical risk.",
+                    tags: ["China", "Tech", "Emerging Markets"]
+                },
+                altETF: {
+                    ticker: "MJ",
+                    name: "ETFMG Alternative Harvest ETF",
+                    desc: "Cannabis industry exposure as legalization spreads globally.",
+                    tags: ["Cannabis", "Emerging Industry", "Speculative"]
+                },
+                traits: ["Thematic", "Conviction-driven", "Research-heavy", "Specialized"]
+            },
+            international: {
+                type: "Global Investor",
+                emoji: "🌐",
+                title: "The World Traveler",
+                description: "You believe the best opportunities aren't just in America. You think globally and invest accordingly.",
+                etf: {
+                    ticker: "VXUS",
+                    name: "Vanguard Total International Stock ETF",
+                    desc: "Broad international exposure across developed and emerging markets outside the US.",
+                    tags: ["International", "Diversified", "Global"]
+                },
+                altETF: {
+                    ticker: "VEA",
+                    name: "Vanguard Developed Markets ETF",
+                    desc: "Focus on established international markets — Europe, Japan, Australia.",
+                    tags: ["Developed Markets", "International", "Stable"]
+                },
+                traits: ["Global thinker", "Diversified", "Open-minded", "Research-driven"]
+            },
+            emerging: {
+                type: "Emerging Markets Investor",
+                emoji: "🌏",
+                title: "The Frontier Explorer",
+                description: "You believe developing economies will drive global growth. You're willing to accept higher risk for emerging market returns.",
+                etf: {
+                    ticker: "VWO",
+                    name: "Vanguard Emerging Markets Stock ETF",
+                    desc: "Exposure to China, India, Brazil, and other fast-growing developing economies.",
+                    tags: ["Emerging Markets", "High Growth", "Volatile"]
+                },
+                altETF: {
+                    ticker: "INDA",
+                    name: "iShares MSCI India ETF",
+                    desc: "Pure-play India exposure — one of the fastest-growing major economies.",
+                    tags: ["India", "Demographic Growth", "Emerging"]
+                },
+                traits: ["Adventurous", "Growth-focused", "Long-term oriented", "Risk-tolerant"]
+            },
+            biotech: {
+                type: "Healthcare Innovator",
+                emoji: "🧬",
+                title: "The Life Extender",
+                description: "You believe biotechnology will revolutionize healthcare and extend human life. You're investing in the future of medicine.",
+                etf: {
+                    ticker: "XBI",
+                    name: "SPDR S&P Biotech ETF",
+                    desc: "Equal-weighted biotech exposure — from established pharma to emerging gene therapy companies.",
+                    tags: ["Biotech", "Healthcare", "Innovation"]
+                },
+                altETF: {
+                    ticker: "ARKG",
+                    name: "ARK Genomic Revolution ETF",
+                    desc: "Active management focused on gene editing, stem cells, and targeted therapeutics.",
+                    tags: ["Genomics", "Active", "High Risk/Reward"]
+                },
+                traits: ["Science-minded", "Future-focused", "Innovation-driven", "Patient"]
+            }
+        };
+
+        // Quiz State
+        let currentQuestion = 0;
+        let scores = {};
+
+        // Initialize scores
+        function initScores() {
+            scores = {
+                conservative: 0, balanced: 0, growth: 0, aggressive: 0,
+                tech: 0, clean: 0, esg: 0, dividend: 0, value: 0,
+                thematic: 0, international: 0, emerging: 0, biotech: 0,
+                bond: 0, sp500: 0, total: 0, gold: 0
+            };
+        }
+
+        // Start Quiz
+        function startQuiz() {
+            initScores();
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            showQuestion();
+
+            // reCAPTCHA
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_start' });
+                });
+            }
+        }
+
+        // Show Question
+        function showQuestion() {
+            const q = quizData.questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('current-question').textContent = currentQuestion + 1;
+
+            let optionsHTML = q.options.map((opt, i) => `
+                <button class="option" onclick="selectAnswer(${i})">
+                    <span class="option-icon">${opt.icon}</span>
+                    <span class="option-text">
+                        <span class="option-title">${opt.title}</span>
+                        <span class="option-desc">${opt.desc}</span>
+                    </span>
+                </button>
+            `).join('');
+
+            document.getElementById('question-container').innerHTML = `
+                <h2>${q.question}</h2>
+                <div class="options-list">${optionsHTML}</div>
+            `;
+        }
+
+        // Select Answer
+        function selectAnswer(index) {
+            const q = quizData.questions[currentQuestion];
+            const selected = q.options[index];
+
+            // Update scores
+            for (let [key, value] of Object.entries(selected.scores)) {
+                scores[key] += value;
+            }
+
+            // Visual feedback
+            document.querySelectorAll('.option')[index].classList.add('selected');
+
+            // Next question
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizData.questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 300);
+        }
+
+        // Show Results
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('results-container').style.display = 'block';
+
+            // Find top 3 categories
+            const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const topCategory = sortedScores[0][0];
+
+            const result = etfRecommendations[topCategory] || etfRecommendations.balanced;
+
+            document.getElementById('results-container').innerHTML = `
+                <div class="results-emoji">${result.emoji}</div>
+                <div class="results-type">${result.type}</div>
+                <h2 class="results-title">${result.title}</h2>
+                <p class="results-description">${result.description}</p>
+
+                <div class="etf-recommendation">
+                    <h3>🎯 Your Primary ETF Recommendation</h3>
+                    <div class="etf-card">
+                        <div class="etf-ticker">${result.etf.ticker}</div>
+                        <div class="etf-name">${result.etf.name}</div>
+                        <div class="etf-desc">${result.etf.desc}</div>
+                        <div class="etf-tags">
+                            ${result.etf.tags.map(tag => `<span class="etf-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 24px;">🔄 Alternative Option</h3>
+                    <div class="etf-card">
+                        <div class="etf-ticker">${result.altETF.ticker}</div>
+                        <div class="etf-name">${result.altETF.name}</div>
+                        <div class="etf-desc">${result.altETF.desc}</div>
+                        <div class="etf-tags">
+                            ${result.altETF.tags.map(tag => `<span class="etf-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="personality-traits">
+                    <h3>🧠 Your Investment Personality</h3>
+                    <ul class="trait-list">
+                        ${result.traits.map(trait => `<li>${trait}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="results-actions">
+                    <a href="/investing-quiz.html" class="btn btn-primary">Test Your Investing Knowledge →</a>
+                    <button class="btn btn-secondary" onclick="location.reload()">Retake Quiz</button>
+                </div>
+            `;
+
+            // reCAPTCHA
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_complete' });
+                });
+            }
+        }
+
+        // Page load reCAPTCHA
+        (function() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'page_load' });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
