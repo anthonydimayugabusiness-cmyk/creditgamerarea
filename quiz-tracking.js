@@ -33,8 +33,6 @@ const QUIZ_TRACKING = {
         'user_type': localStorage.getItem('cookie-consent') === 'accepted' ? 'consented' : 'anonymous'
       });
     }
-    
-    console.log('Quiz started:', quizName, 'Source:', actualSource);
   },
   
   // Track quiz completion with full attribution
@@ -79,8 +77,6 @@ const QUIZ_TRACKING = {
     sessionStorage.removeItem('quiz_start_source');
     sessionStorage.removeItem('quiz_start_medium');
     sessionStorage.removeItem('quiz_start_time');
-    
-    console.log('Quiz completed:', quizName, 'Score:', scorePercentage + '%', 'Source:', source);
     
     return {
       quizName,

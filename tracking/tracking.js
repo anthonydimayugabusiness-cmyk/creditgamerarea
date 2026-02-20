@@ -52,11 +52,11 @@
             this.setCookie('cg_source', this.source, 30);
             sessionStorage.setItem('cg_click_id', this.clickId);
             sessionStorage.setItem('cg_source', this.source);
-            
-            console.log('Tracking: Click logged', this.clickId);
           }
         })
-        .catch(err => console.error('Tracking error:', err));
+        .catch(err => {
+          // Silently fail - tracking shouldn't break functionality
+        });
     },
     
     // Track conversion (quiz completion)
@@ -83,11 +83,9 @@
       })
       .then(res => res.json())
       .then(data => {
-        console.log('Tracking: Conversion logged', data);
         return data;
       })
       .catch(err => {
-        console.error('Conversion tracking error:', err);
         return { success: false, error: err.message };
       });
     },
@@ -101,7 +99,8 @@
     // Helper: Set cookie
     setCookie: function(name, value, days) {
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
-      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax';
+      const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/; SameSite=Lax' + secure;
     },
     
     // Get tracking URL for ads (append to landing page URLs)

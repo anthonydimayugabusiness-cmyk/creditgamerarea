@@ -35,8 +35,7 @@ const CLOUDFLARE_TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY'; // Replace afte
       suspiciousSignals.rapidClicks++;
       
       if (suspiciousSignals.rapidClicks > 5) {
-        console.warn('Suspicious rapid clicking detected');
-        // Could trigger additional verification
+        // Suspicious activity detected - could trigger verification
         if (typeof gtag !== 'undefined') {
           gtag('event', 'suspicious_activity', {
             'type': 'rapid_clicking',
@@ -106,7 +105,6 @@ const CLOUDFLARE_TURNSTILE_SITE_KEY = 'YOUR_TURNSTILE_SITE_KEY'; // Replace afte
     
     // Check if more than 10 attempts in 1 hour
     if (quizAttempts[key].length > 10) {
-      console.warn('Rate limit exceeded for quiz:', quizName);
       if (typeof gtag !== 'undefined') {
         gtag('event', 'rate_limit_exceeded', {
           'quiz_name': quizName,
