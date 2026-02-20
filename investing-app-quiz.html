@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Investing App Is Right for You? - Quiz</title>
+    <meta name="description" content="Find the perfect investing app for your style. Compare Robinhood, Public, Webull, Fidelity, and more. Personalized recommendation in 2 minutes.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/investing-app-quiz.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --robinhood: #00C805;
+            --public: #2E5BFF;
+            --webull: #F7A600;
+            --fidelity: #00853E;
+            --acorns: #2E8B57;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        /* Quiz Container */
+        .quiz-page {
+            padding: 60px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .quiz-header .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .quiz-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .quiz-header p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 40px;
+        }
+
+        .progress-bar-bg {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Question */
+        .question-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px -4px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 20px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
+        }
+
+        .option-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            flex-grow: 1;
+        }
+
+        .option-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .option-desc {
+            font-size: 0.875rem;
+            color: var(--gray);
+            display: block;
+        }
+
+        /* Results */
+        .results-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .app-recommendation {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .app-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .app-logo.robinhood { background: var(--robinhood); }
+        .app-logo.public { background: var(--public); }
+        .app-logo.webull { background: var(--webull); color: var(--dark); }
+        .app-logo.fidelity { background: var(--fidelity); }
+        .app-logo.acorns { background: var(--acorns); }
+        .app-logo.sofi { background: #7C3AED; }
+        .app-logo.m1 { background: #1E3A5F; }
+
+        .app-name-section h2 {
+            font-size: 2rem;
+            margin-bottom: 4px;
+        }
+
+        .app-tagline {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .app-description {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            opacity: 0.95;
+        }
+
+        .app-features {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .app-features h3 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .app-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .app-tag {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        .app-cta {
+            display: inline-block;
+            background: white;
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .app-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .runner-up {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .runner-up h3 {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+
+        .runner-up-app {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .runner-up-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .runner-up-info h4 {
+            font-size: 1.125rem;
+            margin-bottom: 4px;
+        }
+
+        .runner-up-info p {
+            font-size: 0.875rem;
+            color: var(--gray);
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #7c3aed);
+            color: white;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .start-screen h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .start-screen p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .quiz-meta-info {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        .disclaimer-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 24px auto;
+            max-width: 500px;
+        }
+
+        .disclaimer-box p {
+            color: #64748b;
+            font-size: 0.8125rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .important-disclaimer {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .important-disclaimer h4 {
+            color: #92400e;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .important-disclaimer p {
+            color: #92400e;
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .quiz-header h1 { font-size: 1.75rem; }
+            .question-container { padding: 24px; }
+            .question-container h2 { font-size: 1.25rem; }
+            .app-header { flex-direction: column; text-align: center; }
+            .app-name-section h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <a href="/" style="color: var(--gray); text-decoration: none; font-weight: 500;">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="quiz-page">
+        <div class="container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <span class="category-tag">Investing</span>
+                <h1>Which Investing App Is Right for You?</h1>
+                <p>Compare Robinhood, Public, Webull, Fidelity, and more. Find the perfect app for your investing style in 2 minutes.</p>
+            </div>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="start-screen">
+                <h2>Find Your Perfect Investing App</h2>
+                <p>Not all investing apps are the same. Some are built for beginners, others for active traders. This quiz matches your style to the right platform.</p>
+                
+                <div class="quiz-meta-info">
+                    <span>📝 8 Questions</span>
+                    <span>⏱️ ~2 Minutes</span>
+                    <span>📱 Personalized Match</span>
+                </div>
+
+                <div class="disclaimer-box">
+                    <p>⚠️ <strong>Not Financial Advice:</strong> This quiz is for educational purposes only. App recommendations are based on general features. Always research platforms yourself before signing up.</p>
+                </div>
+                
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz →</button>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" id="progress-bar" style="width: 12.5%;"></div>
+                    </div>
+                    <div class="progress-text">Question <span id="current-question">1</span> of 8</div>
+                </div>
+
+                <div class="question-container" id="question-container">
+                    <!-- Questions injected here -->
+                </div>
+            </div>
+
+            <!-- Results Container -->
+            <div id="results-container" class="results-container" style="display: none;">
+                <!-- Results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data
+        const quizData = {
+            questions: [
+                {
+                    question: "What's your investing experience level?",
+                    options: [
+                        { icon: "🌱", title: "Complete Beginner", desc: "I've never invested before, need hand-holding", scores: { robinhood: 2, acorns: 3, public: 2 } },
+                        { icon: "📚", title: "Some Knowledge", desc: "I understand basics but want to learn more", scores: { public: 3, fidelity: 2, sofi: 2 } },
+                        { icon: "📊", title: "Intermediate", desc: "I know my way around stocks and ETFs", scores: { webull: 2, fidelity: 2, m1: 2 } },
+                        { icon: "🎯", title: "Experienced", desc: "I trade regularly and know what I'm doing", scores: { webull: 3, fidelity: 2, m1: 1 } }
+                    ]
+                },
+                {
+                    question: "How do you want to learn about investing?",
+                    options: [
+                        { icon: "👥", title: "Social Learning", desc: "See what others are buying and discuss strategies", scores: { public: 3, robinhood: 2 } },
+                        { icon: "📰", title: "Built-in News", desc: "Get market news and analysis in the app", scores: { webull: 3, fidelity: 2, public: 2 } },
+                        { icon: "🎓", title: "Educational Content", desc: "Articles, videos, and tutorials to teach me", scores: { fidelity: 3, sofi: 2, public: 2 } },
+                        { icon: "🤷", title: "I Don't Need Education", desc: "I already know what I'm doing", scores: { webull: 2, robinhood: 2, m1: 2 } }
+                    ]
+                },
+                {
+                    question: "What type of investor are you?",
+                    options: [
+                        { icon: "🌳", title: "Set It and Forget It", desc: "I want automated investing, minimal effort", scores: { acorns: 3, m1: 3, fidelity: 2 } },
+                        { icon: "🛒", title: "Buy and Hold", desc: "I pick stocks/ETFs and hold for years", scores: { fidelity: 3, public: 2, robinhood: 2 } },
+                        { icon: "⚡", title: "Active Trader", desc: "I want to trade frequently, maybe daily", scores: { webull: 3, robinhood: 2 } },
+                        { icon: "🎯", title: "Goal-Based", desc: "I invest toward specific goals (house, retirement)", scores: { sofi: 3, acorns: 2, fidelity: 2 } }
+                    ]
+                },
+                {
+                    question: "What's most important to you in an app?",
+                    options: [
+                        { icon: "💰", title: "Commission-Free Trading", desc: "I don't want to pay fees on trades", scores: { robinhood: 3, webull: 3, public: 2 } },
+                        { icon: "📈", title: "Advanced Charts", desc: "I need technical analysis tools", scores: { webull: 3, fidelity: 2 } },
+                        { icon: "🏦", title: "Full Banking", desc: "I want checking, savings, and investing together", scores: { sofi: 3, fidelity: 2 } },
+                        { icon: "🌍", title: "Social Impact", desc: "I care about ESG and socially responsible investing", scores: { public: 3, fidelity: 2 } }
+                    ]
+                },
+                {
+                    question: "What assets do you want to invest in?",
+                    options: [
+                        { icon: "🇺🇸", title: "US Stocks & ETFs", desc: "Mainly domestic markets", scores: { robinhood: 3, public: 2, webull: 2 } },
+                        { icon: "🌏", title: "International Markets", desc: "Global diversification", scores: { fidelity: 3, sofi: 2, m1: 2 } },
+                        { icon: "₿", title: "Crypto Too", desc: "I want stocks AND cryptocurrency", scores: { robinhood: 3, webull: 2, public: 2 } },
+                        { icon: "📋", title: "Everything", desc: "Stocks, bonds, mutual funds, options", scores: { fidelity: 3, webull: 2 } }
+                    ]
+                },
+                {
+                    question: "How much money are you starting with?",
+                    options: [
+                        { icon: "💵", title: "Under $100", desc: "Just dipping my toes in", scores: { acorns: 3, robinhood: 2, public: 2 } },
+                        { icon: "💵💵", title: "$100 - $1,000", desc: "Small initial investment", scores: { robinhood: 3, public: 2, webull: 2 } },
+                        { icon: "💵💵💵", title: "$1,000 - $10,000", desc: "Serious about investing", scores: { fidelity: 3, m1: 2, webull: 2 } },
+                        { icon: "💰", title: "$10,000+", desc: "Substantial portfolio", scores: { fidelity: 3, m1: 3, webull: 2 } }
+                    ]
+                },
+                {
+                    question: "Do you want retirement accounts (IRA)?",
+                    options: [
+                        { icon: "✅", title: "Yes, Essential", desc: "I need IRA options for tax advantages", scores: { fidelity: 3, sofi: 3, m1: 2 } },
+                        { icon: "👍", title: "Nice to Have", desc: "Might use one eventually", scores: { public: 2, webull: 2, robinhood: 2 } },
+                        { icon: "❌", title: "Not Now", desc: "Just taxable investing for me", scores: { robinhood: 3, public: 2, webull: 2 } },
+                        { icon: "🤷", title: "Not Sure", desc: "I don't know what an IRA is", scores: { acorns: 2, public: 2, robinhood: 2 } }
+                    ]
+                },
+                {
+                    question: "What's your biggest frustration with investing apps?",
+                    options: [
+                        { icon: "😤", title: "Too Complex", desc: "Overwhelming interface and features", scores: { robinhood: 3, acorns: 2, public: 2 } },
+                        { icon: "😴", title: "Too Simple", desc: "Not enough tools or research", scores: { webull: 3, fidelity: 2 } },
+                        { icon: "💸", title: "Hidden Fees", desc: "Surprise charges and costs", scores: { public: 2, fidelity: 2, robinhood: 2 } },
+                        { icon: "📵", title: "Poor Customer Service", desc: "Can't get help when I need it", scores: { fidelity: 3, sofi: 2 } }
+                    ]
+                }
+            ]
+        };
+
+        // App Recommendations
+        const appRecommendations = {
+            robinhood: {
+                name: "Robinhood",
+                tagline: "Investing for Everyone",
+                emoji: "🟢",
+                color: "#00C805",
+                description: "The app that made commission-free trading mainstream. Perfect for beginners who want a simple, clean interface to buy stocks, ETFs, and crypto without fees.",
+                features: [
+                    "Commission-free stock, ETF, and crypto trading",
+                    "Simple, intuitive mobile interface",
+                    "Fractional shares (buy $1 of any stock)",
+                    "Cash management with debit card",
+                    "24/7 market access for crypto"
+                ],
+                bestFor: "Beginners who want simplicity",
+                pros: ["Zero commissions", "Easy to use", "Crypto included"],
+                cons: ["Limited research tools", "No mutual funds", "Basic charts"],
+                runnerUp: "public"
+            },
+            public: {
+                name: "Public",
+                tagline: "Investing Made Social",
+                emoji: "🔵",
+                color: "#2E5BFF",
+                description: "A social investing platform where you can see what others are buying, share ideas, and learn together. Great for investors who value community and transparency.",
+                features: [
+                    "Social feed showing friends' investments",
+                    "Commission-free fractional shares",
+                    "Educational content built-in",
+                    "ESG-focused investing options",
+                    "Transparent business model (no PFOF)"
+                ],
+                bestFor: "Social learners and ESG investors",
+                pros: ["Social features", "No PFOF", "Great education"],
+                cons: ["Limited charting", "No options trading", "Smaller user base"],
+                runnerUp: "robinhood"
+            },
+            webull: {
+                name: "Webull",
+                tagline: "Your One-Stop Investment Hub",
+                emoji: "🟠",
+                color: "#F7A600",
+                description: "A feature-packed platform for active traders. Advanced charts, extended hours trading, and paper trading make it ideal for those who take investing seriously.",
+                features: [
+                    "Advanced charting with technical indicators",
+                    "Extended hours trading (pre/post market)",
+                    "Paper trading to practice strategies",
+                    "Commission-free options trading",
+                    "Real-time market data"
+                ],
+                bestFor: "Active traders and technical analysts",
+                pros: ["Advanced charts", "Extended hours", "Paper trading"],
+                cons: ["Can be overwhelming", "Limited education", "No mutual funds"],
+                runnerUp: "fidelity"
+            },
+            fidelity: {
+                name: "Fidelity",
+                tagline: "Invest With Confidence",
+                emoji: "🟩",
+                color: "#00853E",
+                description: "The full-service brokerage with the best of both worlds — robust research, retirement accounts, and excellent customer service. Perfect for serious long-term investors.",
+                features: [
+                    "Comprehensive research and analysis tools",
+                    "All account types (IRA, 401k, HSA, etc.)",
+                    "Mutual funds with zero expense ratios",
+                    "24/7 customer service by phone",
+                    "Fractional shares (Stocks by the Slice)"
+                ],
+                bestFor: "Serious investors and retirement planners",
+                pros: ["Excellent research", "All account types", "Great customer service"],
+                cons: ["Interface can feel dated", "Higher learning curve", "App less intuitive"],
+                runnerUp: "sofi"
+            },
+            acorns: {
+                name: "Acorns",
+                tagline: "Invest Your Spare Change",
+                emoji: "🌰",
+                color: "#2E8B57",
+                description: "The ultimate hands-off investing app. Rounds up your purchases and invests the change. Perfect for people who want to invest without thinking about it.",
+                features: [
+                    "Automatic round-up investing",
+                    "Pre-built diversified portfolios",
+                    "Recurring investments (set it and forget it)",
+                    "Retirement accounts (Later)",
+                    "Banking with debit card (Spend)"
+                ],
+                bestFor: "Hands-off beginners and savers",
+                pros: ["Completely automated", "No investment knowledge needed", "Builds habits"],
+                cons: ["Monthly fee ($3-5)", "Limited control", "Small balances only"],
+                runnerUp: "m1"
+            },
+            sofi: {
+                name: "SoFi Invest",
+                tagline: "Invest, Save, and Borrow",
+                emoji: "💜",
+                color: "#7C3AED",
+                description: "All-in-one financial platform. Banking, investing, loans, and financial planning in one place. Great for millennials who want everything integrated.",
+                features: [
+                    "Active and automated investing options",
+                    "Integrated banking (checking/savings)",
+                    "Access to financial advisors",
+                    "IPO investing opportunities",
+                    "Member benefits and discounts"
+                ],
+                bestFor: "All-in-one finance seekers",
+                pros: ["Full banking suite", "Financial advisors", "Member perks"],
+                cons: ["Newer to investing", "Limited research", "Smaller selection"],
+                runnerUp: "fidelity"
+            },
+            m1: {
+                name: "M1 Finance",
+                tagline: "The Finance Super App",
+                emoji: "🔷",
+                color: "#1E3A5F",
+                description: "The perfect hybrid of robo-advisor and brokerage. Build custom portfolios (Pies) and automate your investing strategy. Ideal for long-term planners.",
+                features: [
+                    "Custom portfolio building (Pies)",
+                    "Automated rebalancing",
+                    "Fractional shares",
+                    "Margin loans (M1 Borrow)",
+                    "Retirement accounts with automation"
+                ],
+                bestFor: "Long-term investors who want control",
+                pros: ["Highly customizable", "Free automation", "No commissions"],
+                cons: ["One trading window (free tier)", "No mutual funds", "Learning curve"],
+                runnerUp: "fidelity"
+            }
+        };
+
+        // Quiz State
+        let currentQuestion = 0;
+        let scores = {};
+
+        // Initialize scores
+        function initScores() {
+            scores = { robinhood: 0, public: 0, webull: 0, fidelity: 0, acorns: 0, sofi: 0, m1: 0 };
+        }
+
+        // Start Quiz
+        function startQuiz() {
+            initScores();
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            showQuestion();
+
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_start' });
+                });
+            }
+        }
+
+        // Show Question
+        function showQuestion() {
+            const q = quizData.questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('current-question').textContent = currentQuestion + 1;
+
+            let optionsHTML = q.options.map((opt, i) => `
+                <button class="option" onclick="selectAnswer(${i})">
+                    <span class="option-icon">${opt.icon}</span>
+                    <span class="option-text">
+                        <span class="option-title">${opt.title}</span>
+                        <span class="option-desc">${opt.desc}</span>
+                    </span>
+                </button>
+            `).join('');
+
+            document.getElementById('question-container').innerHTML = `
+                <h2>${q.question}</h2>
+                <div class="options-list">${optionsHTML}</div>
+            `;
+        }
+
+        // Select Answer
+        function selectAnswer(index) {
+            const q = quizData.questions[currentQuestion];
+            const selected = q.options[index];
+
+            for (let [key, value] of Object.entries(selected.scores)) {
+                scores[key] += value;
+            }
+
+            document.querySelectorAll('.option')[index].classList.add('selected');
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizData.questions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 300);
+        }
+
+        // Show Results
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('results-container').style.display = 'block';
+
+            const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const topApp = sortedScores[0][0];
+            const runnerUp = appRecommendations[topApp].runnerUp;
+
+            const result = appRecommendations[topApp];
+
+            document.getElementById('results-container').innerHTML = `
+                <div class="app-recommendation">
+                    <div class="app-header">
+                        <div class="app-logo ${topApp}">${result.emoji}</div>
+                        <div class="app-name-section">
+                            <h2>${result.name}</h2>
+                            <div class="app-tagline">${result.tagline}</div>
+                        </div>
+                    </div>
+
+                    <div class="app-description">${result.description}</div>
+
+                    <div class="app-tags">
+                        ${result.pros.map(pro => `<span class="app-tag">✓ ${pro}</span>`).join('')}
+                    </div>
+
+                    <div class="app-features">
+                        <h3>Key Features</h3>
+                        <ul class="feature-list">
+                            ${result.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; margin-bottom: 24px;">
+                        <strong>Best for:</strong> ${result.bestFor}
+                    </div>
+
+                    <a href="https://www.google.com/search?q=${result.name}+invest+app+download" target="_blank" class="app-cta">
+                        Download ${result.name} →
+                    </a>
+                </div>
+
+                <div class="runner-up">
+                    <h3>Runner-Up: ${appRecommendations[runnerUp].name}</h3>
+                    <div class="runner-up-app">
+                        <div class="runner-up-logo ${runnerUp}" style="background: ${appRecommendations[runnerUp].color}; color: white;">
+                            ${appRecommendations[runnerUp].emoji}
+                        </div>
+                        <div class="runner-up-info">
+                            <h4>${appRecommendations[runnerUp].name}</h4>
+                            <p>${appRecommendations[runnerUp].tagline}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="important-disclaimer">
+                    <h4>⚠️ Important Disclaimer</h4>
+                    <p>
+                        This quiz is for <strong>educational and entertainment purposes only</strong>. App recommendations are based on general features and may not reflect your specific needs. Always research platforms yourself, read reviews, and compare fees before signing up. Investing involves risk, including possible loss of principal. Past performance does not guarantee future results.
+                    </p>
+                </div>
+
+                <div class="results-actions">
+                    <a href="/investing-quiz.html" class="btn btn-primary">Test Your Investing Knowledge →</a>
+                    <button class="btn btn-secondary" onclick="location.reload()">Retake Quiz</button>
+                </div>
+            `;
+
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'quiz_complete' });
+                });
+            }
+        }
+
+        // Page load reCAPTCHA
+        (function() {
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji', { action: 'page_load' });
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
