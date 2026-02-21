@@ -1,0 +1,163 @@
+<!-- Standard Footer Component - Use this on all pages -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>💳 Credit Gamer Area</h3>
+                <p>Helping gamers and young adults master credit, finance, and money-making skills through fun, interactive quizzes.</p>
+                
+                <div class="social-links">
+                    <a href="https://twitter.com/creditgamerarea" target="_blank" rel="noopener">Twitter</a>
+                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener">TikTok</a>
+                    <a href="#" target="_blank" rel="noopener">Discord</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Learn</h4>
+                <ul>
+                    <li><a href="/credit-basics-quiz.html">Credit Basics</a></li>
+                    <li><a href="/credit-cards-quiz.html">Credit Cards</a></li>
+                    <li><a href="/investing-quiz.html">Investing</a></li>
+                    <li><a href="/taxes-quiz.html">Taxes</a></li>
+                    <li><a href="/budgeting-quiz.html">Budgeting</a></li>
+                    <li><a href="/make-money-online-quiz.html">Make Money Online</a></li>
+                    <li><a href="/side-hustle-scam-quiz.html">Side Hustle Scams</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/quizzes/">All Quizzes</a></li>
+                    <li><a href="/resources.html">Financial Calculators</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
+                    <li><a href="/sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Credit Gamer Area. All rights reserved. | Not financial advice.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer Styles -->
+<style>
+.footer {
+    background: var(--dark);
+    color: white;
+    padding: 64px 0 32px;
+    margin-top: 80px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+}
+
+.footer-brand h3 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: #64748b;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+.footer-links h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    color: #94a3b8;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 32px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+    
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
