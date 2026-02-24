@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Travel Personality? Take the Quiz | Credit Gamer Area</title>
+    <meta name="description" content="Discover your travel personality type and get personalized destination recommendations + points strategies. Take our free quiz now!">
+    <link rel="canonical" href="https://www.creditgamerarea.com/travel-personality-quiz.html">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="What's Your Travel Personality? Take the Quiz">
+    <meta property="og:description" content="Discover your travel personality type and get personalized destination recommendations + points strategies.">
+    <meta property="og:image" content="https://www.creditgamerarea.com/images/travel-personality-quiz-og.jpg">
+    <meta property="og:url" content="https://www.creditgamerarea.com/travel-personality-quiz.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --luxury: #8b5cf6;
+            --experience: #06b6d4;
+            --hacker: #10b981;
+            --spirit: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            padding: 60px 0;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .quiz-header h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .quiz-header p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            height: 8px;
+            margin-bottom: 48px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 100%;
+            border-radius: 12px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        /* Question Card */
+        .question-card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            display: none;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .question-text {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .option {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .option:hover {
+            border-color: var(--primary);
+            background: #f0f9ff;
+            transform: translateX(8px);
+        }
+
+        .option-letter {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            font-size: 1.125rem;
+            color: #334155;
+        }
+
+        /* Results Section */
+        .results-section {
+            display: none;
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        .results-section.active {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .result-badge {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .result-badge.luxury { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+        .result-badge.experience { background: linear-gradient(135deg, #06b6d4, #22d3ee); }
+        .result-badge.hacker { background: linear-gradient(135deg, #10b981, #34d399); }
+        .result-badge.spirit { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+
+        .result-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .result-description {
+            font-size: 1.125rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .result-section {
+            margin-bottom: 40px;
+        }
+
+        .result-section h3 {
+            font-size: 1.375rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .result-section h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .destination-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .destination-card h4 {
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .destination-card p {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .strategy-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .strategy-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strategy-box li {
+            padding: 12px 0;
+            border-bottom: 1px solid #bae6fd;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .strategy-box li:last-child {
+            border-bottom: none;
+        }
+
+        .strategy-box li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .share-btn {
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+
+        .share-btn.facebook {
+            background: #4267B2;
+            color: white;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .retake-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 32px;
+            transition: all 0.2s;
+        }
+
+        .retake-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .quiz-header h1 {
+                font-size: 2rem;
+            }
+            
+            .question-card,
+            .results-section {
+                padding: 24px;
+            }
+            
+            .question-text {
+                font-size: 1.25rem;
+            }
+            
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">🎮 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/recommended.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="quiz-container">
+        <div class="container">
+            <div class="quiz-header">
+                <h1>What's Your Travel Personality?</h1>
+                <p>Answer 8 questions to discover your travel personality type and get personalized destination recommendations + points strategies.</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question-card active" data-question="1">
+                <span class="question-number">Question 1 of 8</span>
+                <h2 class="question-text">When planning a trip, you typically...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Start 6+ months early with a detailed spreadsheet of flights, hotels, and daily itineraries</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Book flights 2-3 months out, figure out the rest later</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Wait for a mistake fare or flash sale, then build a trip around it</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Decide Wednesday that you want to leave Friday</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-card" data-question="2">
+                <span class="question-number">Question 2 of 8</span>
+                <h2 class="question-text">Your ideal hotel is...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">A luxury resort where everything is taken care of—meals, activities, the works</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">A boutique hotel in the heart of the city, walking distance to everything</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">An Airbnb or local guesthouse where you can live like a local</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Whatever's cheapest—I barely spend time in the room anyway</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-card" data-question="3">
+                <span class="question-number">Question 3 of 8</span>
+                <h2 class="question-text">At the airport, you're most likely to...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Arrive 3 hours early to enjoy lounge access and grab a proper meal</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Get there with just enough time to grab coffee before boarding</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Sprint to the gate because you were hunting for the best deal at duty-free</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Show up as the gate is closing (somehow you always make it)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-card" data-question="4">
+                <span class="question-number">Question 4 of 8</span>
+                <h2 class="question-text">Your travel photos are mostly...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Perfectly composed shots of sunsets, architecture, and curated flat lays</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Candid moments with locals, street food, and hidden alleyways</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Screenshots of your flight deals and points redemptions</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">A blur because you were too busy experiencing the moment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-card" data-question="5">
+                <span class="question-number">Question 5 of 8</span>
+                <h2 class="question-text">When it comes to airline seats...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Business class or nothing—my miles are for premium cabins only</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">I'll pay extra for economy plus or use points for upgrades</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Middle seat in the back if it means I saved $200</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">I don't care as long as I get there</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-card" data-question="6">
+                <span class="question-number">Question 6 of 8</span>
+                <h2 class="question-text">Your travel mantra is...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">"Travel is the only thing you buy that makes you richer"</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">"Collect moments, not things"</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">"Never pay full price for travel"</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">"Let's see what happens"</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-card" data-question="7">
+                <span class="question-number">Question 7 of 8</span>
+                <h2 class="question-text">Your biggest travel frustration is...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">When the hotel doesn't have your preferred pillow type</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Missing out on authentic local experiences because of tourist traps</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Not having enough points for the redemption you want</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">People who overplan and can't go with the flow</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-card" data-question="8">
+                <span class="question-number">Question 8 of 8</span>
+                <h2 class="question-text">If you won a free trip, you'd choose...</h2>
+                <div class="options">
+                    <div class="option" data-value="A">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Two weeks at an all-inclusive in the Maldives</span>
+                    </div>
+                    <div class="option" data-value="B">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">A multi-city European adventure by train</span>
+                    </div>
+                    <div class="option" data-value="C">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Round-the-world ticket in business class</span>
+                    </div>
+                    <div class="option" data-value="D">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">No itinerary—just a one-way ticket and a backpack</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <div class="result-header">
+                    <div class="result-badge" id="resultBadge">THE LUXURY PLANNER</div>
+                    <h2 class="result-title" id="resultTitle">🏆 The Luxury Planner</h2>
+                    <p class="result-description" id="resultDescription">You believe travel should be seamless, comfortable, and Instagram-worthy.</p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Your Vibe</h3>
+                    <p id="resultVibe">You research extensively, book early, and aren't afraid to splurge (or use points) for the best experience.</p>
+                </div>
+
+                <div class="result-section">
+                    <h3>Your Destinations</h3>
+                    <div class="destination-grid" id="resultDestinations">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="result-section">
+                    <h3>Your Points Strategy</h3>
+                    <div class="strategy-box" id="resultStrategy">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="share-section">
+                    <h3>Share Your Results!</h3>
+                    <p>Tag us with your travel personality and where you're headed next!</p>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn twitter" onclick="shareTwitter()">Share on Twitter</a>
+                        <a href="#" class="share-btn facebook" onclick="shareFacebook()">Share on Facebook</a>
+                    </div>
+                    <button class="retake-btn" onclick="retakeQuiz()">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 8;
+        const answers = {};
+
+        const results = {
+            luxury: {
+                badge: 'THE LUXURY PLANNER',
+                badgeClass: 'luxury',
+                title: '🏆 The Luxury Planner',
+                description: 'You believe travel should be seamless, comfortable, and Instagram-worthy.',
+                vibe: 'You research extensively, book early, and aren\'t afraid to splurge (or use points) for the best experience.',
+                destinations: [
+                    { name: 'Maldives', desc: 'Overwater bungalows and butler service' },
+                    { name: 'Dubai', desc: 'Luxury hotels and world-class dining' },
+                    { name: 'Maui, Hawaii', desc: 'Resort life with stunning natural beauty' },
+                    { name: 'Paris', desc: 'Classic luxury and fine dining' }
+                ],
+                strategy: `
+                    <ul>
+                        <li><strong>Focus on:</strong> Chase Ultimate Rewards and American Express Membership Rewards for transferable points</li>
+                        <li><strong>Target:</strong> Hyatt for luxury hotel redemptions (Park Hyatt properties)</li>
+                        <li><strong>Credit card:</strong> Chase Sapphire Reserve or Amex Platinum for lounge access</li>
+                        <li><strong>Book:</strong> Business class awards 330+ days out when seats are released</li>
+                        <li><strong>Pro tip:</strong> Use your planning skills to track multiple loyalty programs and maximize welcome bonuses</li>
+                    </ul>
+                `
+            },
+            experience: {
+                badge: 'THE EXPERIENCE SEEKER',
+                badgeClass: 'experience',
+                title: '🌍 The Experience Seeker',
+                description: 'You travel to connect—with cultures, people, and authentic moments.',
+                vibe: 'You\'re less concerned with thread count and more interested in the stories you\'ll tell.',
+                destinations: [
+                    { name: 'Tokyo', desc: 'Endless neighborhoods and incredible food culture' },
+                    { name: 'Lisbon', desc: 'Walkable, affordable, authentic European charm' },
+                    { name: 'Mexico City', desc: 'World-class food scene and vibrant energy' },
+                    { name: 'Chiang Mai', desc: 'Temples, night markets, and digital nomad community' }
+                ],
+                strategy: `
+                    <ul>
+                        <li><strong>Focus on:</strong> Bilt Rewards for rent payments, Capital One Venture X for flexible 2x earning</li>
+                        <li><strong>Target:</strong> Hyatt for boutique properties in walkable neighborhoods</li>
+                        <li><strong>Use points for:</strong> Economy flights, save cash for experiences</li>
+                        <li><strong>Pro tip:</strong> Book boutique hotels through Chase The Edit or Amex Fine Hotels + Resorts for perks like free breakfast</li>
+                    </ul>
+                `
+            },
+            hacker: {
+                badge: 'THE POINTS HACKER',
+                badgeClass: 'hacker',
+                title: '🧮 The Points Hacker',
+                description: 'You see travel as a game—and you\'re playing to win.',
+                vibe: 'You know transfer partners, sweet spots, and which cards to use for every purchase.',
+                destinations: [
+                    { name: 'Japan', desc: 'ANA first class via Virgin Atlantic points' },
+                    { name: 'Qatar', desc: 'Qsuites using American Airlines miles' },
+                    { name: 'Bora Bora', desc: 'St. Regis or Conrad using Hilton/Marriott points' },
+                    { name: 'Anywhere with mistake fares', desc: 'You already have alerts set up' }
+                ],
+                strategy: `
+                    <ul>
+                        <li><strong>Primary currencies:</strong> Chase Ultimate Rewards (2.05¢), Bilt Rewards (2.20¢), Amex MR (2.00¢)</li>
+                        <li><strong>Credit card rotation:</strong> Chase Sapphire Preferred, Bilt Mastercard, Amex Gold</li>
+                        <li><strong>Pro tip:</strong> Stack shopping portals + card bonuses + airline shopping programs. Check for transfer bonuses before booking!</li>
+                    </ul>
+                `
+            },
+            spirit: {
+                badge: 'THE FREE SPIRIT',
+                badgeClass: 'spirit',
+                title: '🎒 The Free Spirit',
+                description: 'Spontaneity is your superpower.',
+                vibe: 'You\'d rather have a one-way ticket and see where the wind takes you than follow a rigid itinerary.',
+                destinations: [
+                    { name: 'Bali', desc: 'Cheap living, surf culture, spiritual retreats' },
+                    { name: 'Colombia', desc: 'Affordable, diverse landscapes, friendly locals' },
+                    { name: 'Portugal', desc: 'Great weather, low cost of living' },
+                    { name: 'Southeast Asia', desc: 'Backpacker trails, endless flexibility' }
+                ],
+                strategy: `
+                    <ul>
+                        <li><strong>Keep it simple:</strong> Capital One Venture or Chase Sapphire Preferred</li>
+                        <li><strong>Use points for:</strong> Last-minute flights (no blackout dates with fixed-value points)</li>
+                        <li><strong>Don\'t chase status</strong>—you\'re not loyal to any one airline</li>
+                        <li><strong>Pro tip:</strong> Set up Google Flights trackers for destinations you\'re vaguely interested in. When a deal pops up, jump on it!</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = ((currentQuestion - 1) / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        // Handle option click
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const questionNum = this.closest('.question-card').dataset.question;
+                const value = this.dataset.value;
+                answers[questionNum] = value;
+
+                // Move to next question or show results
+                if (currentQuestion < totalQuestions) {
+                    document.querySelector(`.question-card[data-question="${currentQuestion}"]`).classList.remove('active');
+                    currentQuestion++;
+                    document.querySelector(`.question-card[data-question="${currentQuestion}"]`).classList.add('active');
+                    updateProgress();
+                } else {
+                    showResults();
+                }
+            });
+        });
+
+        // Calculate and show results
+        function showResults() {
+            // Count answers
+            const counts = { A: 0, B: 0, C: 0, D: 0 };
+            Object.values(answers).forEach(answer => counts[answer]++);
+
+            // Determine result
+            let resultType = 'luxury';
+            const maxCount = Math.max(counts.A, counts.B, counts.C, counts.D);
+            
+            if (counts.A === maxCount) resultType = 'luxury';
+            else if (counts.B === maxCount) resultType = 'experience';
+            else if (counts.C === maxCount) resultType = 'hacker';
+            else resultType = 'spirit';
+
+            // Handle ties - prioritize based on question importance
+            if (counts.A === counts.B && counts.A === maxCount) resultType = 'luxury';
+            else if (counts.B === counts.C && counts.B === maxCount) resultType = 'hacker';
+
+            const result = results[resultType];
+
+            // Populate results
+            document.getElementById('resultBadge').textContent = result.badge;
+            document.getElementById('resultBadge').className = 'result-badge ' + result.badgeClass;
+            document.getElementById('resultTitle').textContent = result.title;
+            document.getElementById('resultDescription').textContent = result.description;
+            document.getElementById('resultVibe').textContent = result.vibe;
+
+            // Populate destinations
+            const destContainer = document.getElementById('resultDestinations');
+            destContainer.innerHTML = result.destinations.map(dest => `
+                <div class="destination-card">
+                    <h4>${dest.name}</h4>
+                    <p>${dest.desc}</p>
+                </div>
+            `).join('');
+
+            // Populate strategy
+            document.getElementById('resultStrategy').innerHTML = result.strategy;
+
+            // Hide questions, show results
+            document.querySelectorAll('.question-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('resultsSection').classList.add('active');
+
+            // Track completion
+            gtag('event', 'quiz_complete', {
+                'event_category': 'Travel Personality Quiz',
+                'event_label': resultType
+            });
+        }
+
+        // Retake quiz
+        function retakeQuiz() {
+            currentQuestion = 1;
+            Object.keys(answers).forEach(key => delete answers[key]);
+            document.getElementById('resultsSection').classList.remove('active');
+            document.querySelector('.question-card[data-question="1"]').classList.add('active');
+            updateProgress();
+        }
+
+        // Share functions
+        function shareTwitter() {
+            const text = `I just discovered my travel personality: ${document.getElementById('resultTitle').textContent} Take the quiz!`;
+            const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+
+        function shareFacebook() {
+            const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+            window.open(url, '_blank');
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
