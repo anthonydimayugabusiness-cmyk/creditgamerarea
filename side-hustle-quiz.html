@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Perfect Side Hustle Quiz | Credit Gamer Area</title>
+    <meta name="description" content="Take this quiz to discover the best side hustle for your skills, time availability, budget, and interests. Get personalized recommendations with earning potential.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/side-hustle-quiz.html">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Find Your Perfect Side Hustle Quiz",
+      "description": "Discover the best side hustle based on your skills, time, budget, and interests",
+      "author": {
+        "@type": "Organization",
+        "name": "Credit Gamer Area"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .quiz-page { padding: 40px 0 80px; }
+        
+        .quiz-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+        
+        .quiz-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #1e1b4b;
+        }
+        
+        .quiz-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .progress-bar {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 24px;
+        }
+        
+        .question-number {
+            color: #6366f1;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        
+        .question-text {
+            font-size: 1.5rem;
+            color: #1e1b4b;
+            margin-bottom: 32px;
+            line-height: 1.4;
+        }
+        
+        .options-grid {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .option-btn {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px 24px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .option-btn:hover {
+            border-color: #6366f1;
+            background: #f5f3ff;
+        }
+        
+        .option-btn.selected {
+            border-color: #6366f1;
+            background: #ede9fe;
+        }
+        
+        .option-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .option-text {
+            flex: 1;
+        }
+        
+        .option-label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .option-desc {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary {
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(99,102,241,0.3);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Results Section */
+        .results-card {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .result-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        
+        .result-title {
+            font-size: 2rem;
+            color: #1e1b4b;
+            margin-bottom: 16px;
+        }
+        
+        .result-description {
+            color: #64748b;
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .result-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+            padding: 32px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #6366f1;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        
+        .result-details {
+            text-align: left;
+            margin: 32px 0;
+        }
+        
+        .result-details h3 {
+            color: #1e1b4b;
+            margin-bottom: 16px;
+        }
+        
+        .result-details ul {
+            padding-left: 24px;
+        }
+        
+        .result-details li {
+            margin-bottom: 12px;
+            color: #334155;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+            text-align: left;
+        }
+        
+        .next-steps h3 {
+            color: #065f46;
+            margin-bottom: 16px;
+        }
+        
+        .next-steps ol {
+            padding-left: 24px;
+            margin: 0;
+        }
+        
+        .next-steps li {
+            margin-bottom: 12px;
+            color: #065f46;
+        }
+        
+        .resource-links {
+            display: grid;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        
+        .resource-link:hover {
+            border-color: #6366f1;
+            background: #f5f3ff;
+        }
+        
+        .resource-icon {
+            font-size: 1.5rem;
+        }
+        
+        .resource-info {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .resource-title {
+            font-weight: 600;
+            color: #1e1b4b;
+            display: block;
+        }
+        
+        .resource-desc {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .retake-btn {
+            margin-top: 32px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .quiz-header h1 {
+                font-size: 1.875rem;
+            }
+            
+            .question-card {
+                padding: 24px;
+            }
+            
+            .question-text {
+                font-size: 1.25rem;
+            }
+            
+            .result-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            .results-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <ul class="nav-links">
+                <li><a href="/quizzes/">Quizzes</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="quiz-page">
+        <div class="container">
+            <div class="quiz-header">
+                <h1>Find Your Perfect Side Hustle</h1>
+                <p>Answer 8 quick questions about your skills, time, budget, and interests. We'll match you with the best side hustle opportunities and show you exactly how to get started.</p>
+            </div>
+            
+            <div class="quiz-container">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 12.5%;"></div>
+                </div>
+                
+                <!-- Quiz Questions -->
+                <div id="quizQuestions">
+                    <!-- Question 1: Time Available -->
+                    <div class="question-card" data-question="1">
+                        <div class="question-number">Question 1 of 8</div>
+                        <h2 class="question-text">How much time can you dedicate to a side hustle each week?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="minimal">
+                                <span class="option-icon">⚡</span>
+                                <span class="option-text">
+                                    <span class="option-label">Minimal (1-5 hours)</span>
+                                    <span class="option-desc">I can squeeze in a few hours on weekends or evenings</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="part-time">
+                                <span class="option-icon">🌅</span>
+                                <span class="option-text">
+                                    <span class="option-label">Part-time (10-20 hours)</span>
+                                    <span class="option-desc">I have evenings and weekends mostly free</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="flexible">
+                                <span class="option-icon">🎯</span>
+                                <span class="option-text">
+                                    <span class="option-label">Flexible (5-15 hours, inconsistent)</span>
+                                    <span class="option-desc">My schedule varies week to week</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="full-time">
+                                <span class="option-icon">🚀</span>
+                                <span class="option-text">
+                                    <span class="option-label">Full-time potential (30+ hours)</span>
+                                    <span class="option-desc">I'm ready to go all-in and potentially quit my job</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2: Budget -->
+                    <div class="question-card hidden" data-question="2">
+                        <div class="question-number">Question 2 of 8</div>
+                        <h2 class="question-text">How much money can you invest to get started?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="zero">
+                                <span class="option-icon">🆓</span>
+                                <span class="option-text">
+                                    <span class="option-label">$0 - I need to start free</span>
+                                    <span class="option-desc">I can't spend anything upfront</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="small">
+                                <span class="option-icon">💵</span>
+                                <span class="option-text">
+                                    <span class="option-label">$50-$200</span>
+                                    <span class="option-desc">I can invest a small amount for tools or supplies</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="medium">
+                                <span class="option-icon">💰</span>
+                                <span class="option-text">
+                                    <span class="option-label">$500-$2,000</span>
+                                    <span class="option-desc">I have some savings I can invest</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="large">
+                                <span class="option-icon">🏦</span>
+                                <span class="option-text">
+                                    <span class="option-label">$5,000+</span>
+                                    <span class="option-desc">I can make a significant investment for the right opportunity</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3: Skills -->
+                    <div class="question-card hidden" data-question="3">
+                        <div class="question-number">Question 3 of 8</div>
+                        <h2 class="question-text">What are your strongest skills? (Pick your top area)</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="creative">
+                                <span class="option-icon">🎨</span>
+                                <span class="option-text">
+                                    <span class="option-label">Creative & Design</span>
+                                    <span class="option-desc">Graphic design, writing, photography, video, art</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="tech">
+                                <span class="option-icon">💻</span>
+                                <span class="option-text">
+                                    <span class="option-label">Tech & Digital</span>
+                                    <span class="option-desc">Coding, data analysis, AI tools, automation, IT support</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="people">
+                                <span class="option-icon">🗣️</span>
+                                <span class="option-text">
+                                    <span class="option-label">People & Communication</span>
+                                    <span class="option-desc">Sales, teaching, customer service, coaching, social skills</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="hands">
+                                <span class="option-icon">🔧</span>
+                                <span class="option-text">
+                                    <span class="option-label">Hands-On & Practical</span>
+                                    <span class="option-desc">Repair work, crafts, physical tasks, driving, manual skills</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="analytical">
+                                <span class="option-icon">📊</span>
+                                <span class="option-text">
+                                    <span class="option-label">Analytical & Research</span>
+                                    <span class="option-desc">Research, analysis, problem-solving, organization, planning</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4: Income Goal -->
+                    <div class="question-card hidden" data-question="4">
+                        <div class="question-number">Question 4 of 8</div>
+                        <h2 class="question-text">What's your monthly income goal from this side hustle?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="extra-cash">
+                                <span class="option-icon">☕</span>
+                                <span class="option-text">
+                                    <span class="option-label">$100-$500</span>
+                                    <span class="option-desc">Extra spending money or covering a specific bill</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="supplement">
+                                <span class="option-icon">💪</span>
+                                <span class="option-text">
+                                    <span class="option-label">$500-$2,000</span>
+                                    <span class="option-desc">Significant supplement to my main income</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="replace">
+                                <span class="option-icon">🎯</span>
+                                <span class="option-text">
+                                    <span class="option-label">$2,000-$5,000</span>
+                                    <span class="option-desc">Enough to potentially replace my day job eventually</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="scale">
+                                <span class="option-icon">🚀</span>
+                                <span class="option-text">
+                                    <span class="option-label">$5,000+</span>
+                                    <span class="option-desc">I want to build something that can scale significantly</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5: Risk Tolerance -->
+                    <div class="question-card hidden" data-question="5">
+                        <div class="question-number">Question 5 of 8</div>
+                        <h2 class="question-text">How do you feel about risk and uncertainty?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="low">
+                                <span class="option-icon">🛡️</span>
+                                <span class="option-text">
+                                    <span class="option-label">Low Risk — I want guaranteed income</span>
+                                    <span class="option-desc">I prefer steady, predictable earnings over big potential</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="moderate">
+                                <span class="option-icon">⚖️</span>
+                                <span class="option-text">
+                                    <span class="option-label">Moderate — Some risk is okay</span>
+                                    <span class="option-desc">I'm willing to trade some stability for higher earning potential</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="high">
+                                <span class="option-icon">🎲</span>
+                                <span class="option-text">
+                                    <span class="option-label">High Risk — Go big or go home</span>
+                                    <span class="option-desc">I'm willing to risk time/money for potentially huge returns</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 6: Social Preference -->
+                    <div class="question-card hidden" data-question="6">
+                        <div class="question-number">Question 6 of 8</div>
+                        <h2 class="question-text">Do you prefer working alone or with people?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="alone">
+                                <span class="option-icon">🏠</span>
+                                <span class="option-text">
+                                    <span class="option-label">Alone — I'm an introvert</span>
+                                    <span class="option-desc">I prefer solo work from home with minimal interaction</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="mixed">
+                                <span class="option-icon">🤝</span>
+                                <span class="option-text">
+                                    <span class="option-label">Mixed — Some interaction is fine</span>
+                                    <span class="option-desc">I don't mind occasional client calls or team collaboration</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="social">
+                                <span class="option-icon">🎉</span>
+                                <span class="option-text">
+                                    <span class="option-label">Social — I love working with people</span>
+                                    <span class="option-desc">I thrive on interaction, teaching, or selling to others</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 7: Learning Style -->
+                    <div class="question-card hidden" data-question="7">
+                        <div class="question-number">Question 7 of 8</div>
+                        <h2 class="question-text">How do you prefer to learn new things?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="self-taught">
+                                <span class="option-icon">📚</span>
+                                <span class="option-text">
+                                    <span class="option-label">Self-taught — I learn best on my own</span>
+                                    <span class="option-desc">YouTube, online courses, figuring things out independently</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="structured">
+                                <span class="option-icon">🎓</span>
+                                <span class="option-text">
+                                    <span class="option-label">Structured — I prefer guided learning</span>
+                                    <span class="option-desc">Formal courses, certifications, step-by-step programs</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="hands-on">
+                                <span class="option-icon">🔨</span>
+                                <span class="option-text">
+                                    <span class="option-label">Hands-on — I learn by doing</span>
+                                    <span class="option-desc">Jump in and figure it out as I go, trial and error</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 8: Equipment -->
+                    <div class="question-card hidden" data-question="8">
+                        <div class="question-number">Question 8 of 8</div>
+                        <h2 class="question-text">What equipment do you already have access to?</h2>
+                        
+                        <div class="options-grid">
+                            <button class="option-btn" data-value="basic">
+                                <span class="option-icon">📱</span>
+                                <span class="option-text">
+                                    <span class="option-label">Just a smartphone</span>
+                                    <span class="option-desc">I don't have a computer or special equipment</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="computer">
+                                <span class="option-icon">💻</span>
+                                <span class="option-text">
+                                    <span class="option-label">Computer + internet</span>
+                                    <span class="option-desc">I have a laptop/desktop and reliable internet</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="creative-tools">
+                                <span class="option-icon">🎨</span>
+                                <span class="option-text">
+                                    <span class="option-label">Computer + creative tools</span>
+                                    <span class="option-desc">Camera, microphone, design software, or other creative gear</span>
+                                </span>
+                            </button>
+                            
+                            <button class="option-btn" data-value="vehicle">
+                                <span class="option-icon">🚗</span>
+                                <span class="option-text">
+                                    <span class="option-label">Vehicle + smartphone</span>
+                                    <span class="option-desc">I have a car and phone for on-the-go work</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results Section (Hidden initially) -->
+                <div id="resultsSection" class="hidden">
+                    <div class="results-card">
+                        <span class="result-badge">Your Perfect Match</span>
+                        <h2 class="result-title" id="resultTitle"></h2>
+                        <p class="result-description" id="resultDescription"></p>
+                        
+                        <div class="result-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="earningPotential"></span>
+                                <span class="stat-label">Monthly Potential</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="startupCost"></span>
+                                <span class="stat-label">Startup Cost</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="timeToFirst"></span>
+                                <span class="stat-label">Time to First $</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-details">
+                            <h3>Why this fits you:</h3>
+                            <ul id="resultWhy"></ul>
+                        </div>
+                        
+                        <div class="next-steps">
+                            <h3>🚀 Your Next Steps:</h3>
+                            <ol id="resultSteps"></ol>
+                        </div>
+                        
+                        <div id="resourceLinks" class="resource-links">
+                            <h3>📚 Helpful Resources:</h3>
+                        </div>
+                        
+                        <button class="btn btn-primary retake-btn" onclick="retakeQuiz()">
+                            🔄 Take Quiz Again
+                        </button>
+                    </div>                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Quiz State
+        let currentQuestion = 1;
+        const totalQuestions = 8;
+        const answers = {};
+        
+        // Side Hustle Database
+        const sideHustles = {
+            'freelance-writing': {
+                title: 'Freelance Writing & Content Creation',
+                description: 'Use your writing skills to create blog posts, articles, website copy, and marketing content for businesses. High demand, flexible schedule, and you can start immediately.',
+                earningPotential: '$500-$5,000+',
+                startupCost: '$0-$100',
+                timeToFirst: '1-2 weeks',
+                why: [
+                    'Matches your creative/communication skills',
+                    'Can be done entirely from home',
+                    'Flexible hours fit your schedule',
+                    'No special equipment needed beyond a computer'
+                ],
+                steps: [
+                    'Create writing samples in 2-3 niches you enjoy',
+                    'Set up profiles on Upwork, Fiverr, and Contently',
+                    'Apply to 10-20 entry-level writing gigs',
+                    'Build a simple portfolio website (use Carrd.co for free)',
+                    'Network in Facebook groups for writers and marketers'
+                ],
+                resources: [
+                    { title: 'How to Start Freelance Writing', desc: 'Complete guide to your first $1,000', url: '/blog/start-freelance-writing.html' },
+                    { title: 'AI Tools for Writers', desc: 'Boost productivity with AI assistance', url: '/blog/practical-ai-tools-daily-life.html' }
+                ]
+            },
+            'virtual-assistant': {
+                title: 'Virtual Assistant',
+                description: 'Provide administrative support to busy entrepreneurs and small businesses. Tasks include email management, scheduling, research, and customer service.',
+                earningPotential: '$1,000-$4,000',
+                startupCost: '$0-$50',
+                timeToFirst: '2-4 weeks',
+                why: [
+                    'Steady, predictable income',
+                    'Uses your organizational skills',
+                    'High demand from small businesses',
+                    'Can start with minimal investment'
+                ],
+                steps: [
+                    'Identify your specialty (general admin, social media, customer service)',
+                    'Create a simple service menu with pricing',
+                    'Join VA Facebook groups and job boards',
+                    'Offer 5 free trial hours to build testimonials',
+                    'Scale by raising rates and adding clients'
+                ],
+                resources: [
+                    { title: 'VA Business Setup Guide', desc: 'Step-by-step to your first client', url: '/blog/start-at-home-business-guide.html' }
+                ]
+            },
+            'online-tutoring': {
+                title: 'Online Tutoring & Teaching',
+                description: 'Teach students subjects you know well, English to international students, or specialized skills. Platforms handle marketing and payments.',
+                earningPotential: '$500-$3,000',
+                startupCost: '$0-$100',
+                timeToFirst: '1-3 weeks',
+                why: [
+                    'Leverages your knowledge and communication skills',
+                    'Structured platforms make starting easy',
+                    'Flexible scheduling around your availability',
+                    'Rewarding work helping others learn'
+                ],
+                steps: [
+                    'Choose your subject (academic, language, or skill-based)',
+                    'Apply to platforms like Wyzant, Preply, or VIPKid',
+                    'Create an engaging profile video',
+                    'Set competitive initial rates to get first reviews',
+                    'Gradually increase rates as you gain reviews'
+                ],
+                resources: [
+                    { title: 'Online Teaching Platforms Compared', desc: 'Find the best fit for your skills', url: '/blog/online-tutoring-guide.html' }
+                ]
+            },
+            'ai-automation-agency': {
+                title: 'AI Automation Agency',
+                description: 'Help small businesses automate repetitive tasks using AI tools like ChatGPT, Make, and Zapier. High-value service with recurring revenue potential.',
+                earningPotential: '$3,000-$15,000+',
+                startupCost: '$50-$200',
+                timeToFirst: '2-6 weeks',
+                why: [
+                    'High demand as businesses rush to adopt AI',
+                    'Excellent income potential per client',
+                    'Uses tech/analytical skills',
+                    'Recurring monthly revenue model'
+                ],
+                steps: [
+                    'Learn Make.com and Zapier (free courses available)',
+                    'Practice by automating your own tasks',
+                    'Identify 3 common business problems you can solve',
+                    'Create case studies (even hypothetical ones)',
+                    'Reach out to local businesses with specific proposals'
+                ],
+                resources: [
+                    { title: 'AI Automation Agency Guide', desc: 'Complete business setup guide', url: '/blog/ai-automation-agency-guide.html' },
+                    { title: 'AI Tools for Business', desc: 'Stack recommendations', url: '/blog/practical-ai-tools-daily-life.html' }
+                ]
+            },
+            'print-on-demand': {
+                title: 'AI Art & Print-on-Demand',
+                description: 'Create designs using AI tools like Midjourney, sell on Etsy/Amazon without holding inventory. Passive income potential once designs are live.',
+                earningPotential: '$200-$5,000+',
+                startupCost: '$0-$50',
+                timeToFirst: '2-4 weeks',
+                why: [
+                    'Creative outlet with income potential',
+                    'No inventory or shipping to manage',
+                    'Can start with minimal time investment',
+                    'AI tools make design accessible to everyone'
+                ],
+                steps: [
+                    'Research trending niches on Etsy and Amazon',
+                    'Learn Midjourney or Leonardo.ai (start with free tiers)',
+                    'Create 20-30 designs in your chosen niche',
+                    'Upload to Printful + Etsy or Merch by Amazon',
+                    'Optimize listings with keywords and good photos'
+                ],
+                resources: [
+                    { title: 'AI Art & POD Guide', desc: 'From prompt to profit', url: '/blog/ai-art-print-on-demand-guide.html' }
+                ]
+            },
+            'youtube-content': {
+                title: 'YouTube Content Creator',
+                description: 'Create videos about topics you know or enjoy. Multiple monetization paths: ads, sponsorships, affiliate marketing, and digital products.',
+                earningPotential: '$500-$50,000+',
+                startupCost: '$0-$500',
+                timeToFirst: '3-6 months',
+                why: [
+                    'Scalable income potential',
+                    'Builds long-term asset (your channel)',
+                    'Multiple revenue streams',
+                    'Can be faceless if preferred'
+                ],
+                steps: [
+                    'Choose a niche you can talk about for 100+ videos',
+                    'Study successful channels in your niche',
+                    'Create 30 videos before expecting significant views',
+                    'Learn basic editing (CapCut is free and powerful)',
+                    'Optimize for search, not just trending topics'
+                ],
+                resources: [
+                    { title: 'Faceless YouTube Guide', desc: 'Build without showing your face', url: '/blog/faceless-youtube-channel-ai-guide.html' },
+                    { title: 'YouTube Shorts Monetization', desc: 'New revenue opportunities', url: '/blog/youtube-shorts-monetization-2026.html' }
+                ]
+            },
+            'delivery-driving': {
+                title: 'Delivery & Rideshare Driving',
+                description: 'Flexible gig work delivering food, packages, or giving rides. Start earning within days, work when you want.',
+                earningPotential: '$500-$2,000',
+                startupCost: '$0',
+                timeToFirst: '3-7 days',
+                why: [
+                    'Fastest way to start earning',
+                    'Completely flexible schedule',
+                    'No special skills required',
+                    'Immediate cash flow'
+                ],
+                steps: [
+                    'Sign up for DoorDash, Uber Eats, or Instacart',
+                    'Complete background check and onboarding',
+                    'Start with peak hours (lunch/dinner) for best pay',
+                    'Track mileage for tax deductions',
+                    'Multi-app to maximize earnings'
+                ],
+                resources: [
+                    { title: 'Gig Economy Guide', desc: 'Maximize delivery earnings', url: '/blog/gig-economy-guide.html' }
+                ]
+            },
+            'rental-income': {
+                title: 'Rent Your Assets',
+                description: 'Rent out things you already own: car (Turo), spare room (Airbnb), storage space (Neighbor), or equipment (Fat Llama).',
+                earningPotential: '$200-$3,000+',
+                startupCost: '$0',
+                timeToFirst: '1-2 weeks',
+                why: [
+                    'Income from assets you already have',
+                    'Low time commitment once set up',
+                    'Multiple platforms to choose from',
+                    'Predictable monthly income'
+                ],
+                steps: [
+                    'Identify what you can rent (car, room, gear, storage)',
+                    'Research platforms and insurance coverage',
+                    'Create compelling listings with great photos',
+                    'Set competitive initial pricing',
+                    'Build reviews by providing excellent service'
+                ],
+                resources: [
+                    { title: 'Rent Your Stuff Guide', desc: 'Turo, Fat Llama, Neighbor deep dive', url: '/blog/rent-your-stuff-economy.html' }
+                ]
+            },
+            'micro-saas': {
+                title: 'Micro-SaaS Business',
+                description: 'Build a small software tool that solves one problem. Charge monthly subscriptions. High leverage, can scale to full-time income.',
+                earningPotential: '$1,000-$50,000+',
+                startupCost: '$50-$500',
+                timeToFirst: '2-6 months',
+                why: [
+                    'Highest income potential',
+                    'Recurring revenue model',
+                    'Can sell the business later',
+                    'Leverages tech/analytical skills'
+                ],
+                steps: [
+                    'Identify a painful problem you or others have',
+                    'Validate demand before building (landing page test)',
+                    'Build MVP using no-code tools or AI coding assistants',
+                    'Get first 10 paying customers manually',
+                    'Iterate based on feedback, then scale'
+                ],
+                resources: [
+                    { title: 'Micro-SaaS Playbook', desc: 'From idea to $5K MRR', url: '/blog/micro-saas-business-guide.html' }
+                ]
+            },
+            'tiktok-affiliate': {
+                title: 'TikTok Shop Affiliate',
+                description: 'Create short videos promoting products from TikTok Shop. Earn commissions on sales. Trending opportunity with high earning potential.',
+                earningPotential: '$1,000-$20,000+',
+                startupCost: '$0',
+                timeToFirst: '2-8 weeks',
+                why: [
+                    'Massive growth opportunity right now',
+                    'No product creation or inventory needed',
+                    'Creative work that can go viral',
+                    'Multiple products to promote'
+                ],
+                steps: [
+                    'Apply for TikTok Shop Affiliate program',
+                    'Study trending videos in your niche',
+                    'Create 3 videos daily consistently',
+                    'Focus on products with good commissions',
+                    'Build authentic reviews, not just ads'
+                ],
+                resources: [
+                    { title: 'TikTok Shop Affiliate Guide', desc: '$10K+/month strategies', url: '/blog/tiktok-shop-affiliate-guide.html' }
+                ]
+            }
+        };
+        
+        // Scoring Logic
+        function calculateResult() {
+            const scores = {};
+            
+            // Initialize scores
+            Object.keys(sideHustles).forEach(key => scores[key] = 0);
+            
+            // Question 1: Time
+            if (answers.time === 'minimal') {
+                scores['freelance-writing'] += 2;
+                scores['print-on-demand'] += 2;
+                scores['rental-income'] += 3;
+            } else if (answers.time === 'part-time') {
+                scores['virtual-assistant'] += 3;
+                scores['online-tutoring'] += 2;
+                scores['ai-automation-agency'] += 2;
+            } else if (answers.time === 'flexible') {
+                scores['delivery-driving'] += 3;
+                scores['freelance-writing'] += 2;
+                scores['tiktok-affiliate'] += 2;
+            } else if (answers.time === 'full-time') {
+                scores['micro-saas'] += 3;
+                scores['youtube-content'] += 3;
+                scores['ai-automation-agency'] += 3;
+            }
+            
+            // Question 2: Budget
+            if (answers.budget === 'zero') {
+                scores['freelance-writing'] += 3;
+                scores['delivery-driving'] += 3;
+                scores['tiktok-affiliate'] += 3;
+                scores['rental-income'] += 2;
+            } else if (answers.budget === 'small') {
+                scores['virtual-assistant'] += 2;
+                scores['print-on-demand'] += 2;
+                scores['online-tutoring'] += 2;
+            } else if (answers.budget === 'medium') {
+                scores['ai-automation-agency'] += 2;
+                scores['youtube-content'] += 2;
+                scores['micro-saas'] += 2;
+            } else if (answers.budget === 'large') {
+                scores['micro-saas'] += 3;
+                scores['ai-automation-agency'] += 2;
+                scores['youtube-content'] += 2;
+            }
+            
+            // Question 3: Skills
+            if (answers.skills === 'creative') {
+                scores['freelance-writing'] += 3;
+                scores['print-on-demand'] += 3;
+                scores['youtube-content'] += 2;
+            } else if (answers.skills === 'tech') {
+                scores['ai-automation-agency'] += 3;
+                scores['micro-saas'] += 3;
+                scores['freelance-writing'] += 1;
+            } else if (answers.skills === 'people') {
+                scores['virtual-assistant'] += 3;
+                scores['online-tutoring'] += 3;
+                scores['tiktok-affiliate'] += 2;
+            } else if (answers.skills === 'hands') {
+                scores['delivery-driving'] += 3;
+                scores['rental-income'] += 2;
+            } else if (answers.skills === 'analytical') {
+                scores['ai-automation-agency'] += 3;
+                scores['micro-saas'] += 2;
+                scores['freelance-writing'] += 1;
+            }
+            
+            // Question 4: Income Goal
+            if (answers.income === 'extra-cash') {
+                scores['delivery-driving'] += 3;
+                scores['rental-income'] += 2;
+                scores['print-on-demand'] += 2;
+            } else if (answers.income === 'supplement') {
+                scores['freelance-writing'] += 2;
+                scores['virtual-assistant'] += 2;
+                scores['online-tutoring'] += 2;
+            } else if (answers.income === 'replace') {
+                scores['ai-automation-agency'] += 3;
+                scores['youtube-content'] += 2;
+                scores['micro-saas'] += 2;
+            } else if (answers.income === 'scale') {
+                scores['micro-saas'] += 3;
+                scores['youtube-content'] += 3;
+                scores['ai-automation-agency'] += 2;
+            }
+            
+            // Question 5: Risk
+            if (answers.risk === 'low') {
+                scores['virtual-assistant'] += 3;
+                scores['delivery-driving'] += 3;
+                scores['online-tutoring'] += 2;
+            } else if (answers.risk === 'moderate') {
+                scores['freelance-writing'] += 2;
+                scores['ai-automation-agency'] += 2;
+                scores['print-on-demand'] += 2;
+            } else if (answers.risk === 'high') {
+                scores['micro-saas'] += 3;
+                scores['youtube-content'] += 3;
+                scores['tiktok-affiliate'] += 2;
+            }
+            
+            // Question 6: Social Preference
+            if (answers.social === 'alone') {
+                scores['freelance-writing'] += 3;
+                scores['print-on-demand'] += 3;
+                scores['micro-saas'] += 2;
+            } else if (answers.social === 'mixed') {
+                scores['virtual-assistant'] += 2;
+                scores['ai-automation-agency'] += 2;
+                scores['freelance-writing'] += 1;
+            } else if (answers.social === 'social') {
+                scores['online-tutoring'] += 3;
+                scores['tiktok-affiliate'] += 3;
+                scores['delivery-driving'] += 2;
+            }
+            
+            // Question 7: Learning Style
+            if (answers.learning === 'self-taught') {
+                scores['freelance-writing'] += 2;
+                scores['youtube-content'] += 2;
+                scores['micro-saas'] += 1;
+            } else if (answers.learning === 'structured') {
+                scores['virtual-assistant'] += 2;
+                scores['online-tutoring'] += 2;
+                scores['ai-automation-agency'] += 1;
+            } else if (answers.learning === 'hands-on') {
+                scores['delivery-driving'] += 2;
+                scores['tiktok-affiliate'] += 2;
+                scores['print-on-demand'] += 2;
+            }
+            
+            // Question 8: Equipment
+            if (answers.equipment === 'basic') {
+                scores['delivery-driving'] += 3;
+                scores['rental-income'] += 2;
+            } else if (answers.equipment === 'computer') {
+                scores['freelance-writing'] += 3;
+                scores['virtual-assistant'] += 3;
+                scores['ai-automation-agency'] += 3;
+            } else if (answers.equipment === 'creative-tools') {
+                scores['youtube-content'] += 3;
+                scores['print-on-demand'] += 2;
+                scores['tiktok-affiliate'] += 3;
+            } else if (answers.equipment === 'vehicle') {
+                scores['delivery-driving'] += 3;
+                scores['rental-income'] += 3;
+            }
+            
+            // Find highest score
+            let bestMatch = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            
+            // Handle ties or edge cases
+            if (scores[bestMatch] < 5) {
+                bestMatch = 'freelance-writing'; // Default fallback
+            }
+            
+            return bestMatch;
+        }
+        
+        // Event Listeners
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.question-card');
+                const questionNum = card.dataset.question;
+                const value = this.dataset.value;
+                
+                // Store answer
+                const questionKeys = ['', 'time', 'budget', 'skills', 'income', 'risk', 'social', 'learning', 'equipment'];
+                answers[questionKeys[questionNum]] = value;
+                
+                // Visual feedback
+                card.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                // Auto-advance after short delay
+                setTimeout(() => {
+                    if (currentQuestion < totalQuestions) {
+                        nextQuestion();
+                    } else {
+                        showResults();
+                    }
+                }, 300);
+            });
+        });
+        
+        function nextQuestion() {
+            // Hide current
+            document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
+            
+            // Show next
+            currentQuestion++;
+            document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
+            
+            // Update progress
+            updateProgress();
+        }
+        
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+        
+        function showResults() {
+            const resultKey = calculateResult();
+            const result = sideHustles[resultKey];
+            
+            // Hide questions, show results
+            document.getElementById('quizQuestions').classList.add('hidden');
+            document.querySelector('.progress-bar').classList.add('hidden');
+            document.getElementById('resultsSection').classList.remove('hidden');
+            
+            // Populate results
+            document.getElementById('resultTitle').textContent = result.title;
+            document.getElementById('resultDescription').textContent = result.description;
+            document.getElementById('earningPotential').textContent = result.earningPotential;
+            document.getElementById('startupCost').textContent = result.startupCost;
+            document.getElementById('timeToFirst').textContent = result.timeToFirst;
+            
+            // Why this fits
+            const whyList = document.getElementById('resultWhy');
+            whyList.innerHTML = result.why.map(item => `<li>${item}</li>`).join('');
+            
+            // Next steps
+            const stepsList = document.getElementById('resultSteps');
+            stepsList.innerHTML = result.steps.map(step => `<li>${step}</li>`).join('');
+            
+            // Resource links
+            const resourcesDiv = document.getElementById('resourceLinks');
+            // Clear existing links except h3
+            const h3 = resourcesDiv.querySelector('h3');
+            resourcesDiv.innerHTML = '';
+            resourcesDiv.appendChild(h3);
+            
+            result.resources.forEach(resource => {
+                const link = document.createElement('a');
+                link.className = 'resource-link';
+                link.href = resource.url;
+                link.innerHTML = `
+                    <span class="resource-icon">📖</span>
+                    <span class="resource-info">
+                        <span class="resource-title">${resource.title}</span>
+                        <span class="resource-desc">${resource.desc}</span>
+                    </span>
+                `;
+                resourcesDiv.appendChild(link);
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function retakeQuiz() {
+            // Reset state
+            currentQuestion = 1;
+            Object.keys(answers).forEach(key => delete answers[key]);
+            
+            // Reset UI
+            document.querySelectorAll('.question-card').forEach((card, index) => {
+                if (index === 0) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.getElementById('quizQuestions').classList.remove('hidden');
+            document.querySelector('.progress-bar').classList.remove('hidden');
+            document.getElementById('resultsSection').classList.add('hidden');
+            
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

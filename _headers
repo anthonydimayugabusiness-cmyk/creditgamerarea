@@ -1,0 +1,20 @@
+/_next/static/:version/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles.css
+  Cache-Control: public, max-age=86400
+
+/script.js
+  Cache-Control: public, max-age=86400
+
+/*.html
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/blog/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/quizzes/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/images/*
+  Cache-Control: public, max-age=2592000

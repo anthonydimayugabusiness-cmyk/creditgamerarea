@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What the Year of the Horse Means for Your Finances - 2026 Horoscope Quiz</title>
+    <meta name="description" content="Discover your financial spirit animal for 2026. Take our Year of the Horse quiz to get your personalized money horoscope and finance forecast.">
+    <link rel="canonical" href="https://www.creditgamerarea.com/year-of-the-horse-finance-quiz.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUcHEsAAAAAO8UItTPnmMwR05X4CkNpXd4vlji"></script>
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --success: #10b981;
+            --horse-red: #dc2626;
+            --horse-gold: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: linear-gradient(180deg, #fef3c7 0%, #fff 300px);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        /* Quiz Container */
+        .quiz-page {
+            padding: 60px 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .quiz-header .category-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--horse-red), var(--horse-gold));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .quiz-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .quiz-header p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 40px;
+        }
+
+        .progress-bar-bg {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--horse-red), var(--horse-gold));
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Question */
+        .question-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px -4px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .question-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 20px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .option:hover {
+            border-color: var(--horse-red);
+            background: #fef3c7;
+            transform: translateX(4px);
+        }
+
+        .option.selected {
+            border-color: var(--horse-red);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.08), rgba(245, 158, 11, 0.05));
+        }
+
+        .option-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .option-text {
+            flex-grow: 1;
+        }
+
+        .option-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .option-desc {
+            font-size: 0.875rem;
+            color: var(--gray);
+            display: block;
+        }
+
+        /* Results */
+        .results-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .results-emoji {
+            font-size: 5rem;
+            margin-bottom: 24px;
+        }
+
+        .results-type {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--horse-red);
+            margin-bottom: 12px;
+        }
+
+        .results-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--horse-red), var(--horse-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .results-description {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+
+        .horoscope-box {
+            background: linear-gradient(135deg, #fef3c7, #fee2e2);
+            border: 2px solid var(--horse-gold);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .horoscope-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .horoscope-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .lucky-months {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .lucky-month {
+            background: var(--horse-red);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .mantra-box {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .mantra-box h3 {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .mantra-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            font-style: italic;
+        }
+
+        .wisdom-box {
+            background: linear-gradient(135deg, var(--dark), #1e293b);
+            color: white;
+            padding: 32px;
+            border-radius: 16px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .wisdom-box h3 {
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--horse-gold);
+        }
+
+        .wisdom-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--horse-red), var(--horse-gold));
+            color: white;
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--horse-red);
+            color: var(--horse-red);
+        }
+
+        /* Start Screen */
+        .start-screen {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .start-screen h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .start-screen p {
+            color: var(--gray);
+            font-size: 1.125rem;
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+
+        .quiz-meta-info {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .quiz-meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+            font-size: 0.9375rem;
+        }
+
+        .horse-decoration {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .quiz-header h1 { font-size: 1.75rem; }
+            .question-container { padding: 24px; }
+            .question-container h2 { font-size: 1.25rem; }
+            .results-title { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">💳 Credit Gamer Area</a>
+            <a href="/" style="color: var(--gray); text-decoration: none; font-weight: 500;">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="quiz-page">
+        <div class="container">
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+                <span class="category-tag">🐎 2026 Horoscope</span>
+                <h1>What the Year of the Horse Means for Your Finances</h1>
+                <p>The Year of the Horse gallops in with energy, freedom, and forward momentum. Discover your financial spirit animal and get your personalized money horoscope.</p>
+            </div>
+
+            <!-- Start Screen -->
+            <div id="start-screen" class="start-screen">
+                <div class="horse-decoration">🐎✨🧧</div>
+                <h2>Discover Your 2026 Money Forecast</h2>
+                <p>This quiz reveals how the Year of the Horse's fiery energy will affect your wallet. Are you a Galloping Investor, Grazing Saver, Wild Spender, or Steady Builder?</p>
+                
+                <div class="quiz-meta-info">
+                    <span>📝 8 Questions</span>
+                    <span>⏱️ ~2 Minutes</span>
+                    <span>🔮 Personalized Horoscope</span>
+                </div>
+                
+                <button class="btn btn-primary" onclick="startQuiz()">Start Quiz →</button>
+            </div>
+
+            <!-- Quiz Container -->
+            <div id="quiz-container" style="display: none;">
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" id="progress-bar" style="width: 12.5%;"></div>
+                    </div>
+                    <div class="progress-text">Question <span id="current-question">1</span> of 8</div>
+                </div>
+
+                <div class="question-container" id="question-container">
+                    <!-- Questions injected here -->
+                </div>
+            </div>
+
+            <!-- Results Container -->
+            <div id="results-container" class="results-container" style="display: none;">
+                <!-- Results injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data
+        const quizData = {
+            questions: [
+                {
+                    question: "It's payday. What's your first move?",
+                    options: [
+                        { icon: "📈", title: "Check my investment apps", desc: "Buy the dip — opportunities wait for no one!", type: "galloping" },
+                        { icon: "🏦", title: "Transfer half to savings", desc: "Then relax knowing I'm secure", type: "grazing" },
+                        { icon: "🛍️", title: "Treat myself first", desc: "I earned it!", type: "wild" },
+                        { icon: "📋", title: "Pay bills, review budget", desc: "Stick to the plan", type: "steady" }
+                    ]
+                },
+                {
+                    question: "You see a limited-time offer in your favorite mobile game. You:",
+                    options: [
+                        { icon: "🧮", title: "Calculate the ROI", desc: "Will this purchase accelerate my progress?", type: "galloping" },
+                        { icon: "❌", title: "Close the app", desc: "Wait for a better deal", type: "grazing" },
+                        { icon: "💳", title: "Buy it immediately", desc: "FOMO is real!", type: "wild" },
+                        { icon: "📊", title: "Check my gaming budget", desc: "Decide if this fits", type: "steady" }
+                    ]
+                },
+                {
+                    question: "Your friend tells you about a 'hot' investment tip. You:",
+                    options: [
+                        { icon: "🔍", title: "Research it immediately", desc: "Could be the next big thing!", type: "galloping" },
+                        { icon: "🐢", title: "Stick to my index funds", desc: "Slow and steady wins the race", type: "grazing" },
+                        { icon: "🎲", title: "Put in a small amount", desc: "Just for fun", type: "wild" },
+                        { icon: "📈", title: "Analyze my portfolio first", desc: "Then decide if it fits my strategy", type: "steady" }
+                    ]
+                },
+                {
+                    question: "How do you handle unexpected money (tax refund, bonus, gift)?",
+                    options: [
+                        { icon: "🚀", title: "Invest it", desc: "Let it grow!", type: "galloping" },
+                        { icon: "🛡️", title: "Straight to emergency fund", desc: "High-yield savings", type: "grazing" },
+                        { icon: "🎁", title: "Splurge on something", desc: "I've been wanting this", type: "wild" },
+                        { icon: "⚖️", title: "Split it: 50/30/20", desc: "Goals, fun, savings", type: "steady" }
+                    ]
+                },
+                {
+                    question: "Your financial goal for 2026 is:",
+                    options: [
+                        { icon: "🎯", title: "Max out investments", desc: "Find new opportunities", type: "galloping" },
+                        { icon: "🏰", title: "Build a 6-month emergency fund", desc: "Security first", type: "grazing" },
+                        { icon: "🌴", title: "Enjoy life more", desc: "Money is for spending!", type: "wild" },
+                        { icon: "📊", title: "Pay off debt", desc: "Increase net worth by 15%", type: "steady" }
+                    ]
+                },
+                {
+                    question: "When it comes to financial advice, you:",
+                    options: [
+                        { icon: "📱", title: "Follow finance influencers", desc: "Act on trends quickly", type: "galloping" },
+                        { icon: "👨‍👩‍👧", title: "Trust tried-and-true methods", desc: "What my parents used", type: "grazing" },
+                        { icon: "🤷", title: "Wing it", desc: "I trust my gut", type: "wild" },
+                        { icon: "📚", title: "Read books, make spreadsheets", desc: "Create a solid plan", type: "steady" }
+                    ]
+                },
+                {
+                    question: "Your credit card statement arrives. You feel:",
+                    options: [
+                        { icon: "🎉", title: "Excited", desc: "Check my rewards points and returns", type: "galloping" },
+                        { icon: "😰", title: "Anxious", desc: "Did I spend too much?", type: "grazing" },
+                        { icon: "😎", title: "Whatever", desc: "I'll pay the minimum", type: "wild" },
+                        { icon: "✅", title: "Confident", desc: "I track everything and pay in full", type: "steady" }
+                    ]
+                },
+                {
+                    question: "The Year of the Horse energy makes you want to:",
+                    options: [
+                        { icon: "🏇", title: "Take bold financial risks", desc: "Chase big wins", type: "galloping" },
+                        { icon: "🌾", title: "Slow down", desc: "Protect what I have", type: "grazing" },
+                        { icon: "🎆", title: "Run free", desc: "Enjoy spontaneous purchases", type: "wild" },
+                        { icon: "🏗️", title: "Harness the energy", desc: "Steady, consistent progress", type: "steady" }
+                    ]
+                }
+            ]
+        };
+
+        // Results Data
+        const resultsData = {
+            galloping: {
+                emoji: "🐎",
+                title: "The Galloping Investor",
+                type: "Fast, Bold, Opportunity-Seeking",
+                description: "You chase opportunities with the speed and courage of a wild horse. 2026 amplifies your natural instinct to sprint toward financial wins.",
+                forecast: "The Horse's energy amplifies your bold approach. 2026 favors your instinct to chase opportunities, but beware — not every shiny investment is worth the sprint.",
+                luckyMonths: ["March", "July", "November"],
+                mantra: "Speed without direction is just running in circles.",
+                wisdom: "Channel that galloping energy into researched risks. The Horse rewards courage, but punishes recklessness. Consider setting 'speed limits' on your investments — maybe 70% aggressive, 30% stable."
+            },
+            grazing: {
+                emoji: "🌾",
+                title: "The Grazing Saver",
+                type: "Patient, Protective, Security-Focused",
+                description: "You build wealth slowly, grazing on steady returns. The Horse's fiery energy may feel overwhelming, but your patience is your superpower.",
+                forecast: "The Horse's energy might feel overwhelming to your steady nature. But here's the secret: even horses need to graze. 2026 is your year to build an unshakeable foundation.",
+                luckyMonths: ["April", "August", "December"],
+                mantra: "The horse that grazes well runs far.",
+                wisdom: "Don't let FOMO spook you. The Horse year rewards those who know when to run and when to rest. Your emergency fund and conservative strategy will protect you when others stumble."
+            },
+            wild: {
+                emoji: "🎆",
+                title: "The Wild Spender",
+                type: "Spontaneous, Experience-Focused, Free",
+                description: "You live in the moment, spending on experiences and joy. The Horse LOVES your energy — maybe too much.",
+                forecast: "The Horse LOVES your energy — maybe too much. 2026's impulsive vibes could lead to debt if you're not careful. But harnessed correctly, this year brings unforgettable experiences.",
+                luckyMonths: ["May", "September", "January"],
+                mantra: "Freedom isn't free — but it can be affordable.",
+                wisdom: "The wild horse runs free, but it also knows where the water holes are. Set up 'fun money' accounts that let you gallop without falling off a cliff. Your spontaneity is a gift — just add a small fence."
+            },
+            steady: {
+                emoji: "🏗️",
+                title: "The Steady Builder",
+                type: "Strategic, Disciplined, Goal-Oriented",
+                description: "You're the rider who knows how to harness the Horse's power. Systems, plans, and consistent progress are your trademarks.",
+                forecast: "You're the rider who knows how to harness the Horse's power. While others get spooked by 2026's volatility, your systems keep you on track. This year rewards your methodical approach.",
+                luckyMonths: ["February", "June", "October"],
+                mantra: "The horse that follows the path reaches the destination.",
+                wisdom: "Don't be afraid to loosen the reins slightly. The Horse year favors calculated risks, and your disciplined nature means you can afford to pick up the pace. Your goals? Totally achievable."
+            }
+        };
+
+        // Quiz State
+        let currentQuestion = 0;
+        let answers = { galloping: 0, grazing: 0, wild: 0, steady: 0 };
+
+        function startQuiz() {
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizData.questions[currentQuestion];
+            const container = document.getElementById('question-container');
+            
+            let optionsHTML = question.options.map((opt, idx) => `
+                <button class="option" onclick="selectOption('${opt.type}')">
+                    <span class="option-icon">${opt.icon}</span>
+                    <span class="option-text">
+                        <span class="option-title">${opt.title}</span>
+                        <span class="option-desc">${opt.desc}</span>
+                    </span>
+                </button>
+            `).join('');
+            
+            container.innerHTML = `
+                <h2>${question.question}</h2>
+                <div class="options-list">
+                    ${optionsHTML}
+                </div>
+            `;
+            
+            // Update progress
+            const progress = ((currentQuestion + 1) / quizData.questions.length) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('current-question').textContent = currentQuestion + 1;
+        }
+
+        function selectOption(type) {
+            answers[type]++;
+            
+            currentQuestion++;
+            if (currentQuestion < quizData.questions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('results-container').style.display = 'block';
+            
+            // Determine result (highest score, tie-breaker is question 8)
+            let resultType = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+            const result = resultsData[resultType];
+            
+            const luckyMonthsHTML = result.luckyMonths.map(m => `<span class="lucky-month">${m}</span>`).join('');
+            
+            document.getElementById('results-container').innerHTML = `
+                <div class="results-emoji">${result.emoji}</div>
+                <div class="results-type">${result.type}</div>
+                <h2 class="results-title">${result.title}</h2>
+                <p class="results-description">${result.description}</p>
+                
+                <div class="horoscope-box">
+                    <h3>🔮 Your 2026 Year of the Horse Forecast</h3>
+                    <p class="horoscope-text">${result.forecast}</p>
+                    <p style="font-weight: 600; margin-top: 16px;">Your Lucky Months:</p>
+                    <div class="lucky-months">${luckyMonthsHTML}</div>
+                </div>
+                
+                <div class="mantra-box">
+                    <h3>Your 2026 Money Mantra</h3>
+                    <p class="mantra-text">"${result.mantra}"</p>
+                </div>
+                
+                <div class="wisdom-box">
+                    <h3>🐎 Horse Wisdom for You</h3>
+                    <p class="wisdom-text">${result.wisdom}</p>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="shareResult()">📤 Share My Result</button>
+                    <button class="btn btn-secondary" onclick="retakeQuiz()">🔄 Retake Quiz</button>
+                    <a href="/" class="btn btn-secondary">🏠 More Quizzes</a>
+                </div>
+            `;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function shareResult() {
+            const resultType = Object.keys(answers).reduce((a, b) => answers[a] > answers[b] ? a : b);
+            const result = resultsData[resultType];
+            const shareText = `I got "${result.title}" on the Year of the Horse Finance Quiz! ${result.mantra} Take the quiz: https://www.creditgamerarea.com/year-of-the-horse-finance-quiz.html`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My 2026 Money Horoscope',
+                    text: shareText,
+                    url: 'https://www.creditgamerarea.com/year-of-the-horse-finance-quiz.html'
+                });
+            } else {
+                navigator.clipboard.writeText(shareText);
+                alert('Result copied to clipboard!');
+            }
+        }
+
+        function retakeQuiz() {
+            currentQuestion = 0;
+            answers = { galloping: 0, grazing: 0, wild: 0, steady: 0 };
+            document.getElementById('results-container').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            showQuestion();
+        }
+    </script>
+</body>
+</html>

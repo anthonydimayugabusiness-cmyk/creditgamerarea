@@ -1,6 +1,14 @@
 User-agent: *
 Allow: /
 
+# Disallow non-content directories
+Disallow: /research/
+Disallow: /tasks/
+Disallow: /tracking/
+Disallow: /*.md$
+Disallow: /*.py$
+Disallow: /*.sh$
+
 # Allow all search engines and AI crawlers
 User-agent: Googlebot
 Allow: /

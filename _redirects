@@ -1,0 +1,25 @@
+# Redirects for SEO and UX
+
+# Old quiz URLs to new
+/credit.html /credit-basics-quiz.html 301
+/investing.html /investing-quiz.html 301
+/budgeting.html /budgeting-quiz.html 301
+/banking.html /banking-quiz.html 301
+/taxes.html /taxes-quiz.html 301
+/student-loans.html /student-loans-quiz.html 301
+
+# Blog redirects
+/blog.html /blog/ 301
+/blog/index.html /blog/ 301
+
+# Quiz index
+/quiz.html /quizzes/ 301
+/quiz/index.html /quizzes/ 301
+/quizzes.html /quizzes/ 301
+
+# Force HTTPS
+http://creditgamerarea.com/* https://www.creditgamerarea.com/:splat 301
+http://www.creditgamerarea.com/* https://www.creditgamerarea.com/:splat 301
+
+# WWW to non-WWW (or keep WWW - be consistent)
+# https://creditgamerarea.com/* https://www.creditgamerarea.com/:splat 301

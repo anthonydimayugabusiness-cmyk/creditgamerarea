@@ -57,7 +57,7 @@
         
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 32px; }
         
-        .blog-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+        .blog-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block; opacity: 1; }
         .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
         
         .blog-image { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
@@ -76,6 +76,14 @@
         @media (max-width: 768px) {
             .featured-post { grid-template-columns: 1fr; }
             .featured-post .blog-image { min-height: 200px; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-card { display: flex; flex-direction: column; }
+            .blog-image { height: 180px; min-height: 180px; }
+            .blog-content { padding: 20px; }
+            .blog-content h3 { font-size: 1.125rem; }
+            .blog-content p { font-size: 0.875rem; }
+            .blog-categories { gap: 8px; }
+            .category-btn { padding: 6px 14px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -120,6 +128,126 @@
             
             <div class="blog-grid">
                 <!-- Featured Post - Most Recent -->
+                <a href="/blog/market-update-2026-02-23.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span class="blog-tag">Market Update</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Market Update: Bitcoin Dips Below $65K, Big Tech in Bear Territory, Tariff Drama Continues</h3>
+                        <p>Bitcoin slides to $64K as whale selling dominates, Amazon and Microsoft officially enter bear markets down 20%+, and tariff chaos continues despite Supreme Court ruling. Your gamer-friendly market breakdown.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/22-credit-money-tips-elite.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                        <span class="blog-tag">Credit Secrets</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>22 Credit and Money Tips the Elite Don't Want You to Know</h3>
+                        <p>Insider secrets on credit hacks, tax optimization, investment strategies, and wealth-building tactics that wealthy people use to build and protect their money.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/make-money-agentic-ai-2026.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);">
+                        <span class="blog-tag">AI & Tech</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Top 10 Ways to Make Money with Agentic AI in 2026</h3>
+                        <p>How people are earning $1,000-$50,000/month using OpenClaw and autonomous AI agents. Real business models, earning potential, and step-by-step guides.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/micro-saas-business-guide.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Micro-SaaS Playbook: How to Build a $5K-$50K/Month Software Business</h3>
+                        <p>Learn how indie hackers are building profitable Micro-SaaS businesses using no-code tools and AI coding assistants. Complete guide with real case studies, validation strategies, and 90-day launch plan.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/practical-ai-tools-daily-life.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <span class="blog-tag">Productivity</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>15 Practical AI Tools That Will Actually Improve Your Daily Life</h3>
+                        <p>Real AI tools for executive function, productivity, and getting more done with less stress — from ChatGPT to Notion AI, with actual use cases and links.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/content-creator-clipper-economy.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Content Creator Clipper Economy: How to Build a Business from Viral Moments</h3>
+                        <p>Deep dive into the $2.3B clipper business. Learn how clippers earn $5K-$50K/month, what platforms to use, legal considerations, and the 30-day launch plan to start your own clipper empire.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/faceless-youtube-channel-ai-guide.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Build a Faceless YouTube Channel with AI (2026 Guide)</h3>
+                        <p>Complete guide to creating profitable faceless YouTube channels using AI tools. Learn the best software, success stories like Alux and Practical Psychology, and proven strategies to earn $10K+/month.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/coupon-blogger-success.html" class="blog-card featured-post">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How Two Moms Built a $30M Coupon Blog Empire (And How You Can Too)</h3>
+                        <p>Meet Heather Wheeler and Joanie Demer, founders of The Krazy Coupon Lady. Learn how they built a $30M/year business through affiliate marketing and ads — plus actionable tips to start your own.</p>
+                        <div class="blog-meta">
+                            <span>Feb 22, 2026</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </a>
+
                 <a href="/blog/reddit-side-hustles-that-pay.html" class="blog-card featured-post">
                     <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                         <span class="blog-tag">Side Hustles</span>
@@ -225,6 +353,368 @@
                     </div>
                 </a>
                 
+                <!-- Feb 23 Posts -->
+                <a href="/blog/market-update-2026-02-23.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span class="blog-tag">Market Update</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Market Update: Bitcoin Dips Below $65K, Big Tech in Bear Territory</h3>
+                        <p>Bitcoin slides to $64K, Amazon and Microsoft enter bear markets, tariff drama continues. Your market breakdown.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/22-credit-money-tips-elite.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                        <span class="blog-tag">Credit Secrets</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>22 Credit and Money Tips the Elite Don't Want You to Know</h3>
+                        <p>Insider secrets on credit hacks, tax optimization, investment strategies, and wealth-building tactics.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/top-20-reward-apps-2026.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="blog-tag">Side Hustles</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Top 20 Reward Apps Like JustPlay & Mistplay (2026)</h3>
+                        <p>Real earnings data for 47 apps tested. Which ones actually pay $2-5/day and which are scams.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-automation-agency-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI Automation Agency: Step-by-Step Guide</h3>
+                        <p>Complete guide to starting an AI Automation Agency. Services, pricing, tools, client acquisition, and 90-day launch plan.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-ecommerce-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI-Powered E-commerce: Step-by-Step Guide</h3>
+                        <p>Build a $5K-$50K/month store with AI. Product research, listing optimization, pricing, ads, and automation.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>25 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/micro-saas-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Micro-SaaS: Step-by-Step Guide</h3>
+                        <p>Build a $5K-$50K MRR software business. No-code tools, AI coding assistants, validation, pricing, and case studies.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/lead-generation-service-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Lead Generation Service: Step-by-Step Guide</h3>
+                        <p>Sell qualified B2B leads for $50-$200 each. AI research, verification, finding buyers, and scaling to $10K/month.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/customer-support-automation-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Customer Support Automation: Step-by-Step Guide</h3>
+                        <p>Sell AI support systems to businesses. Handle 80% of tickets automatically. $2K-$8K/month agency model.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-consulting-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI Consulting & Training: Step-by-Step Guide</h3>
+                        <p>Build a $5K-$25K/month consultancy. $200-$500/hour pricing, authority building, course creation, and scaling.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/data-processing-service-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Data Processing Service: Step-by-Step Guide</h3>
+                        <p>AI-powered data cleaning, analysis, and visualization. $3K-$12K/month with 60-day launch plan.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/newsletter-ai-curation-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI-Curated Newsletter: Step-by-Step Guide</h3>
+                        <p>1,000 subs × $10 = $10K MRR. 70/30 AI/human formula, niche selection, growth strategies.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/automated-trading-ai-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Automated Trading with AI: Step-by-Step Guide</h3>
+                        <p>⚠️ High risk. Algorithmic trading strategies, risk management, 2-3 year learning timeline.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/content-empire-ai-step-by-step.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Content Empire with AI: Step-by-Step Guide</h3>
+                        <p>Run 5+ channels simultaneously. $8K/month case study, AI tools for scripting/voiceover/editing, 90-day launch.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>22 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/make-money-agentic-ai-2026.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);">
+                        <span class="blog-tag">AI & Tech</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>Top 10 Ways to Make Money with Agentic AI</h3>
+                        <p>How people are earning $1K-$50K/month using OpenClaw and autonomous AI agents.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/micro-saas-business-guide.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Micro-SaaS Playbook</h3>
+                        <p>How to build a $5K-$50K/month software business using no-code tools and AI coding assistants.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/rent-your-stuff-economy.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <span class="blog-tag">Side Hustles</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The "Rent Your Stuff" Economy</h3>
+                        <p>Make money renting your car, gear, and storage space on Turo, Fat Llama, and Neighbor.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/tiktok-shop-affiliate-guide.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>TikTok Shop Affiliate Guide</h3>
+                        <p>How creators are making $10K+/month promoting products through TikTok Shop.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>16 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/youtube-shorts-monetization-2026.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>YouTube Shorts Monetization 2026</h3>
+                        <p>New Shorts ad revenue program, real creator earnings, and strategies for success.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>17 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-art-print-on-demand-guide.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI Art & Print-on-Demand Guide</h3>
+                        <p>Build a profitable POD business using Midjourney and Leonardo.ai for Etsy and Amazon.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>16 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-automation-agency-guide.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="blog-tag">Business Guide</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>AI Automation Agency Guide</h3>
+                        <p>Start a business setting up AI workflows for SMBs. Earn $3K-$10K/month per client.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>19 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/practical-ai-tools-daily-life.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <span class="blog-tag">Productivity</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>15 Practical AI Tools for Daily Life</h3>
+                        <p>Real AI tools for executive function and productivity — ChatGPT, Notion AI, and more with actual use cases.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>15 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/content-creator-clipper-economy.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>The Content Creator Clipper Economy</h3>
+                        <p>Deep dive into the $2.3B clipper business. Learn how clippers earn $5K-$50K/month, platforms, legal considerations, and how to start.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>20 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/faceless-youtube-channel-ai-guide.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How to Build a Faceless YouTube Channel with AI</h3>
+                        <p>Complete guide to creating profitable faceless YouTube channels using AI tools. Learn the best software, success stories, and proven strategies.</p>
+                        <div class="blog-meta">
+                            <span>Feb 23, 2026</span>
+                            <span>•</span>
+                            <span>18 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Feb 22 Posts -->
+                <a href="/blog/coupon-blogger-success.html" class="blog-card">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);">
+                        <span class="blog-tag">Money From Home</span>
+                    </div>
+                    <div class="blog-content">
+                        <h3>How Two Moms Built a $30M Coupon Blog Empire</h3>
+                        <p>Meet Heather Wheeler and Joanie Demer, founders of The Krazy Coupon Lady. Learn how they built a $30M/year business through affiliate marketing and ads.</p>
+                        <div class="blog-meta">
+                            <span>Feb 22, 2026</span>
+                            <span>•</span>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- Feb 21 Posts -->
                 <a href="/blog/reddit-side-hustles-that-pay.html" class="blog-card">
                     <div class="blog-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
@@ -639,5 +1129,61 @@
             <p style="text-align: center; color: #64748b;">&copy; 2026 Credit Gamer Area. Not financial advice.</p>
         </div>
     </footer>
+
+    <!-- Blog Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.textContent.trim();
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter cards
+                    blogCards.forEach(card => {
+                        const tag = card.querySelector('.blog-tag');
+                        const tagText = tag ? tag.textContent.trim() : '';
+                        
+                        if (category === 'All') {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 10);
+                        } else {
+                            // Map button text to tag categories
+                            const categoryMap = {
+                                'Breaking News': 'Breaking News',
+                                'Market Updates': 'Market Update',
+                                'Money From Home': 'Money From Home',
+                                'Side Hustles': 'Side Hustle',
+                                'Make Money Online': 'Make Money Online',
+                                'Business Guide': 'Business Guide',
+                                'Credit Building': 'Credit',
+                                'Credit Cards': 'Credit Cards',
+                                'Investing': 'Investing',
+                                'News': 'News'
+                            };
+                            
+                            const mappedCategory = categoryMap[category] || category;
+                            
+                            if (tagText === mappedCategory || 
+                                tagText.includes(mappedCategory) ||
+                                (category === 'Credit Building' && (tagText === 'Credit' || tagText === 'Credit Building')) ||
+                                (category === 'Investing' && tagText === 'Investing')) {
+                                card.style.display = 'block';
+                                setTimeout(() => card.style.opacity = '1', 10);
+                            } else {
+                                card.style.opacity = '0';
+                                setTimeout(() => card.style.display = 'none', 300);
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

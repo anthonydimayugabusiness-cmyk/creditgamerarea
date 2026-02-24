@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Credit Card is Right for Your Gaming Lifestyle? | Credit Gamer Area</title>
+    <meta name="description" content="Take our quiz to find the perfect credit card for your gaming habits. Maximize rewards on Steam, Twitch, and gaming purchases.">
+    <meta property="og:title" content="Which Credit Card is Right for Your Gaming Lifestyle?">
+    <meta property="og:description" content="Discover the best credit card for gamers based on your spending habits. Maximize rewards on gaming purchases!">
+    <meta property="og:image" content="https://www.creditgamerarea.com/images/og-gaming-credit-card-quiz.jpg">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.creditgamerarea.com/quizzes/gaming-credit-card-quiz.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Quiz",
+        "name": "Which Credit Card is Right for Your Gaming Lifestyle?",
+        "description": "Find the perfect credit card for your gaming habits and maximize rewards on gaming purchases.",
+        "about": {
+            "@type": "Thing",
+            "name": "Credit Cards for Gamers"
+        },
+        "educationalLevel": "Beginner",
+        "author": {
+            "@type": "Organization",
+            "name": "Credit Gamer Area"
+        }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e94560;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .quiz-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .progress-bar {
+            height: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        .question {
+            display: none;
+        }
+        .question.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .question h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .option {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .option:hover {
+            background: rgba(233,69,96,0.2);
+            border-color: #e94560;
+            transform: translateX(5px);
+        }
+        .option-icon {
+            font-size: 1.5rem;
+        }
+        .option-text {
+            flex: 1;
+        }
+        .option-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .option-desc {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        .result {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        .result.active {
+            display: block;
+        }
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        .result h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #e94560;
+        }
+        .result-description {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .card-recommendation {
+            background: rgba(233,69,96,0.1);
+            border: 2px solid #e94560;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: left;
+        }
+        .card-recommendation h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+        .card-list {
+            list-style: none;
+        }
+        .card-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-list li:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(233,69,96,0.4);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #e94560;
+        }
+        .tags {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #a0a0a0;
+        }
+        .share-section {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .share-section h3 {
+            margin-bottom: 15px;
+        }
+        .related-content {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+        }
+        .related-content h3 {
+            margin-bottom: 15px;
+            color: #e94560;
+        }
+        .related-content a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        .related-content a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .quiz-container { padding: 25px; }
+            .option { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🎮 CREDIT GAMER AREA</div>
+            <h1>Which Credit Card is Right for Your Gaming Lifestyle?</h1>
+            <p class="subtitle">Answer 8 quick questions to discover the perfect credit card for maximizing rewards on your gaming purchases, streaming subscriptions, and hardware upgrades.</p>
+        </header>
+
+        <div class="quiz-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar" style="width: 0%"></div>
+            </div>
+
+            <!-- Question 1 -->
+            <div class="question active" data-question="1">
+                <h2>1. How much do you spend on gaming per month?</h2>
+                <div class="options">
+                    <div class="option" data-value="casual">
+                        <span class="option-icon">🎲</span>
+                        <div class="option-text">
+                            <div class="option-title">$50 or less</div>
+                            <div class="option-desc">Occasional indie games, maybe one AAA title per quarter</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="regular">
+                        <span class="option-icon">🎮</span>
+                        <div class="option-text">
+                            <div class="option-title">$50-$150</div>
+                            <div class="option-desc">Regular gamer with subscriptions and new releases</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="enthusiast">
+                        <span class="option-icon">🏆</span>
+                        <div class="option-text">
+                            <div class="option-title">$150-$300</div>
+                            <div class="option-desc">Multiple subscriptions, DLCs, and frequent purchases</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="whale">
+                        <span class="option-icon">💎</span>
+                        <div class="option-text">
+                            <div class="option-title">$300+</div>
+                            <div class="option-desc">Collector's editions, gacha games, premium everything</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" data-question="2">
+                <h2>2. Where do you buy most of your games?</h2>
+                <div class="options">
+                    <div class="option" data-value="steam">
+                        <span class="option-icon">💻</span>
+                        <div class="option-text">
+                            <div class="option-title">Steam / PC platforms</div>
+                            <div class="option-desc">PC master race - Steam, Epic, GOG</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="console">
+                        <span class="option-icon">🎯</span>
+                        <div class="option-text">
+                            <div class="option-title">PlayStation / Xbox Store</div>
+                            <div class="option-desc">Console digital store purchases</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="retail">
+                        <span class="option-icon">🏪</span>
+                        <div class="option-text">
+                            <div class="option-title">Physical retail stores</div>
+                            <div class="option-desc">GameStop, Best Buy, Target, Walmart</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="mixed">
+                        <span class="option-icon">🌐</span>
+                        <div class="option-text">
+                            <div class="option-title">All over the place</div>
+                            <div class="option-desc">Mix of digital, retail, and online marketplaces</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" data-question="3">
+                <h2>3. Do you have any gaming subscriptions?</h2>
+                <div class="options">
+                    <div class="option" data-value="none">
+                        <span class="option-icon">❌</span>
+                        <div class="option-text">
+                            <div class="option-title">None</div>
+                            <div class="option-desc">I buy games individually, no subscriptions</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="one">
+                        <span class="option-icon">📱</span>
+                        <div class="option-text">
+                            <div class="option-title">Just one</div>
+                            <div class="option-desc">Game Pass, PS Plus, or Nintendo Switch Online</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="few">
+                        <span class="option-icon">📱📱</span>
+                        <div class="option-text">
+                            <div class="option-title">2-3 subscriptions</div>
+                            <div class="option-desc">Game Pass + PS Plus, or multiple services</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="all">
+                        <span class="option-icon">📱📱📱</span>
+                        <div class="option-text">
+                            <div class="option-title">The works</div>
+                            <div class="option-desc">Game Pass Ultimate, PS Plus Premium, Nintendo, Humble, etc.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" data-question="4">
+                <h2>4. Do you stream or create gaming content?</h2>
+                <div class="options">
+                    <div class="option" data-value="viewer">
+                        <span class="option-icon">👀</span>
+                        <div class="option-text">
+                            <div class="option-title">Just a viewer</div>
+                            <div class="option-desc">I watch Twitch/YouTube but don't create</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="casual-streamer">
+                        <span class="option-icon">📹</span>
+                        <div class="option-text">
+                            <div class="option-title">Casual streamer</div>
+                            <div class="option-desc">Occasional streams for friends</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="content-creator">
+                        <span class="option-icon">🎬</span>
+                        <div class="option-text">
+                            <div class="option-title">Active creator</div>
+                            <div class="option-desc">Regular streaming or YouTube content</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="pro">
+                        <span class="option-icon">⭐</span>
+                        <div class="option-text">
+                            <div class="option-title">Aspiring pro / monetized</div>
+                            <div class="option-desc">Making money from gaming content</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" data-question="5">
+                <h2>5. How often do you upgrade your gaming setup?</h2>
+                <div class="options">
+                    <div class="option" data-value="rarely">
+                        <span class="option-icon">🛡️</span>
+                        <div class="option-text">
+                            <div class="option-title">Rarely / Never</div>
+                            <div class="option-desc">My setup works, why change it?</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="yearly">
+                        <span class="option-icon">🔄</span>
+                        <div class="option-text">
+                            <div class="option-title">Once a year</div>
+                            <div class="option-desc">Annual upgrades to key components</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="frequently">
+                        <span class="option-icon">⚡</span>
+                        <div class="option-text">
+                            <div class="option-title">Every few months</div>
+                            <div class="option-desc">Always chasing the latest gear</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="financing">
+                        <span class="option-icon">💳</span>
+                        <div class="option-text">
+                            <div class="option-title">I finance big purchases</div>
+                            <div class="option-desc">0% APR plans for expensive hardware</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question" data-question="6">
+                <h2>6. What's your biggest gaming expense category?</h2>
+                <div class="options">
+                    <div class="option" data-value="hardware">
+                        <span class="option-icon">🖥️</span>
+                        <div class="option-text">
+                            <div class="option-title">Hardware & Accessories</div>
+                            <div class="option-desc">GPUs, monitors, keyboards, headsets</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="games">
+                        <span class="option-icon">🎲</span>
+                        <div class="option-text">
+                            <div class="option-title">Games & DLC</div>
+                            <div class="option-desc">New releases, season passes, in-game purchases</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="subscriptions">
+                        <span class="option-icon">📅</span>
+                        <div class="option-text">
+                            <div class="option-title">Subscriptions</div>
+                            <div class="option-desc">Monthly service fees add up</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="streaming">
+                        <span class="option-icon">📡</span>
+                        <div class="option-text">
+                            <div class="option-title">Streaming equipment</div>
+                            <div class="option-desc">Cameras, mics, capture cards, lighting</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question" data-question="7">
+                <h2>7. Do you travel with your gaming setup?</h2>
+                <div class="options">
+                    <div class="option" data-value="homebody">
+                        <span class="option-icon">🏠</span>
+                        <div class="option-text">
+                            <div class="option-title">Never</div>
+                            <div class="option-desc">My setup stays put at home</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="handheld">
+                        <span class="option-icon">🎒</span>
+                        <div class="option-text">
+                            <div class="option-title">Just my handheld</div>
+                            <div class="option-desc">Switch or Steam Deck on the go</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="sometimes">
+                        <span class="option-icon">✈️</span>
+                        <div class="option-text">
+                            <div class="option-title">Occasionally</div>
+                            <div class="option-desc">LAN parties, tournaments, trips</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="frequent">
+                        <span class="option-icon">🌍</span>
+                        <div class="option-text">
+                            <div class="option-title">Frequently</div>
+                            <div class="option-desc">Gaming conventions, esports events, travel often</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question" data-question="8">
+                <h2>8. What's your credit score situation?</h2>
+                <div class="options">
+                    <div class="option" data-value="no-credit">
+                        <span class="option-icon">🆕</span>
+                        <div class="option-text">
+                            <div class="option-title">No credit history yet</div>
+                            <div class="option-desc">Just starting my credit journey</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="building">
+                        <span class="option-icon">📈</span>
+                        <div class="option-text">
+                            <div class="option-title">Building credit (580-669)</div>
+                            <div class="option-desc">Working on improving my score</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="good">
+                        <span class="option-icon">✅</span>
+                        <div class="option-text">
+                            <div class="option-title">Good credit (670-739)</div>
+                            <div class="option-desc">Solid credit history, qualifying for most cards</div>
+                        </div>
+                    </div>
+                    <div class="option" data-value="excellent">
+                        <span class="option-icon">🏆</span>
+                        <div class="option-text">
+                            <div class="option-title">Excellent credit (740+)</div>
+                            <div class="option-desc">Top-tier credit, eligible for premium rewards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="result" id="result-rewards">
+                <div class="result-icon">💰</div>
+                <h2>You're The Rewards Grinder!</h2>
+                <p class="result-description">
+                    You game smart and spend smarter. You're all about maximizing every dollar, whether it's waiting for Steam sales or stacking credit card rewards. You want a card that gives you the highest cash back on your gaming purchases without annual fees eating into your savings.
+                </p>
+                <div class="card-recommendation">
+                    <h3>🏆 Recommended Cards for You:</h3>
+                    <ul class="card-list">
+                        <li>💳 <strong>Wells Fargo Active Cash® Card</strong> - 2% cash back on everything, perfect for Steam and hardware</li>
+                        <li>💳 <strong>Citi Double Cash® Card</strong> - 2% on all purchases (1% when you buy, 1% when you pay)</li>
+                        <li>💳 <strong>PayPal Cashback Mastercard®</strong> - 3% on PayPal purchases (great for eBay hardware deals)</li>
+                        <li>💳 <strong>Discover it® Cash Back</strong> - 5% rotating categories often includes digital wallets</li>
+                    </ul>
+                </div>
+                <p><strong>Pro Tip:</strong> Use your card for all gaming subscriptions to hit minimum spend for sign-up bonuses, then set up autopay to avoid interest.</p>
+                <a href="/blog/best-credit-cards-gamers-2026.html" class="btn">Read Full Card Reviews</a>
+                <button class="btn btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+
+            <div class="result" id="result-streamer">
+                <div class="result-icon">🎥</div>
+                <h2>You're The Streamer!</h2>
+                <p class="result-description">
+                    Gaming isn't just a hobby—it's your side hustle (or main hustle). You need a card that rewards business expenses, offers extended warranty on equipment, and has travel perks for conventions. You're building something, and your credit card should help you scale.
+                </p>
+                <div class="card-recommendation">
+                    <h3>🏆 Recommended Cards for You:</h3>
+                    <ul class="card-list">
+                        <li>💳 <strong>Chase Ink Business Preferred®</strong> - 3X on shipping, internet, cable, phone, and advertising</li>
+                        <li>💳 <strong>American Express® Business Gold</strong> - 4X on top 2 spending categories</li>
+                        <li>💳 <strong>Capital One Spark Cash Plus</strong> - 2% unlimited cash back, no preset spending limit</li>
+                        <li>💳 <strong>Amazon Business Prime Card</strong> - 5% back on Amazon (great for equipment)</li>
+                    </ul>
+                </div>
+                <p><strong>Pro Tip:</strong> Keep business and personal expenses separate. Use your business card for streaming equipment, software subscriptions, and convention travel.</p>
+                <a href="/blog/best-credit-cards-gamers-2026.html" class="btn">Read Full Card Reviews</a>
+                <button class="btn btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+
+            <div class="result" id="result-casual">
+                <div class="result-icon">🎯</div>
+                <h2>You're The Casual Player!</h2>
+                <p class="result-description">
+                    You game to relax, not to grind. You want a simple, no-fuss credit card that gives you decent rewards without thinking about rotating categories or annual fees. Your gaming spending is moderate, but every bit of cash back helps fund your next favorite game.
+                </p>
+                <div class="card-recommendation">
+                    <h3>🏆 Recommended Cards for You:</h3>
+                    <ul class="card-list">
+                        <li>💳 <strong>Capital One Quicksilver</strong> - 1.5% cash back, no annual fee, easy to understand</li>
+                        <li>💳 <strong>Chase Freedom Unlimited®</strong> - 1.5% base + 3% on dining and drugstores</li>
+                        <li>💳 <strong>Apple Card</strong> - 2% on Apple purchases, 3% on Apple services (great for Apple Arcade)</li>
+                        <li>💳 <strong>Bank of America® Customized Cash</strong> - 3% category of choice (online shopping)</li>
+                    </ul>
+                </div>
+                <p><strong>Pro Tip:</strong> Pick one good card and use it for everything. Set up autopay and never worry about it again while your cash back accumulates.</p>
+                <a href="/blog/best-credit-cards-gamers-2026.html" class="btn">Read Full Card Reviews</a>
+                <button class="btn btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+
+            <div class="result" id="result-builder">
+                <div class="result-icon">🛠️</div>
+                <h2>You're The Builder!</h2>
+                <p class="result-description">
+                    Your rig is never "finished." You're constantly upgrading, and those $500+ purchases add up fast. You need a card with extended warranty protection, purchase protection, and ideally 0% APR financing options for those big hardware splurges.
+                </p>
+                <div class="card-recommendation">
+                    <h3>🏆 Recommended Cards for You:</h3>
+                    <ul class="card-list">
+                        <li>💳 <strong>Chase Freedom Flex®</strong> - Extended warranty + 5% rotating categories</li>
+                        <li>💳 <strong>U.S. Bank Visa® Platinum</strong> - 0% APR for 21 months on purchases</li>
+                        <li>💳 <strong>Amazon Prime Visa</strong> - 5% back on Amazon (best for PC parts)</li>
+                        <li>💳 <strong>Blue Cash Preferred® from Amex</strong> - Extended warranty + return protection</li>
+                    </ul>
+                </div>
+                <p><strong>Pro Tip:</strong> Use 0% APR cards for big hardware purchases, but divide the total by the promo period and pay it off monthly to avoid interest bombs.</p>
+                <a href="/blog/best-credit-cards-gamers-2026.html" class="btn">Read Full Card Reviews</a>
+                <button class="btn btn-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+            </div>
+        </div>
+
+        <div class="tags">
+            <span class="tag">credit cards</span>
+            <span class="tag">gaming</span>
+            <span class="tag">rewards</span>
+            <span class="tag">cash back</span>
+            <span class="tag">finance</span>
+            <span class="tag">personality quiz</span>
+            <span class="tag">steam</span>
+            <span class="tag">twitch</span>
+        </div>
+
+        <div class="share-section">
+            <h3>Share Your Result</h3>
+            <p>Know a fellow gamer who needs the right credit card? Share this quiz!</p>
+        </div>
+
+        <div class="related-content">
+            <h3>📚 Related Articles</h3>
+            <ul style="list-style: none; margin-top: 15px;">
+                <li style="padding: 10px 0;">→ <a href="/blog/best-credit-cards-gamers-2026.html">Best Credit Cards for Gamers in 2026: Complete Guide</a></li>
+                <li style="padding: 10px 0;">→ <a href="/quizzes/credit-basics-quiz.html">Credit Basics Quiz: Test Your Knowledge</a></li>
+                <li style="padding: 10px 0;">→ <a href="/blog/gaming-pc-financing-guide.html">How to Finance Your Dream Gaming PC in 2026</a></li>
+                <li style="padding: 10px 0;">→ <a href="/blog/build-credit-from-scratch.html">How to Build Credit from Scratch: Gamer's Guide</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2026 Credit Gamer Area. This site is for educational purposes only.</p>
+            <p><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a> | <a href="/affiliate-disclosure.html">Affiliate Disclosure</a></p>
+            <p style="margin-top: 15px; font-size: 0.8rem; color: #888;">
+                Disclaimer: Credit card offers and terms are subject to change. Always verify current terms with the issuer before applying.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 8;
+        const answers = {};
+
+        // Scoring weights for each result type
+        const scoring = {
+            'rewards': 0,
+            'streamer': 0,
+            'casual': 0,
+            'builder': 0
+        };
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.closest('.question');
+                const questionNum = parseInt(question.dataset.question);
+                const value = this.dataset.value;
+                
+                answers[questionNum] = value;
+                calculateScore(questionNum, value);
+                
+                if (questionNum < totalQuestions) {
+                    showQuestion(questionNum + 1);
+                } else {
+                    showResult();
+                }
+            });
+        });
+
+        function calculateScore(question, value) {
+            // Q1: Monthly spending
+            if (question === 1) {
+                if (value === 'casual') scoring.casual += 2;
+                if (value === 'regular') scoring.rewards += 1;
+                if (value === 'enthusiast') scoring.builder += 1;
+                if (value === 'whale') scoring.rewards += 2;
+            }
+            // Q2: Where you buy
+            if (question === 2) {
+                if (value === 'steam') scoring.rewards += 1;
+                if (value === 'console') scoring.casual += 1;
+                if (value === 'retail') scoring.builder += 1;
+                if (value === 'mixed') scoring.rewards += 1;
+            }
+            // Q3: Subscriptions
+            if (question === 3) {
+                if (value === 'none') scoring.casual += 2;
+                if (value === 'one') scoring.casual += 1;
+                if (value === 'few') scoring.rewards += 1;
+                if (value === 'all') scoring.rewards += 2;
+            }
+            // Q4: Streaming
+            if (question === 4) {
+                if (value === 'viewer') scoring.casual += 1;
+                if (value === 'casual-streamer') scoring.casual += 1;
+                if (value === 'content-creator') scoring.streamer += 2;
+                if (value === 'pro') scoring.streamer += 3;
+            }
+            // Q5: Upgrades
+            if (question === 5) {
+                if (value === 'rarely') scoring.casual += 2;
+                if (value === 'yearly') scoring.rewards += 1;
+                if (value === 'frequently') scoring.builder += 2;
+                if (value === 'financing') scoring.builder += 2;
+            }
+            // Q6: Biggest expense
+            if (question === 6) {
+                if (value === 'hardware') scoring.builder += 2;
+                if (value === 'games') scoring.rewards += 1;
+                if (value === 'subscriptions') scoring.casual += 1;
+                if (value === 'streaming') scoring.streamer += 2;
+            }
+            // Q7: Travel
+            if (question === 7) {
+                if (value === 'homebody') scoring.casual += 1;
+                if (value === 'handheld') scoring.casual += 1;
+                if (value === 'sometimes') scoring.builder += 1;
+                if (value === 'frequent') scoring.streamer += 1;
+            }
+            // Q8: Credit score
+            if (question === 8) {
+                // Credit score doesn't heavily influence result type
+                if (value === 'no-credit') scoring.casual += 1;
+                if (value === 'building') scoring.casual += 1;
+            }
+        }
+
+        function showQuestion(num) {
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+            document.querySelector(`.question[data-question="${num}"]`).classList.add('active');
+            
+            const progress = (num - 1) / totalQuestions * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            currentQuestion = num;
+        }
+
+        function showResult() {
+            document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+            document.querySelector('.progress-bar').style.display = 'none';
+            
+            // Find highest scoring result
+            let maxScore = -1;
+            let resultType = 'casual';
+            
+            for (const [type, score] of Object.entries(scoring)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                    resultType = type;
+                }
+            }
+            
+            document.getElementById(`result-${resultType}`).classList.add('active');
+            
+            // Push to data layer for tracking
+            if (window.dataLayer) {
+                window.dataLayer.push({
+                    'event': 'quiz_complete',
+                    'quiz_name': 'gaming_credit_card_quiz',
+                    'result_type': resultType
+                });
+            }
+        }
+
+        function restartQuiz() {
+            // Reset scoring
+            for (let key in scoring) {
+                scoring[key] = 0;
+            }
+            
+            // Reset UI
+            document.querySelectorAll('.result').forEach(r => r.classList.remove('active'));
+            document.querySelectorAll('.question').forEach(q => {
+                q.style.display = 'block';
+                q.classList.remove('active');
+            });
+            document.querySelector('.question[data-question="1"]').classList.add('active');
+            document.querySelector('.progress-bar').style.display = 'block';
+            document.getElementById('progressBar').style.width = '0%';
+            
+            currentQuestion = 1;
+        }
+    </script>
+</body>
+</html>
