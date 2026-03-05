@@ -69,6 +69,33 @@
         .part-nav a { flex: 1; padding: 20px; background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; text-align: center; text-decoration: none; color: #64748b; }
         .part-nav a.active { background: #ede9fe; border-color: #8b5cf6; color: #5b21b6; }
     </style>
+    
+    <style>
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .breadcrumb .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            color: #64748b;
+            margin: 0 8px;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -79,7 +106,18 @@
                 <li><a href="/blog/">Blog</a></li>
             </ul>
         </div>
+    </nav>    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/blog/">Blog</a>
+            <span>/</span>
+            <span aria-current="page">Article</span>
+        </div>
     </nav>
+
 
     <header class="blog-header">
         <div class="container">

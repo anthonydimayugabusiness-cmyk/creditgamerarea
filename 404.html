@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found (404) | Credit Gamer Area</title>
+    <meta name="description" content="Sorry, the page you're looking for doesn't exist. Explore our quizzes and guides to level up your financial game.">
+    <meta name="robots" content="noindex, follow">
+    
+    <link rel="canonical" href="https://www.creditgamerarea.com/404.html">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon { font-size: 1.5rem; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Error Section */
+        .error-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .error-content {
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .error-message {
+            font-size: 1.125rem;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        /* Suggested Links */
+        .suggested-section {
+            padding: 60px 24px;
+            background: var(--light);
+        }
+
+        .suggested-section h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            color: var(--dark);
+        }
+
+        .suggested-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .suggested-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .suggested-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .suggested-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .suggested-card p {
+            font-size: 0.9375rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .suggested-card .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer p {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; }
+            .error-title { font-size: 1.5rem; }
+            .nav-links { display: none; }
+            .footer-content { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">💳</span>
+                    <span>Credit Gamer Area</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Quizzes</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/resources.html">Resources</a></li>
+                    <li><a href="/recommended.html">Cards</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="error-section">
+        <div class="error-content">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Oops! Looks like this page took a wrong turn. <br>
+                Don't worry - we've got plenty of other ways to help you level up your money game.
+            </p>
+            <div class="error-actions">
+                <a href="/" class="btn btn-primary">🏠 Go Home</a>
+                <a href="/blog/" class="btn btn-secondary">📚 Browse Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="suggested-section">
+        <div class="container">
+            <h2>Popular Content You Might Like</h2>
+            <div class="suggested-grid">
+                <a href="/credit-basics-quiz.html" class="suggested-card">
+                    <div class="icon">💳</div>
+                    <h3>Credit Basics Quiz</h3>
+                    <p>Test your knowledge and learn how to build credit from scratch.</p>
+                </a>
+                
+                <a href="/blog/gaming-finance-iq.html" class="suggested-card">
+                    <div class="icon">🎮</div>
+                    <h3>Gaming Finance IQ</h3>
+                    <p>Money tips for gamers - from credit cards to avoiding gacha traps.</p>
+                </a>
+                
+                <a href="/blog/best-credit-cards-gamers-2026.html" class="suggested-card">
+                    <div class="icon">💰</div>
+                    <h3>Best Cards for Gamers</h3>
+                    <p>Maximize rewards on Steam, Twitch, and gaming hardware purchases.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="/privacy.html">Privacy</a>
+                    <a href="/terms.html">Terms</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

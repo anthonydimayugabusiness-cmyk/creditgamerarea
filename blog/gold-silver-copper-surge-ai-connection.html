@@ -473,14 +473,81 @@
             .price-cards { grid-template-columns: 1fr; }
         }
     </style>
+    
+    <style>
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .breadcrumb .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .breadcrumb a {
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb span {
+            color: #64748b;
+            margin: 0 8px;
+            font-size: 0.875rem;
+        }
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <span class="logo-icon">💳</span>
+                    <span>Credit Gamer Area</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">Quizzes</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/resources.html">Resources</a></li>
+                    <li><a href="/recommended.html">Cards</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/blog/">Blog</a>
+            <span>/</span>
+            <span aria-current="page">Article</span>
+        </div>
+    </nav>
+
+
     <nav>
         <div class="container">
             <a href="/" class="logo">💳 Credit Gamer Area</a>
             <a href="/blog/" style="color: var(--gray); text-decoration: none; font-weight: 500;">← All Posts</a>
         </div>
+    </nav>    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/blog/">Blog</a>
+            <span>/</span>
+            <span aria-current="page">Article</span>
+        </div>
     </nav>
+
 
     <header class="blog-header">
         <div class="container">
@@ -759,5 +826,47 @@
             }
         })();
     </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>💳 Credit Gamer Area</h3>
+                    <p>Learn money skills through interactive quizzes. No signup required.</p>
+                    <div class="social-links">
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/">All Quizzes</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/terms.html">Terms</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Credit Gamer Area. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
